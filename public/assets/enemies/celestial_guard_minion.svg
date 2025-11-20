@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48">
+  <rect width="24" height="24" fill="none"/>
+  <!-- 天兵 -->
+  <!-- 头盔 -->
+  <rect x="8" y="5" width="8" height="2" fill="#4169E1"/>
+  <rect x="7" y="6" width="1" height="1" fill="#4682B4"/>
+  <rect x="16" y="6" width="1" height="1" fill="#4682B4"/>
+  <rect x="11" y="5" width="2" height="1" fill="#FFD700"/>
+  
+  <!-- 头部 -->
+  <rect x="9" y="7" width="6" height="3" fill="#FFE4C4"/>
+  <rect x="8" y="8" width="1" height="1" fill="#FFE4C4"/>
+  <rect x="15" y="8" width="1" height="1" fill="#FFE4C4"/>
+  
+  <!-- 眼睛 -->
+  <rect x="10" y="8" width="1" height="1" fill="#000000"/>
+  <rect x="13" y="8" width="1" height="1" fill="#000000"/>
+  
+  <!-- 身体 - 天界甲胄 -->
+  <rect x="8" y="10" width="8" height="5" fill="#4682B4"/>
+  <rect x="7" y="11" width="1" height="3" fill="#4682B4"/>
+  <rect x="16" y="11" width="1" height="3" fill="#4682B4"/>
+  
+  <!-- 护甲装饰 -->
+  <rect x="10" y="11" width="4" height="2" fill="#87CEEB"/>
+  <rect x="11" y="12" width="2" height="1" fill="#B0E0E6"/>
+  <rect x="9" y="13" width="2" height="1" fill="#FFD700"/>
+  <rect x="13" y="13" width="2" height="1" fill="#FFD700"/>
+  
+  <!-- 腿部 -->
+  <rect x="9" y="15" width="2" height="3" fill="#4682B4"/>
+  <rect x="13" y="15" width="2" height="3" fill="#4682B4"/>
+  
+  <!-- 战靴 -->
+  <rect x="8" y="18" width="3" height="2" fill="#2F4F4F"/>
+  <rect x="13" y="18" width="3" height="2" fill="#2F4F4F"/>
+  
+  <!-- 武器提示 - 长矛 -->
+  <rect x="17" y="8" width="1" height="8" fill="#C0C0C0"/>
+  <rect x="16" y="7" width="1" height="1" fill="#FFD700"/>
+  <rect x="18" y="7" width="1" height="1" fill="#FFD700"/>
+  <rect x="16" y="8" width="1" height="2" fill="#4682B4"/>
+  <rect x="18" y="8" width="1" height="2" fill="#4682B4"/>
+</svg>

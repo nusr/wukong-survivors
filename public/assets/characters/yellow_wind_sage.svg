@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="64" height="64">
+  <rect width="32" height="32" fill="none"/>
+  <!-- 黄风大王 - 黄鼠狼精 -->
+  <!-- 耳朵 -->
+  <rect x="9" y="8" width="2" height="4" fill="#DAA520"/>
+  <rect x="21" y="8" width="2" height="4" fill="#DAA520"/>
+  <rect x="10" y="9" width="1" height="2" fill="#FFD700"/>
+  <rect x="21" y="9" width="1" height="2" fill="#FFD700"/>
+  
+  <!-- 头部 -->
+  <rect x="11" y="10" width="10" height="6" fill="#DAA520"/>
+  <rect x="10" y="11" width="1" height="4" fill="#DAA520"/>
+  <rect x="21" y="11" width="1" height="4" fill="#DAA520"/>
+  
+  <!-- 眼睛 - 狡猾 -->
+  <rect x="12" y="12" width="3" height="2" fill="#FFD700"/>
+  <rect x="17" y="12" width="3" height="2" fill="#FFD700"/>
+  <rect x="13" y="13" width="1" height="1" fill="#000000"/>
+  <rect x="18" y="13" width="1" height="1" fill="#000000"/>
+  
+  <!-- 胡须 -->
+  <rect x="8" y="14" width="2" height="1" fill="#B8860B"/>
+  <rect x="22" y="14" width="2" height="1" fill="#B8860B"/>
+  <rect x="7" y="15" width="2" height="1" fill="#B8860B"/>
+  <rect x="23" y="15" width="2" height="1" fill="#B8860B"/>
+  
+  <!-- 鼻子 -->
+  <rect x="15" y="14" width="2" height="1" fill="#8B6914"/>
+  
+  <!-- 身体 - 道袍 -->
+  <rect x="10" y="16" width="12" height="8" fill="#FFD700"/>
+  <rect x="9" y="17" width="1" height="6" fill="#FFD700"/>
+  <rect x="22" y="17" width="1" height="6" fill="#FFD700"/>
+  
+  <!-- 风纹装饰 -->
+  <rect x="12" y="18" width="2" height="1" fill="#FFFFFF"/>
+  <rect x="18" y="18" width="2" height="1" fill="#FFFFFF"/>
+  <rect x="13" y="19" width="1" height="1" fill="#FFFFFF"/>
+  <rect x="18" y="19" width="1" height="1" fill="#FFFFFF"/>
+  <rect x="11" y="20" width="3" height="1" fill="#87CEEB"/>
+  <rect x="18" y="20" width="3" height="1" fill="#87CEEB"/>
+  <rect x="14" y="21" width="4" height="1" fill="#87CEEB"/>
+  
+  <!-- 腰带 -->
+  <rect x="10" y="22" width="12" height="2" fill="#8B4513"/>
+  <rect x="15" y="22" width="2" height="2" fill="#FFD700"/>
+  
+  <!-- 腿部 -->
+  <rect x="11" y="24" width="4" height="4" fill="#DAA520"/>
+  <rect x="17" y="24" width="4" height="4" fill="#DAA520"/>
+  
+  <!-- 爪子 -->
+  <rect x="10" y="28" width="5" height="2" fill="#B8860B"/>
+  <rect x="17" y="28" width="5" height="2" fill="#B8860B"/>
+  
+  <!-- 风的特效 -->
+  <rect x="6" y="16" width="2" height="1" fill="#87CEEB" opacity="0.7"/>
+  <rect x="24" y="17" width="2" height="1" fill="#87CEEB" opacity="0.7"/>
+  <rect x="5" y="19" width="3" height="1" fill="#B0E0E6" opacity="0.7"/>
+  <rect x="24" y="20" width="3" height="1" fill="#B0E0E6" opacity="0.7"/>
+</svg>

@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="64" height="64">
+  <rect width="32" height="32" fill="none"/>
+  <!-- 天命人 - 主角孙悟空形象 -->
+  <!-- 金箍 -->
+  <rect x="10" y="8" width="12" height="2" fill="#FFD700"/>
+  <rect x="9" y="9" width="1" height="1" fill="#B8860B"/>
+  <rect x="22" y="9" width="1" height="1" fill="#B8860B"/>
+  
+  <!-- 头部 -->
+  <rect x="11" y="10" width="10" height="6" fill="#F4A460"/>
+  <rect x="10" y="11" width="1" height="4" fill="#F4A460"/>
+  <rect x="21" y="11" width="1" height="4" fill="#F4A460"/>
+  
+  <!-- 眼睛 -->
+  <rect x="13" y="12" width="2" height="2" fill="#FF0000"/>
+  <rect x="17" y="12" width="2" height="2" fill="#FF0000"/>
+  <rect x="14" y="13" width="1" height="1" fill="#FFD700"/>
+  <rect x="18" y="13" width="1" height="1" fill="#FFD700"/>
+  
+  <!-- 嘴 -->
+  <rect x="14" y="15" width="4" height="1" fill="#8B4513"/>
+  
+  <!-- 身体 - 金甲 -->
+  <rect x="11" y="16" width="10" height="6" fill="#FFD700"/>
+  <rect x="10" y="17" width="1" height="4" fill="#FFD700"/>
+  <rect x="21" y="17" width="1" height="4" fill="#FFD700"/>
+  <rect x="13" y="17" width="2" height="2" fill="#FFA500"/>
+  <rect x="17" y="17" width="2" height="2" fill="#FFA500"/>
+  <rect x="15" y="19" width="2" height="2" fill="#B8860B"/>
+  
+  <!-- 披风 -->
+  <rect x="9" y="17" width="1" height="5" fill="#DC143C"/>
+  <rect x="22" y="17" width="1" height="5" fill="#DC143C"/>
+  <rect x="8" y="19" width="1" height="3" fill="#8B0000"/>
+  <rect x="23" y="19" width="1" height="3" fill="#8B0000"/>
+  
+  <!-- 腰带 -->
+  <rect x="11" y="21" width="10" height="1" fill="#8B4513"/>
+  
+  <!-- 腿部 -->
+  <rect x="11" y="22" width="4" height="4" fill="#FFA500"/>
+  <rect x="17" y="22" width="4" height="4" fill="#FFA500"/>
+  <rect x="12" y="23" width="2" height="2" fill="#FF8C00"/>
+  <rect x="18" y="23" width="2" height="2" fill="#FF8C00"/>
+  
+  <!-- 靴子 -->
+  <rect x="10" y="26" width="5" height="3" fill="#8B4513"/>
+  <rect x="17" y="26" width="5" height="3" fill="#8B4513"/>
+  <rect x="11" y="27" width="3" height="1" fill="#654321"/>
+  <rect x="18" y="27" width="3" height="1" fill="#654321"/>
+  
+  <!-- 金箍棒提示 -->
+  <rect x="6" y="14" width="2" height="12" fill="#B8860B"/>
+  <rect x="5" y="13" width="1" height="1" fill="#FFD700"/>
+  <rect x="8" y="13" width="1" height="1" fill="#FFD700"/>
+  <rect x="5" y="26" width="1" height="1" fill="#FFD700"/>
+  <rect x="8" y="26" width="1" height="1" fill="#FFD700"/>
+</svg>

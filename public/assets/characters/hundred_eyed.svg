@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="64" height="64">
+  <rect width="32" height="32" fill="none"/>
+  <!-- 百眼魔君 -->
+  <!-- 头部 -->
+  <rect x="10" y="8" width="12" height="6" fill="#9370DB"/>
+  <rect x="9" y="9" width="1" height="4" fill="#9370DB"/>
+  <rect x="22" y="9" width="1" height="4" fill="#9370DB"/>
+  
+  <!-- 主眼睛 - 大 -->
+  <rect x="12" y="10" width="3" height="3" fill="#FFD700"/>
+  <rect x="17" y="10" width="3" height="3" fill="#FFD700"/>
+  <rect x="13" y="11" width="1" height="1" fill="#8B0000"/>
+  <rect x="18" y="11" width="1" height="1" fill="#8B0000"/>
+  
+  <!-- 额头的眼 -->
+  <rect x="15" y="9" width="2" height="1" fill="#FFFF00"/>
+  
+  <!-- 身体 -->
+  <rect x="9" y="14" width="14" height="9" fill="#9370DB"/>
+  <rect x="8" y="15" width="1" height="7" fill="#9370DB"/>
+  <rect x="23" y="15" width="1" height="7" fill="#9370DB"/>
+  
+  <!-- 身上的眼睛 - 百眼特征 -->
+  <rect x="10" y="15" width="2" height="1" fill="#FFD700"/>
+  <rect x="20" y="15" width="2" height="1" fill="#FFD700"/>
+  <rect x="12" y="16" width="1" height="1" fill="#FFFF00"/>
+  <rect x="19" y="16" width="1" height="1" fill="#FFFF00"/>
+  <rect x="14" y="17" width="1" height="1" fill="#FFD700"/>
+  <rect x="17" y="17" width="1" height="1" fill="#FFD700"/>
+  <rect x="11" y="18" width="2" height="1" fill="#FFFF00"/>
+  <rect x="19" y="18" width="2" height="1" fill="#FFFF00"/>
+  <rect x="15" y="19" width="2" height="1" fill="#FFD700"/>
+  <rect x="10" y="20" width="1" height="1" fill="#FFFF00"/>
+  <rect x="21" y="20" width="1" height="1" fill="#FFFF00"/>
+  <rect x="13" y="21" width="1" height="1" fill="#FFD700"/>
+  <rect x="18" y="21" width="1" height="1" fill="#FFD700"/>
+  
+  <!-- 道袍装饰 -->
+  <rect x="13" y="16" width="6" height="4" fill="#8B008B"/>
+  <rect x="14" y="17" width="4" height="2" fill="#9400D3"/>
+  
+  <!-- 腰部 -->
+  <rect x="10" y="22" width="12" height="1" fill="#4B0082"/>
+  
+  <!-- 腿部 -->
+  <rect x="10" y="23" width="5" height="5" fill="#9370DB"/>
+  <rect x="17" y="23" width="5" height="5" fill="#9370DB"/>
+  <rect x="11" y="24" width="1" height="1" fill="#FFFF00"/>
+  <rect x="18" y="24" width="1" height="1" fill="#FFFF00"/>
+  <rect x="13" y="26" width="1" height="1" fill="#FFD700"/>
+  <rect x="19" y="26" width="1" height="1" fill="#FFD700"/>
+  
+  <!-- 紫金铃 -->
+  <rect x="25" y="15" width="3" height="4" fill="#9370DB"/>
+  <rect x="26" y="14" width="1" height="1" fill="#FFD700"/>
+  <rect x="25" y="19" width="3" height="1" fill="#4B0082"/>
+  <rect x="26" y="20" width="1" height="1" fill="#FFD700"/>
+  
+  <!-- 眼光特效 -->
+  <rect x="7" y="16" width="1" height="1" fill="#FFFF00" opacity="0.7"/>
+  <rect x="24" y="17" width="1" height="1" fill="#FFFF00" opacity="0.7"/>
+  <rect x="8" y="19" width="1" height="1" fill="#FFD700" opacity="0.6"/>
+  <rect x="23" y="20" width="1" height="1" fill="#FFD700" opacity="0.6"/>
+</svg>

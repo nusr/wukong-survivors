@@ -1,0 +1,35 @@
+.settings {
+  padding: var(--container-padding);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.languageSelector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--white-color);
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.languageSelector label {
+  color: var(--primary-color);
+}
+
+.languageSelector select {
+  padding: 8px 15px;
+  border: 2px solid var(--primary-color);
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.6);
+  color: var(--white-color);
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.languageSelector select:hover {
+  background: rgba(212, 175, 55, 0.2);
+}

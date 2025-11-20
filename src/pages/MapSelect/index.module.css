@@ -1,0 +1,197 @@
+.mapSelect {
+  padding: var(--container-padding);
+}
+
+.title {
+  color: var(--primary-color);
+  font-size: 42px;
+  margin-bottom: 30px;
+  text-align: center;
+  text-shadow:
+    2px 2px 4px rgba(0, 0, 0, 0.8),
+    0 0 20px rgba(212, 175, 55, 0.5);
+  font-weight: bold;
+}
+
+.mapsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.mapCard {
+  background: rgba(212, 175, 55, 0.1);
+  border: 3px solid var(--primary-color);
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  position: relative;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  touch-action: manipulation;
+}
+
+@media (max-width: 768px) {
+  .mapCard {
+    padding: 15px;
+    min-height: 100px;
+    border-radius: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mapCard {
+    padding: 12px;
+    min-height: 90px;
+    border-radius: 10px;
+  }
+}
+
+.mapCard.unlocked:hover {
+  background-color: rgba(212, 175, 55, 0.2);
+}
+
+.mapCard.selected {
+  background-color: rgba(212, 175, 55, 0.25);
+}
+
+.mapCard.locked {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.chapterBadge {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 5px 15px;
+  border-radius: 15px;
+  color: #000;
+  font-weight: bold;
+  font-size: 14px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.mapName {
+  color: var(--white-color);
+  font-size: 20px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.difficulty {
+  color: #ffd700;
+  font-size: 18px;
+  margin-top: 5px;
+}
+
+.unlockCondition {
+  color: #999;
+  font-size: 14px;
+  font-style: italic;
+  margin-top: 10px;
+}
+
+.mapDetail {
+  background: rgba(212, 175, 55, 0.15);
+  border: 2px solid var(--primary-color);
+  border-radius: 10px;
+  padding: 25px;
+  margin-bottom: 25px;
+}
+
+.mapDetail h2 {
+  color: var(--primary-color);
+  font-size: var(--subtitle-font-size);
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.description {
+  color: #ccc;
+  font-size: var(--body-font-size);
+  line-height: 1.6;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.difficultyInfo {
+  color: var(--white-color);
+  font-size: var(--body-font-size);
+  text-align: center;
+}
+
+.difficultyInfo strong {
+  color: var(--primary-color);
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .mapName {
+    font-size: 18px;
+    margin: 8px 0;
+  }
+
+  .difficulty {
+    font-size: 16px;
+  }
+
+  .unlockCondition {
+    font-size: 13px;
+  }
+
+  .mapDetail {
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .mapDetail h2 {
+    margin-bottom: 12px;
+  }
+
+  .description {
+    margin-bottom: 12px;
+  }
+
+  .buttons {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mapName {
+    font-size: 16px;
+  }
+
+  .difficulty {
+    font-size: 15px;
+  }
+
+  .mapDetail {
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .mapsGrid {
+    grid-template-columns: 1fr;
+  }
+}

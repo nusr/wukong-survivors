@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="64" height="64">
+  <rect width="32" height="32" fill="none"/>
+  <!-- 亢金星君 - 龙形态 -->
+  <!-- 龙角 -->
+  <rect x="9" y="5" width="2" height="3" fill="#FFD700"/>
+  <rect x="21" y="5" width="2" height="3" fill="#FFD700"/>
+  <rect x="8" y="4" width="1" height="2" fill="#FFA500"/>
+  <rect x="23" y="4" width="1" height="2" fill="#FFA500"/>
+  
+  <!-- 龙头 -->
+  <rect x="10" y="7" width="12" height="6" fill="#FFD700"/>
+  <rect x="9" y="8" width="1" height="4" fill="#FFD700"/>
+  <rect x="22" y="8" width="1" height="4" fill="#FFD700"/>
+  
+  <!-- 龙眼 - 威严 -->
+  <rect x="12" y="9" width="3" height="2" fill="#FF0000"/>
+  <rect x="17" y="9" width="3" height="2" fill="#FF0000"/>
+  <rect x="13" y="10" width="1" height="1" fill="#FFFF00"/>
+  <rect x="18" y="10" width="1" height="1" fill="#FFFF00"/>
+  
+  <!-- 龙须 -->
+  <rect x="7" y="11" width="2" height="1" fill="#FFA500"/>
+  <rect x="23" y="11" width="2" height="1" fill="#FFA500"/>
+  <rect x="6" y="12" width="2" height="2" fill="#FFD700"/>
+  <rect x="24" y="12" width="2" height="2" fill="#FFD700"/>
+  
+  <!-- 龙鼻 -->
+  <rect x="14" y="12" width="4" height="1" fill="#FFA500"/>
+  
+  <!-- 身体 - 金甲龙鳞 -->
+  <rect x="9" y="13" width="14" height="9" fill="#FFD700"/>
+  <rect x="8" y="14" width="1" height="7" fill="#FFD700"/>
+  <rect x="23" y="14" width="1" height="7" fill="#FFD700"/>
+  
+  <!-- 龙鳞纹理 -->
+  <rect x="10" y="14" width="3" height="2" fill="#FFA500"/>
+  <rect x="13" y="15" width="3" height="2" fill="#FFA500"/>
+  <rect x="16" y="14" width="3" height="2" fill="#FFA500"/>
+  <rect x="19" y="15" width="3" height="2" fill="#FFA500"/>
+  <rect x="11" y="17" width="2" height="2" fill="#DAA520"/>
+  <rect x="14" y="18" width="2" height="2" fill="#DAA520"/>
+  <rect x="17" y="17" width="2" height="2" fill="#DAA520"/>
+  <rect x="20" y="18" width="2" height="2" fill="#DAA520"/>
+  
+  <!-- 龙纹 -->
+  <rect x="13" y="20" width="6" height="1" fill="#FF0000"/>
+  <rect x="14" y="21" width="4" height="1" fill="#DC143C"/>
+  
+  <!-- 腰带 -->
+  <rect x="10" y="21" width="12" height="1" fill="#8B0000"/>
+  
+  <!-- 腿部 - 龙爪 -->
+  <rect x="10" y="22" width="5" height="4" fill="#FFD700"/>
+  <rect x="17" y="22" width="5" height="4" fill="#FFD700"/>
+  <rect x="11" y="23" width="3" height="2" fill="#FFA500"/>
+  <rect x="18" y="23" width="3" height="2" fill="#FFA500"/>
+  
+  <!-- 龙爪 -->
+  <rect x="9" y="26" width="6" height="3" fill="#DAA520"/>
+  <rect x="17" y="26" width="6" height="3" fill="#DAA520"/>
+  <rect x="9" y="29" width="1" height="1" fill="#FFFFFF"/>
+  <rect x="11" y="29" width="1" height="1" fill="#FFFFFF"/>
+  <rect x="13" y="29" width="1" height="1" fill="#FFFFFF"/>
+  <rect x="14" y="29" width="1" height="1" fill="#FFFFFF"/>
+  <rect x="18" y="29" width="1" height="1" fill="#FFFFFF"/>
+  <rect x="20" y="29" width="1" height="1" fill="#FFFFFF"/>
+  <rect x="22" y="29" width="1" height="1" fill="#FFFFFF"/>
+  
+  <!-- 金光特效 -->
+  <rect x="7" y="15" width="1" height="1" fill="#FFFF00" opacity="0.8"/>
+  <rect x="24" y="16" width="1" height="1" fill="#FFFF00" opacity="0.8"/>
+  <rect x="8" y="19" width="1" height="1" fill="#FFD700" opacity="0.7"/>
+  <rect x="23" y="20" width="1" height="1" fill="#FFD700" opacity="0.7"/>
+</svg>

@@ -1,0 +1,46 @@
+.statsGrid {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.stat {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--body-font-size);
+  gap: 20px;
+  align-items: center;
+}
+
+.statLabel {
+  text-align: left;
+}
+
+.statValue {
+  font-weight: bold;
+  color: var(--primary-color);
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  .statsGrid {
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .stat {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .statsGrid {
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .stat {
+    gap: 10px;
+  }
+}

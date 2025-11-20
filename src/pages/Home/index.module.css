@@ -1,0 +1,248 @@
+.characterSelect {
+  padding: var(--container-padding);
+  min-height: 100vh;
+  overflow-y: auto;
+}
+
+.title {
+  color: var(--primary-color);
+  font-size: var(--title-font-size);
+  margin-bottom: 30px;
+  text-align: center;
+  text-shadow:
+    2px 2px 4px rgba(0, 0, 0, 0.8),
+    0 0 20px rgba(212, 175, 55, 0.5);
+  font-weight: bold;
+}
+
+.charactersGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 1024px) {
+  .charactersGrid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    margin-bottom: 20px;
+  }
+
+  .charactersGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .charactersGrid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
+
+.characterCard {
+  background: rgba(212, 175, 55, 0.1);
+  border: 2px solid var(--primary-color);
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  position: relative;
+  touch-action: manipulation;
+  min-height: 120px;
+}
+
+@media (max-width: 768px) {
+  .characterCard {
+    padding: 12px;
+    min-height: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .characterCard {
+    padding: 10px;
+    min-height: 90px;
+  }
+}
+
+.characterCard.unlocked:hover {
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+}
+
+.characterCard.selected {
+  background-color: rgba(212, 175, 55, 0.3);
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.8);
+}
+
+.characterCard.locked {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.characterIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.unlockedChar {
+  width: 30px;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  padding-bottom: 20px;
+}
+
+.lockedIcon {
+  font-size: 30px;
+}
+
+.characterName {
+  color: var(--white-color);
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.unlockCondition {
+  color: #999;
+  font-size: 14px;
+  font-style: italic;
+}
+
+.characterDetail {
+  background: rgba(212, 175, 55, 0.15);
+  border: 2px solid var(--primary-color);
+  border-radius: 10px;
+  padding: 25px;
+  margin-bottom: 25px;
+}
+
+.characterDetail h2 {
+  color: var(--primary-color);
+  font-size: var(--subtitle-font-size);
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.description {
+  color: #ccc;
+  font-size: var(--body-font-size);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+  .characterDetail {
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .characterDetail h2 {
+    margin-bottom: 12px;
+  }
+
+  .description {
+    margin-bottom: 15px;
+  }
+
+  .stats {
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .characterDetail {
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
+.stat {
+  display: flex;
+  justify-content: space-between;
+  color: var(--white-color);
+  font-size: 16px;
+  padding: 8px;
+  background: var(--gray-color);
+  border-radius: 5px;
+}
+
+.statName {
+  color: #aaa;
+}
+
+.statValue {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.weaponInfo {
+  color: var(--white-color);
+  font-size: 16px;
+  text-align: center;
+}
+
+.weaponInfo strong {
+  color: var(--primary-color);
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .buttons {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.statLabel {
+  color: var(--primary-color);
+}
+
+.statValue {
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}

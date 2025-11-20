@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  position: fixed;
+  overscroll-behavior: none;
+  touch-action: pan-x pan-y;
+}
+
+body {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #1a1a2e;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+:root {
+  --primary-color: #d4af37;
+  --white-color: #fff;
+  --gray-color: rgba(86, 28, 28, 0.3);
+  --container-padding: 40px;
+  --highestZIndex: 1000;
+  --title-font-size: 42px;
+  --subtitle-font-size: 24px;
+  --body-font-size: 16px;
+  --button-font-size: 20px;
+}
+
+/* Tablet styles (768px - 1024px) */
+@media (max-width: 1024px) {
+  :root {
+    --container-padding: 30px;
+    --title-font-size: 36px;
+    --subtitle-font-size: 20px;
+    --body-font-size: 15px;
+    --button-font-size: 18px;
+  }
+}
+
+/* Mobile styles (< 768px) */
+@media (max-width: 768px) {
+  :root {
+    --container-padding: 20px;
+    --title-font-size: 28px;
+    --subtitle-font-size: 18px;
+    --body-font-size: 14px;
+    --button-font-size: 16px;
+  }
+}
+
+/* Small mobile styles (< 480px) */
+@media (max-width: 480px) {
+  :root {
+    --container-padding: 15px;
+    --title-font-size: 24px;
+    --subtitle-font-size: 16px;
+    --body-font-size: 13px;
+    --button-font-size: 15px;
+  }
+}
+
+.resetButton,
+.backButton,
+.confirmButton {
+  flex: 1;
+  padding: 10px;
+  font-size: var(--button-font-size);
+  border: 2px solid var(--primary-color);
+  border-radius: 10px;
+  background: rgba(212, 175, 55, 0.2);
+  color: var(--white-color);
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: bold;
+  min-height: 44px;
+  touch-action: manipulation;
+}
+
+@media (max-width: 768px) {
+  .resetButton,
+  .backButton,
+  .confirmButton {
+    padding: 12px;
+    font-size: var(--button-font-size);
+    min-height: 48px;
+  }
+}
+
+.backButton:hover,
+.confirmButton:hover:not(:disabled) {
+  background-color: rgba(212, 175, 55, 0.4);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+}
+
+.resetButton:hover {
+  background: rgba(244, 67, 54, 0.5);
+  box-shadow: 0 0 20px rgba(244, 67, 54, 0.6);
+}
+
+button + button {
+  margin-left: 20px;
+}
+
+button.resetButton {
+  background: rgba(244, 67, 54, 0.3);
+  border-color: #f44336;
+}
+
+.confirmButton {
+  background: rgba(212, 175, 55, 0.3);
+  border-width: 3px;
+}
+
+.confirmButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+h1 {
+  color: var(--primary-color);
+  font-size: var(--title-font-size);
+  padding-bottom: 20px;
+  text-align: center;
+  text-shadow:
+    2px 2px 4px rgba(0, 0, 0, 0.8),
+    0 0 20px rgba(212, 175, 55, 0.5);
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    padding-bottom: 15px;
+  }
+}

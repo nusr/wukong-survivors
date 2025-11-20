@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 32" width="80" height="64">
+  <rect width="40" height="32" fill="none"/>
+  <!-- 多目金蜈蚣 - BOSS -->
+  <!-- 头部 - 蜈蚣头 -->
+  <rect x="8" y="12" width="8" height="6" fill="#FFD700"/>
+  <rect x="7" y="13" width="1" height="4" fill="#B8860B"/>
+  <rect x="16" y="13" width="1" height="4" fill="#B8860B"/>
+  
+  <!-- 触须 -->
+  <rect x="5" y="13" width="2" height="1" fill="#DAA520"/>
+  <rect x="4" y="14" width="2" height="2" fill="#FFA500"/>
+  <rect x="5" y="11" width="2" height="1" fill="#DAA520"/>
+  <rect x="4" y="10" width="2" height="2" fill="#FFA500"/>
+  
+  <!-- 多眼 -->
+  <rect x="9" y="13" width="2" height="1" fill="#FF0000"/>
+  <rect x="13" y="13" width="2" height="1" fill="#FF0000"/>
+  <rect x="8" y="15" width="1" height="1" fill="#FFFF00"/>
+  <rect x="15" y="15" width="1" height="1" fill="#FFFF00"/>
+  <rect x="10" y="16" width="1" height="1" fill="#FF0000"/>
+  <rect x="13" y="16" width="1" height="1" fill="#FF0000"/>
+  
+  <!-- 蜈蚣身体 - 长节段 -->
+  <rect x="16" y="13" width="4" height="4" fill="#DAA520"/>
+  <rect x="20" y="13" width="4" height="4" fill="#B8860B"/>
+  <rect x="24" y="13" width="4" height="4" fill="#DAA520"/>
+  <rect x="28" y="13" width="4" height="4" fill="#B8860B"/>
+  <rect x="32" y="14" width="3" height="2" fill="#DAA520"/>
+  
+  <!-- 身体上的眼睛 -->
+  <rect x="17" y="14" width="1" height="1" fill="#FF0000"/>
+  <rect x="22" y="15" width="1" height="1" fill="#FFFF00"/>
+  <rect x="26" y="14" width="1" height="1" fill="#FF0000"/>
+  <rect x="30" y="15" width="1" height="1" fill="#FFFF00"/>
+  
+  <!-- 金色甲壳纹理 -->
+  <rect x="17" y="13" width="2" height="1" fill="#FFD700"/>
+  <rect x="21" y="13" width="2" height="1" fill="#FFD700"/>
+  <rect x="25" y="13" width="2" height="1" fill="#FFD700"/>
+  <rect x="29" y="13" width="2" height="1" fill="#FFD700"/>
+  
+  <!-- 蜈蚣腿 - 左侧 -->
+  <rect x="6" y="18" width="2" height="1" fill="#B8860B"/>
+  <rect x="5" y="19" width="2" height="2" fill="#8B6914"/>
+  <rect x="10" y="18" width="2" height="1" fill="#B8860B"/>
+  <rect x="9" y="19" width="2" height="2" fill="#8B6914"/>
+  <rect x="14" y="18" width="2" height="1" fill="#B8860B"/>
+  <rect x="13" y="19" width="2" height="2" fill="#8B6914"/>
+  <rect x="18" y="18" width="2" height="1" fill="#B8860B"/>
+  <rect x="17" y="19" width="2" height="2" fill="#8B6914"/>
+  <rect x="22" y="18" width="2" height="1" fill="#B8860B"/>
+  <rect x="21" y="19" width="2" height="2" fill="#8B6914"/>
+  <rect x="26" y="18" width="2" height="1" fill="#B8860B"/>
+  <rect x="25" y="19" width="2" height="2" fill="#8B6914"/>
+  <rect x="30" y="18" width="2" height="1" fill="#B8860B"/>
+  <rect x="29" y="19" width="2" height="2" fill="#8B6914"/>
+  
+  <!-- 蜈蚣腿 - 右侧 -->
+  <rect x="6" y="11" width="2" height="1" fill="#B8860B"/>
+  <rect x="5" y="9" width="2" height="2" fill="#8B6914"/>
+  <rect x="10" y="11" width="2" height="1" fill="#B8860B"/>
+  <rect x="9" y="9" width="2" height="2" fill="#8B6914"/>
+  <rect x="14" y="11" width="2" height="1" fill="#B8860B"/>
+  <rect x="13" y="9" width="2" height="2" fill="#8B6914"/>
+  <rect x="18" y="11" width="2" height="1" fill="#B8860B"/>
+  <rect x="17" y="9" width="2" height="2" fill="#8B6914"/>
+  <rect x="22" y="11" width="2" height="1" fill="#B8860B"/>
+  <rect x="21" y="9" width="2" height="2" fill="#8B6914"/>
+  <rect x="26" y="11" width="2" height="1" fill="#B8860B"/>
+  <rect x="25" y="9" width="2" height="2" fill="#8B6914"/>
+  <rect x="30" y="11" width="2" height="1" fill="#B8860B"/>
+  <rect x="29" y="9" width="2" height="2" fill="#8B6914"/>
+  
+  <!-- 毒液特效 -->
+  <rect x="3" y="14" width="1" height="1" fill="#00FF00" opacity="0.6"/>
+  <rect x="2" y="15" width="1" height="1" fill="#32CD32" opacity="0.5"/>
+</svg>

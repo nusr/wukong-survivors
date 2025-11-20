@@ -1,0 +1,389 @@
+{
+    "game": {
+        "title": "Wukong Survivors",
+        "start": "Start Game",
+        "restart": "Restart",
+        "backToHome": "Back to Home",
+        "gameOver": "Game Over",
+        "levelUp": "Level Up!",
+        "paused": "Paused",
+        "level": "Lv.{level}",
+        "specialWeapon": "Special Weapon",
+        "resetSave": "Reset Save",
+        "endGame": "End Game",
+        "endGameTitle": "Do you want to end the game?"
+    },
+    "settings": {
+        "title": "Settings",
+        "language": "Language",
+        "zh-CN": "中文",
+        "en-US": "English",
+        "ja-JP": "日本語"
+    },
+    "stats": {
+        "title": "Game Statistics",
+        "gold": "Gold",
+        "totalKills": "Total Kills",
+        "bestSurvival": "Best Survival",
+        "totalPlayTime": "Total Play Time",
+        "survivalTime": "Survival Time",
+        "kills": "Kills",
+        "level": "Level",
+        "close": "Close"
+    },
+    "characters": {
+        "destined_one": {
+            "name": "Destined One",
+            "description": "The legendary journey begins, balanced all-rounder"
+        },
+        "black_bear_guai": {
+            "name": "Black Bear Guai",
+            "description": "Powerful bear demon with high HP and defense"
+        },
+        "lingxuzi": {
+            "name": "Lingxuzi",
+            "description": "Black Wind Mountain lord, master of Taoist arts"
+        },
+        "wandering_wight": {
+            "name": "Wandering Wight",
+            "description": "Red-haired ghost, fierce and brutal"
+        },
+        "yellow_wind_sage": {
+            "name": "Yellow Wind Sage",
+            "description": "Master of sandstorms, high magic damage"
+        },
+        "tiger_vanguard": {
+            "name": "Tiger Vanguard",
+            "description": "Fierce tiger warrior, fast and powerful"
+        },
+        "stone_vanguard": {
+            "name": "Stone Vanguard",
+            "description": "Yellow Wind Ridge lord, solid as rock"
+        },
+        "king_of_flowing_sand": {
+            "name": "King of Flowing Sand",
+            "description": "Yellow Wind Ridge boss, lord of sand sea"
+        },
+        "yellow_brow_king": {
+            "name": "Yellow Brow King",
+            "description": "Cunning Buddhist traitor, well-balanced"
+        },
+        "hundred_eyed": {
+            "name": "Hundred-Eyed Daoist Master",
+            "description": "Mysterious monster with ultra-high critical hits"
+        },
+        "mad_tiger": {
+            "name": "Mad Tiger",
+            "description": "Little Western Heaven lord, wild and ferocious"
+        },
+        "kang_jin_loong": {
+            "name": "Kang-Jin Star",
+            "description": "Star lord descended from heaven"
+        },
+        "spider_celestial": {
+            "name": "Violet Spider",
+            "description": "Silk Cave lord, web binding expert"
+        },
+        "hundred_eyed_daoist": {
+            "name": "Hundred-Eyed Daoist",
+            "description": "Silk Cave lord, hundred-eyed demon light"
+        },
+        "elder_jinchi": {
+            "name": "Elder Jinchi",
+            "description": "Silk Cave lord, Buddhist monk"
+        },
+        "hundred_eyed_daoist_master": {
+            "name": "Multi-Eyed Centipede",
+            "description": "True form of Hundred-Eyed Demon"
+        },
+        "bull_king": {
+            "name": "Bull King",
+            "description": "Immensely powerful demon king, ultimate tank"
+        },
+        "red_boy": {
+            "name": "Red Boy",
+            "description": "Flaming Mountains lord, master of Samadhi Fire"
+        },
+        "rakshasa": {
+            "name": "Princess Iron Fan",
+            "description": "Flaming Mountains lord, wielder of Plantain Fan"
+        },
+        "yaksha_king": {
+            "name": "Yaksha King",
+            "description": "Flaming Mountains boss, king of yakshas"
+        },
+        "erlang_shen": {
+            "name": "Erlang Shen",
+            "description": "Mount Sumeru lord, three-eyed deity"
+        },
+        "great_sage_heaven": {
+            "name": "Great Sage Equal to Heaven",
+            "description": "Mount Sumeru lord, Victorious Fighting Buddha"
+        },
+        "golden_cicada": {
+            "name": "Golden Cicada",
+            "description": "Mount Sumeru lord, past life of Tang Sanzang"
+        },
+        "stone_monkey": {
+            "name": "Stone Monkey",
+            "description": "Mount Sumeru boss, original form of Great Sage"
+        },
+        "unlockCharacter": "Unlock Character",
+        "locked": "Locked",
+        "unlockCondition": "Unlock Condition",
+        "specialWeapon": "Special Weapon"
+    },
+    "maps": {
+        "chapter1": {
+            "name": "Chapter 1 - Lair of Wolves and Tigers",
+            "description": "First steps in the journey, trials of Black Wind Mountain"
+        },
+        "chapter2": {
+            "name": "Chapter 2 - Yellow Sands",
+            "description": "Sandstorm illusions of Yellow Wind Ridge"
+        },
+        "chapter3": {
+            "name": "Chapter 3 - Snow and Ice",
+            "description": "Frozen world of Little Western Heaven"
+        },
+        "chapter4": {
+            "name": "Chapter 4 - Webbed Hollow",
+            "description": "Spider demon nest in the cave"
+        },
+        "chapter5": {
+            "name": "Chapter 5 - Flaming Mountains",
+            "description": "Blazing inferno of flames"
+        },
+        "chapter6": {
+            "name": "Chapter 6 - Western Paradise",
+            "description": "Ultimate challenge, path to enlightenment"
+        },
+        "selectMap": "Select Map",
+        "difficulty": "Difficulty"
+    },
+    "unlockConditions": {
+        "default": "Default unlocked",
+        "kills": "Defeat {value} enemies",
+        "time": "Survive for {value} seconds",
+        "gold": "Collect {value} gold",
+        "chapter": "Unlock Chapter {value} "
+    },
+    "shop": {
+        "title": "Permanent Upgrades",
+        "hint": "Upgrade permanent stats to become stronger!",
+        "infoText": "* Reset refunds 70% of spent gold",
+        "resetMessage": "Will refund {refund} gold\n(70% of spent)",
+        "purchaseUpgrade": "Purchase Upgrade",
+        "resetUpgrades": "Reset All Upgrades",
+        "resetConfirm": "Reset all upgrades? You will get back 70% of spent gold.",
+        "confirm": "Confirm",
+        "cancel": "Cancel",
+        "maxLevel": "Max Level",
+        "currentLevel": "Level {level}",
+        "cost": "Cost",
+        "notEnoughGold": "Not enough gold",
+        "purchased": "Purchased!",
+        "resetComplete": "Reset complete! Refunded {amount} gold"
+    },
+    "upgrades": {
+        "attack": {
+            "name": "Attack Power",
+            "description": "+{value} damage per level"
+        },
+        "health": {
+            "name": "Max Health",
+            "description": "+{value} HP per level"
+        },
+        "armor": {
+            "name": "Armor",
+            "description": "+{value} defense per level"
+        },
+        "luck": {
+            "name": "Luck",
+            "description": "+{value} item drop rate per level"
+        },
+        "speed": {
+            "name": "Movement Speed",
+            "description": "+{value} speed per level"
+        }
+    },
+    "weapons": {
+        "golden_staff": {
+            "name": "Golden Staff",
+            "description": "Destined One's magical staff"
+        },
+        "ruyi_staff": {
+            "name": "Ruyi Golden Staff",
+            "description": "Ultimate form of Golden Staff, immense power"
+        },
+        "fire_lance": {
+            "name": "Fire-Tipped Spear",
+            "description": "Flame-wreathed lance that burns enemies"
+        },
+        "wind_tamer": {
+            "name": "Wind Tamer Bead",
+            "description": "Divine pearl that controls storms, area attack"
+        },
+        "violet_bell": {
+            "name": "Violet Bell",
+            "description": "Magical treasure that emits deadly sound waves"
+        },
+        "fireproof_cloak": {
+            "name": "Fireproof Mantle",
+            "description": "Protective divine light that resists damage"
+        },
+        "twin_blades": {
+            "name": "Twin Blades",
+            "description": "Tiger Vanguard's dual swords for rapid strikes"
+        },
+        "mace": {
+            "name": "Demon-Subduing Mace",
+            "description": "Heavy Buddhist weapon that strikes fear in demons"
+        },
+        "bull_horns": {
+            "name": "Bull Demon Horns",
+            "description": "Bull King's mighty horns, unstoppable charge"
+        },
+        "thunder_drum": {
+            "name": "Thunder Drum",
+            "description": "Summons thunder power"
+        },
+        "ice_needle": {
+            "name": "Ice Soul Silver Needle",
+            "description": "Condenses ice, freezes enemies"
+        },
+        "wind_fire_wheels": {
+            "name": "Wind Fire Wheels",
+            "description": "Ride wind and fire, swift as lightning"
+        },
+        "jade_purity_bottle": {
+            "name": "Jade Purity Bottle",
+            "description": "Guanyin's bottle, subdues demons"
+        },
+        "golden_rope": {
+            "name": "Golden Rope",
+            "description": "Binds enemies, unmatched restraint"
+        },
+        "plantain_fan": {
+            "name": "Plantain Fan",
+            "description": "Iron Fan Princess's treasure, howling winds"
+        },
+        "goldenStaff": {
+            "name": "Golden Staff",
+            "description": "Destined One's magical staff, grows and shrinks at will"
+        },
+        "fireLance": {
+            "name": "Fire-Tipped Spear",
+            "description": "Flame-wreathed lance that burns enemies"
+        },
+        "windTamer": {
+            "name": "Wind Tamer Bead",
+            "description": "Divine pearl that controls storms"
+        },
+        "violetBell": {
+            "name": "Violet Bell",
+            "description": "Magical treasure that emits deadly sound waves"
+        },
+        "fireproofCloak": {
+            "name": "Fireproof Mantle",
+            "description": "Protective divine light that resists damage"
+        },
+        "twinBlades": {
+            "name": "Twin Blades",
+            "description": "Tiger Vanguard's dual swords for rapid strikes"
+        },
+        "bullHorns": {
+            "name": "Bull Demon Horns",
+            "description": "Bull King's mighty horns, unstoppable charge"
+        },
+        "upgrade": "Upgrade {name}",
+        "addWeapon": "Add {name}",
+        "upgradeToLevel": "{name} Lv.{level}"
+    },
+    "elixirs": {
+        "peach_of_immortality": {
+            "name": "Peach of Immortality",
+            "description": "Increase max health by 20"
+        },
+        "golden_elixir": {
+            "name": "Golden Elixir",
+            "description": "Increase attack by 10%"
+        },
+        "jade_dew": {
+            "name": "Jade Dew",
+            "description": "Restore 50% health"
+        },
+        "tiger_bone_wine": {
+            "name": "Tiger Bone Wine",
+            "description": "Increase armor by 5"
+        },
+        "phoenix_feather": {
+            "name": "Phoenix Feather",
+            "description": "Increase movement speed by 10"
+        },
+        "dragon_scale": {
+            "name": "Dragon Scale",
+            "description": "Increase defense by 8"
+        },
+        "spirit_mushroom": {
+            "name": "Spirit Mushroom",
+            "description": "Increase experience gain by 20%"
+        },
+        "soul_bead": {
+            "name": "Soul Bead",
+            "description": "Increase critical rate by 10%"
+        },
+        "inner_elixir": {
+            "name": "Inner Elixir",
+            "description": "Increase all stats by 5%"
+        },
+        "resurrection_pill": {
+            "name": "Resurrection Pill",
+            "description": "Revive once at full health upon death"
+        }
+    },
+    "enemies": {
+        "wolf_minion": "Wolf Demon",
+        "ghost_minion": "Ghost Soldier",
+        "bear_elite": "Bear Guardian",
+        "snake_elite": "Snake General",
+        "rat_minion": "Rat Demon",
+        "sand_minion": "Sand Monster",
+        "tiger_elite": "Tiger Warrior",
+        "wind_elite": "Wind Commander",
+        "monk_minion": "Demon Monk",
+        "spider_minion": "Small Spider",
+        "centipede_elite": "Centipede Commander",
+        "scorpion_elite": "Scorpion Demon",
+        "spider_woman_minion": "Spider Woman",
+        "centipede_minion": "Small Centipede",
+        "violet_spider_elite": "Violet Spider",
+        "poison_centipede_elite": "Poison Centipede",
+        "fire_demon_minion": "Fire Demon",
+        "bull_soldier_minion": "Bull Soldier",
+        "fire_general_elite": "Fire General",
+        "bull_captain_elite": "Bull Captain",
+        "celestial_guard_minion": "Celestial Guard",
+        "thunder_minion": "Thunder Demon",
+        "celestial_general_elite": "Celestial General",
+        "dragon_guardian_elite": "Dragon Guardian"
+    },
+    "rewards": {
+        "title": "Select Reward",
+        "refresh": "Refresh",
+        "refreshCost": "Refresh ({cost} 💰)",
+        "craftHint": "Hint: Can craft {count} legendary weapons",
+        "selectReward": "Select Reward",
+        "rarity": {
+            "common": "Common",
+            "rare": "Rare",
+            "epic": "Epic",
+            "legendary": "Legendary"
+        }
+    },
+    "dialog": {
+        "resetSaveConfirm": "Are you sure you want to reset all save data? This cannot be undone!",
+        "yes": "Yes",
+        "no": "No"
+    }
+}

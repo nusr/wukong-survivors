@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="64" height="64">
+  <rect width="32" height="32" fill="none"/>
+  <!-- 金池长老 -->
+  <!-- 头部 - 光头 -->
+  <rect x="11" y="8" width="10" height="5" fill="#F5DEB3"/>
+  <rect x="10" y="9" width="1" height="3" fill="#F5DEB3"/>
+  <rect x="21" y="9" width="1" height="3" fill="#F5DEB3"/>
+  
+  <!-- 戒疤 -->
+  <rect x="14" y="8" width="1" height="1" fill="#8B4513"/>
+  <rect x="16" y="8" width="1" height="1" fill="#8B4513"/>
+  <rect x="18" y="8" width="1" height="1" fill="#8B4513"/>
+  
+  <!-- 眼睛 - 慈祥 -->
+  <rect x="13" y="10" width="2" height="1" fill="#000000"/>
+  <rect x="17" y="10" width="2" height="1" fill="#000000"/>
+  
+  <!-- 嘴 -->
+  <rect x="14" y="12" width="4" height="1" fill="#8B4513"/>
+  
+  <!-- 袈裟 -->
+  <rect x="10" y="13" width="12" height="9" fill="#FFD700"/>
+  <rect x="9" y="14" width="1" height="7" fill="#FFD700"/>
+  <rect x="22" y="14" width="1" height="7" fill="#FFD700"/>
+  
+  <!-- 袈裟装饰 -->
+  <rect x="11" y="14" width="10" height="1" fill="#FFA500"/>
+  <rect x="12" y="15" width="8" height="5" fill="#DAA520"/>
+  <rect x="13" y="16" width="6" height="3" fill="#F0E68C"/>
+  <rect x="14" y="17" width="4" height="1" fill="#FFFFE0"/>
+  
+  <!-- 佛珠 -->
+  <rect x="11" y="20" width="2" height="1" fill="#8B4513"/>
+  <rect x="13" y="20" width="1" height="1" fill="#A0522D"/>
+  <rect x="14" y="20" width="2" height="1" fill="#8B4513"/>
+  <rect x="16" y="20" width="1" height="1" fill="#A0522D"/>
+  <rect x="17" y="20" width="2" height="1" fill="#8B4513"/>
+  <rect x="19" y="20" width="2" height="1" fill="#8B4513"/>
+  
+  <!-- 腰带 -->
+  <rect x="11" y="21" width="10" height="1" fill="#8B4513"/>
+  
+  <!-- 下摆 -->
+  <rect x="10" y="22" width="12" height="5" fill="#FFD700"/>
+  <rect x="11" y="23" width="10" height="3" fill="#F0E68C"/>
+  
+  <!-- 腿部 -->
+  <rect x="11" y="27" width="4" height="2" fill="#DAA520"/>
+  <rect x="17" y="27" width="4" height="2" fill="#DAA520"/>
+  
+  <!-- 僧鞋 -->
+  <rect x="10" y="29" width="5" height="2" fill="#8B4513"/>
+  <rect x="17" y="29" width="5" height="2" fill="#8B4513"/>
+  
+  <!-- 禅杖 -->
+  <rect x="5" y="10" width="2" height="16" fill="#8B4513"/>
+  <rect x="4" y="9" width="1" height="1" fill="#FFD700"/>
+  <rect x="7" y="9" width="1" height="1" fill="#FFD700"/>
+  <rect x="4" y="10" width="1" height="2" fill="#FFA500"/>
+  <rect x="7" y="10" width="1" height="2" fill="#FFA500"/>
+  <rect x="5" y="8" width="2" height="1" fill="#DAA520"/>
+</svg>

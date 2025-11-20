@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="64" height="64">
+  <rect width="32" height="32" fill="none"/>
+  <!-- 虎先锋 -->
+  <!-- 耳朵 -->
+  <rect x="9" y="7" width="2" height="3" fill="#FF8C00"/>
+  <rect x="21" y="7" width="2" height="3" fill="#FF8C00"/>
+  <rect x="10" y="8" width="1" height="1" fill="#FFA500"/>
+  <rect x="21" y="8" width="1" height="1" fill="#FFA500"/>
+  
+  <!-- 头部 -->
+  <rect x="10" y="9" width="12" height="6" fill="#FF8C00"/>
+  <rect x="9" y="10" width="1" height="4" fill="#FF8C00"/>
+  <rect x="22" y="10" width="1" height="4" fill="#FF8C00"/>
+  
+  <!-- 王字额纹 -->
+  <rect x="12" y="10" width="8" height="1" fill="#000000"/>
+  <rect x="15" y="11" width="2" height="1" fill="#000000"/>
+  <rect x="12" y="12" width="8" height="1" fill="#000000"/>
+  
+  <!-- 眼睛 - 威猛 -->
+  <rect x="12" y="13" width="3" height="2" fill="#FFFF00"/>
+  <rect x="17" y="13" width="3" height="2" fill="#FFFF00"/>
+  <rect x="13" y="14" width="1" height="1" fill="#000000"/>
+  <rect x="18" y="14" width="1" height="1" fill="#000000"/>
+  
+  <!-- 身体 - 战甲 -->
+  <rect x="9" y="15" width="14" height="8" fill="#8B4513"/>
+  <rect x="8" y="16" width="1" height="6" fill="#8B4513"/>
+  <rect x="23" y="16" width="1" height="6" fill="#8B4513"/>
+  
+  <!-- 护甲装饰 -->
+  <rect x="11" y="16" width="4" height="3" fill="#CD853F"/>
+  <rect x="17" y="16" width="4" height="3" fill="#CD853F"/>
+  <rect x="12" y="17" width="2" height="1" fill="#DAA520"/>
+  <rect x="18" y="17" width="2" height="1" fill="#DAA520"/>
+  <rect x="13" y="19" width="6" height="3" fill="#FFD700"/>
+  <rect x="15" y="20" width="2" height="1" fill="#FFA500"/>
+  
+  <!-- 虎纹 -->
+  <rect x="10" y="17" width="1" height="5" fill="#2F4F4F"/>
+  <rect x="21" y="17" width="1" height="5" fill="#2F4F4F"/>
+  <rect x="14" y="19" width="1" height="2" fill="#000000"/>
+  <rect x="17" y="19" width="1" height="2" fill="#000000"/>
+  
+  <!-- 披风 -->
+  <rect x="7" y="17" width="1" height="6" fill="#DC143C"/>
+  <rect x="24" y="17" width="1" height="6" fill="#DC143C"/>
+  
+  <!-- 腰带 -->
+  <rect x="10" y="22" width="12" height="1" fill="#FFD700"/>
+  
+  <!-- 腿部 -->
+  <parameter name="10" y="23" width="5" height="4" fill="#FF8C00"/>
+  <rect x="17" y="23" width="5" height="4" fill="#FF8C00"/>
+  <rect x="11" y="24" width="3" height="2" fill="#FF6347"/>
+  <rect x="18" y="24" width="3" height="2" fill="#FF6347"/>
+  
+  <!-- 战靴 -->
+  <rect x="9" y="27" width="6" height="3" fill="#2F4F4F"/>
+  <rect x="17" y="27" width="6" height="3" fill="#2F4F4F"/>
+  <rect x="10" y="28" width="4" height="1" fill="#8B4513"/>
+  <rect x="18" y="28" width="4" height="1" fill="#8B4513"/>
+  
+  <!-- 双刀 -->
+  <rect x="5" y="14" width="2" height="10" fill="#C0C0C0"/>
+  <rect x="25" y="14" width="2" height="10" fill="#C0C0C0"/>
+  <rect x="5" y="13" width="2" height="1" fill="#FFD700"/>
+  <rect x="25" y="13" width="2" height="1" fill="#FFD700"/>
+</svg>

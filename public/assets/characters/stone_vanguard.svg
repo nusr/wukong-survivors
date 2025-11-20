@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="64" height="64">
+  <rect width="32" height="32" fill="none"/>
+  <!-- 石先锋 -->
+  <!-- 头部 - 石质 -->
+  <rect x="10" y="8" width="12" height="6" fill="#808080"/>
+  <rect x="9" y="9" width="1" height="4" fill="#808080"/>
+  <rect x="22" y="9" width="1" height="4" fill="#808080"/>
+  
+  <!-- 石纹 -->
+  <rect x="11" y="9" width="2" height="1" fill="#696969"/>
+  <rect x="19" y="9" width="2" height="1" fill="#696969"/>
+  <rect x="12" y="11" width="3" height="1" fill="#A9A9A9"/>
+  <rect x="17" y="11" width="3" height="1" fill="#A9A9A9"/>
+  
+  <!-- 眼睛 - 石眼 -->
+  <rect x="13" y="11" width="2" height="2" fill="#FFD700"/>
+  <rect x="17" y="11" width="2" height="2" fill="#FFD700"/>
+  <rect x="14" y="12" width="1" height="1" fill="#000000"/>
+  <rect x="18" y="12" width="1" height="1" fill="#000000"/>
+  
+  <!-- 身体 - 巨石战甲 -->
+  <rect x="9" y="14" width="14" height="9" fill="#808080"/>
+  <rect x="8" y="15" width="1" height="7" fill="#808080"/>
+  <rect x="23" y="15" width="1" height="7" fill="#808080"/>
+  
+  <!-- 石甲纹理 -->
+  <rect x="10" y="15" width="4" height="4" fill="#696969"/>
+  <rect x="18" y="15" width="4" height="4" fill="#696969"/>
+  <rect x="11" y="16" width="2" height="2" fill="#A9A9A9"/>
+  <rect x="19" y="16" width="2" height="2" fill="#A9A9A9"/>
+  <rect x="13" y="17" width="6" height="4" fill="#696969"/>
+  <rect x="14" y="18" width="4" height="2" fill="#A9A9A9"/>
+  
+  <!-- 石块装饰 -->
+  <rect x="10" y="19" width="2" height="2" fill="#A9A9A9"/>
+  <rect x="20" y="19" width="2" height="2" fill="#A9A9A9"/>
+  <rect x="15" y="21" width="2" height="1" fill="#DCDCDC"/>
+  
+  <!-- 腰部 -->
+  <rect x="10" y="22" width="12" height="1" fill="#FFD700"/>
+  
+  <!-- 腿部 - 石柱 -->
+  <rect x="10" y="23" width="5" height="6" fill="#808080"/>
+  <rect x="17" y="23" width="5" height="6" fill="#808080"/>
+  <rect x="11" y="24" width="3" height="4" fill="#696969"/>
+  <rect x="18" y="24" width="3" height="4" fill="#696969"/>
+  <rect x="12" y="25" width="1" height="2" fill="#A9A9A9"/>
+  <rect x="19" y="25" width="1" height="2" fill="#A9A9A9"/>
+  
+  <!-- 石足 -->
+  <rect x="9" y="29" width="6" height="2" fill="#696969"/>
+  <rect x="17" y="29" width="6" height="2" fill="#696969"/>
+  
+  <!-- 金绳提示 -->
+  <rect x="24" y="16" width="3" height="1" fill="#FFD700"/>
+  <rect x="25" y="17" width="2" height="4" fill="#FFA500"/>
+  <rect x="24" y="21" width="3" height="1" fill="#FFD700"/>
+</svg>

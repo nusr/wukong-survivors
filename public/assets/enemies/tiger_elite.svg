@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" width="56" height="56">
+  <rect width="28" height="28" fill="none"/>
+  <!-- 虎力士 - 精英怪 -->
+  <!-- 耳朵 -->
+  <rect x="7" y="6" width="2" height="2" fill="#FF6347"/>
+  <rect x="19" y="6" width="2" height="2" fill="#FF6347"/>
+  
+  <!-- 头部 -->
+  <rect x="8" y="7" width="12" height="6" fill="#FF6347"/>
+  <rect x="7" y="8" width="1" height="4" fill="#FF6347"/>
+  <rect x="20" y="8" width="1" height="4" fill="#FF6347"/>
+  
+  <!-- 王字纹 -->
+  <rect x="10" y="8" width="8" height="1" fill="#FFD700"/>
+  <rect x="13" y="9" width="2" height="1" fill="#FFD700"/>
+  <rect x="10" y="10" width="8" height="1" fill="#FFD700"/>
+  
+  <!-- 眼睛 - 威猛 -->
+  <rect x="10" y="11" width="2" height="1" fill="#FFFF00"/>
+  <rect x="16" y="11" width="2" height="1" fill="#FFFF00"/>
+  <rect x="11" y="11" width="1" height="1" fill="#000000"/>
+  <rect x="17" y="11" width="1" height="1" fill="#000000"/>
+  
+  <!-- 身体 - 盔甲 -->
+  <rect x="7" y="13" width="14" height="8" fill="#8B4513"/>
+  <rect x="6" y="14" width="1" height="6" fill="#8B4513"/>
+  <rect x="21" y="14" width="1" height="6" fill="#8B4513"/>
+  
+  <!-- 护甲装饰 -->
+  <rect x="9" y="14" width="3" height="3" fill="#CD853F"/>
+  <rect x="16" y="14" width="3" height="3" fill="#CD853F"/>
+  <rect x="11" y="17" width="6" height="3" fill="#DAA520"/>
+  <rect x="13" y="18" width="2" height="1" fill="#FFD700"/>
+  
+  <!-- 虎纹 -->
+  <rect x="8" y="15" width="1" height="4" fill="#2F4F4F"/>
+  <rect x="19" y="15" width="1" height="4" fill="#2F4F4F"/>
+  
+  <!-- 腿部 -->
+  <rect x="8" y="21" width="4" height="4" fill="#FF6347"/>
+  <rect x="16" y="21" width="4" height="4" fill="#FF6347"/>
+  <rect x="9" y="22" width="2" height="2" fill="#FF4500"/>
+  <rect x="17" y="22" width="2" height="2" fill="#FF4500"/>
+  
+  <!-- 爪子 -->
+  <rect x="7" y="25" width="5" height="1" fill="#2F4F4F"/>
+  <rect x="16" y="25" width="5" height="1" fill="#2F4F4F"/>
+  
+  <!-- 武器提示 -->
+  <rect x="22" y="10" width="2" height="8" fill="#C0C0C0"/>
+  <rect x="23" y="9" width="1" height="1" fill="#FFD700"/>
+  <rect x="23" y="18" width="1" height="1" fill="#8B0000"/>
+</svg>

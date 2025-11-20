@@ -1,0 +1,164 @@
+<svg width="1280" height="720" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
+  <!-- Chapter 6: Mount Huaguo - 花果山 -->
+  <!-- Heavenly/celestial atmosphere with divine light and clouds -->
+  <defs>
+    <linearGradient id="skyGrad6" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#87ceeb;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#4a90e2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2e5c8a;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="divineLight" cx="50%" cy="20%" r="50%">
+      <stop offset="0%" style="stop-color:#fff;stop-opacity:0.9" />
+      <stop offset="30%" style="stop-color:#ffd700;stop-opacity:0.5" />
+      <stop offset="100%" style="stop-color:#87ceeb;stop-opacity:0" />
+    </radialGradient>
+    <linearGradient id="cloudGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#fff;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#e0e0e0;stop-opacity:0.7" />
+    </linearGradient>
+    <linearGradient id="palaceGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffd700;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#daa520;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Celestial sky -->
+  <rect width="1280" height="720" fill="url(#skyGrad6)" />
+
+  <!-- Divine light from heaven -->
+  <ellipse cx="640" cy="100" rx="600" ry="300" fill="url(#divineLight)" />
+
+  <!-- Heavenly clouds - floating islands -->
+  <g opacity="0.8">
+    <!-- Large cloud formations -->
+    <ellipse cx="200" cy="350" rx="150" ry="50" fill="url(#cloudGrad)" />
+    <ellipse cx="180" cy="360" rx="120" ry="45" fill="url(#cloudGrad)" />
+    <ellipse cx="220" cy="365" rx="130" ry="40" fill="url(#cloudGrad)" />
+
+    <ellipse cx="500" cy="420" rx="180" ry="60" fill="url(#cloudGrad)" />
+    <ellipse cx="480" cy="430" rx="150" ry="55" fill="url(#cloudGrad)" />
+    <ellipse cx="520" cy="435" rx="160" ry="50" fill="url(#cloudGrad)" />
+
+    <ellipse cx="900" cy="380" rx="170" ry="55" fill="url(#cloudGrad)" />
+    <ellipse cx="880" cy="390" rx="140" ry="50" fill="url(#cloudGrad)" />
+    <ellipse cx="920" cy="395" rx="150" ry="45" fill="url(#cloudGrad)" />
+
+    <ellipse cx="1100" cy="450" rx="140" ry="50" fill="url(#cloudGrad)" />
+    <ellipse cx="1080" cy="460" rx="110" ry="45" fill="url(#cloudGrad)" />
+  </g>
+
+  <!-- Heavenly palace/temple complex -->
+  <g transform="translate(450, 200)">
+    <!-- Main palace -->
+    <rect x="50" y="120" width="300" height="180" fill="url(#palaceGrad)" />
+    <polygon points="200,40 20,120 380,120" fill="#ff6347" />
+    <polygon points="200,60 50,120 350,120" fill="#ffd700" opacity="0.8" />
+
+    <!-- Central tower -->
+    <rect x="160" y="80" width="80" height="220" fill="url(#palaceGrad)" />
+    <polygon points="200,20 150,80 250,80" fill="#ff6347" />
+
+    <!-- Side towers -->
+    <rect x="20" y="140" width="60" height="160" fill="#daa520" />
+    <polygon points="50,100 15,140 85,140" fill="#ff6347" />
+
+    <rect x="320" y="140" width="60" height="160" fill="#daa520" />
+    <polygon points="350,100 315,140 385,140" fill="#ff6347" />
+
+    <!-- Decorative pillars -->
+    <rect x="90" y="150" width="20" height="130" fill="#b8860b" />
+    <rect x="140" y="150" width="20" height="130" fill="#b8860b" />
+    <rect x="240" y="150" width="20" height="130" fill="#b8860b" />
+    <rect x="290" y="150" width="20" height="130" fill="#b8860b" />
+
+    <!-- Main gate -->
+    <rect x="170" y="220" width="60" height="80" fill="#8b4513" />
+
+    <!-- Windows -->
+    <rect x="100" y="170" width="30" height="40" fill="#4a90e2" opacity="0.6" />
+    <rect x="270" y="170" width="30" height="40" fill="#4a90e2" opacity="0.6" />
+
+    <!-- Golden ornaments -->
+    <circle cx="200" cy="40" r="10" fill="#ffd700">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite" />
+    </circle>
+  </g>
+
+  <!-- Peach trees (symbolic of immortality) -->
+  <g opacity="0.7">
+    <ellipse cx="250" cy="550" rx="40" ry="60" fill="#228b22" />
+    <circle cx="230" cy="530" r="8" fill="#ffb6c1" />
+    <circle cx="250" cy="540" r="8" fill="#ffb6c1" />
+    <circle cx="265" cy="535" r="8" fill="#ffb6c1" />
+
+    <ellipse cx="1000" cy="580" rx="45" ry="65" fill="#228b22" />
+    <circle cx="980" cy="560" r="8" fill="#ffb6c1" />
+    <circle cx="1000" cy="570" r="8" fill="#ffb6c1" />
+    <circle cx="1020" cy="565" r="8" fill="#ffb6c1" />
+  </g>
+
+  <!-- Celestial beings/spirits (light orbs) -->
+  <g opacity="0.8">
+    <circle cx="350" cy="280" r="5" fill="#fff">
+      <animate attributeName="cy" values="280;260;280" dur="4s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="4s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="750" cy="250" r="5" fill="#fff">
+      <animate attributeName="cy" values="250;230;250" dur="5s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="950" cy="300" r="5" fill="#fff">
+      <animate attributeName="cy" values="300;280;300" dur="4.5s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="4.5s" repeatCount="indefinite" />
+    </circle>
+  </g>
+
+  <!-- Golden light rays -->
+  <g opacity="0.3">
+    <path d="M 640 100 L 580 300" stroke="#ffd700" stroke-width="3">
+      <animate attributeName="opacity" values="0.2;0.5;0.2" dur="3s" repeatCount="indefinite" />
+    </path>
+    <path d="M 640 100 L 640 320" stroke="#ffd700" stroke-width="3">
+      <animate attributeName="opacity" values="0.3;0.6;0.3" dur="3.5s" repeatCount="indefinite" />
+    </path>
+    <path d="M 640 100 L 700 300" stroke="#ffd700" stroke-width="3">
+      <animate attributeName="opacity" values="0.2;0.5;0.2" dur="4s" repeatCount="indefinite" />
+    </path>
+    <path d="M 640 100 L 520 320" stroke="#ffd700" stroke-width="2">
+      <animate attributeName="opacity" values="0.1;0.4;0.1" dur="3.2s" repeatCount="indefinite" />
+    </path>
+    <path d="M 640 100 L 760 320" stroke="#ffd700" stroke-width="2">
+      <animate attributeName="opacity" values="0.1;0.4;0.1" dur="3.8s" repeatCount="indefinite" />
+    </path>
+  </g>
+
+  <!-- Floating golden particles -->
+  <g opacity="0.7">
+    <circle cx="400" cy="350" r="3" fill="#ffd700">
+      <animate attributeName="cy" values="350;250;350" dur="6s" repeatCount="indefinite" />
+      <animate attributeName="cx" values="400;420;400" dur="6s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="6s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="600" cy="400" r="3" fill="#ffd700">
+      <animate attributeName="cy" values="400;300;400" dur="7s" repeatCount="indefinite" />
+      <animate attributeName="cx" values="600;580;600" dur="7s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.2;0.9;0.2" dur="7s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="850" cy="370" r="3" fill="#ffd700">
+      <animate attributeName="cy" values="370;270;370" dur="6.5s" repeatCount="indefinite" />
+      <animate attributeName="cx" values="850;870;850" dur="6.5s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="6.5s" repeatCount="indefinite" />
+    </circle>
+  </g>
+
+  <!-- Water reflection/sea of clouds at bottom -->
+  <g opacity="0.5">
+    <ellipse cx="640" cy="650" rx="500" ry="60" fill="url(#cloudGrad)" />
+    <ellipse cx="400" cy="670" rx="300" ry="40" fill="url(#cloudGrad)" />
+    <ellipse cx="900" cy="670" rx="350" ry="40" fill="url(#cloudGrad)" />
+  </g>
+
+  <!-- Mountains in distance -->
+  <path d="M 0 580 Q 200 520 400 560 T 800 540 T 1280 580 L 1280 720 L 0 720 Z"
+    fill="#2e5c8a" opacity="0.4" />
+</svg>

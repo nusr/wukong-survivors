@@ -1,0 +1,22 @@
+<svg width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+  <!-- Medium value gem - Purple -->
+  <defs>
+    <radialGradient id="purpleGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#ff88ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff00ff;stop-opacity:1" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Outer glow -->
+  <circle cx="16" cy="16" r="14" fill="url(#purpleGlow)" opacity="0.6"/>
+  
+  <!-- Main gem -->
+  <polygon points="16,4 22,12 22,20 16,28 10,20 10,12" fill="#ff00ff" stroke="#aa00aa" stroke-width="2"/>
+  
+  <!-- Highlight -->
+  <ellipse cx="14" cy="10" rx="4" ry="6" fill="#ff88ff" opacity="0.7"/>
+  
+  <!-- Sparkles -->
+  <circle cx="20" cy="14" r="2" fill="#ffffff" opacity="0.8"/>
+  <circle cx="12" cy="22" r="1.5" fill="#ffffff" opacity="0.8"/>
+</svg>

@@ -1,0 +1,390 @@
+{
+    "game": {
+        "title": "悟空サバイバー",
+        "start": "ゲーム開始",
+        "restart": "再スタート",
+        "backToHome": "メニューに戻る",
+        "gameOver": "ゲームオーバー",
+        "levelUp": "レベルアップ！",
+        "paused": "一時停止",
+        "level": "Lv.{level}",
+        "specialWeapon": "専用武器",
+        "resetSave": "セーブリセット"
+    },
+    "settings": {
+        "title": "設定",
+        "language": "言語",
+        "zh-CN": "中文",
+        "en-US": "English",
+        "ja-JP": "日本語"
+    },
+    "stats": {
+        "title": "統計情報",
+        "gold": "ゴールド",
+        "totalKills": "総撃破数",
+        "bestSurvival": "最高生存時間",
+        "totalPlayTime": "総プレイ時間",
+        "survivalTime": "生存時間",
+        "kills": "撃破",
+        "level": "レベル",
+        "close": "閉じる"
+    },
+    "characters": {
+        "destined_one": {
+            "name": "天命人",
+            "description": "伝説の旅の始まり、バランス型の万能戦士"
+        },
+        "black_bear_guai": {
+            "name": "黒熊精",
+            "description": "黒風山妖王、高HP・高防御"
+        },
+        "lingxuzi": {
+            "name": "霊虚子",
+            "description": "黒風山大王、道術に長けた"
+        },
+        "wandering_wight": {
+            "name": "赤髪鬼",
+            "description": "黒風山ボス、凶暴残忍"
+        },
+        "yellow_wind_sage": {
+            "name": "黄風大王",
+            "description": "黄風嶺妖王、砂嵐を操る"
+        },
+        "tiger_vanguard": {
+            "name": "虎先鋒",
+            "description": "黄風嶺大王、獰猛素早い"
+        },
+        "stone_vanguard": {
+            "name": "石先鋒",
+            "description": "黄風嶺大王、岩のように堅固"
+        },
+        "king_of_flowing_sand": {
+            "name": "砂大王",
+            "description": "黄風嶺ボス、砂海の覇者"
+        },
+        "yellow_brow_king": {
+            "name": "黄眉大王",
+            "description": "小西天妖王、仏門の裏切り者"
+        },
+        "hundred_eyed": {
+            "name": "百眼魔君",
+            "description": "小西天妖王、謎多き妖怪"
+        },
+        "mad_tiger": {
+            "name": "狂虎",
+            "description": "小西天大王、狂暴凶猛"
+        },
+        "kang_jin_loong": {
+            "name": "亢金星君",
+            "description": "小西天ボス、天から降りた星君"
+        },
+        "spider_celestial": {
+            "name": "紫蛛",
+            "description": "盤絲洞妖王、蜘蛛の糸で束縛"
+        },
+        "hundred_eyed_daoist": {
+            "name": "百眼道人",
+            "description": "盤絲洞妖王、百眼魔光"
+        },
+        "elder_jinchi": {
+            "name": "金池長老",
+            "description": "盤絲洞大王、仏門の高僧"
+        },
+        "hundred_eyed_daoist_master": {
+            "name": "多目金蜈蚣",
+            "description": "盤絲洞ボス、百眼魔君真身"
+        },
+        "bull_king": {
+            "name": "牛魔王",
+            "description": "火焔山妖王、計り知れない力"
+        },
+        "red_boy": {
+            "name": "紅孩児",
+            "description": "火焔山大王、三昧真火"
+        },
+        "rakshasa": {
+            "name": "羅刹女",
+            "description": "火焔山大王、芭蕉扇の主"
+        },
+        "yaksha_king": {
+            "name": "夜叉王",
+            "description": "火焔山ボス、夜叉の王"
+        },
+        "erlang_shen": {
+            "name": "二郎神",
+            "description": "須弥山妖王、三つ目の天神"
+        },
+        "great_sage_heaven": {
+            "name": "斉天大聖",
+            "description": "須弥山妖王、闘戦勝仏"
+        },
+        "golden_cicada": {
+            "name": "金蝉子",
+            "description": "須弥山大王、唐三蔵の前世"
+        },
+        "stone_monkey": {
+            "name": "石猿",
+            "description": "須弥山ボス、斉天大聖の原身"
+        },
+        "unlockCharacter": "キャラクター選択",
+        "locked": "ロック中",
+        "unlockCondition": "解放条件",
+        "specialWeapon": "専用武器"
+    },
+    "maps": {
+        "chapter1": {
+            "name": "第一回 - 狼虎の巣",
+            "description": "旅の始まり、黒風山の試練"
+        },
+        "chapter2": {
+            "name": "第二回 - 黄砂万里",
+            "description": "黄風嶺の砂嵐の幻影"
+        },
+        "chapter3": {
+            "name": "第三回 - 雪海氷河",
+            "description": "小西天の氷雪世界"
+        },
+        "chapter4": {
+            "name": "第四回 - 盤絲洞",
+            "description": "盤絲洞の蜘蛛妖の巣"
+        },
+        "chapter5": {
+            "name": "第五回 - 火焔山",
+            "description": "烈火焚天の煉獄の地"
+        },
+        "chapter6": {
+            "name": "第六回 - 西域仏境",
+            "description": "究極の挑戦、覚醒への道"
+        },
+        "selectMap": "マップ選択",
+        "difficulty": "難易度"
+    },
+    "unlockConditions": {
+        "default": "デフォルトで解放済み",
+        "kills": "{value}体の敵を倒す",
+        "time": "{value}秒生き延びる",
+        "gold": "{value}ゴールド収集"
+    },
+    "shop": {
+        "title": "永続アップグレード",
+        "hint": "永続的なステータスアップで強くなろう！",
+        "infoText": "* リセットすると使用したゴールドの70%が返還されます",
+        "resetMessage": "{refund} ゴールド返還\n(使用分の70%)",
+        "purchaseUpgrade": "アップグレード購入",
+        "resetUpgrades": "すべてリセット",
+        "resetConfirm": "すべてのアップグレードをリセットしますか？使用したゴールドの70%が返還されます。",
+        "confirm": "確認",
+        "cancel": "キャンセル",
+        "maxLevel": "最大レベル",
+        "currentLevel": "レベル{level}",
+        "cost": "コスト",
+        "notEnoughGold": "ゴールド不足",
+        "purchased": "購入完了！",
+        "resetComplete": "リセット完了！{amount}ゴールド返還"
+    },
+    "upgrades": {
+        "attack": {
+            "name": "攻撃力",
+            "description": "レベル毎に+{value}ダメージ"
+        },
+        "health": {
+            "name": "最大体力",
+            "description": "レベル毎に+{value}HP"
+        },
+        "armor": {
+            "name": "防御力",
+            "description": "レベル毎に+{value}防御"
+        },
+        "luck": {
+            "name": "幸運",
+            "description": "レベル毎に+{value}ドロップ率"
+        },
+        "speed": {
+            "name": "移動速度",
+            "description": "レベル毎に+{value}速度"
+        }
+    },
+    "weapons": {
+        "golden_staff": {
+            "name": "金箍棒",
+            "description": "天命人の如意神兵"
+        },
+        "ruyi_staff": {
+            "name": "如意金箍棒",
+            "description": "金箍棒の究極形態、無限の威力"
+        },
+        "fire_lance": {
+            "name": "火尖槍",
+            "description": "烈火纏う長槍、敵を焼き尽くす"
+        },
+        "wind_tamer": {
+            "name": "定風珠",
+            "description": "嵐を制御する神珠、範囲攻撃"
+        },
+        "violet_bell": {
+            "name": "紫金鈴",
+            "description": "致命的な音波を発する法宝"
+        },
+        "fireproof_cloak": {
+            "name": "避火罩",
+            "description": "護体の神光、ダメージを防ぐ"
+        },
+        "twin_blades": {
+            "name": "双刃刀",
+            "description": "虎先鋒の双刀、高速連撃"
+        },
+        "mace": {
+            "name": "降魔杵",
+            "description": "仏門の重器、妖魔を鎮圧"
+        },
+        "bull_horns": {
+            "name": "牛魔双角",
+            "description": "牛魔王の巨角、無敵の突進"
+        },
+        "thunder_drum": {
+            "name": "雷公凿",
+            "description": "雷霆の力を引き出す"
+        },
+        "ice_needle": {
+            "name": "冰魄銀針",
+            "description": "寒氷凝集、敵を凍結"
+        },
+        "wind_fire_wheels": {
+            "name": "風火輪",
+            "description": "風火を踏み、疾走如電"
+        },
+        "jade_purity_bottle": {
+            "name": "玉浄瓶",
+            "description": "観音浄瓶、妖魔降伏"
+        },
+        "golden_rope": {
+            "name": "金縄索",
+            "description": "敵を束縛、無双の拘束"
+        },
+        "plantain_fan": {
+            "name": "芭蕉扇",
+            "description": "鉄扇公主の法宝、狂風呼嘯"
+        },
+        "goldenStaff": {
+            "name": "金箍棒",
+            "description": "天命人の如意神兵、自在に伸縮"
+        },
+        "fireLance": {
+            "name": "火尖槍",
+            "description": "烈火纏う長槍、敵を焼き尽くす"
+        },
+        "windTamer": {
+            "name": "定風珠",
+            "description": "嵐を制御する神珠"
+        },
+        "violetBell": {
+            "name": "紫金鈴",
+            "description": "致命的な音波を発する法宝"
+        },
+        "fireproofCloak": {
+            "name": "避火罩",
+            "description": "護体の神光、ダメージを防ぐ"
+        },
+        "twinBlades": {
+            "name": "双刃刀",
+            "description": "虎先鋒の双刀、高速連撃"
+        },
+        "mace": {
+            "name": "降魔杵",
+            "description": "仏門の重器、妖魔を鎮圧"
+        },
+        "bullHorns": {
+            "name": "牛魔双角",
+            "description": "牛魔王の巨角、無敵の突進"
+        },
+        "upgrade": "{name}を強化",
+        "addWeapon": "{name}を追加",
+        "upgradeToLevel": "{name} Lv.{level}"
+    },
+    "elixirs": {
+        "peach_of_immortality": {
+            "name": "蟠桃",
+            "description": "最大HP+20"
+        },
+        "golden_elixir": {
+            "name": "金丹",
+            "description": "攻撃力+10%"
+        },
+        "jade_dew": {
+            "name": "玉露",
+            "description": "HP50%回復"
+        },
+        "tiger_bone_wine": {
+            "name": "虎骨酒",
+            "description": "防御力+5"
+        },
+        "phoenix_feather": {
+            "name": "鳳凰羽",
+            "description": "移動速度+10"
+        },
+        "dragon_scale": {
+            "name": "龍鱗",
+            "description": "防御力+8"
+        },
+        "spirit_mushroom": {
+            "name": "霊芝",
+            "description": "経験値獲得+20%"
+        },
+        "soul_bead": {
+            "name": "舎利子",
+            "description": "クリティカル率+10%"
+        },
+        "inner_elixir": {
+            "name": "内丹",
+            "description": "全ステータス+5%"
+        },
+        "resurrection_pill": {
+            "name": "還魂丹",
+            "description": "死亡時に全回復で復活"
+        }
+    },
+    "enemies": {
+        "wolf_minion": "狼妖",
+        "ghost_minion": "陰兵",
+        "bear_elite": "熊罴精",
+        "snake_elite": "蛇将軍",
+        "rat_minion": "鼠妖",
+        "sand_minion": "砂怪",
+        "tiger_elite": "虎力士",
+        "wind_elite": "風妖統領",
+        "monk_minion": "妖僧",
+        "spider_minion": "小蜘蛛精",
+        "centipede_elite": "蜈蚣統領",
+        "scorpion_elite": "蠍子精",
+        "spider_woman_minion": "蜘蛛女妖",
+        "centipede_minion": "小蜈蚣",
+        "violet_spider_elite": "紫蜘蛛",
+        "poison_centipede_elite": "毒蜈蚣",
+        "fire_demon_minion": "火妖",
+        "bull_soldier_minion": "牛兵",
+        "fire_general_elite": "火将軍",
+        "bull_captain_elite": "牛魔統領",
+        "celestial_guard_minion": "天兵",
+        "thunder_minion": "雷妖",
+        "celestial_general_elite": "天将",
+        "dragon_guardian_elite": "龍衛"
+    },
+    "rewards": {
+        "title": "報酬選択",
+        "refresh": "リフレッシュ",
+        "refreshCost": "リフレッシュ ({cost} 💰)",
+        "craftHint": "ヒント：{count}種の伝説武器を合成可能",
+        "selectReward": "報酬選択",
+        "rarity": {
+            "common": "普通",
+            "rare": "レア",
+            "epic": "エピック",
+            "legendary": "レジェンド"
+        }
+    },
+    "dialog": {
+        "resetSaveConfirm": "すべてのセーブデータをリセットしますか？この操作は元に戻せません！",
+        "yes": "はい",
+        "no": "いいえ"
+    }
+}
