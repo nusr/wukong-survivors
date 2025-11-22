@@ -62,12 +62,12 @@ export class RewardSelectionUI {
         0.85,
       )
       .setScrollFactor(0)
-      .setDepth(500);
+      .setDepth(scaleManager.getZIndex());
 
     this.container = this.scene.add
       .container(0, 0)
       .setScrollFactor(0)
-      .setDepth(501);
+      .setDepth(scaleManager.getZIndex());
 
     // Title
     const title = this.scene.add
@@ -101,6 +101,7 @@ export class RewardSelectionUI {
 
     // Get random weapons
     const randomWeapons = getRandomWeapons(weaponCount);
+    console.log("randomWeapons", randomWeapons);
     randomWeapons.forEach((weaponId) => {
       this.currentOptions.push({
         type: "weapon",
@@ -110,6 +111,7 @@ export class RewardSelectionUI {
 
     // Get random elixirs
     const randomElixirs = getRandomElixirs(elixirCount);
+    console.log("randomElixirs", randomElixirs);
     randomElixirs.forEach((elixirId) => {
       this.currentOptions.push({
         type: "elixir",
@@ -145,7 +147,7 @@ export class RewardSelectionUI {
         buttonHeight,
       );
       this.buttons.push(button);
-      this.container!.add(button.container);
+      this.container?.add(button.container);
     });
   }
 
@@ -242,6 +244,7 @@ export class RewardSelectionUI {
     });
 
     background.on("pointerdown", () => {
+      // FIXME: 鼠标点击后，没有触发方法 this.selectOption(option)
       this.selectOption(option);
     });
 
@@ -301,11 +304,12 @@ export class RewardSelectionUI {
       });
 
       refreshBg.on("pointerdown", () => {
+        // FIXME: 鼠标点击后，没有触发方法  this.refresh();
         this.refresh();
       });
     }
 
-    this.container!.add([refreshBg, refreshText]);
+    this.container?.add([refreshBg, refreshText]);
   }
 
   private createCraftHint(centerX: number, centerY: number): void {
@@ -327,12 +331,13 @@ export class RewardSelectionUI {
         )
         .setOrigin(0.5);
 
-      this.container!.add(hintText);
+      this.container?.add(hintText);
     }
   }
 
   private refresh(): void {
     const spendGold = useSaveStore.getState().spendGold;
+    console.log("refresh:", spendGold);
     if (spendGold(this.refreshCost)) {
       // Clear old buttons
       this.buttons.forEach((button) => button.container.destroy());
@@ -350,12 +355,13 @@ export class RewardSelectionUI {
       this.refreshCost += 5;
 
       // Update refresh button
-      this.container!.removeAll(true);
+      this.container?.removeAll(true);
       this.show(this.onSelectCallback!);
     }
   }
 
   private selectOption(option: RewardOption): void {
+    console.log("selectOption:", option);
     // Play selection sound (if available)
     this.scene.tweens.add({
       targets: this.container,

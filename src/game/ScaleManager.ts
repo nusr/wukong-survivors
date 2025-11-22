@@ -3,7 +3,8 @@
  * Following game development best practices for mobile and desktop support
  */
 
-import { SCREEN_SIZE } from "../constant";
+import { SCREEN_SIZE, START_Z_INDEX } from "../constant";
+import _ from "lodash";
 
 export interface ScaleConfig {
   // Base design dimensions (reference screen size)
@@ -37,9 +38,25 @@ class ScaleManagerClass {
 
   private minScale = 1;
   private maxScale = 2.0;
+  private zIndex = START_Z_INDEX;
 
   constructor() {
     this.updateScale();
+
+    const onResize = _.throttle(() => {
+      this.updateScale();
+    }, 100);
+
+    window.addEventListener("resize", onResize);
+    window.addEventListener("orientationchange", () => {
+      this.updateScale();
+    });
+  }
+
+  getZIndex() {
+    const t = (this.zIndex + 1) % 100;
+    this.zIndex = t;
+    return t;
   }
 
   /**
@@ -96,48 +113,6 @@ class ScaleManagerClass {
   public getFontSize(baseFontSize: number): string {
     const scaledSize = Math.round(baseFontSize * this.config.uiScale);
     return `${scaledSize}px`;
-  }
-
-  /**
-   * Check if current device is mobile
-   */
-  public isMobile(): boolean {
-    return this.config.screenWidth < 768;
-  }
-
-  /**
-   * Check if current device is small mobile
-   */
-  public isSmallMobile(): boolean {
-    return this.config.screenWidth < 480;
-  }
-
-  /**
-   * Check if current device is tablet
-   */
-  public isTablet(): boolean {
-    return this.config.screenWidth >= 768 && this.config.screenWidth < 1024;
-  }
-
-  /**
-   * Check if current device is desktop
-   */
-  public isDesktop(): boolean {
-    return this.config.screenWidth >= 1024;
-  }
-
-  /**
-   * Get camera zoom level based on screen size
-   */
-  public getCameraZoom(): number {
-    if (this.isSmallMobile()) {
-      return 0.6; // Zoom out more on small mobile for better view
-    } else if (this.isMobile()) {
-      return 0.7; // Zoom out on mobile for better view
-    } else if (this.isTablet()) {
-      return 0.85;
-    }
-    return 1.0;
   }
 
   /**

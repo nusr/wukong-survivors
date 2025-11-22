@@ -122,6 +122,8 @@ export const useSaveStore = create<SaveStore>()(
       },
 
       updatePlayTime: (seconds: number) => {
+        seconds = Math.floor(seconds);
+
         const state = get();
 
         const newPlayTime = state.totalPlayTime + seconds;

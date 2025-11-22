@@ -7,7 +7,7 @@ import type { WeaponType } from "../types";
 
 interface WeaponConfig {
   damage: number;
-  cooldown: number;
+  coolDown: number;
   type: WeaponType;
   projectiles?: Phaser.Physics.Arcade.Group;
 }
@@ -29,7 +29,7 @@ export abstract class Weapon {
   public level: number;
   public maxLevel: number;
   public damage: number;
-  public cooldown: number;
+  public coolDown: number;
   protected lastFired: number;
   public type: WeaponType;
   static type: WeaponType;
@@ -42,7 +42,7 @@ export abstract class Weapon {
     this.level = 1;
     this.maxLevel = 5;
     this.damage = config.damage;
-    this.cooldown = config.cooldown;
+    this.coolDown = config.coolDown;
     this.lastFired = 0;
     Weapon.type = config.type;
     this.type = config.type;
@@ -50,7 +50,7 @@ export abstract class Weapon {
   }
 
   public update(time: number, enemies: Enemy[]): void {
-    if (time - this.lastFired >= this.cooldown) {
+    if (time - this.lastFired >= this.coolDown) {
       this.fire(enemies);
       this.lastFired = time;
     }
@@ -76,7 +76,7 @@ export class GoldenStaff extends Weapon {
   constructor(scene: Phaser.Scene, player: Player) {
     super(scene, player, {
       damage: 15,
-      cooldown: 1000,
+      coolDown: 1000,
       type: "golden_staff",
       projectiles: scene.physics.add.group(),
     });
@@ -141,7 +141,7 @@ export class GoldenStaff extends Weapon {
 
   protected applyUpgrade(): void {
     this.damage += 5;
-    this.cooldown = Math.max(300, this.cooldown - 100);
+    this.coolDown = Math.max(300, this.coolDown - 100);
     if (this.level >= 3) {
       this.piercing = 2;
     }
@@ -160,7 +160,7 @@ export class FireproofCloak extends Weapon {
   constructor(scene: Phaser.Scene, player: Player) {
     super(scene, player, {
       damage: 8,
-      cooldown: 100,
+      coolDown: 100,
       type: "fireproof_cloak",
     });
     this.orbCount = 1;
@@ -240,7 +240,7 @@ export class RuyiStaff extends Weapon {
   constructor(scene: Phaser.Scene, player: Player) {
     super(scene, player, {
       damage: 50,
-      cooldown: 800,
+      coolDown: 800,
       type: "ruyi_staff",
       projectiles: scene.physics.add.group(),
     });
@@ -304,7 +304,7 @@ export class RuyiStaff extends Weapon {
 
   protected applyUpgrade(): void {
     this.damage += 10;
-    this.cooldown = Math.max(500, this.cooldown - 50);
+    this.coolDown = Math.max(500, this.coolDown - 50);
     if (this.level >= 3) this.projectileCount = 2;
     if (this.level >= 5) this.piercing = 5;
   }
@@ -318,7 +318,7 @@ export class FireLance extends Weapon {
   constructor(scene: Phaser.Scene, player: Player) {
     super(scene, player, {
       damage: 20,
-      cooldown: 1200,
+      coolDown: 1200,
       type: "fire_lance",
       projectiles: scene.physics.add.group(),
     });
@@ -383,7 +383,7 @@ export class FireLance extends Weapon {
 
   protected applyUpgrade(): void {
     this.damage += 6;
-    this.cooldown = Math.max(600, this.cooldown - 150);
+    this.coolDown = Math.max(600, this.coolDown - 150);
     if (this.level >= 3) this.piercing = 3;
     if (this.level >= 5) this.projectileSpeed += 100;
   }
@@ -400,7 +400,7 @@ export class WindTamer extends Weapon {
   constructor(scene: Phaser.Scene, player: Player) {
     super(scene, player, {
       damage: 25,
-      cooldown: 2000,
+      coolDown: 2000,
       type: "wind_tamer",
     });
     this.orbCount = 1;
@@ -461,7 +461,7 @@ export class WindTamer extends Weapon {
   protected applyUpgrade(): void {
     this.damage += 8;
     if (this.level >= 2) this.damageRadius = 120;
-    if (this.level >= 3) this.cooldown = 1500;
+    if (this.level >= 3) this.coolDown = 1500;
     if (this.level >= 4) this.damageRadius = 150;
     if (this.level >= 5) this.orbCount = 2;
   }
@@ -474,7 +474,7 @@ export class VioletBell extends Weapon {
   constructor(scene: Phaser.Scene, player: Player) {
     super(scene, player, {
       damage: 30,
-      cooldown: 1500,
+      coolDown: 1500,
       type: "violet_bell",
     });
     this.waveCount = 3;
@@ -525,9 +525,9 @@ export class VioletBell extends Weapon {
   protected applyUpgrade(): void {
     this.damage += 8;
     if (this.level >= 2) this.waveCount = 4;
-    if (this.level >= 3) this.cooldown = 1200;
+    if (this.level >= 3) this.coolDown = 1200;
     if (this.level >= 4) this.waveCount = 5;
-    if (this.level >= 5) this.cooldown = 1000;
+    if (this.level >= 5) this.coolDown = 1000;
   }
 }
 
@@ -538,7 +538,7 @@ export class TwinBlades extends Weapon {
   constructor(scene: Phaser.Scene, player: Player) {
     super(scene, player, {
       damage: 18,
-      cooldown: 800,
+      coolDown: 800,
       type: "twin_blades",
       projectiles: scene.physics.add.group(),
     });
@@ -586,7 +586,7 @@ export class TwinBlades extends Weapon {
 
   protected applyUpgrade(): void {
     this.damage += 5;
-    this.cooldown = Math.max(400, this.cooldown - 100);
+    this.coolDown = Math.max(400, this.coolDown - 100);
     if (this.level >= 5) this.projectileSpeed += 150;
   }
 }
@@ -601,7 +601,7 @@ export class Mace extends Weapon {
   constructor(scene: Phaser.Scene, player: Player) {
     super(scene, player, {
       damage: 35,
-      cooldown: 1800,
+      coolDown: 1800,
       type: "mace",
       projectiles: scene.physics.add.group(),
     });
@@ -666,7 +666,7 @@ export class Mace extends Weapon {
   protected applyUpgrade(): void {
     this.damage += 10;
     if (this.level >= 2) this.stunChance = 0.4;
-    if (this.level >= 3) this.cooldown = 1500;
+    if (this.level >= 3) this.coolDown = 1500;
     if (this.level >= 4) this.stunChance = 0.5;
     if (this.level >= 5) this.damage += 15;
   }
@@ -679,7 +679,7 @@ export class BullHorns extends Weapon {
   constructor(scene: Phaser.Scene, player: Player) {
     super(scene, player, {
       damage: 40,
-      cooldown: 2500,
+      coolDown: 2500,
       type: "bull_horns",
     });
     this.chargeRadius = 150;
@@ -707,17 +707,18 @@ export class BullHorns extends Weapon {
       );
       if (distance < this.chargeRadius) {
         enemy.takeDamage(this.damage);
-        // Knockback effect
         const angle = Phaser.Math.Angle.Between(
           playerPos.x,
           playerPos.y,
           enemy.sprite.x,
           enemy.sprite.y,
         );
-        (enemy.sprite.body as Phaser.Physics.Arcade.Body).setVelocity(
-          Math.cos(angle) * 300,
-          Math.sin(angle) * 300,
-        );
+        if (enemy.sprite.body && "setVelocity" in enemy.sprite.body) {
+          enemy.sprite.body?.setVelocity(
+            Math.cos(angle) * 300,
+            Math.sin(angle) * 300,
+          );
+        }
       }
     });
 
@@ -732,7 +733,7 @@ export class BullHorns extends Weapon {
   protected applyUpgrade(): void {
     this.damage += 12;
     if (this.level >= 2) this.chargeRadius = 180;
-    if (this.level >= 3) this.cooldown = 2000;
+    if (this.level >= 3) this.coolDown = 2000;
     if (this.level >= 4) this.chargeRadius = 200;
     if (this.level >= 5) this.damage += 20;
   }
@@ -745,7 +746,7 @@ export class ThunderDrum extends Weapon {
   constructor(scene: Phaser.Scene, player: Player) {
     super(scene, player, {
       damage: 22,
-      cooldown: 1600,
+      coolDown: 1600,
       type: "thunder_drum",
     });
     this.strikeCount = 3;
@@ -785,7 +786,7 @@ export class ThunderDrum extends Weapon {
   protected applyUpgrade(): void {
     this.damage += 6;
     if (this.level >= 2) this.strikeCount = 4;
-    if (this.level >= 3) this.cooldown = 1300;
+    if (this.level >= 3) this.coolDown = 1300;
     if (this.level >= 4) this.strikeCount = 5;
     if (this.level >= 5) this.damage += 10;
   }
@@ -799,7 +800,7 @@ export class IceNeedle extends Weapon {
   constructor(scene: Phaser.Scene, player: Player) {
     super(scene, player, {
       damage: 16,
-      cooldown: 900,
+      coolDown: 900,
       type: "ice_needle",
       projectiles: scene.physics.add.group(),
     });
@@ -843,7 +844,7 @@ export class IceNeedle extends Weapon {
   protected applyUpgrade(): void {
     this.damage += 5;
     if (this.level >= 2) this.projectileCount = 4;
-    if (this.level >= 3) this.cooldown = 700;
+    if (this.level >= 3) this.coolDown = 700;
     if (this.level >= 4) this.projectileCount = 5;
     if (this.level >= 5) this.projectileSpeed += 100;
   }
@@ -859,7 +860,7 @@ export class WindFireWheels extends Weapon {
   constructor(scene: Phaser.Scene, player: Player) {
     super(scene, player, {
       damage: 28,
-      cooldown: 100,
+      coolDown: 100,
       type: "wind_fire_wheels",
     });
     this.orbCount = 2;
@@ -927,7 +928,7 @@ export class JadePurityBottle extends Weapon {
   constructor(scene: Phaser.Scene, player: Player) {
     super(scene, player, {
       damage: 32,
-      cooldown: 2200,
+      coolDown: 2200,
       type: "jade_purity_bottle",
     });
     this.pullRadius = 200;
@@ -963,10 +964,12 @@ export class JadePurityBottle extends Weapon {
           playerPos.x,
           playerPos.y,
         );
-        (enemy.sprite.body as Phaser.Physics.Arcade.Body).setVelocity(
-          Math.cos(angle) * this.pullStrength,
-          Math.sin(angle) * this.pullStrength,
-        );
+        if (enemy.sprite.body && "setVelocity" in enemy.sprite.body) {
+          enemy.sprite.body?.setVelocity(
+            Math.cos(angle) * this.pullStrength,
+            Math.sin(angle) * this.pullStrength,
+          );
+        }
 
         if (distance < 80) {
           enemy.takeDamage(this.damage);
@@ -987,7 +990,7 @@ export class JadePurityBottle extends Weapon {
     this.damage += 10;
     if (this.level >= 2) this.pullRadius = 250;
     if (this.level >= 3) this.pullStrength = 200;
-    if (this.level >= 4) this.cooldown = 1800;
+    if (this.level >= 4) this.coolDown = 1800;
     if (this.level >= 5) this.damage += 15;
   }
 }
@@ -1000,7 +1003,7 @@ export class GoldenRope extends Weapon {
   constructor(scene: Phaser.Scene, player: Player) {
     super(scene, player, {
       damage: 12,
-      cooldown: 1400,
+      coolDown: 1400,
       type: "golden_rope",
     });
     this.bindDuration = 2000;
@@ -1045,18 +1048,23 @@ export class GoldenRope extends Weapon {
       rope.setLineWidth(3);
 
       // Slow enemy
-      const originalSpeed = (target.sprite.body as Phaser.Physics.Arcade.Body)
-        .speed;
-      (target.sprite.body as Phaser.Physics.Arcade.Body).speed =
-        originalSpeed * 0.3;
+      let originalSpeed: number;
+      if (target.sprite.body && "speed" in target.sprite.body) {
+        originalSpeed = target.sprite.body.speed;
+
+        target.sprite.body.speed = originalSpeed * 0.3;
+      }
 
       target.takeDamage(this.damage);
 
       this.scene.time.delayedCall(this.bindDuration, () => {
         rope.destroy();
-        if (!target.isDead) {
-          (target.sprite.body as Phaser.Physics.Arcade.Body).speed =
-            originalSpeed;
+        if (
+          !target.isDead &&
+          target.sprite.body &&
+          "speed" in target.sprite.body
+        ) {
+          target.sprite.body.speed = originalSpeed;
         }
       });
     });
@@ -1067,7 +1075,7 @@ export class GoldenRope extends Weapon {
     if (this.level >= 2) this.maxTargets = 3;
     if (this.level >= 3) this.bindDuration = 3000;
     if (this.level >= 4) this.maxTargets = 4;
-    if (this.level >= 5) this.cooldown = 1000;
+    if (this.level >= 5) this.coolDown = 1000;
   }
 }
 
@@ -1079,7 +1087,7 @@ export class PlantainFan extends Weapon {
   constructor(scene: Phaser.Scene, player: Player) {
     super(scene, player, {
       damage: 45,
-      cooldown: 3000,
+      coolDown: 3000,
       type: "plantain_fan",
     });
     this.fanAngle = Math.PI / 3;
@@ -1152,11 +1160,12 @@ export class PlantainFan extends Weapon {
 
       if (distance < this.fanRange && angleDiff < this.fanAngle / 2) {
         enemy.takeDamage(this.damage);
-        // Knockback
-        (enemy.sprite.body as Phaser.Physics.Arcade.Body).setVelocity(
-          Math.cos(angle) * 400,
-          Math.sin(angle) * 400,
-        );
+        if (enemy.sprite.body && "setVelocity" in enemy.sprite.body) {
+          enemy.sprite.body.setVelocity(
+            Math.cos(angle) * 400,
+            Math.sin(angle) * 400,
+          );
+        }
       }
     });
 
@@ -1172,7 +1181,7 @@ export class PlantainFan extends Weapon {
     this.damage += 12;
     if (this.level >= 2) this.fanAngle = Math.PI / 2.5;
     if (this.level >= 3) this.fanRange = 300;
-    if (this.level >= 4) this.cooldown = 2500;
+    if (this.level >= 4) this.coolDown = 2500;
     if (this.level >= 5) this.fanAngle = Math.PI / 2;
   }
 }

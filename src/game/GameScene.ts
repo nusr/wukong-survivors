@@ -1,7 +1,7 @@
 import Phaser from "phaser";
-import { Player } from "./player";
+import { Player, type WASDKeys } from "./player";
 import { EnemySpawner } from "./enemy";
-import { WeaponManager, WeaponClass } from "./weapon";
+import { WeaponManager, type UpgradeOption } from "./weapon";
 import { ExperienceManager } from "./experience";
 import { useSaveStore, useAppStore } from "../store";
 import {
@@ -16,6 +16,7 @@ import {
   EVENT_MAP,
   DEFAULT_GAME_TIME,
   SCREEN_SIZE,
+  START_Z_INDEX,
 } from "../constant";
 import i18n from "../i18n";
 import { scaleManager } from "./ScaleManager";
@@ -29,21 +30,6 @@ import type {
 } from "../types";
 import eventBus from "./eventBus";
 
-interface WASDKeys {
-  w: Phaser.Input.Keyboard.Key;
-  a: Phaser.Input.Keyboard.Key;
-  s: Phaser.Input.Keyboard.Key;
-  d: Phaser.Input.Keyboard.Key;
-}
-
-interface UpgradeOption {
-  type: "upgrade" | "new";
-  weapon?: any;
-  weaponClass?: WeaponClass;
-  name: string;
-  description: string;
-}
-
 interface ButtonElement {
   button: Phaser.GameObjects.Rectangle;
   nameText: Phaser.GameObjects.Text;
@@ -53,25 +39,27 @@ interface ButtonElement {
 // Game scene
 export class GameScene extends Phaser.Scene {
   private player!: Player;
-  private cursors!: Phaser.Types.Input.Keyboard.CursorKeys;
-  private wasd!: WASDKeys;
-  private enemySpawner!: EnemySpawner;
-  private weaponManager!: WeaponManager;
-  private experienceManager!: ExperienceManager;
-  private rewardUI!: RewardSelectionUI;
-  private uiContainer!: Phaser.GameObjects.Container;
-  private healthBarBg!: Phaser.GameObjects.Rectangle;
-  private healthBar!: Phaser.GameObjects.Rectangle;
-  private expBarBg!: Phaser.GameObjects.Rectangle;
-  private expBar!: Phaser.GameObjects.Rectangle;
-  private levelText!: Phaser.GameObjects.Text;
-  private timeText!: Phaser.GameObjects.Text;
-  private killText!: Phaser.GameObjects.Text;
+  private cursors?: Phaser.Types.Input.Keyboard.CursorKeys;
+  private wasd?: WASDKeys;
+  private enemySpawner?: EnemySpawner;
+  private weaponManager?: WeaponManager;
+  private experienceManager?: ExperienceManager;
+  private rewardUI?: RewardSelectionUI;
+  private uiContainer?: Phaser.GameObjects.Container;
+  private healthBarBg?: Phaser.GameObjects.Rectangle;
+  private healthBar?: Phaser.GameObjects.Rectangle;
+  private expBarBg?: Phaser.GameObjects.Rectangle;
+  private expBar?: Phaser.GameObjects.Rectangle;
+  private levelText?: Phaser.GameObjects.Text;
+  private timeText?: Phaser.GameObjects.Text;
+  private killText?: Phaser.GameObjects.Text;
   private killsSinceLastReward: number = 0;
   private killsRequiredForReward: number = 10; // Pop reward every 10 kills
   private isPaused: boolean = false;
   private isGameOver: boolean = false;
   private playerDamageCoolDown: number = 0;
+  private killCount = 0;
+  private gameTime = 0;
 
   constructor() {
     super({ key: GAME_SCENE_KEY });
@@ -205,12 +193,15 @@ export class GameScene extends Phaser.Scene {
     });
 
     // Input controls
-    this.cursors = this.input.keyboard!.createCursorKeys();
+    const cursors = this.input.keyboard?.createCursorKeys();
+    if (cursors) {
+      this.cursors = cursors;
+    }
     this.wasd = {
-      w: this.input.keyboard!.addKey("W"),
-      a: this.input.keyboard!.addKey("A"),
-      s: this.input.keyboard!.addKey("S"),
-      d: this.input.keyboard!.addKey("D"),
+      w: this.input.keyboard?.addKey("W"),
+      a: this.input.keyboard?.addKey("A"),
+      s: this.input.keyboard?.addKey("S"),
+      d: this.input.keyboard?.addKey("D"),
     };
 
     // Get selected map and its available enemies
@@ -245,11 +236,11 @@ export class GameScene extends Phaser.Scene {
     this.createUI();
 
     // Game state
-    useAppStore.getState().setGameTime(DEFAULT_GAME_TIME);
+    this.gameTime = DEFAULT_GAME_TIME;
     this.isPaused = false;
     this.isGameOver = false;
 
-    // Player damage cooldown
+    // Player damage cool down
     this.playerDamageCoolDown = 0;
 
     // Handle window resize
@@ -264,7 +255,6 @@ export class GameScene extends Phaser.Scene {
 
     // Update camera bounds
     this.cameras.main.setBounds(-2000, -2000, 4000, 4000);
-    this.cameras.main.setZoom(scaleManager.getCameraZoom());
 
     // Update UI positions and sizes
     this.updateUILayout(width);
@@ -345,7 +335,7 @@ export class GameScene extends Phaser.Scene {
     this.uiContainer = this.add
       .container(0, 0)
       .setScrollFactor(0)
-      .setDepth(100);
+      .setDepth(scaleManager.getZIndex());
 
     // Responsive UI sizing
     const barWidth = scaleManager.getUIElementSize(200);
@@ -429,7 +419,7 @@ export class GameScene extends Phaser.Scene {
       },
     );
     this.killText.setOrigin(0.5, 0);
-    useAppStore.getState().setKillCount(0);
+    this.killCount = 0;
 
     const buttonHeight = scaleManager.getUIElementSize(40);
     const buttonWidth = scaleManager.getUIElementSize(60);
@@ -443,7 +433,7 @@ export class GameScene extends Phaser.Scene {
       .setStrokeStyle(3, 0xffffff)
       .setInteractive({ useHandCursor: true })
       .setScrollFactor(0)
-      .setDepth(101);
+      .setDepth(scaleManager.getZIndex());
 
     this.add
       .text(x, y, "X", {
@@ -453,7 +443,7 @@ export class GameScene extends Phaser.Scene {
       })
       .setOrigin(0.5)
       .setScrollFactor(0)
-      .setDepth(102);
+      .setDepth(scaleManager.getZIndex());
 
     menuButton.on("pointerover", () => {
       menuButton.setFillStyle(0x555555);
@@ -480,11 +470,9 @@ export class GameScene extends Phaser.Scene {
   }
 
   private endGame(): void {
-    const gameTime = useAppStore.getState().gameTime;
-
     // Save game data
-    useSaveStore.getState().addKills(useAppStore.getState().killCount);
-    useSaveStore.getState().updatePlayTime(DEFAULT_GAME_TIME - gameTime);
+    useSaveStore.getState().addKills(this.killCount);
+    useSaveStore.getState().updatePlayTime(DEFAULT_GAME_TIME - this.gameTime);
 
     this.showModal({
       title: i18n.t("game.endGame"),
@@ -492,8 +480,7 @@ export class GameScene extends Phaser.Scene {
       description: i18n.t("game.endGameTitle"),
       cancelText: i18n.t("shop.cancel"),
       onCancel: () => {
-        this.isPaused = false;
-        this.physics.resume();
+        this.resume();
       },
       okText: i18n.t("game.endGame"),
       onOk: () => {
@@ -506,41 +493,44 @@ export class GameScene extends Phaser.Scene {
     // Update health bar
     const healthPercent = this.player.health / this.player.maxHealth;
     const barWidth = scaleManager.getUIElementSize(200);
-    this.healthBar.width = barWidth * healthPercent;
+    if (this.healthBar) {
+      this.healthBar.width = barWidth * healthPercent;
+    }
 
     // Update experience bar
     const expPercent =
       this.player.experience / this.player.experienceToNextLevel;
-    this.expBar.width = barWidth * expPercent;
+
+    if (this.expBar) {
+      this.expBar.width = barWidth * expPercent;
+    }
 
     // Update level
-    this.levelText.setText(i18n.t("game.level", { level: this.player.level }));
+    this.levelText?.setText(
+      i18n.t("game.level", { level: this.player?.level }),
+    );
 
     // Update time
 
-    const gameTime = useAppStore.getState().gameTime;
-
-    const minutes = Math.floor(gameTime / 60);
-    const seconds = Math.floor(gameTime % 60);
-    this.timeText.setText(
+    const minutes = Math.floor(this.gameTime / 60);
+    const seconds = Math.floor(this.gameTime % 60);
+    this.timeText?.setText(
       `${minutes.toString().padStart(2, "0")}:${seconds
         .toString()
         .padStart(2, "0")}`,
     );
 
     // Change color based on remaining time
-    if (gameTime < 60) {
-      this.timeText.setColor("#ff0000"); // Red when less than 1 minute
-    } else if (gameTime < 300) {
-      this.timeText.setColor("#ffff00"); // Yellow when less than 5 minutes
+    if (this.gameTime < 60) {
+      this.timeText?.setColor("#ff0000"); // Red when less than 1 minute
+    } else if (this.gameTime < 300) {
+      this.timeText?.setColor("#ffff00"); // Yellow when less than 5 minutes
     } else {
-      this.timeText.setColor("#ffffff"); // White otherwise
+      this.timeText?.setColor("#ffffff"); // White otherwise
     }
 
     // Update kill count
-    this.killText.setText(
-      `${i18n.t("stats.kills")}: ${useAppStore.getState().killCount}`,
-    );
+    this.killText?.setText(`${i18n.t("stats.kills")}: ${this.killCount}`);
   }
 
   public update(time: number, delta: number): void {
@@ -548,12 +538,10 @@ export class GameScene extends Phaser.Scene {
 
     // Update game time (countdown)
 
-    const gameTime = useAppStore.getState().gameTime - delta / 1000;
-
-    useAppStore.getState().setGameTime(gameTime);
+    this.gameTime -= delta / 1000;
 
     // Check for victory when time runs out
-    if (gameTime <= 0) {
+    if (this.gameTime <= 0) {
       this.showVictory();
       return;
     }
@@ -563,14 +551,14 @@ export class GameScene extends Phaser.Scene {
 
     // Update enemies
     const playerPos = this.player.getPosition();
-    this.enemySpawner.update(time, delta, playerPos);
+    this.enemySpawner?.update(time, delta, playerPos);
 
     // Update weapons
-    const enemies = this.enemySpawner.getEnemies();
-    this.weaponManager.update(time, enemies);
+    const enemies = this.enemySpawner?.getEnemies() || [];
+    this.weaponManager?.update(time, enemies);
 
     // Update experience
-    this.experienceManager.update();
+    this.experienceManager?.update();
 
     // Collision detection
     this.checkCollisions(delta);
@@ -580,7 +568,7 @@ export class GameScene extends Phaser.Scene {
   }
 
   private checkCollisions(delta: number): void {
-    const enemies = this.enemySpawner.getEnemies();
+    const enemies = this.enemySpawner?.getEnemies() || [];
 
     // Player and enemy collision
     this.playerDamageCoolDown = Math.max(0, this.playerDamageCoolDown - delta);
@@ -602,7 +590,7 @@ export class GameScene extends Phaser.Scene {
     });
 
     // Weapon and enemy collision
-    this.weaponManager.weapons.forEach((weapon) => {
+    this.weaponManager?.weapons.forEach((weapon) => {
       // Magic missile collision
 
       weapon.projectiles?.children.entries.forEach((projectile: any) => {
@@ -621,9 +609,7 @@ export class GameScene extends Phaser.Scene {
           if (distance < 20) {
             const killed = enemy.takeDamage(projectile.damage);
             if (killed) {
-              useAppStore
-                .getState()
-                .setKillCount(useAppStore.getState().killCount + 1);
+              this.killCount++;
               this.killsSinceLastReward++;
               this.checkRewardTrigger();
               // Drop gold coin (10% chance)
@@ -656,9 +642,7 @@ export class GameScene extends Phaser.Scene {
           if (distance < 25 && typeof orb.damage === "number") {
             const killed = enemy.takeDamage(orb.damage);
             if (killed) {
-              useAppStore
-                .getState()
-                .setKillCount(useAppStore.getState().killCount + 1);
+              this.killCount++;
               this.killsSinceLastReward++;
               this.checkRewardTrigger();
               // Drop gold coin (10% chance)
@@ -673,7 +657,7 @@ export class GameScene extends Phaser.Scene {
   }
 
   private spawnGoldCoin(x: number, y: number): void {
-    const coin = this.add.circle(x, y, 8, 0xffd700).setDepth(50);
+    const coin = this.add.circle(x, y, 8, 0xffd700).setDepth(START_Z_INDEX);
     this.physics.add.existing(coin);
 
     // Coin automatically flies towards player
@@ -689,10 +673,12 @@ export class GameScene extends Phaser.Scene {
           useSaveStore.getState().addGold(1);
         } else if (distance < 300) {
           const speed = 200;
-          (coin.body as Phaser.Physics.Arcade.Body).setVelocity(
-            (dx / distance) * speed,
-            (dy / distance) * speed,
-          );
+          if (coin.body && "setVelocity" in coin.body) {
+            coin.body.setVelocity(
+              (dx / distance) * speed,
+              (dy / distance) * speed,
+            );
+          }
         }
       },
       loop: true,
@@ -700,7 +686,7 @@ export class GameScene extends Phaser.Scene {
   }
 
   public spawnExperience(x: number, y: number, value: number): void {
-    this.experienceManager.spawnGem(x, y, value);
+    this.experienceManager?.spawnGem(x, y, value);
   }
 
   private checkRewardTrigger(): void {
@@ -715,35 +701,49 @@ export class GameScene extends Phaser.Scene {
     }
   }
 
-  private showRewardSelection(): void {
-    if (this.rewardUI.isVisible()) return;
-
+  public pause() {
     this.isPaused = true;
-    this.rewardUI.show((option: RewardOption) => {
+    this.physics.pause();
+  }
+
+  public resume() {
+    this.isPaused = false;
+    this.physics.resume();
+  }
+
+  private showRewardSelection(): void {
+    if (this.rewardUI?.isVisible() || this.isPaused) return;
+    this.pause();
+
+    this.rewardUI?.show((option: RewardOption) => {
       this.handleRewardSelection(option);
+      this.resume();
     });
   }
 
   private handleRewardSelection(option: RewardOption): void {
+    console.log("handleRewardSelection:", option);
     if (option.type === "weapon") {
       const weaponData = option.data as WeaponData;
 
-      const WeaponClass = this.weaponManager.getWeaponById(weaponData.id);
+      const WeaponClass = this.weaponManager?.getWeaponById(weaponData.id);
+      if (!WeaponClass) {
+        return;
+      }
 
       // Add weapon to manager if not already owned
-      if (!this.weaponManager.hasWeapon(WeaponClass)) {
-        this.weaponManager.addWeapon(WeaponClass);
+      if (!this.weaponManager?.hasWeapon(WeaponClass)) {
+        this.weaponManager?.addWeapon(WeaponClass);
         // Save to store
         useSaveStore.getState().addWeapon(weaponData.id);
       } else {
         // If already owned, upgrade it
-        const weapon = this.weaponManager.getWeapon(WeaponClass);
+        const weapon = this.weaponManager?.getWeapon(WeaponClass);
         if (weapon && weapon.level < weapon.maxLevel) {
           weapon.upgrade();
         }
       }
 
-      this.isPaused = false;
       return;
     }
 
@@ -767,7 +767,7 @@ export class GameScene extends Phaser.Scene {
           break;
         case "damage":
           // Golden Elixir: Increase attack power
-          this.weaponManager.weapons.forEach((weapon) => {
+          this.weaponManager?.weapons.forEach((weapon) => {
             weapon.damage *= 1 + elixir.effect.value;
           });
           break;
@@ -792,7 +792,7 @@ export class GameScene extends Phaser.Scene {
           this.player.maxHealth += this.player.maxHealth * elixir.effect.value;
           this.player.health += this.player.maxHealth * elixir.effect.value;
           this.player.speed += this.player.speed * elixir.effect.value;
-          this.weaponManager.weapons.forEach((weapon) => {
+          this.weaponManager?.weapons.forEach((weapon) => {
             weapon.damage *= 1 + elixir.effect.value;
           });
           break;
@@ -802,15 +802,16 @@ export class GameScene extends Phaser.Scene {
           break;
       }
     }
-
-    this.isPaused = false;
   }
 
   public showLevelUpMenu(): void {
-    this.isPaused = true;
-
-    // Pause physics
-    this.physics.pause();
+    if (this.isPaused) {
+      return;
+    }
+    this.pause();
+    const startDepth = scaleManager.getZIndex();
+    const textDepth = scaleManager.getZIndex();
+    const endDepth = scaleManager.getZIndex();
 
     // Create level up menu
     const centerX = this.cameras.main.width / 2;
@@ -827,7 +828,7 @@ export class GameScene extends Phaser.Scene {
         0.8,
       )
       .setScrollFactor(0)
-      .setDepth(200);
+      .setDepth(startDepth);
 
     // Title
     const title = this.add
@@ -840,10 +841,10 @@ export class GameScene extends Phaser.Scene {
       })
       .setOrigin(0.5)
       .setScrollFactor(0)
-      .setDepth(201);
+      .setDepth(textDepth);
 
     // Get upgrade options
-    const options = this.weaponManager.getUpgradeOptions();
+    const options = this.weaponManager?.getUpgradeOptions() || [];
 
     // Create option buttons
     const buttons: ButtonElement[] = [];
@@ -851,11 +852,11 @@ export class GameScene extends Phaser.Scene {
       const y = centerY - 50 + index * 100;
 
       const button = this.add
-        .rectangle(centerX, y, 400, 80, 0x333333)
+        .rectangle(centerX, y, 500, 80, 0x333333)
         .setStrokeStyle(3, 0xffffff)
         .setInteractive({ useHandCursor: true })
         .setScrollFactor(0)
-        .setDepth(201);
+        .setDepth(textDepth);
 
       const nameText = this.add
         .text(centerX, y - 15, option.name, {
@@ -865,16 +866,16 @@ export class GameScene extends Phaser.Scene {
         })
         .setOrigin(0.5)
         .setScrollFactor(0)
-        .setDepth(202);
+        .setDepth(endDepth);
 
       const descText = this.add
         .text(centerX, y + 15, option.description, {
-          fontSize: scaleManager.getFontSize(16),
+          fontSize: scaleManager.getFontSize(14),
           color: "#cccccc",
         })
         .setOrigin(0.5)
         .setScrollFactor(0)
-        .setDepth(202);
+        .setDepth(endDepth);
 
       button.on("pointerover", () => {
         button.setFillStyle(0x555555);
@@ -904,12 +905,10 @@ export class GameScene extends Phaser.Scene {
     if (option.type === "upgrade" && option.weapon) {
       option.weapon.upgrade();
     } else if (option.type === "new" && option.weaponClass) {
-      this.weaponManager.addWeapon(option.weaponClass);
+      this.weaponManager?.addWeapon(option.weaponClass);
     }
 
-    // Resume game
-    this.isPaused = false;
-    this.physics.resume();
+    this.resume();
   }
 
   private showModal({
@@ -937,12 +936,14 @@ export class GameScene extends Phaser.Scene {
       return result;
     }
 
-    // Stop physics
-    this.isPaused = true;
-    this.physics.pause();
+    this.pause();
 
     const centerX = this.cameras.main.width / 2;
     const centerY = this.cameras.main.height / 2;
+
+    const startDepth = scaleManager.getZIndex();
+    const textDepth = scaleManager.getZIndex();
+    const endDepth = scaleManager.getZIndex();
 
     const container = this.add
       .rectangle(
@@ -954,7 +955,7 @@ export class GameScene extends Phaser.Scene {
         0.9,
       )
       .setScrollFactor(0)
-      .setDepth(300);
+      .setDepth(startDepth);
 
     result.push(container);
 
@@ -968,7 +969,7 @@ export class GameScene extends Phaser.Scene {
       })
       .setOrigin(0.5)
       .setScrollFactor(0)
-      .setDepth(301);
+      .setDepth(textDepth);
 
     result.push(titleText);
 
@@ -983,7 +984,7 @@ export class GameScene extends Phaser.Scene {
         })
         .setOrigin(0.5)
         .setScrollFactor(0)
-        .setDepth(301);
+        .setDepth(textDepth);
       result.push(descText);
     }
 
@@ -992,19 +993,19 @@ export class GameScene extends Phaser.Scene {
       .setStrokeStyle(3, 0xffffff)
       .setInteractive({ useHandCursor: true })
       .setScrollFactor(0)
-      .setDepth(301);
+      .setDepth(textDepth);
 
     result.push(okButton);
 
     const okObj = this.add
       .text(centerX - 110, centerY + 120, okText, {
-        fontSize: scaleManager.getFontSize(24),
+        fontSize: scaleManager.getFontSize(20),
         color: "#ffffff",
         fontStyle: "bold",
       })
       .setOrigin(0.5)
       .setScrollFactor(0)
-      .setDepth(302);
+      .setDepth(endDepth);
 
     result.push(okObj);
 
@@ -1025,19 +1026,19 @@ export class GameScene extends Phaser.Scene {
       .setStrokeStyle(3, 0xffffff)
       .setInteractive({ useHandCursor: true })
       .setScrollFactor(0)
-      .setDepth(301);
+      .setDepth(textDepth);
 
     result.push(cancelButton);
 
     const cancelTextObj = this.add
       .text(centerX + 110, centerY + 120, cancelText, {
-        fontSize: scaleManager.getFontSize(24),
+        fontSize: scaleManager.getFontSize(20),
         color: "#ffffff",
         fontStyle: "bold",
       })
       .setOrigin(0.5)
       .setScrollFactor(0)
-      .setDepth(302);
+      .setDepth(endDepth);
 
     result.push(cancelTextObj);
 
@@ -1064,20 +1065,14 @@ export class GameScene extends Phaser.Scene {
     this.isGameOver = true;
 
     // Save game data
-    useSaveStore.getState().addKills(useAppStore.getState().killCount);
-    useSaveStore
-      .getState()
-      .updatePlayTime(DEFAULT_GAME_TIME - useAppStore.getState().gameTime);
+    useSaveStore.getState().addKills(this.killCount);
+    useSaveStore.getState().updatePlayTime(DEFAULT_GAME_TIME - this.gameTime);
 
     // Complete the chapter and unlock characters
     const selectedMap = useAppStore.getState().getSelectMap();
     useSaveStore.getState().completeChapter(selectedMap.id);
 
-    // Stop physics
-    this.isPaused = true;
-    this.physics.pause();
-
-    const desc = `${i18n.t("stats.kills")}: ${useAppStore.getState().killCount}\n${i18n.t(
+    const desc = `${i18n.t("stats.kills")}: ${this.killCount}\n${i18n.t(
       "stats.level",
     )}: ${this.player.level}`;
 
@@ -1099,21 +1094,20 @@ export class GameScene extends Phaser.Scene {
   public gameOver(): void {
     if (this.isGameOver) return;
     this.isGameOver = true;
-    const gameTime = useAppStore.getState().gameTime;
 
     // Save game data
-    useSaveStore.getState().addKills(useAppStore.getState().killCount);
-    useSaveStore.getState().updatePlayTime(DEFAULT_GAME_TIME - gameTime);
+    useSaveStore.getState().addKills(this.killCount);
+    useSaveStore.getState().updatePlayTime(DEFAULT_GAME_TIME - this.gameTime);
 
-    const minutes = Math.floor(gameTime / 60);
-    const seconds = Math.floor(gameTime % 60);
+    const minutes = Math.floor(this.gameTime / 60);
+    const seconds = Math.floor(this.gameTime % 60);
     const timeStr = `${minutes.toString().padStart(2, "0")}:${seconds
       .toString()
       .padStart(2, "0")}`;
 
     const desc = `${i18n.t("stats.survivalTime")}: ${timeStr}\n${i18n.t(
       "stats.kills",
-    )}: ${useAppStore.getState().killCount}\n${i18n.t("stats.level")}: ${this.player.level}`;
+    )}: ${this.killCount}\n${i18n.t("stats.level")}: ${this.player.level}`;
 
     this.showModal({
       title: i18n.t("game.gameOver"),

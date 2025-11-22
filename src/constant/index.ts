@@ -199,12 +199,14 @@ export const EVENT_MAP = {
 
 export const GAME_SCENE_KEY = "GameScene";
 
-export const DEFAULT_GAME_TIME = 1800; // 30 minutes in seconds
+export const DEFAULT_GAME_TIME = 30 * 60; // 30 minutes in seconds
 
 export const SCREEN_SIZE = {
   width: window.innerWidth,
   height: window.innerHeight,
 };
+
+export const START_Z_INDEX = 2;
 
 export * from "./characters";
 export * from "./enemies";

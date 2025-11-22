@@ -3,11 +3,11 @@ import { scaleManager } from "./ScaleManager";
 import type { CharacterType } from "../types";
 import type { GameScene } from "./GameScene";
 
-interface WASDKeys {
-  w: Phaser.Input.Keyboard.Key;
-  a: Phaser.Input.Keyboard.Key;
-  s: Phaser.Input.Keyboard.Key;
-  d: Phaser.Input.Keyboard.Key;
+export interface WASDKeys {
+  w?: Phaser.Input.Keyboard.Key;
+  a?: Phaser.Input.Keyboard.Key;
+  s?: Phaser.Input.Keyboard.Key;
+  d?: Phaser.Input.Keyboard.Key;
 }
 
 interface Position {
@@ -45,7 +45,7 @@ export class Player {
     this.sprite = scene.physics.add.sprite(x, y, textureKey);
     this.sprite.setDisplaySize(spriteSize, spriteSize);
     // Set collision body to match sprite size
-    this.sprite.body!.setSize(spriteSize, spriteSize);
+    this.sprite.body?.setSize(spriteSize, spriteSize);
 
     // Player attributes
     this.maxHealth = 100;
@@ -61,12 +61,11 @@ export class Player {
 
     // Set camera to follow with responsive zoom
     scene.cameras.main.startFollow(this.sprite);
-    scene.cameras.main.setZoom(scaleManager.getCameraZoom());
   }
 
   public update(
-    cursors: Phaser.Types.Input.Keyboard.CursorKeys,
-    wasd: WASDKeys,
+    cursors?: Phaser.Types.Input.Keyboard.CursorKeys,
+    wasd?: WASDKeys,
   ): void {
     // Reset velocity
     this.sprite.setVelocity(0);
@@ -75,15 +74,15 @@ export class Player {
     let velocityX = 0;
     let velocityY = 0;
 
-    if (cursors.left.isDown || wasd.a.isDown) {
+    if (cursors?.left.isDown || wasd?.a?.isDown) {
       velocityX = -this.speed;
-    } else if (cursors.right.isDown || wasd.d.isDown) {
+    } else if (cursors?.right.isDown || wasd?.d?.isDown) {
       velocityX = this.speed;
     }
 
-    if (cursors.up.isDown || wasd.w.isDown) {
+    if (cursors?.up.isDown || wasd?.w?.isDown) {
       velocityY = -this.speed;
-    } else if (cursors.down.isDown || wasd.s.isDown) {
+    } else if (cursors?.down.isDown || wasd?.s?.isDown) {
       velocityY = this.speed;
     }
 

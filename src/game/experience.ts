@@ -40,7 +40,7 @@ export class ExperienceGem {
     this.sprite = scene.physics.add.sprite(x, y, textureName) as GemSprite;
     this.sprite.setDisplaySize(gemSize, gemSize);
     // Set collision body to match sprite size
-    this.sprite.body!.setSize(gemSize, gemSize);
+    this.sprite.body?.setSize(gemSize, gemSize);
 
     this.sprite.gemRef = this;
   }

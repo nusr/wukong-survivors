@@ -21,6 +21,7 @@
   "license": "MIT",
   "dependencies": {
     "i18next": "^25.6.3",
+    "lodash": "^4.17.21",
     "phaser": "^3.90.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
@@ -29,6 +30,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
+    "@types/lodash": "^4.17.20",
     "@types/node": "^24.10.1",
     "@types/react": "^19.2.6",
     "@types/react-dom": "^19.2.3",

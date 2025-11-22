@@ -51,7 +51,7 @@ export class Enemy {
     this.sprite.setDisplaySize(displaySize, displaySize);
 
     // Set collision body to match sprite size
-    this.sprite.body!.setSize(displaySize, displaySize);
+    this.sprite.body?.setSize(displaySize, displaySize);
 
     // Store reference
     this.sprite.enemyRef = this;
