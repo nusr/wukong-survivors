@@ -19,9 +19,32 @@ const SAVE_KEY = "wukong_survivors_save_1";
 
 // Helper function to check unlock conditions
 const checkUnlocks = (state: GameSave): Partial<GameSave> => {
-  const { unlockedCharacters, unlockedMaps, completedChapters } = state;
+  const { unlockedCharacters, unlockedMaps } = state;
 
-  const chapters = completedChapters.map((c) => {
+  // Check map unlock
+  MAPS.forEach((map) => {
+    if (!unlockedMaps.includes(map.id)) {
+      let unlocked = false;
+
+      switch (map.unlockCondition.type) {
+        case "kills":
+          unlocked = state.totalKills >= map.unlockCondition.value;
+          break;
+        case "time":
+          unlocked = state.bestSurvivalTime >= map.unlockCondition.value;
+          break;
+        case "gold":
+          unlocked = state.totalGold >= map.unlockCondition.value;
+          break;
+      }
+
+      if (unlocked) {
+        unlockedMaps.push(map.id);
+      }
+    }
+  });
+
+  const chapters = unlockedMaps.map((c) => {
     const item = MAPS.find((m) => m.id === c);
     return item?.chapter ?? 0;
   });
@@ -49,29 +72,6 @@ const checkUnlocks = (state: GameSave): Partial<GameSave> => {
 
       if (unlocked) {
         unlockedCharacters.push(char.id);
-      }
-    }
-  });
-
-  // Check map unlock
-  MAPS.forEach((map) => {
-    if (!unlockedMaps.includes(map.id)) {
-      let unlocked = false;
-
-      switch (map.unlockCondition.type) {
-        case "kills":
-          unlocked = state.totalKills >= map.unlockCondition.value;
-          break;
-        case "time":
-          unlocked = state.bestSurvivalTime >= map.unlockCondition.value;
-          break;
-        case "gold":
-          unlocked = state.totalGold >= map.unlockCondition.value;
-          break;
-      }
-
-      if (unlocked) {
-        unlockedMaps.push(map.id);
       }
     }
   });
@@ -104,9 +104,8 @@ export const useSaveStore = create<SaveStore>()(
 
       // Actions
       addGold: (amount: number) => {
-        const { totalGold } = get();
-
-        set({ totalGold: totalGold + amount });
+        set({ totalGold: get().totalGold + amount });
+        get().checkUnlocks();
       },
 
       spendGold: (amount: number) => {
@@ -119,13 +118,10 @@ export const useSaveStore = create<SaveStore>()(
       },
 
       addKills: (amount: number) => {
-        const state = get();
-
-        const newState = checkUnlocks({
-          ...state,
-          totalKills: state.totalKills + amount,
+        set({
+          totalKills: get().totalKills + amount,
         });
-        set(newState);
+        get().checkUnlocks();
       },
 
       updatePlayTime: (seconds: number) => {
@@ -136,12 +132,11 @@ export const useSaveStore = create<SaveStore>()(
         const newPlayTime = state.totalPlayTime + seconds;
         const newBestTime =
           seconds > state.bestSurvivalTime ? seconds : state.bestSurvivalTime;
-        const newState = checkUnlocks({
-          ...state,
+        set({
           totalPlayTime: newPlayTime,
           bestSurvivalTime: newBestTime,
         });
-        return newState;
+        get().checkUnlocks();
       },
 
       upgradePermanent: (upgradeId: PermanentUpgradeType) => {
@@ -199,24 +194,13 @@ export const useSaveStore = create<SaveStore>()(
 
       // Complete chapter and unlock corresponding characters
       completeChapter: (chapter: MapType) => {
-        const { completedChapters = [], unlockedMaps = [] } = get();
+        const { completedChapters = [] } = get();
 
         if (completedChapters.includes(chapter)) {
           return;
         }
 
-        completedChapters.push(chapter);
-        const index = MAPS.findIndex((m) => m.id === chapter);
-
-        if (index >= 0 && index < MAPS.length - 1) {
-          set({
-            completedChapters: [...completedChapters],
-            unlockedMaps: [...unlockedMaps, MAPS[index + 1].id],
-          });
-        } else {
-          set({ completedChapters: [...completedChapters] });
-        }
-        set(checkUnlocks(get()));
+        set({ completedChapters: [...completedChapters, chapter] });
       },
 
       // Manually unlock character
