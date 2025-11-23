@@ -1,4 +1,4 @@
-import Phaser from "phaser";
+import Phaser from 'phaser';
 import {
   WEAPONS,
   ELIXIRS,
@@ -6,11 +6,11 @@ import {
   getRandomElixirs,
   RARITY_COLORS,
   getAvailableCrafts,
-} from "../constant/rewards";
-import type { RewardOption } from "../types/reward";
-import { useSaveStore } from "../store";
-import i18n from "../i18n";
-import { scaleManager } from "./ScaleManager";
+} from '../constant/rewards';
+import type { RewardOption } from '../types/reward';
+import { useSaveStore } from '../store';
+import i18n from '../i18n';
+import { scaleManager } from './ScaleManager';
 
 interface RewardButton {
   container: Phaser.GameObjects.Container;
@@ -71,11 +71,11 @@ export class RewardSelectionUI {
 
     // Title
     const title = this.scene.add
-      .text(centerX, centerY - 220, i18n.t("rewards.title"), {
+      .text(centerX, centerY - 220, i18n.t('rewards.title'), {
         fontSize: scaleManager.getFontSize(48),
-        color: "#ffd700",
-        fontStyle: "bold",
-        stroke: "#000000",
+        color: '#ffd700',
+        fontStyle: 'bold',
+        stroke: '#000000',
         strokeThickness: 6,
       })
       .setOrigin(0.5);
@@ -101,20 +101,20 @@ export class RewardSelectionUI {
 
     // Get random weapons
     const randomWeapons = getRandomWeapons(weaponCount);
-    console.log("randomWeapons", randomWeapons);
+    console.log('randomWeapons', randomWeapons);
     randomWeapons.forEach((weaponId) => {
       this.currentOptions.push({
-        type: "weapon",
+        type: 'weapon',
         data: { ...WEAPONS[weaponId] },
       });
     });
 
     // Get random elixirs
     const randomElixirs = getRandomElixirs(elixirCount);
-    console.log("randomElixirs", randomElixirs);
+    console.log('randomElixirs', randomElixirs);
     randomElixirs.forEach((elixirId) => {
       this.currentOptions.push({
-        type: "elixir",
+        type: 'elixir',
         data: { ...ELIXIRS[elixirId] },
       });
     });
@@ -171,11 +171,11 @@ export class RewardSelectionUI {
 
     background.setInteractive({ useHandCursor: true });
 
-    const isWeapon = option.type === "weapon";
+    const isWeapon = option.type === 'weapon';
 
     // Icon (using emoji instead of images)
     const icon = this.scene.add
-      .text(0, -50, isWeapon ? "⚔️" : "🧪", {
+      .text(0, -50, isWeapon ? '⚔️' : '🧪', {
         fontSize: scaleManager.getFontSize(48),
       })
       .setOrigin(0.5);
@@ -192,9 +192,9 @@ export class RewardSelectionUI {
     const nameText = this.scene.add
       .text(0, 0, name, {
         fontSize: scaleManager.getFontSize(20),
-        color: "#ffffff",
-        fontStyle: "bold",
-        align: "center",
+        color: '#ffffff',
+        fontStyle: 'bold',
+        align: 'center',
         wordWrap: { width: width - 20 },
       })
       .setOrigin(0.5);
@@ -203,8 +203,8 @@ export class RewardSelectionUI {
     const descText = this.scene.add
       .text(0, 35, description, {
         fontSize: scaleManager.getFontSize(14),
-        color: "#cccccc",
-        align: "center",
+        color: '#cccccc',
+        align: 'center',
         wordWrap: { width: width - 20 },
       })
       .setOrigin(0.5);
@@ -213,38 +213,38 @@ export class RewardSelectionUI {
     const rarityText = this.scene.add
       .text(0, 70, i18n.t(`rewards.rarity.${rarity}`), {
         fontSize: scaleManager.getFontSize(16),
-        color: `#${color.toString(16).padStart(6, "0")}`,
-        fontStyle: "bold",
+        color: `#${color.toString(16).padStart(6, '0')}`,
+        fontStyle: 'bold',
       })
       .setOrigin(0.5);
 
     container.add([background, icon, nameText, descText, rarityText]);
 
     // Mouse hover effects
-    background.on("pointerover", () => {
+    background.on('pointerover', () => {
       background.setFillStyle(0x3a3a3a);
       this.scene.tweens.add({
         targets: container,
         scaleX: 1.05,
         scaleY: 1.05,
         duration: 200,
-        ease: "Power2",
+        ease: 'Power2',
       });
     });
 
-    background.on("pointerout", () => {
+    background.on('pointerout', () => {
       background.setFillStyle(0x2a2a2a);
       this.scene.tweens.add({
         targets: container,
         scaleX: 1,
         scaleY: 1,
         duration: 200,
-        ease: "Power2",
+        ease: 'Power2',
       });
     });
 
-    background.on("pointerdown", () => {
-      // FIXME: 鼠标点击后，没有触发方法 this.selectOption(option)
+    // FIXME: 页面上鼠标点击 background 后，没有触发方法 this.selectOption(option)
+    background.on('pointerdown', () => {
       this.selectOption(option);
     });
 
@@ -285,26 +285,26 @@ export class RewardSelectionUI {
       .text(
         centerX,
         buttonY,
-        i18n.t("rewards.refreshCost", { cost: this.refreshCost }),
+        i18n.t('rewards.refreshCost', { cost: this.refreshCost }),
         {
           fontSize: scaleManager.getFontSize(18),
-          color: canRefresh ? "#ffffff" : "#666666",
-          fontStyle: "bold",
+          color: canRefresh ? '#ffffff' : '#666666',
+          fontStyle: 'bold',
         },
       )
       .setOrigin(0.5);
 
     if (canRefresh) {
-      refreshBg.on("pointerover", () => {
+      refreshBg.on('pointerover', () => {
         refreshBg.setFillStyle(0x5a5a5a);
       });
 
-      refreshBg.on("pointerout", () => {
+      refreshBg.on('pointerout', () => {
         refreshBg.setFillStyle(0x4a4a4a);
       });
 
-      refreshBg.on("pointerdown", () => {
-        // FIXME: 鼠标点击后，没有触发方法  this.refresh();
+      // FIXME: 页面上鼠标点击 refreshBg 后，没有触发方法 this.refresh();
+      refreshBg.on('pointerdown', () => {
         this.refresh();
       });
     }
@@ -322,11 +322,11 @@ export class RewardSelectionUI {
         .text(
           centerX,
           centerY + 200,
-          i18n.t("rewards.craftHint", { count: availableCrafts.length }),
+          i18n.t('rewards.craftHint', { count: availableCrafts.length }),
           {
             fontSize: scaleManager.getFontSize(16),
-            color: "#ffd700",
-            fontStyle: "italic",
+            color: '#ffd700',
+            fontStyle: 'italic',
           },
         )
         .setOrigin(0.5);
@@ -337,7 +337,7 @@ export class RewardSelectionUI {
 
   private refresh(): void {
     const spendGold = useSaveStore.getState().spendGold;
-    console.log("refresh:", spendGold);
+    console.log('refresh:', spendGold);
     if (spendGold(this.refreshCost)) {
       // Clear old buttons
       this.buttons.forEach((button) => button.container.destroy());
@@ -361,13 +361,13 @@ export class RewardSelectionUI {
   }
 
   private selectOption(option: RewardOption): void {
-    console.log("selectOption:", option);
+    console.log('selectOption:', option);
     // Play selection sound (if available)
     this.scene.tweens.add({
       targets: this.container,
       alpha: 0,
       duration: 300,
-      ease: "Power2",
+      ease: 'Power2',
       onComplete: () => {
         this.hide();
         if (this.onSelectCallback) {

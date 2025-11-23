@@ -5,7 +5,6 @@
     "restart": "再スタート",
     "backToHome": "メニューに戻る",
     "gameOver": "ゲームオーバー",
-    "victory": "勝利！",
     "chapterComplete": "ステージクリア！",
     "continueGame": "続ける",
     "levelUp": "レベルアップ！",
@@ -13,14 +12,23 @@
     "level": "Lv.{level}",
     "specialWeapon": "専用武器",
     "resetSave": "セーブリセット",
-    "completeChapters": "クリアしたチャプター"
+    "endGame": "終了",
+    "endGameTitle": "終了",
+    "endGameDesc": "ゲームを終了しますか？",
+    "completeChapters": "クリアしたチャプター",
+    "stats": "統計"
   },
-  "settings": {
-    "title": "設定",
-    "language": "言語",
-    "zh-CN": "中文",
-    "en-US": "English",
-    "ja-JP": "日本語"
+  "languages": {
+    "en-US": "英語",
+    "zh-CN": "中国語",
+    "ja-JP": "日本語",
+    "ko-KR": "韓国語",
+    "fr-FR": "フランス語",
+    "de-DE": "ドイツ語",
+    "es-ES": "スペイン語",
+    "pt-BR": "ポルトガル語（ブラジル）",
+    "ru-RU": "ロシア語",
+    "zh-TW": "繁体字中国語"
   },
   "stats": {
     "title": "統計情報",
@@ -167,7 +175,8 @@
     "default": "デフォルトで解放済み",
     "kills": "{value}体の敵を倒す",
     "time": "{value}秒生き延びる",
-    "gold": "{value}ゴールド収集"
+    "gold": "{value}ゴールド収集",
+    "chapter": "チャプター{value}を解放する"
   },
   "shop": {
     "title": "永続アップグレード",
@@ -292,10 +301,6 @@
     "twinBlades": {
       "name": "双刃刀",
       "description": "虎先鋒の双刀、高速連撃"
-    },
-    "mace": {
-      "name": "降魔杵",
-      "description": "仏門の重器、妖魔を鎮圧"
     },
     "bullHorns": {
       "name": "牛魔双角",

@@ -91,6 +91,7 @@ body {
   font-weight: bold;
   min-height: 44px;
   touch-action: manipulation;
+  text-align: center;
 }
 
 @media (max-width: 768px) {

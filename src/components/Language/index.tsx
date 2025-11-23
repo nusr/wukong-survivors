@@ -9,19 +9,17 @@ const LanguageSelect = () => {
   const language = useLanguage();
 
   return (
-    <div className={styles.languageSelector}>
-      <label>{t("settings.language")}:</label>
-      <select
-        value={language}
-        onChange={(e) => i18n.changeLanguage(e.target.value as Language)}
-      >
-        {SupportLanguageCodes.map((lang) => (
-          <option key={lang} value={lang}>
-            {t(`settings.${lang}`)}
-          </option>
-        ))}
-      </select>
-    </div>
+    <select
+      value={language}
+      className={styles.languageSelector}
+      onChange={(e) => i18n.changeLanguage(e.target.value as Language)}
+    >
+      {SupportLanguageCodes.map((lang) => (
+        <option key={lang} value={lang}>
+          {t(`languages.${lang}`)}
+        </option>
+      ))}
+    </select>
   );
 };
 

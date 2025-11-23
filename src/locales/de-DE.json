@@ -1,0 +1,399 @@
+{
+    "game": {
+        "title": "Wukong Survivor",
+        "start": "Starten",
+        "restart": "Neustarten",
+        "backToHome": "Zurück zum Hauptmenü",
+        "gameOver": "Spiel vorbei",
+        "chapterComplete": "Kapitel abgeschlossen",
+        "continueGame": "Weiter spielen",
+        "levelUp": "Level aufgestiegen",
+        "paused": "Pausiert",
+        "level": "Stufe {level}",
+        "specialWeapon": "Spezialwaffe",
+        "resetSave": "Speicherung zurücksetzen",
+        "endGame": "Beenden",
+        "endGameTitle": "Beenden",
+        "endGameDesc": "Möchten Sie das Spiel beenden?",
+        "completeChapters": "Abgeschlossene Kapitel",
+        "stats": "Statistik"
+    },
+    "languages": {
+        "zh-CN": "Vereinfachtes Chinesisch",
+        "zh-TW": "Traditionelles Chinesisch",
+        "en-US": "English",
+        "ja-JP": "日本語",
+        "ko-KR": "한국어",
+        "es-ES": "Español",
+        "ru-RU": "Русский",
+        "de-DE": "Deutsch",
+        "fr-FR": "Français",
+        "pt-BR": "Português-BR"
+    },
+    "stats": {
+        "title": "Spielstatistik",
+        "gold": "Gold",
+        "totalKills": "Gesamte Tötungen",
+        "bestSurvival": "Beste Überlebenszeit",
+        "totalPlayTime": "Gesamte Spielzeit",
+        "survivalTime": "Überlebenszeit",
+        "kills": "Tötungen",
+        "level": "Level",
+        "close": "Schließen"
+    },
+    "characters": {
+        "destined_one": {
+            "name": "Der Auserwählte",
+            "description": "Legende beginnt, ausgewogener universal Soldat"
+        },
+        "black_bear_guai": {
+            "name": "Schwarzer Bär Guai",
+            "description": "Mächtiger Bären-Dämon mit hohem Leben und Schutz"
+        },
+        "lingxuzi": {
+            "name": "Ling Xuzi",
+            "description": "Herrscher des Schwarzen Windbergs, Meister der Dao-Künste"
+        },
+        "wandering_wight": {
+            "name": "Wandernder Geist",
+            "description": "Roter Geist, wild und grausam"
+        },
+        "yellow_wind_sage": {
+            "name": "Weiser des Gelben Windes",
+            "description": "Meister der Sandstürme, hoher magischer Schaden"
+        },
+        "tiger_vanguard": {
+            "name": "Tiger-Vorhut",
+            "description": "Wilder Tiger-Krieger, schnell und stark"
+        },
+        "stone_vanguard": {
+            "name": "Stein-Vorhut",
+            "description": "Herrscher des Gelben Windbergs, hart wie Stein"
+        },
+        "king_of_flowing_sand": {
+            "name": "König des Fließenden Sands",
+            "description": "Boss des Gelben Windbergs, Herrscher des Sandmeeres"
+        },
+        "yellow_brow_king": {
+            "name": "Gelbbrauner König",
+            "description": "Listiger buddhistischer Verräter, gut ausgewogen"
+        },
+        "hundred_eyed": {
+            "name": "Hundertäugiger Daoist",
+            "description": "Geheimnisvolles Monster mit ultrahöhem Kritisch-Chance"
+        },
+        "mad_tiger": {
+            "name": "Wilder Tiger",
+            "description": "Herrscher des Kleinen Westlichen Himmels, wild und grausam"
+        },
+        "kang_jin_loong": {
+            "name": "Stern Kang Jin",
+            "description": "Herrscher des Sterns, vom Himmel gesandt"
+        },
+        "spider_celestial": {
+            "name": "Violette Spinne",
+            "description": "Herrscher der Spinne, Meister der Spinnwebe"
+        },
+        "hundred_eyed_daoist": {
+            "name": "Hundertäugiger Daoist",
+            "description": "Herrscher der Spinne, unzählige dämonische Strahlen"
+        },
+        "elder_jinchi": {
+            "name": "Elder Jinchi",
+            "description": "Herrscher der Spinne, buddhistischer Mönch"
+        },
+        "hundred_eyed_daoist_master": {
+            "name": "Mehräugiger Schurke",
+            "description": "Die wahre Form des Hundertäugigen Dämons"
+        },
+        "bull_king": {
+            "name": "Bullenkönig",
+            "description": "Ultimativ starker Dämonenkönig, idealer Tank"
+        },
+        "red_boy": {
+            "name": "Roter Junge",
+            "description": "Herrscher der Heißflammenberge, Meister des Samadhi-Feufs"
+        },
+        "rakshasa": {
+            "name": "Prinzessin des Eisernen Fächer",
+            "description": "Herrscher der Heißflammenberge, Gebieterin des Blattfächers"
+        },
+        "yaksha_king": {
+            "name": "Yaksha-König",
+            "description": "Boss der Heißflammenberge, König der Yaksha"
+        },
+        "erlang_shen": {
+            "name": "Erlang Shen",
+            "description": "Herrscher des Sumeru-Berges, dreieyes Gott"
+        },
+        "great_sage_heaven": {
+            "name": "Großer Weise, gleich dem Himmel",
+            "description": "Herrscher des Sumeru-Berges, Siegesbuddha im Kampf"
+        },
+        "golden_cicada": {
+            "name": "Goldene Zikade",
+            "description": "Herrscher des Sumeru-Berges, Tang Sanzangs frühere Leben"
+        },
+        "stone_monkey": {
+            "name": "Steinaffe",
+            "description": "Boss des Sumeru-Berges, Urform des Großen Weisen"
+        },
+        "unlockCharacter": "Charakter freischalten",
+        "locked": "Gesperrt",
+        "unlockCondition": "Freischaltungsbedingung",
+        "specialWeapon": "Spezialwaffe"
+    },
+    "maps": {
+        "chapter1": {
+            "name": "Kapitel 1 - Wolf und Tiger Höhle",
+            "description": "Die ersten Schritte der Reise, Prüfungen des Schwarzen Windbergs"
+        },
+        "chapter2": {
+            "name": "Kapitel 2 - Gelbe Sand",
+            "description": "Illusionen der Sandstürme des Gelben Windbergs"
+        },
+        "chapter3": {
+            "name": "Kapitel 3 - Schnee und Eis",
+            "description": "Die gefrorene Welt des Kleinen Westlichen Himmels"
+        },
+        "chapter4": {
+            "name": "Kapitel 4 - Spinne Wüste",
+            "description": "Die Wiege der Spinne-Dämonen in der Höhle"
+        },
+        "chapter5": {
+            "name": "Kapitel 5 - Heißflammenberge",
+            "description": "Höllische Flammen"
+        },
+        "chapter6": {
+            "name": "Kapitel 6 - Westliches Paradies",
+            "description": "Die finale Herausforderung, der Pfad der Erleuchtung"
+        },
+        "selectMap": "Karte auswählen",
+        "difficulty": "Schwierigkeit"
+    },
+    "unlockConditions": {
+        "default": "Standardmäßig freigeschaltet",
+        "kills": "Besiege {value} Feinde",
+        "time": "Überlebe {value} Sekunden",
+        "gold": "Sammle {value} Gold",
+        "chapter": "Freischalte Kapitel {value}"
+    },
+    "shop": {
+        "title": "Permanente Verbesserungen",
+        "hint": "Verbessern Sie permanente Eigenschaften, um stärker zu werden!",
+        "infoText": "* Reset gibt 70% des verbrauchten Goldes zurück",
+        "resetMessage": "Gibt {refund} Gold zurück\n(70% des verbrauchten)",
+        "purchaseUpgrade": "Upgrade kaufen",
+        "resetUpgrades": "Alle Upgrades zurücksetzen",
+        "resetConfirm": "Alle Upgrades zurücksetzen? Sie erhalten 70% des verbrauchten Goldes zurück.",
+        "confirm": "Bestätigen",
+        "cancel": "Abbrechen",
+        "maxLevel": "Max Level",
+        "currentLevel": "Level {level}",
+        "cost": "Kosten",
+        "notEnoughGold": "Nicht genug Gold",
+        "purchased": "Gekauft",
+        "resetComplete": "Reset abgeschlossen! {amount} Gold zurückgegeben"
+    },
+    "upgrades": {
+        "attack": {
+            "name": "Angriffsstärke",
+            "description": "+{value} Schaden pro Level"
+        },
+        "health": {
+            "name": "Maximale Gesundheit",
+            "description": "+{value} Gesundheit pro Level"
+        },
+        "armor": {
+            "name": "Rüstung",
+            "description": "+{value} Schutz pro Level"
+        },
+        "luck": {
+            "name": "Glück",
+            "description": "+{value} Chance für Gegenstandsfallen pro Level"
+        },
+        "speed": {
+            "name": "Bewegungsgeschwindigkeit",
+            "description": "+{value} Geschwindigkeit pro Level"
+        }
+    },
+    "weapons": {
+        "golden_staff": {
+            "name": "Goldene Stab",
+            "description": "Magischer Stab des Auserwählten"
+        },
+        "ruyi_staff": {
+            "name": "Ruyi Goldene Stab",
+            "description": "Endform des Goldenen Stabes, unfassbare Kraft"
+        },
+        "fire_lance": {
+            "name": "Feuerlanze",
+            "description": "Mit Feuer umhüllte Lanze, die Feinde verbrennt"
+        },
+        "wind_tamer": {
+            "name": "Windgleichgewicht Perle",
+            "description": "Göttliche Perle, die Stürme kontrolliert, Fläche angriff"
+        },
+        "violet_bell": {
+            "name": "Violetter Glocke",
+            "description": "Magisches Juwel, das tödliche Schallwellen aussendet"
+        },
+        "fireproof_cloak": {
+            "name": "Feuerfester Umhang",
+            "description": "Schützendes göttliches Licht, das Schaden widersteht"
+        },
+        "twin_blades": {
+            "name": "Doppelschwert",
+            "description": "Doppelschwert des Tiger-Vorhut für schnelle Angriffe"
+        },
+        "mace": {
+            "name": "Dämonenunterdrückende Streitkolben",
+            "description": "Schweres buddhistisches Waffe, das Dämonen einschüchtert"
+        },
+        "bull_horns": {
+            "name": "Stierdämon Hörner",
+            "description": "Mächtige Hörner des Bullenknigs, ununterbrochene Attacke"
+        },
+        "thunder_drum": {
+            "name": "Donner-Trommel",
+            "description": "Ruft die Kraft des Donners"
+        },
+        "ice_needle": {
+            "name": "Silberner Eisdorn",
+            "description": "Kondensiert Eis, friert Feinde ein"
+        },
+        "wind_fire_wheels": {
+            "name": "Wind und Feuer Räder",
+            "description": "Fährt auf Wind und Feuer, schnell wie Blitz"
+        },
+        "jade_purity_bottle": {
+            "name": "Jade Leere Flasche",
+            "description": "Guan Yins Flasche, die Dämonen bezwingt"
+        },
+        "golden_rope": {
+            "name": "Goldenes Seil",
+            "description": "Bindet Feinde, unübertroffene Einschränkung"
+        },
+        "plantain_fan": {
+            "name": "Blattfächer",
+            "description": "Juwel der Eisernen Fächer Prinzessin, tosender Wind"
+        },
+        "goldenStaff": {
+            "name": "Goldene Stab",
+            "description": "Magischer Stab des Auserwählten, wächst und schrumpft nach Belieben"
+        },
+        "fireLance": {
+            "name": "Feuerlanze",
+            "description": "Mit Feuer umhüllte Lanze, die Feinde verbrennt"
+        },
+        "windTamer": {
+            "name": "Windgleichgewicht Perle",
+            "description": "Göttliche Perle, die Stürme kontrolliert"
+        },
+        "violetBell": {
+            "name": "Violetter Glocke",
+            "description": "Magisches Juwel, das tödliche Schallwellen aussendet"
+        },
+        "fireproofCloak": {
+            "name": "Feuerfester Umhang",
+            "description": "Schützendes göttliches Licht, das Schaden widersteht"
+        },
+        "twinBlades": {
+            "name": "Doppelschwert",
+            "description": "Doppelschwert des Tiger-Vorhut für schnelle Angriffe"
+        },
+        "bullHorns": {
+            "name": "Stierdämon Hörner",
+            "description": "Mächtige Hörner des Bullenknigs, ununterbrochene Attacke"
+        },
+        "upgrade": "{name} verbessern",
+        "addWeapon": "{name} hinzufügen",
+        "upgradeToLevel": "{name} Stufe {level}"
+    },
+    "elixirs": {
+        "peach_of_immortality": {
+            "name": "Unsterblichkeit Pfirsich",
+            "description": "Erhöht maximale Gesundheit um 20"
+        },
+        "golden_elixir": {
+            "name": "Goldenes Eliksir",
+            "description": "Erhöht Angriff um 10%"
+        },
+        "jade_dew": {
+            "name": "Jade Tau",
+            "description": "Stellt 50% Gesundheit wieder her"
+        },
+        "tiger_bone_wine": {
+            "name": "Tigerbeinwein",
+            "description": "Erhöht Rüstung um 5"
+        },
+        "phoenix_feather": {
+            "name": "Phönix Feder",
+            "description": "Erhöht Bewegungsgeschwindigkeit um 10"
+        },
+        "dragon_scale": {
+            "name": "Drachenschuppe",
+            "description": "Erhöht Schutz um 8"
+        },
+        "spirit_mushroom": {
+            "name": "Geisterpilz",
+            "description": "Erhöht Erfahrungserhalt um 20%"
+        },
+        "soul_bead": {
+            "name": "Seelenperle",
+            "description": "Erhöht Kritisch-Chance um 10%"
+        },
+        "inner_elixir": {
+            "name": "Inneres Eliksir",
+            "description": "Erhöht alle Eigenschaften um 5%"
+        },
+        "resurrection_pill": {
+            "name": "Wiederauferstehungs Tablette",
+            "description": "Wiederauferstehung mit voller Gesundheit nach Tod einmal"
+        }
+    },
+    "enemies": {
+        "wolf_minion": "Wolf-Dämon",
+        "ghost_minion": "Geist-Soldat",
+        "bear_elite": "Bär-Wächter",
+        "snake_elite": "Schlange-General",
+        "rat_minion": "Ratte-Dämon",
+        "sand_minion": "Sandmonster",
+        "tiger_elite": "Tiger-Krieger",
+        "wind_elite": "Wind-Kommandant",
+        "monk_minion": "Mönch-Dämon",
+        "spider_minion": "Kleine Spinne",
+        "centipede_elite": "Tausendfüßer-Kommandant",
+        "scorpion_elite": "Skorpion-Dämon",
+        "spider_woman_minion": "Spinnenfrau",
+        "centipede_minion": "Kleiner Tausendfüßer",
+        "violet_spider_elite": "Violette Spinne",
+        "poison_centipede_elite": "Giftiger Tausendfüßer",
+        "fire_demon_minion": "Feuer-Dämon",
+        "bull_soldier_minion": "Stier-Soldat",
+        "fire_general_elite": "Feuer-General",
+        "bull_captain_elite": "Stier-Kapitän",
+        "celestial_guard_minion": "Himmelswächter",
+        "thunder_minion": "Donner-Dämon",
+        "celestial_general_elite": "Himmelsgeneral",
+        "dragon_guardian_elite": "Drachenwächter"
+    },
+    "rewards": {
+        "title": "Belohnung wählen",
+        "refresh": "Aktualisieren",
+        "refreshCost": "Aktualisieren ({cost} 💰)",
+        "craftHint": "Tipp: {count} legendäre Waffen herstellbar",
+        "selectReward": "Belohnung wählen",
+        "rarity": {
+            "common": "Gewöhnlich",
+            "rare": "Selten",
+            "epic": "Episch",
+            "legendary": "Legendär"
+        }
+    },
+    "dialog": {
+        "resetSaveConfirm": "Sind Sie sicher, dass Sie alle gespeicherten Daten zurücksetzen möchten? Diese Aktion kann nicht rückgängig gemacht werden.",
+        "yes": "Ja",
+        "no": "Nein"
+    }
+}

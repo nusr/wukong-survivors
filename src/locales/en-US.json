@@ -1,28 +1,34 @@
 {
     "game": {
         "title": "Wukong Survivors",
-        "start": "Start Game",
+        "start": "Start",
         "restart": "Restart",
         "backToHome": "Back to Home",
         "gameOver": "Game Over",
-        "victory": "Victory!",
-        "chapterComplete": "Chapter Complete!",
+        "chapterComplete": "Chapter Complete",
         "continueGame": "Continue",
-        "levelUp": "Level Up!",
+        "levelUp": "Level Up",
         "paused": "Paused",
         "level": "Lv.{level}",
         "specialWeapon": "Special Weapon",
         "resetSave": "Reset Save",
-        "endGame": "End Game",
-        "endGameTitle": "Do you want to end the game?",
-        "completeChapters": "Complete Chapters"
+        "endGame": "End",
+        "endGameTitle": "End",
+        "endGameDesc": "Do you want to end the game?",
+        "completeChapters": "Complete Chapters",
+        "stats": "Statistics"
     },
-    "settings": {
-        "title": "Settings",
-        "language": "Language",
-        "zh-CN": "中文",
+    "languages": {
         "en-US": "English",
-        "ja-JP": "日本語"
+        "zh-CN": "中文",
+        "ja-JP": "日本語",
+        "ko-KR": "한국어",
+        "fr-FR": "Français",
+        "de-DE": "Deutsch",
+        "es-ES": "Español",
+        "pt-BR": "Português (Brasil)",
+        "ru-RU": "Русский",
+        "zh-TW": "繁體中文"
     },
     "stats": {
         "title": "Game Statistics",
@@ -186,7 +192,7 @@
         "currentLevel": "Level {level}",
         "cost": "Cost",
         "notEnoughGold": "Not enough gold",
-        "purchased": "Purchased!",
+        "purchased": "Purchased",
         "resetComplete": "Reset complete! Refunded {amount} gold"
     },
     "upgrades": {
@@ -386,7 +392,7 @@
         }
     },
     "dialog": {
-        "resetSaveConfirm": "Are you sure you want to reset all save data? This cannot be undone!",
+        "resetSaveConfirm": "Are you sure you want to reset all save data? This cannot be undone.",
         "yes": "Yes",
         "no": "No"
     }

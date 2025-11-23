@@ -176,11 +176,11 @@ const Home: React.FC<CharacterSelectProps> = ({ changeScreen }) => {
         </button>
 
         <button className="backButton" onClick={() => changeScreen("shop")}>
-          {t("shop.title")}
+          <img src="./assets/shop.svg" alt={t("shop.title")} />
         </button>
 
         <button className="backButton" onClick={() => setVisible(true)}>
-          {t("stats.title")}
+          {t("game.stats")}
         </button>
 
         <button className="resetButton" onClick={handleResetSave}>

@@ -97,9 +97,7 @@ const Shop: React.FC<ShopProps> = ({ onBack }) => {
                 onClick={() => handlePurchase(upgrade.id)}
                 disabled={!canAfford || isMaxLevel}
               >
-                {isMaxLevel
-                  ? t("shop.maxLevel")
-                  : `${t("shop.purchaseUpgrade")} (${cost} 💰)`}
+                {isMaxLevel ? t("shop.maxLevel") : `${cost} 💰`}
               </button>
             </div>
           );

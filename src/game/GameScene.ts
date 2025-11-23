@@ -475,9 +475,9 @@ export class GameScene extends Phaser.Scene {
     useSaveStore.getState().updatePlayTime(DEFAULT_GAME_TIME - this.gameTime);
 
     this.showModal({
-      title: i18n.t("game.endGame"),
+      title: i18n.t("game.endGameTitle"),
       titleColor: "#ff0000",
-      description: i18n.t("game.endGameTitle"),
+      description: i18n.t("game.endGameDesc"),
       cancelText: i18n.t("shop.cancel"),
       onCancel: () => {
         this.resume();
