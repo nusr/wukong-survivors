@@ -82,10 +82,17 @@ const GameWrapper: React.FC<GameWrapperProps> = ({ onBack }) => {
 
   return (
     <>
-      <div className={styles.gameContainer} ref={containerRef} />
+      <div
+        className={styles.gameContainer}
+        ref={containerRef}
+        data-testid="game-container"
+      />
       {isLoading && (
-        <div className={styles.loadingOverlay}>
-          <div className={styles.loadingSpinner}></div>
+        <div className={styles.loadingOverlay} data-testid="loading-overlay">
+          <div
+            className={styles.loadingSpinner}
+            data-testid="loading-spinner"
+          ></div>
         </div>
       )}
     </>

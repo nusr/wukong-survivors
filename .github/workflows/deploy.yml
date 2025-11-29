@@ -32,7 +32,10 @@ jobs:
       - name: Build
         run: |
           npm i
+          npx playwright install --with-deps
           npm run test:coverage
+          npm run test:e2e
+          npm run lint
           npm run build
       - name: Setup Pages
         uses: actions/configure-pages@v4

@@ -42,14 +42,14 @@ const Shop: React.FC<ShopProps> = ({ onBack }) => {
 
   return (
     <div className={styles.shop}>
-      <h1>{t("shop.title")}</h1>
+      <h1 data-testid="shop-title">{t("shop.title")}</h1>
 
-      <div className={styles.goldDisplay}>
+      <div className={styles.goldDisplay} data-testid="shop-gold-display">
         <span className={styles.goldIcon}>💰</span>
         <span className={styles.goldAmount}>{totalGold}</span>
       </div>
 
-      <div className={styles.upgradesGrid}>
+      <div className={styles.upgradesGrid} data-testid="upgrades-grid">
         {PERMANENT_UPGRADES.map((upgrade) => {
           const currentLevel = save[upgrade.id] || 0;
           const cost = upgrade.cost(currentLevel);
@@ -59,7 +59,11 @@ const Shop: React.FC<ShopProps> = ({ onBack }) => {
           const nextEffect = upgrade.effect(currentLevel + 1);
 
           return (
-            <div key={upgrade.id} className={styles.upgradeCard}>
+            <div
+              key={upgrade.id}
+              className={styles.upgradeCard}
+              data-testid={`upgrade-card-${upgrade.id}`}
+            >
               <h3 className={styles.upgradeName}>
                 {getUpgradeIcon(upgrade.id)} {t(`upgrades.${upgrade.id}.name`)}
               </h3>
@@ -96,6 +100,7 @@ const Shop: React.FC<ShopProps> = ({ onBack }) => {
                 className="confirmButton"
                 onClick={() => handlePurchase(upgrade.id)}
                 disabled={!canAfford || isMaxLevel}
+                data-testid={`purchase-button-${upgrade.id}`}
               >
                 {isMaxLevel ? t("shop.maxLevel") : `${cost} 💰`}
               </button>
@@ -105,10 +110,18 @@ const Shop: React.FC<ShopProps> = ({ onBack }) => {
       </div>
 
       <div className="button-group">
-        <button className="backButton" onClick={onBack}>
+        <button
+          className="backButton"
+          onClick={onBack}
+          data-testid="shop-back-button"
+        >
           {t("game.backToHome")}
         </button>
-        <button className="resetButton" onClick={handleResetUpgrades}>
+        <button
+          className="resetButton"
+          onClick={handleResetUpgrades}
+          data-testid="reset-upgrades-button"
+        >
           {t("shop.resetUpgrades")}
         </button>
       </div>

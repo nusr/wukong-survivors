@@ -34,4 +34,6 @@ yarn.lock
 package-lock.json
 coverage
 tsconfig.tsbuildinfo
-tsconfig.*.tsbuildinfo
+tsconfig.*.tsbuildinfo
+playwright-report
+test-results

@@ -1,5 +1,33 @@
 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <ellipse cx="16" cy="16" rx="12" ry="13" fill="#7ED6E2" stroke="#3A7A8C" stroke-width="3" />
-  <ellipse cx="16" cy="16" rx="6" ry="7" fill="#B6F0F7" opacity="0.7" />
-  <ellipse cx="16" cy="12" rx="4" ry="2" fill="#E6FCFF" opacity="0.8" />
-</svg>
+  <!-- 宝石主体：六边形底座 -->
+  <path d="M16 2L24 8L28 16L24 24L16 30L8 24L4 16L8 8L16 2Z" fill="url(#mediumGemGradient)" stroke="#3A7A8C" stroke-width="1.5"/>
+  <!-- 内部菱形切面 -->
+  <path d="M16 6L21 12L16 18L11 12L16 6Z" fill="url(#mediumGemInnerGradient)"/>
+  <!-- 顶部高光 -->
+  <path d="M16 4L19 8L16 12L13 8L16 4Z" fill="#E6FCFF" opacity="0.8"/>
+  <!-- 侧面高光 -->
+  <path d="M19 8L22 12L19 16L16 12L19 8Z" fill="#B6F0F7" opacity="0.6"/>
+  <path d="M11 8L13 12L11 16L8 12L11 8Z" fill="#B6F0F7" opacity="0.6"/>
+  <!-- 底部反光 -->
+  <path d="M16 22L19 18L16 14L13 18L16 22Z" fill="#FFF" opacity="0.3"/>
+  <!-- 内部细节纹路 -->
+  <path d="M16 12L19 16L16 20L13 16L16 12Z" fill="url(#mediumGemDetailGradient)" opacity="0.4"/>
+  <!-- 渐变定义 -->
+  <defs>
+    <linearGradient id="mediumGemGradient" x1="4" y1="16" x2="28" y2="16" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7ED6E2" stop-opacity="0.9"/>
+      <stop offset="0.5" stop-color="#98E6F2" stop-opacity="1"/>
+      <stop offset="1" stop-color="#7ED6E2" stop-opacity="0.9"/>
+    </linearGradient>
+    <linearGradient id="mediumGemInnerGradient" x1="11" y1="12" x2="21" y2="12" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#B6F0F7" stop-opacity="0.8"/>
+      <stop offset="0.5" stop-color="#E6FCFF" stop-opacity="1"/>
+      <stop offset="1" stop-color="#B6F0F7" stop-opacity="0.8"/>
+    </linearGradient>
+    <linearGradient id="mediumGemDetailGradient" x1="13" y1="16" x2="19" y2="16" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3A7A8C" stop-opacity="0.2"/>
+      <stop offset="0.5" stop-color="#7ED6E2" stop-opacity="0.4"/>
+      <stop offset="1" stop-color="#3A7A8C" stop-opacity="0.2"/>
+    </linearGradient>
+  </defs>
+</svg>

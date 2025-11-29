@@ -118,7 +118,7 @@ class ScaleManagerClass {
   }
 
   public getNameSize(): string {
-    const scaledSize = Math.round(16 * this.config.uiScale);
+    const scaledSize = Math.round(18 * this.config.uiScale);
     return `${scaledSize}px`;
   }
 

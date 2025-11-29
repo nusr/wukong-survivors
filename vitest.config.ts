@@ -3,6 +3,7 @@ import path from "path";
 
 export default defineConfig({
   test: {
+    exclude: ["**/node_modules/**", "**/.git/**", "**/e2e/**"],
     globals: true,
     environment: "jsdom",
     setupFiles: "./vitest.setup.ts",

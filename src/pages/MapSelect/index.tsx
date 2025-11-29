@@ -47,9 +47,11 @@ const MapSelect: React.FC<MapSelectProps> = ({ onSelect, onBack }) => {
 
   return (
     <div className={styles.mapSelect}>
-      <h1 className={styles.title}>{t("maps.selectMap")}</h1>
+      <h1 className={styles.title} data-testid="page-title">
+        {t("maps.selectMap")}
+      </h1>
 
-      <div className={styles.mapsGrid}>
+      <div className={styles.mapsGrid} data-testid="maps-grid">
         {MAPS.map((map) => {
           const isUnlocked = unlockedMaps.includes(map.id);
           const isSelected = selectedMap?.id === map.id;
@@ -59,6 +61,7 @@ const MapSelect: React.FC<MapSelectProps> = ({ onSelect, onBack }) => {
             <div
               key={map.id}
               className={`${styles.mapCard} ${isUnlocked ? styles.unlocked : styles.locked} ${isSelected ? styles.selected : ""}`}
+              data-testid={`map-card-${map.id}`}
               onClick={() => handleMapClick(map)}
             >
               <div
@@ -108,10 +111,15 @@ const MapSelect: React.FC<MapSelectProps> = ({ onSelect, onBack }) => {
           className="confirmButton"
           onClick={handleConfirm}
           disabled={!selectedMap}
+          data-testid="start-game-button"
         >
           {t("game.start")}
         </button>
-        <button className="backButton" onClick={onBack}>
+        <button
+          className="backButton"
+          onClick={onBack}
+          data-testid="back-to-home-button"
+        >
           {t("game.backToHome")}
         </button>
       </div>

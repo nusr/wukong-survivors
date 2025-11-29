@@ -53,14 +53,14 @@ const Home: React.FC<CharacterSelectProps> = ({ changeScreen }) => {
   return (
     <div className={styles.characterSelect}>
       <div className={styles.header}>
-        <div className={styles.statsPanel}>
+        <div className={styles.statsPanel} data-testid="gold-display">
           <span className={styles.statLabel}>💰 {t("stats.gold")}:</span>
           &nbsp;
           <span className={styles.statValue}>{totalGold}</span>
         </div>
         <LanguageSelect />
       </div>
-      <div className={styles.charactersGrid}>
+      <div className={styles.charactersGrid} data-testid="characters-grid">
         {characterList.map((character) => {
           const isUnlocked = unlockedCharacters.includes(character.id);
           const isSelected = selectedCharacter?.id === character.id;
@@ -69,6 +69,7 @@ const Home: React.FC<CharacterSelectProps> = ({ changeScreen }) => {
             <div
               key={character.id}
               className={`${styles.characterCard} ${isUnlocked ? styles.unlocked : styles.locked} ${isSelected ? styles.selected : ""}`}
+              data-testid={`character-card-${character.id}`}
               onClick={() => handleCharacterClick(character)}
             >
               <div className={styles.characterIcon}>
@@ -171,6 +172,7 @@ const Home: React.FC<CharacterSelectProps> = ({ changeScreen }) => {
           className="confirmButton"
           onClick={handleConfirm}
           disabled={!selectedCharacter}
+          data-testid="start-button"
         >
           {t("game.start")}
         </button>
@@ -180,15 +182,24 @@ const Home: React.FC<CharacterSelectProps> = ({ changeScreen }) => {
           onClick={() => {
             changeScreen("shop");
           }}
+          data-testid="shop-button"
         >
           <img src="./assets/shop.svg" alt={t("shop.title")} />
         </button>
 
-        <button className="backButton" onClick={() => setVisible(true)}>
+        <button
+          className="backButton"
+          onClick={() => setVisible(true)}
+          data-testid="stats-button"
+        >
           {t("game.stats")}
         </button>
 
-        <button className="resetButton" onClick={handleResetSave}>
+        <button
+          className="resetButton"
+          onClick={handleResetSave}
+          data-testid="reset-save-button"
+        >
           {t("game.resetSave")}
         </button>
       </div>
@@ -197,6 +208,7 @@ const Home: React.FC<CharacterSelectProps> = ({ changeScreen }) => {
         visible={visible}
         onCancel={() => setVisible(false)}
         hideButtons
+        testId="stats-dialog"
       >
         <Stats />
       </Dialog>
