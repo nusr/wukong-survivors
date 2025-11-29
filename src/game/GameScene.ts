@@ -570,6 +570,9 @@ export class GameScene extends Phaser.Scene {
       this.closeButton,
       this.closeButtonText,
     ]);
+
+    // Emit event to indicate game initialization is complete
+    eventBus.emit(EVENT_MAP.GAME_INITIALIZED);
   }
 
   private endGame(): void {

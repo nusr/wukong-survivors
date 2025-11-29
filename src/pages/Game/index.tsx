@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./index.module.css";
 import { GameScene } from "../../game/GameScene";
 import { EVENT_MAP } from "../../constant";
@@ -41,6 +41,7 @@ const getConfig = (parent: HTMLElement) => {
 const GameWrapper: React.FC<GameWrapperProps> = ({ onBack }) => {
   const gameRef = useRef<Phaser.Game | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     if (!containerRef.current || gameRef.current) return;
@@ -56,6 +57,11 @@ const GameWrapper: React.FC<GameWrapperProps> = ({ onBack }) => {
   }, []);
 
   useEffect(() => {
+    EventBus.on(EVENT_MAP.BACK_TO_HOME, onBack);
+    const handleGameInitialized = () => {
+      setIsLoading(false);
+    };
+
     function handleKeyDown(event: KeyboardEvent) {
       if (event.key === "Escape") {
         EventBus.emit(EVENT_MAP.SHOW_END_GAME_MODAL);
@@ -65,19 +71,25 @@ const GameWrapper: React.FC<GameWrapperProps> = ({ onBack }) => {
     }
 
     window.addEventListener("keydown", handleKeyDown);
+    EventBus.on(EVENT_MAP.GAME_INITIALIZED, handleGameInitialized);
+
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, []);
-
-  useEffect(() => {
-    EventBus.on(EVENT_MAP.BACK_TO_HOME, onBack);
-    return () => {
       EventBus.off(EVENT_MAP.BACK_TO_HOME, onBack);
+      EventBus.off(EVENT_MAP.GAME_INITIALIZED, handleGameInitialized);
     };
   }, []);
 
-  return <div className={styles.gameContainer} ref={containerRef} />;
+  return (
+    <>
+      <div className={styles.gameContainer} ref={containerRef} />
+      {isLoading && (
+        <div className={styles.loadingOverlay}>
+          <div className={styles.loadingSpinner}></div>
+        </div>
+      )}
+    </>
+  );
 };
 
 export default GameWrapper;
