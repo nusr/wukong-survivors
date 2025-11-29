@@ -1,10 +1,3 @@
-export const formatTime = (seconds: number): string => {
-  const mins = Math.floor(seconds / 60);
-  const secs = Math.floor(seconds % 60);
-  return `${mins.toString().padStart(2, "0")}:${secs.toString().padStart(2, "0")}`;
-};
-
-// Import types needed for utility functions
 import type {
   WeaponType,
   ElixirType,
@@ -13,6 +6,14 @@ import type {
   EnemyType,
   MapType,
 } from "../types";
+import { WEAPONS, ELIXIRS, WEAPON_RECIPES } from "../constant";
+import _ from "lodash";
+
+export const formatTime = (seconds: number): string => {
+  const mins = Math.floor(seconds / 60);
+  const secs = Math.floor(seconds % 60);
+  return `${mins.toString().padStart(2, "0")}:${secs.toString().padStart(2, "0")}`;
+};
 
 // ===== Weapon and Elixir Utility Functions =====
 
@@ -87,14 +88,13 @@ export const getMapImagePath = (id: MapType): string => {
   return `assets/maps/${id}.svg`;
 };
 
-// ===== Random Selection Functions =====
-
-// Need to import constants here because these functions depend on them
-import { WEAPONS, ELIXIRS, WEAPON_RECIPES } from "../constant";
-
 // Randomly get weapons (considering rarity weight)
 export function getRandomWeapons(count: number): WeaponType[] {
-  return getRandomItemsWithWeight(WEAPONS, count);
+  const list = Object.values(WEAPON_RECIPES).map((recipe) => recipe.result);
+
+  const result = _.omit(WEAPONS, list);
+
+  return getRandomItemsWithWeight(result, count);
 }
 
 // Randomly get elixirs
