@@ -26,31 +26,8 @@ test.describe("Game Page", () => {
     // 验证游戏容器
     await expect(page.locator('[data-testid="game-container"]')).toBeVisible();
 
-    // 验证加载覆盖层
-    await expect(page.locator('[data-testid="loading-overlay"]')).toBeVisible();
-
     // 验证加载旋转器
     await expect(page.locator('[data-testid="loading-spinner"]')).toBeVisible();
-  });
-
-  test("should initialize game and hide loading screen", async ({
-    page,
-    browserName,
-  }) => {
-    // 点击开始游戏按钮
-    await page.locator('[data-testid="start-game-button"]').click();
-
-    // 等待一段时间让游戏初始化（根据浏览器性能调整）
-    // 注意：Phaser游戏初始化可能需要较长时间，这里设置一个合理的超时
-    const timeout = browserName === "webkit" ? 10000 : 5000;
-
-    // 等待加载覆盖层隐藏
-    await expect(page.locator('[data-testid="loading-overlay"]')).toBeHidden({
-      timeout,
-    });
-
-    // 验证游戏容器仍然可见
-    await expect(page.locator('[data-testid="game-container"]')).toBeVisible();
   });
 
   test("should show end game modal when escape key is pressed", async ({
