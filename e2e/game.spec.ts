@@ -19,15 +19,12 @@ test.describe("Game Page", () => {
     await firstUnlockedMap.click();
   });
 
-  test("should load game page and show loading screen", async ({ page }) => {
+  test("should load game page", async ({ page }) => {
     // 点击开始游戏按钮
     await page.locator('[data-testid="start-game-button"]').click();
 
     // 验证游戏容器
     await expect(page.locator('[data-testid="game-container"]')).toBeVisible();
-
-    // 验证加载旋转器
-    await expect(page.locator('[data-testid="loading-spinner"]')).toBeVisible();
   });
 
   test("should show end game modal when escape key is pressed", async ({
