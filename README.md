@@ -11,9 +11,13 @@ Wukong Survivors is a roguelike survivor game inspired by _Black Myth: Wukong_ a
 
 The game supports PC, mobile, and tablet devices.
 
-[Play Now](https://nusr.github.io/wukong-survivors/)
-
 ![GIF](./public/assets/demo.gif)
+
+[Onlnie Demo](https://nusr.github.io/wukong-survivors/)
+
+Mobile users can scan the QR Code below to play instantly.
+
+![Mobile](./public/assets/mobile.png)
 
 ### ✨ Key Features
 
