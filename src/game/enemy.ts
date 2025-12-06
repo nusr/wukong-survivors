@@ -55,7 +55,7 @@ export class Enemy {
 
     // Set display size based on enemy rank with responsive scaling
     const baseSize = this.getEnemySizeByRank(enemyData.rank);
-    const displaySize = scaleManager.getSpriteSize(baseSize);
+    const displaySize = scaleManager.scaleValue(baseSize);
     this.sprite.setDisplaySize(displaySize, displaySize);
 
     // Set collision body to match sprite size
@@ -165,7 +165,6 @@ export class EnemySpawner {
   private enemiesPerWave: number;
   private maxEnemiesOnScreen: number;
   private difficultyTimer: number;
-  private gameTime: number;
   private availableEnemies: EnemyType[];
   private minSpawnDistance: number;
   private maxSpawnDistance: number;
@@ -184,7 +183,6 @@ export class EnemySpawner {
     this.enemiesPerWave = 2; // Start with 2 enemies per wave
     this.maxEnemiesOnScreen = 100; // Max enemies on screen at once
     this.difficultyTimer = 0;
-    this.gameTime = 0;
     this.availableEnemies =
       availableEnemies.length > 0 ? availableEnemies : ["wolf_minion"];
 
@@ -200,8 +198,6 @@ export class EnemySpawner {
    * @param playerPos Current player position
    */
   public update(_time: number, delta: number, playerPos: Position): void {
-    this.gameTime += delta;
-
     // Update all active enemies
     this.enemies.forEach((enemy) => {
       if (!enemy.isDead) {
@@ -250,7 +246,8 @@ export class EnemySpawner {
    */
   private spawnWave(playerPos: Position): void {
     // Calculate actual spawn count based on game time (scales with minutes played)
-    const timeBasedMultiplier = 1 + Math.floor(this.gameTime / 60000); // +1 per minute
+    const timeBasedMultiplier =
+      1 + Math.floor(this.scene.getPlayTime() / 60000); // +1 per minute
 
     // Ensure we don't exceed max enemies on screen
     const spawnCount = Math.min(
@@ -295,7 +292,7 @@ export class EnemySpawner {
    */
   private selectEnemyType(): EnemyType {
     // Increase elite spawn chance as game progresses (capped at 30%)
-    const eliteChance = Math.min(0.3, this.gameTime / 300000);
+    const eliteChance = Math.min(0.3, this.scene.getPlayTime() / 300000);
 
     // Filter enemies by rank for balanced spawning
     const minions = this.availableEnemies.filter(

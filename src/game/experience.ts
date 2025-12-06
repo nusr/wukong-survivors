@@ -2,7 +2,8 @@ import Phaser from "phaser";
 import { Player } from "./player";
 import { scaleManager } from "./ScaleManager";
 import { GEM_MAP } from "../constant";
-import { useSaveStore } from "../store/save";
+import { useSaveStore } from "../store";
+import type { GameScene } from "./GameScene";
 
 interface Position {
   x: number;
@@ -20,13 +21,13 @@ export class CollectibleItem {
   public sprite: CollectibleSprite;
   public type: CollectibleType;
   public value: number;
-  private scene: Phaser.Scene;
+  private scene: GameScene;
   private magnetized: boolean;
   private collectRadius: number;
   private magnetRadius: number;
 
   constructor(
-    scene: Phaser.Scene,
+    scene: GameScene,
     x: number,
     y: number,
     type: CollectibleType,
@@ -55,7 +56,7 @@ export class CollectibleItem {
     }
 
     // Create sprite with responsive scaling
-    const itemSize = scaleManager.getSpriteSize(32);
+    const itemSize = scaleManager.scaleValue(32);
     this.sprite = scene.physics.add.sprite(
       x,
       y,
@@ -129,18 +130,18 @@ export class CollectibleItem {
 
 // Experience manager
 export class ExperienceManager {
-  private scene: Phaser.Scene;
+  private scene: GameScene;
   private player: Player;
   private collectibles: CollectibleItem[] = [];
 
-  constructor(scene: Phaser.Scene, player: Player) {
+  constructor(scene: GameScene, player: Player) {
     this.scene = scene;
     this.player = player;
   }
 
   // Update all collectibles (gems and coins)
   public update(): void {
-    const playerPos = this.player.getPosition();
+    const playerPos = this.scene.getPlayerPosition();
     const collectRangeBonus = this.player?.collectRangeBonus || 0;
     const magnetBonus = this.player?.magnetBonus || 0;
     for (let i = this.collectibles.length - 1; i >= 0; i--) {

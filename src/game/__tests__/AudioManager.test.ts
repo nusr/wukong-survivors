@@ -1,6 +1,16 @@
 import { describe, it, expect, beforeEach, vi } from "vitest";
 import { AudioManager, SoundEffect } from "../AudioManager";
 
+// Mock useSaveStore
+vi.mock("../../store", () => ({
+  useSaveStore: {
+    getState: vi.fn(() => ({
+      musicEnabled: true,
+      musicVolume: 0.5,
+    })),
+  },
+}));
+
 // Mock Phaser
 let currentMockSound = {
   play: vi.fn(),

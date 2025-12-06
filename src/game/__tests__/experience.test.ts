@@ -27,12 +27,13 @@ const mockScene = {
       return {};
     }),
   },
+  getPlayerPosition: vi.fn(() => ({ x: 100, y: 100 })),
 } as any;
 
 // Mock Player
 const mockPlayer = {
-  getPosition: vi.fn(() => ({ x: 100, y: 100 })),
   addExperience: vi.fn(),
+  getPosition: vi.fn(() => ({ x: 100, y: 100 })),
 } as any;
 
 // Mock eventBus
@@ -42,11 +43,11 @@ vi.mock("../eventBus", () => ({
   },
 }));
 
-// Mock ScaleManager
+// Mock scaleManager
 vi.mock("../ScaleManager", () => ({
   scaleManager: {
-    scaleValue: (value: number) => value,
-    getSpriteSize: (value: number) => value,
+    scaleValue: vi.fn((value) => value),
+    getCameraZoom: vi.fn(() => 1),
   },
 }));
 
@@ -193,7 +194,7 @@ describe("ExperienceManager", () => {
   });
 
   it("should not collect gems that are far away", () => {
-    mockPlayer.getPosition.mockReturnValue({ x: 500, y: 500 });
+    mockScene.getPlayerPosition.mockReturnValue({ x: 500, y: 500 });
 
     manager.spawnGem(100, 100, 5);
     manager.update();
@@ -206,7 +207,7 @@ describe("ExperienceManager", () => {
     mockPlayer.addExperience.mockClear();
 
     // Spawn gem exactly at player position (will be collected immediately)
-    const playerPos = mockPlayer.getPosition();
+    const playerPos = mockScene.getPlayerPosition();
     manager.spawnGem(playerPos.x, playerPos.y, 5);
 
     // First update should collect the gem
@@ -233,7 +234,7 @@ describe("ExperienceManager", () => {
   });
 
   it("should update multiple gems", () => {
-    mockPlayer.getPosition.mockReturnValue({ x: 500, y: 500 });
+    mockScene.getPlayerPosition.mockReturnValue({ x: 500, y: 500 });
 
     manager.spawnGem(100, 100, 5);
     manager.spawnGem(150, 150, 3);

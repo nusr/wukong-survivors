@@ -1,5 +1,6 @@
 import Phaser from "phaser";
 import { scaleManager } from "./ScaleManager";
+import type { GameScene } from "./GameScene";
 
 export interface JoystickInput {
   x: number; // -1 to 1
@@ -15,7 +16,7 @@ export interface JoystickInput {
  * - Responsive sizing based on screen size
  */
 export class VirtualJoystick {
-  private scene: Phaser.Scene;
+  private scene: GameScene;
   private base: Phaser.GameObjects.Graphics;
   private stick: Phaser.GameObjects.Graphics;
   private container: Phaser.GameObjects.Container;
@@ -26,12 +27,12 @@ export class VirtualJoystick {
   private currentInput: JoystickInput = { x: 0, y: 0 };
   private pointer: Phaser.Input.Pointer | null = null;
 
-  constructor(scene: Phaser.Scene, x: number, y: number) {
+  constructor(scene: GameScene, x: number, y: number) {
     this.scene = scene;
 
     // Responsive sizing
-    this.baseRadius = scaleManager.getUIElementSize(60);
-    this.stickRadius = scaleManager.getUIElementSize(30);
+    this.baseRadius = scaleManager.UIScaleValue(60);
+    this.stickRadius = scaleManager.UIScaleValue(30);
     this.maxDistance = this.baseRadius - this.stickRadius;
 
     // Create container
@@ -163,8 +164,8 @@ export class VirtualJoystick {
   public updateSize(): void {
     // Update sizes based on current scale
     const oldBaseRadius = this.baseRadius;
-    this.baseRadius = scaleManager.getUIElementSize(60);
-    this.stickRadius = scaleManager.getUIElementSize(30);
+    this.baseRadius = scaleManager.UIScaleValue(60);
+    this.stickRadius = scaleManager.UIScaleValue(30);
     this.maxDistance = this.baseRadius - this.stickRadius;
 
     // Update graphics

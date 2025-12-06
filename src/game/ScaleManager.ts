@@ -101,13 +101,6 @@ class ScaleManagerClass {
     );
   }
 
-  /**
-   * Scale a value based on the uniform scale
-   */
-  public scaleValue(value: number): number {
-    return value * this.config.scale;
-  }
-
   public getTitleSize(): string {
     const scaledSize = Math.round(24 * this.config.uiScale);
     return `${scaledSize}px`;
@@ -127,17 +120,11 @@ class ScaleManagerClass {
     return `${scaledSize}px`;
   }
 
-  /**
-   * Get base sprite size with scaling applied
-   */
-  public getSpriteSize(baseSize: number): number {
+  public scaleValue(baseSize: number): number {
     return Math.round(baseSize * this.config.scale);
   }
 
-  /**
-   * Get UI element size with UI scaling applied
-   */
-  public getUIElementSize(baseSize: number): number {
+  public UIScaleValue(baseSize: number): number {
     return Math.round(baseSize * this.config.uiScale);
   }
 

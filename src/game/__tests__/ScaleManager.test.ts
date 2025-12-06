@@ -89,7 +89,7 @@ describe("ScaleManager", () => {
       window.innerHeight = 1080;
       scaleManager.updateScale();
 
-      const size = scaleManager.getSpriteSize(32);
+      const size = scaleManager.scaleValue(32);
       expect(Number.isInteger(size)).toBe(true);
     });
 
@@ -98,7 +98,7 @@ describe("ScaleManager", () => {
       window.innerHeight = 540;
       scaleManager.updateScale();
 
-      const size = scaleManager.getSpriteSize(32);
+      const size = scaleManager.scaleValue(32);
       expect(size).toBeGreaterThan(0);
     });
   });

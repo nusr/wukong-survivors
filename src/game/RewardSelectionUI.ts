@@ -14,7 +14,6 @@ export class RewardSelectionUI {
   private scene: Phaser.Scene;
   private uiElements: Phaser.GameObjects.GameObject[] = [];
   private overlay: Phaser.GameObjects.Rectangle | null = null;
-  private currentOptions: RewardOption[] = [];
   private refreshCost: number = 10; // Refresh cost in gold
   private onSelectCallback?: (option: RewardOption) => void;
 
@@ -28,9 +27,9 @@ export class RewardSelectionUI {
     }
 
     // Generate random options (mixed weapons and elixirs)
-    this.generateOptions();
+    const options = this.generateOptions();
 
-    if (this.currentOptions.length === 0) {
+    if (options.length === 0) {
       return;
     }
 
@@ -65,7 +64,7 @@ export class RewardSelectionUI {
     const title = this.scene.add
       .text(
         centerX,
-        centerY - scaleManager.getUIElementSize(220),
+        centerY - scaleManager.UIScaleValue(220),
         i18n.t("rewards.title"),
         {
           fontSize: scaleManager.getTitleSize(),
@@ -83,7 +82,7 @@ export class RewardSelectionUI {
     this.uiElements.push(title);
 
     // Create option buttons
-    this.createOptionButtons(centerX, centerY);
+    this.createOptionButtons(centerX, centerY, options);
 
     // Refresh button
     this.createRefreshButton(centerX, centerY);
@@ -92,14 +91,14 @@ export class RewardSelectionUI {
     this.createCraftHint(centerX, centerY);
   }
 
-  private generateOptions(): void {
-    this.currentOptions = [];
+  private generateOptions() {
+    const options: RewardOption[] = [];
 
     if (Math.random() > 0.5) {
       // Get random weapons
       const randomWeapons = getRandomWeapons(MAX_SELECT_SIZE);
       randomWeapons.forEach((weaponId) => {
-        this.currentOptions.push({
+        options.push({
           type: "weapon",
           data: { ...WEAPONS[weaponId] },
         });
@@ -108,7 +107,7 @@ export class RewardSelectionUI {
       // Get random elixirs
       const randomElixirs = getRandomElixirs(MAX_SELECT_SIZE);
       randomElixirs.forEach((elixirId) => {
-        this.currentOptions.push({
+        options.push({
           type: "elixir",
           data: { ...ELIXIRS[elixirId] },
         });
@@ -116,34 +115,38 @@ export class RewardSelectionUI {
     }
 
     // Shuffle order
-    this.currentOptions.sort(() => Math.random() - 0.5);
+    options.sort(() => Math.random() - 0.5);
+
+    return options;
   }
 
-  private createOptionButtons(centerX: number, centerY: number): void {
+  private createOptionButtons(
+    centerX: number,
+    centerY: number,
+    options: RewardOption[],
+  ): void {
     const minWidth = Math.floor(
       (this.scene.cameras.main.width - 40) / MAX_SELECT_SIZE,
     );
 
-    const buttonWidth = Math.min(minWidth, scaleManager.getUIElementSize(280));
-    const buttonHeight = scaleManager.getUIElementSize(180);
-    const spacing = scaleManager.getUIElementSize(30);
+    const buttonWidth = Math.min(minWidth, scaleManager.UIScaleValue(280));
+    const buttonHeight = scaleManager.UIScaleValue(180);
+    const spacing = scaleManager.UIScaleValue(30);
     const startX =
       centerX -
-      (buttonWidth * this.currentOptions.length +
-        spacing * (this.currentOptions.length - 1)) /
-        2;
+      (buttonWidth * options.length + spacing * (options.length - 1)) / 2;
     const depth = scaleManager.getZIndex();
 
-    this.currentOptions.forEach((option, index) => {
+    options.forEach((option, index) => {
       const x = startX + index * (buttonWidth + spacing) + buttonWidth / 2;
-      const y = centerY - scaleManager.getUIElementSize(20);
+      const y = centerY - scaleManager.UIScaleValue(20);
 
       this.createOptionButton(option, x, y, buttonWidth, buttonHeight, depth);
     });
 
     if (useSaveStore.getState().enableAutoSelect) {
-      const index = Math.floor(Math.random() * this.currentOptions.length);
-      this.selectOption(this.currentOptions[index]);
+      const index = Math.floor(Math.random() * options.length);
+      this.selectOption(options[index]);
     }
   }
 
@@ -173,7 +176,7 @@ export class RewardSelectionUI {
 
     // Icon (using emoji instead of images)
     const icon = this.scene.add
-      .text(x, y - scaleManager.getUIElementSize(60), isWeapon ? "⚔️" : "🧪", {
+      .text(x, y - scaleManager.UIScaleValue(60), isWeapon ? "⚔️" : "🧪", {
         fontSize: scaleManager.getNameSize(),
         fontFamily: scaleManager.getDefaultFont(),
       })
@@ -193,7 +196,7 @@ export class RewardSelectionUI {
 
     // Name
     const nameText = this.scene.add
-      .text(x, y - scaleManager.getUIElementSize(10), name, {
+      .text(x, y - scaleManager.UIScaleValue(10), name, {
         fontSize: scaleManager.getNameSize(),
         fontFamily: scaleManager.getDefaultFont(),
         color: "#ffffff",
@@ -212,7 +215,7 @@ export class RewardSelectionUI {
     if (!scaleManager.isMobile()) {
       // Description
       descText = this.scene.add
-        .text(x, y + scaleManager.getUIElementSize(30), description, {
+        .text(x, y + scaleManager.UIScaleValue(30), description, {
           fontSize: scaleManager.getDescSize(),
           fontFamily: scaleManager.getDefaultFont(),
           color: "#cccccc",
@@ -230,7 +233,7 @@ export class RewardSelectionUI {
     const rarityText = this.scene.add
       .text(
         x,
-        y + scaleManager.getUIElementSize(70),
+        y + scaleManager.UIScaleValue(70),
         i18n.t(`rewards.rarity.${rarity}`),
         {
           fontSize: scaleManager.getDescSize(),
@@ -285,9 +288,9 @@ export class RewardSelectionUI {
     const gold = useSaveStore.getState().totalGold;
     const canRefresh = gold >= this.refreshCost;
 
-    const buttonY = centerY + scaleManager.getUIElementSize(140);
-    const buttonWidth = scaleManager.getUIElementSize(200);
-    const buttonHeight = scaleManager.getUIElementSize(50);
+    const buttonY = centerY + scaleManager.UIScaleValue(140);
+    const buttonWidth = scaleManager.UIScaleValue(200);
+    const buttonHeight = scaleManager.UIScaleValue(50);
 
     const refreshBg = this.scene.add
       .rectangle(
@@ -347,7 +350,7 @@ export class RewardSelectionUI {
       const hintText = this.scene.add
         .text(
           centerX,
-          centerY + scaleManager.getUIElementSize(200),
+          centerY + scaleManager.UIScaleValue(200),
           i18n.t("rewards.craftHint", { count: availableCrafts.length }),
           {
             fontSize: scaleManager.getDescSize(),
@@ -398,10 +401,8 @@ export class RewardSelectionUI {
   }
 
   public hide(): void {
-    if (this.overlay) {
-      this.overlay.destroy();
-      this.overlay = null;
-    }
+    this.overlay?.destroy();
+    this.overlay = null;
 
     // Destroy all UI elements
     this.uiElements.forEach((element) => {
@@ -411,11 +412,10 @@ export class RewardSelectionUI {
     });
 
     this.uiElements = [];
-    this.currentOptions = [];
     this.refreshCost = 10; // Reset refresh cost
   }
 
   public isVisible(): boolean {
-    return this.overlay !== null && this.uiElements.length > 0;
+    return Boolean(this.overlay && this.uiElements.length > 0);
   }
 }

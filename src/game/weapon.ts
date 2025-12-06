@@ -2,16 +2,20 @@ import Phaser from "phaser";
 import { Player } from "./player";
 import { Enemy } from "./enemy";
 import { scaleManager } from "./ScaleManager";
-import type { WeaponType, WeaponSynergyBonus } from "../types";
+import type { WeaponType } from "../types";
 import i18n from "../i18n";
-import { MAX_SELECT_SIZE, WEAPON_SYNERGIES } from "../constant";
+import {
+  MAX_SELECT_SIZE,
+  WEAPONS,
+  COLLECT_RANGE_BONUS,
+  RARITY_SIZE,
+} from "../constant";
+import type { GameScene } from "./GameScene";
 
 /**
  * Configuration interface for weapon creation
  */
 export interface WeaponConfig {
-  damage: number;
-  coolDown: number;
   type: WeaponType;
 }
 
@@ -32,12 +36,14 @@ export interface OrbData {
   offset: number;
 }
 
+// TODO: fix weapon fire logic
+
 /**
  * Abstract base class for all weapons in the game
  * Provides common functionality and defines the interface for weapon implementations
  */
 export abstract class Weapon {
-  protected scene: Phaser.Scene;
+  protected scene: GameScene;
   protected player: Player;
   public level: number;
   public maxLevel: number;
@@ -54,23 +60,24 @@ export abstract class Weapon {
    * @param player Player reference
    * @param config Weapon configuration
    */
-  constructor(scene: Phaser.Scene, player: Player, config: WeaponConfig) {
-    this.scene = scene;
-    this.player = player;
-    this.level = 1;
-    this.maxLevel = 5;
-    this.damage = config.damage;
-    this.coolDown = config.coolDown;
-    this.lastFired = 0;
-    this.type = config.type;
-    this.projectiles = scene.physics.add.group();
-
+  constructor(scene: GameScene, player: Player, config: WeaponConfig) {
     // Validate that the weapon texture exists
     if (!scene.textures.exists(config.type)) {
       console.error(
         `Weapon texture '${config.type}' not found. Please ensure the SVG file is preloaded correctly.`,
       );
     }
+
+    const weaponData = WEAPONS[config.type];
+    this.scene = scene;
+    this.player = player;
+    this.level = 1;
+    this.maxLevel = 5;
+    this.damage = weaponData.baseDamage;
+    this.coolDown = weaponData.attackSpeed;
+    this.lastFired = 0;
+    this.type = config.type;
+    this.projectiles = scene.physics.add.group();
   }
 
   /**
@@ -80,7 +87,7 @@ export abstract class Weapon {
    */
   public update(time: number, enemies: Enemy[]): void {
     if (time - this.lastFired >= this.coolDown) {
-      this.player.scene.playPlayerFireSound();
+      this.scene.playPlayerFireSound();
       this.fire(enemies);
       this.lastFired = time;
     }
@@ -115,6 +122,8 @@ export abstract class Weapon {
   protected getClosestEnemy(enemies: Enemy[]): Enemy | undefined {
     if (enemies.length === 0) return undefined;
 
+    const playerPos = this.scene.getPlayerPosition();
+
     let closestEnemy: Enemy | undefined;
     let minDist = Infinity;
 
@@ -123,8 +132,8 @@ export abstract class Weapon {
       if (enemy.isDead) return;
 
       const dist = Phaser.Math.Distance.Between(
-        this.player.sprite.x,
-        this.player.sprite.y,
+        playerPos.x,
+        playerPos.y,
         enemy.sprite.x,
         enemy.sprite.y,
       );
@@ -147,7 +156,7 @@ export abstract class Weapon {
   protected getEnemiesInRange(enemies: Enemy[], range: number): Enemy[] {
     if (enemies.length === 0) return [];
 
-    const playerPos = this.player.getPosition();
+    const playerPos = this.scene.getPlayerPosition();
 
     return enemies.filter((enemy) => {
       if (enemy.isDead) return false;
@@ -177,24 +186,20 @@ export abstract class Weapon {
 
   /**
    * Create a projectile with consistent settings
-   * @param x X position to spawn projectile
-   * @param y Y position to spawn projectile
-   * @param textureName Texture key to use
-   * @param size Sprite size factor
-   * @returns Created projectile sprite
    */
-  protected createProjectile(
-    x: number,
-    y: number,
-    textureName: string,
-    size: number = 24,
-  ): ProjectileSprite {
+  protected createProjectile(): ProjectileSprite {
+    const playerPos = this.scene.getPlayerPosition();
+
+    const weaponData = WEAPONS[this.type];
+
+    const size = RARITY_SIZE[weaponData.rarity];
+
     // Create projectile with the specified texture
-    const projectileSize = scaleManager.getSpriteSize(size);
+    const projectileSize = scaleManager.scaleValue(size);
     const projectile = this.projectiles.create(
-      x,
-      y,
-      textureName,
+      playerPos.x,
+      playerPos.y,
+      this.type,
     ) as ProjectileSprite;
 
     projectile.setCircle(projectileSize / 2);
@@ -219,10 +224,8 @@ export class GoldenStaff extends Weapon {
    * @param scene Game scene reference
    * @param player Player reference
    */
-  constructor(scene: Phaser.Scene, player: Player) {
+  constructor(scene: GameScene, player: Player) {
     super(scene, player, {
-      damage: 15,
-      coolDown: 1000,
       type: "golden_staff",
     });
     this.projectileSpeed = 300; // Base projectile speed
@@ -237,19 +240,14 @@ export class GoldenStaff extends Weapon {
     // Check if there are enemies to target
     if (enemies.length === 0) return;
 
-    const playerPos = this.player.getPosition();
+    const playerPos = this.scene.getPlayerPosition();
     const nearestEnemy = this.getClosestEnemy(enemies);
 
     // Only fire if an enemy was found
     if (!nearestEnemy) return;
 
     // Create projectile using helper method
-    const projectile = this.createProjectile(
-      playerPos.x,
-      playerPos.y,
-      this.type,
-      24,
-    );
+    const projectile = this.createProjectile();
 
     // Set piercing property
     projectile.piercing = this.piercing;
@@ -312,10 +310,8 @@ export class FireproofCloak extends Weapon {
    * @param scene Game scene reference
    * @param player Player reference
    */
-  constructor(scene: Phaser.Scene, player: Player) {
+  constructor(scene: GameScene, player: Player) {
     super(scene, player, {
-      damage: 8,
-      coolDown: 100,
       type: "fireproof_cloak",
     });
     this.orbCount = 1; // Start with 1 orb
@@ -337,7 +333,7 @@ export class FireproofCloak extends Weapon {
     this.orbs = [];
 
     // Create new orbs with responsive scaling
-    const orbSize = scaleManager.getSpriteSize(32);
+    const orbSize = scaleManager.scaleValue(32);
     for (let i = 0; i < this.orbCount; i++) {
       // Create orb sprite
       const orb = this.scene.physics.add.sprite(
@@ -376,7 +372,7 @@ export class FireproofCloak extends Weapon {
     this.angle += this.rotationSpeed * 0.016; // Assuming 60fps
 
     // Get current player position
-    const playerPos = this.player.getPosition();
+    const playerPos = this.scene.getPlayerPosition();
 
     // Update each orb's position around the player
     this.orbs.forEach((orb) => {
@@ -441,10 +437,8 @@ export class RuyiStaff extends Weapon {
    * @param scene Game scene reference
    * @param player Player reference
    */
-  constructor(scene: Phaser.Scene, player: Player) {
+  constructor(scene: GameScene, player: Player) {
     super(scene, player, {
-      damage: 50, // High base damage
-      coolDown: 800,
       type: "ruyi_staff",
     });
 
@@ -461,7 +455,7 @@ export class RuyiStaff extends Weapon {
   protected fire(enemies: Enemy[]): void {
     if (enemies.length === 0) return;
 
-    const playerPos = this.player.getPosition();
+    const playerPos = this.scene.getPlayerPosition();
 
     // Fire multiple projectiles based on projectileCount
     for (let i = 0; i < this.projectileCount; i++) {
@@ -476,12 +470,7 @@ export class RuyiStaff extends Weapon {
       );
 
       // Use the createProjectile utility method from Weapon base class
-      const projectile = this.createProjectile(
-        playerPos.x,
-        playerPos.y,
-        this.type,
-        32,
-      );
+      const projectile = this.createProjectile();
       projectile.damage = this.damage;
       projectile.piercing = this.piercing;
       projectile.rotation = angle;
@@ -533,10 +522,8 @@ export class FireLance extends Weapon {
    * @param scene Game scene reference
    * @param player Player reference
    */
-  constructor(scene: Phaser.Scene, player: Player) {
+  constructor(scene: GameScene, player: Player) {
     super(scene, player, {
-      damage: 20,
-      coolDown: 1200,
       type: "fire_lance",
     });
 
@@ -552,7 +539,7 @@ export class FireLance extends Weapon {
   protected fire(enemies: Enemy[]): void {
     if (enemies.length === 0) return;
 
-    const playerPos = this.player.getPosition();
+    const playerPos = this.scene.getPlayerPosition();
 
     // Find closest enemy using base class helper method
     const nearestEnemy = this.getClosestEnemy(enemies);
@@ -567,12 +554,7 @@ export class FireLance extends Weapon {
     );
 
     // Use createProjectile utility method from Weapon base class
-    const projectile = this.createProjectile(
-      playerPos.x,
-      playerPos.y,
-      this.type,
-      28,
-    );
+    const projectile = this.createProjectile();
     projectile.damage = this.damage;
     projectile.piercing = this.piercing;
     projectile.rotation = angle;
@@ -617,10 +599,8 @@ export class WindTamer extends Weapon {
   private radius: number;
   private damageRadius: number;
 
-  constructor(scene: Phaser.Scene, player: Player) {
+  constructor(scene: GameScene, player: Player) {
     super(scene, player, {
-      damage: 25,
-      coolDown: 2000,
       type: "wind_tamer",
     });
     this.orbCount = 1;
@@ -633,7 +613,7 @@ export class WindTamer extends Weapon {
     this.orbs.forEach((orb) => orb.sprite.destroy());
     this.orbs = [];
 
-    const orbSize = scaleManager.getSpriteSize(28);
+    const orbSize = scaleManager.scaleValue(28);
     for (let i = 0; i < this.orbCount; i++) {
       const orb = this.scene.physics.add.sprite(
         0,
@@ -654,7 +634,7 @@ export class WindTamer extends Weapon {
 
   public update(_time: number, _enemies: Enemy[]): void {
     console.log(_time, _enemies);
-    const playerPos = this.player.getPosition();
+    const playerPos = this.scene.getPlayerPosition();
     this.orbs.forEach((orb) => {
       orb.sprite.x = playerPos.x;
       orb.sprite.y = playerPos.y;
@@ -663,7 +643,7 @@ export class WindTamer extends Weapon {
 
   protected fire(enemies: Enemy[]): void {
     // Wind effect damages all enemies in radius
-    const playerPos = this.player.getPosition();
+    const playerPos = this.scene.getPlayerPosition();
     enemies.forEach((enemy) => {
       if (enemy.isDead) return;
       const distance = Phaser.Math.Distance.Between(
@@ -691,17 +671,15 @@ export class WindTamer extends Weapon {
 export class VioletBell extends Weapon {
   private waveCount: number;
 
-  constructor(scene: Phaser.Scene, player: Player) {
+  constructor(scene: GameScene, player: Player) {
     super(scene, player, {
-      damage: 30,
-      coolDown: 1500,
       type: "violet_bell",
     });
     this.waveCount = 3;
   }
 
   protected fire(enemies: Enemy[]): void {
-    const playerPos = this.player.getPosition();
+    const playerPos = this.scene.getPlayerPosition();
     const angles = [];
 
     for (let i = 0; i < this.waveCount; i++) {
@@ -755,10 +733,8 @@ export class VioletBell extends Weapon {
 export class TwinBlades extends Weapon {
   private projectileSpeed: number;
 
-  constructor(scene: Phaser.Scene, player: Player) {
+  constructor(scene: GameScene, player: Player) {
     super(scene, player, {
-      damage: 18,
-      coolDown: 800,
       type: "twin_blades",
     });
     this.projectileSpeed = 450;
@@ -767,11 +743,11 @@ export class TwinBlades extends Weapon {
   protected fire(enemies: Enemy[]): void {
     if (enemies.length === 0) return;
 
-    const playerPos = this.player.getPosition();
+    const playerPos = this.scene.getPlayerPosition();
     const targets = enemies.filter((e) => !e.isDead).slice(0, 2);
 
     targets.forEach((target, index) => {
-      const projectileSize = scaleManager.getSpriteSize(24);
+      const projectileSize = scaleManager.scaleValue(24);
       const projectile = this.projectiles?.create(
         playerPos.x + (index === 0 ? -10 : 10),
         playerPos.y,
@@ -817,10 +793,8 @@ export class Mace extends Weapon {
   // @ts-ignore
   private stunChance: number;
 
-  constructor(scene: Phaser.Scene, player: Player) {
+  constructor(scene: GameScene, player: Player) {
     super(scene, player, {
-      damage: 35,
-      coolDown: 1800,
       type: "mace",
     });
     this.projectileSpeed = 250;
@@ -830,12 +804,12 @@ export class Mace extends Weapon {
   protected fire(enemies: Enemy[]): void {
     if (enemies.length === 0) return;
 
-    const playerPos = this.player.getPosition();
+    const playerPos = this.scene.getPlayerPosition();
     const nearestEnemy = this.getClosestEnemy(enemies);
 
     if (!nearestEnemy) return;
 
-    const projectileSize = scaleManager.getSpriteSize(32);
+    const projectileSize = scaleManager.scaleValue(32);
     const projectile = this.projectiles?.create(
       playerPos.x,
       playerPos.y,
@@ -879,17 +853,15 @@ export class Mace extends Weapon {
 export class BullHorns extends Weapon {
   private chargeRadius: number;
 
-  constructor(scene: Phaser.Scene, player: Player) {
+  constructor(scene: GameScene, player: Player) {
     super(scene, player, {
-      damage: 40,
-      coolDown: 2500,
       type: "bull_horns",
     });
     this.chargeRadius = 150;
   }
 
   protected fire(enemies: Enemy[]): void {
-    const playerPos = this.player.getPosition();
+    const playerPos = this.scene.getPlayerPosition();
 
     // Create charge effect
     const circle = this.scene.add.circle(
@@ -946,10 +918,8 @@ export class BullHorns extends Weapon {
 export class ThunderDrum extends Weapon {
   private strikeCount: number;
 
-  constructor(scene: Phaser.Scene, player: Player) {
+  constructor(scene: GameScene, player: Player) {
     super(scene, player, {
-      damage: 22,
-      coolDown: 1600,
       type: "thunder_drum",
     });
     this.strikeCount = 3;
@@ -967,9 +937,9 @@ export class ThunderDrum extends Weapon {
       // Lightning strike effect
       const lightning = this.scene.add.rectangle(
         target.sprite.x,
-        target.sprite.y - scaleManager.getUIElementSize(100),
-        scaleManager.getUIElementSize(10),
-        scaleManager.getUIElementSize(100),
+        target.sprite.y - scaleManager.UIScaleValue(100),
+        scaleManager.UIScaleValue(10),
+        scaleManager.UIScaleValue(100),
         0xffd700,
         0.8,
       );
@@ -1000,10 +970,8 @@ export class IceNeedle extends Weapon {
   private projectileSpeed: number;
   private projectileCount: number;
 
-  constructor(scene: Phaser.Scene, player: Player) {
+  constructor(scene: GameScene, player: Player) {
     super(scene, player, {
-      damage: 16,
-      coolDown: 900,
       type: "ice_needle",
     });
     this.projectileSpeed = 550;
@@ -1013,12 +981,12 @@ export class IceNeedle extends Weapon {
   protected fire(enemies: Enemy[]): void {
     if (enemies.length === 0) return;
 
-    const playerPos = this.player.getPosition();
+    const playerPos = this.scene.getPlayerPosition();
     const angleStep = (Math.PI * 2) / this.projectileCount;
 
     for (let i = 0; i < this.projectileCount; i++) {
       const angle = angleStep * i;
-      const projectileSize = scaleManager.getSpriteSize(20);
+      const projectileSize = scaleManager.scaleValue(20);
       const projectile = this.projectiles?.create(
         playerPos.x,
         playerPos.y,
@@ -1059,10 +1027,8 @@ export class WindFireWheels extends Weapon {
   private rotationSpeed: number;
   private angle: number;
 
-  constructor(scene: Phaser.Scene, player: Player) {
+  constructor(scene: GameScene, player: Player) {
     super(scene, player, {
-      damage: 28,
-      coolDown: 100,
       type: "wind_fire_wheels",
     });
     this.orbCount = 2;
@@ -1076,7 +1042,7 @@ export class WindFireWheels extends Weapon {
     this.orbs.forEach((orb) => orb.sprite.destroy());
     this.orbs = [];
 
-    const orbSize = scaleManager.getSpriteSize(32);
+    const orbSize = scaleManager.scaleValue(32);
     for (let i = 0; i < this.orbCount; i++) {
       const orb = this.scene.physics.add.sprite(
         0,
@@ -1098,7 +1064,7 @@ export class WindFireWheels extends Weapon {
   public update(_time: number, _enemies: Enemy[]): void {
     console.log(_time, _enemies);
     this.angle += this.rotationSpeed * 0.016;
-    const playerPos = this.player.getPosition();
+    const playerPos = this.scene.getPlayerPosition();
 
     this.orbs.forEach((orb) => {
       const angle = this.angle + orb.offset;
@@ -1127,10 +1093,8 @@ export class JadePurityBottle extends Weapon {
   private pullRadius: number;
   private pullStrength: number;
 
-  constructor(scene: Phaser.Scene, player: Player) {
+  constructor(scene: GameScene, player: Player) {
     super(scene, player, {
-      damage: 32,
-      coolDown: 2200,
       type: "jade_purity_bottle",
     });
     this.pullRadius = 200;
@@ -1138,7 +1102,7 @@ export class JadePurityBottle extends Weapon {
   }
 
   protected fire(enemies: Enemy[]): void {
-    const playerPos = this.player.getPosition();
+    const playerPos = this.scene.getPlayerPosition();
 
     // Create bottle effect
     const bottle = this.scene.add.circle(
@@ -1202,10 +1166,8 @@ export class GoldenRope extends Weapon {
   private bindDuration: number;
   private maxTargets: number;
 
-  constructor(scene: Phaser.Scene, player: Player) {
+  constructor(scene: GameScene, player: Player) {
     super(scene, player, {
-      damage: 12,
-      coolDown: 1400,
       type: "golden_rope",
     });
     this.bindDuration = 2000;
@@ -1215,7 +1177,7 @@ export class GoldenRope extends Weapon {
   protected fire(enemies: Enemy[]): void {
     if (enemies.length === 0) return;
 
-    const playerPos = this.player.getPosition();
+    const playerPos = this.scene.getPlayerPosition();
     const targets = enemies
       .filter((e) => !e.isDead)
       .sort(
@@ -1237,12 +1199,7 @@ export class GoldenRope extends Weapon {
 
     targets.forEach((target) => {
       // Create projectile using the weapon's SVG texture
-      const projectile = this.createProjectile(
-        playerPos.x,
-        playerPos.y,
-        this.type, // This uses the "golden_rope" SVG texture
-        24, // Size of the rope projectile
-      );
+      const projectile = this.createProjectile();
       projectile.damage = this.damage;
       projectile.piercing = 0;
 
@@ -1299,10 +1256,8 @@ export class PlantainFan extends Weapon {
   private fanAngle: number;
   private fanRange: number;
 
-  constructor(scene: Phaser.Scene, player: Player) {
+  constructor(scene: GameScene, player: Player) {
     super(scene, player, {
-      damage: 45,
-      coolDown: 3000,
       type: "plantain_fan",
     });
     this.fanAngle = Math.PI / 3;
@@ -1310,7 +1265,7 @@ export class PlantainFan extends Weapon {
   }
 
   protected fire(enemies: Enemy[]): void {
-    const playerPos = this.player.getPosition();
+    const playerPos = this.scene.getPlayerPosition();
 
     // Find direction to nearest enemy
     let targetAngle = 0;
@@ -1389,10 +1344,8 @@ export class ThreePointedBlade extends Weapon {
   private projectileSpeed: number;
   private slashCount: number;
 
-  constructor(scene: Phaser.Scene, player: Player) {
+  constructor(scene: GameScene, player: Player) {
     super(scene, player, {
-      damage: 42,
-      coolDown: 1100,
       type: "three_pointed_blade",
     });
     this.projectileSpeed = 400;
@@ -1402,8 +1355,8 @@ export class ThreePointedBlade extends Weapon {
   protected fire(enemies: Enemy[]): void {
     if (enemies.length === 0) return;
 
-    const playerPos = this.player.getPosition();
-    const projectileSize = scaleManager.getSpriteSize(32);
+    const playerPos = this.scene.getPlayerPosition();
+    const projectileSize = scaleManager.scaleValue(32);
 
     // Three-pronged attack, 120 degree fan shape
     for (let i = 0; i < this.slashCount; i++) {
@@ -1446,10 +1399,8 @@ export class NineRingStaff extends Weapon {
   private soundWaveRadius: number;
   private stunDuration: number;
 
-  constructor(scene: Phaser.Scene, player: Player) {
+  constructor(scene: GameScene, player: Player) {
     super(scene, player, {
-      damage: 30,
-      coolDown: 1700,
       type: "nine_ring_staff",
     });
     this.soundWaveRadius = scaleManager.scaleValue(150);
@@ -1457,7 +1408,7 @@ export class NineRingStaff extends Weapon {
   }
 
   protected fire(enemies: Enemy[]): void {
-    const playerPos = this.player.getPosition();
+    const playerPos = this.scene.getPlayerPosition();
 
     // Create sound wave circle effect
     const graphics = this.scene.add.graphics();
@@ -1513,10 +1464,8 @@ export class CrescentBlade extends Weapon {
   private bladeCount: number;
   private returnSpeed: number;
 
-  constructor(scene: Phaser.Scene, player: Player) {
+  constructor(scene: GameScene, player: Player) {
     super(scene, player, {
-      damage: 33,
-      coolDown: 1500,
       type: "crescent_blade",
     });
     this.bladeCount = 2;
@@ -1525,8 +1474,8 @@ export class CrescentBlade extends Weapon {
 
   protected fire(enemies: Enemy[]): void {
     console.log(enemies);
-    const playerPos = this.player.getPosition();
-    const projectileSize = scaleManager.getSpriteSize(28);
+    const playerPos = this.scene.getPlayerPosition();
+    const projectileSize = scaleManager.scaleValue(28);
     const baseAngle = this.getPlayerAngle();
 
     // Launch multiple crescent blades with boomerang effect
@@ -1579,10 +1528,8 @@ export class IronCudgel extends Weapon {
   private smashRadius: number;
   private knockbackForce: number;
 
-  constructor(scene: Phaser.Scene, player: Player) {
+  constructor(scene: GameScene, player: Player) {
     super(scene, player, {
-      damage: 38,
-      coolDown: 2200,
       type: "iron_cudgel",
     });
     this.smashRadius = scaleManager.scaleValue(120);
@@ -1590,7 +1537,7 @@ export class IronCudgel extends Weapon {
   }
 
   protected fire(enemies: Enemy[]): void {
-    const playerPos = this.player.getPosition();
+    const playerPos = this.scene.getPlayerPosition();
 
     // Heavy strike on the ground, creating a huge shockwave
     const graphics = this.scene.add.graphics();
@@ -1651,10 +1598,8 @@ export class SevenStarSword extends Weapon {
   private orbitRadius: number;
   private swords: ProjectileSprite[];
 
-  constructor(scene: Phaser.Scene, player: Player) {
+  constructor(scene: GameScene, player: Player) {
     super(scene, player, {
-      damage: 24,
-      coolDown: 100,
       type: "seven_star_sword",
     });
     this.swordCount = 3;
@@ -1667,7 +1612,7 @@ export class SevenStarSword extends Weapon {
     this.swords.forEach((sword) => sword.destroy());
     this.swords = [];
 
-    const swordSize = scaleManager.getSpriteSize(24);
+    const swordSize = scaleManager.scaleValue(24);
     for (let i = 0; i < this.swordCount; i++) {
       const sword = this.scene.physics.add.sprite(
         0,
@@ -1684,7 +1629,7 @@ export class SevenStarSword extends Weapon {
 
   public update(time: number, enemies: Enemy[]): void {
     console.log(enemies);
-    const playerPos = this.player.getPosition();
+    const playerPos = this.scene.getPlayerPosition();
     const angleStep = (Math.PI * 2) / this.swordCount;
     const rotation = (time / 1000) * 3; // Rotation speed
 
@@ -1720,10 +1665,8 @@ export class GinsengFruit extends Weapon {
   private healAmount: number;
   private maxHealthBonus: number;
 
-  constructor(scene: Phaser.Scene, player: Player) {
+  constructor(scene: GameScene, player: Player) {
     super(scene, player, {
-      damage: 15,
-      coolDown: 5000,
       type: "ginseng_fruit",
     });
     this.healAmount = 20;
@@ -1738,7 +1681,7 @@ export class GinsengFruit extends Weapon {
     this.player.health = newHealth;
 
     // Create healing effect
-    const playerPos = this.player.getPosition();
+    const playerPos = this.scene.getPlayerPosition();
     const graphics = this.scene.add.graphics();
     graphics.fillStyle(0x90ee90, 0.8);
     graphics.fillCircle(0, 0, scaleManager.scaleValue(40));
@@ -1791,10 +1734,8 @@ export class HeavenEarthCircle extends Weapon {
   private circleSpeed: number;
   private returnDelay: number;
 
-  constructor(scene: Phaser.Scene, player: Player) {
+  constructor(scene: GameScene, player: Player) {
     super(scene, player, {
-      damage: 40,
-      coolDown: 1800,
       type: "heaven_earth_circle",
     });
     this.circleSpeed = 450;
@@ -1804,9 +1745,9 @@ export class HeavenEarthCircle extends Weapon {
   protected fire(enemies: Enemy[]): void {
     if (enemies.length === 0) return;
 
-    const playerPos = this.player.getPosition();
+    const playerPos = this.scene.getPlayerPosition();
     const targetAngle = this.getPlayerAngle();
-    const projectileSize = scaleManager.getSpriteSize(36);
+    const projectileSize = scaleManager.scaleValue(36);
 
     const circle = this.projectiles?.create(
       playerPos.x,
@@ -1830,7 +1771,7 @@ export class HeavenEarthCircle extends Weapon {
         const checkReturn = () => {
           if (!circle.active) return;
 
-          const currentPlayerPos = this.player.getPosition();
+          const currentPlayerPos = this.scene.getPlayerPosition();
           const dx = currentPlayerPos.x - circle.x;
           const dy = currentPlayerPos.y - circle.y;
           const distance = Math.sqrt(dx * dx + dy * dy);
@@ -1869,10 +1810,8 @@ export class RedArmillarySash extends Weapon {
   private sashLength: number;
   private whipCount: number;
 
-  constructor(scene: Phaser.Scene, player: Player) {
+  constructor(scene: GameScene, player: Player) {
     super(scene, player, {
-      damage: 28,
-      coolDown: 1400,
       type: "red_armillary_sash",
     });
     this.sashLength = scaleManager.scaleValue(200);
@@ -1880,7 +1819,7 @@ export class RedArmillarySash extends Weapon {
   }
 
   protected fire(enemies: Enemy[]): void {
-    const playerPos = this.player.getPosition();
+    const playerPos = this.scene.getPlayerPosition();
     const baseAngle = this.getPlayerAngle();
 
     // Whip attack, fan-shaped swing
@@ -1954,10 +1893,8 @@ export class PurpleGoldGourd extends Weapon {
   private absorbDuration: number;
   private collectRangeBonus: number;
 
-  constructor(scene: Phaser.Scene, player: Player) {
+  constructor(scene: GameScene, player: Player) {
     super(scene, player, {
-      damage: 35,
-      coolDown: 3500,
       type: "purple_gold_gourd",
     });
     this.absorbRadius = scaleManager.scaleValue(180);
@@ -1967,7 +1904,7 @@ export class PurpleGoldGourd extends Weapon {
   }
 
   protected fire(enemies: Enemy[]): void {
-    const playerPos = this.player.getPosition();
+    const playerPos = this.scene.getPlayerPosition();
 
     // Create absorption effect
     const graphics = this.scene.add.graphics();
@@ -2038,8 +1975,7 @@ export class PurpleGoldGourd extends Weapon {
     // Remove old bonus
     this.player.collectRangeBonus -= this.collectRangeBonus;
 
-    // Calculate new bonus: 5% per level (0.05 * level)
-    this.collectRangeBonus = 0.05 * this.level;
+    this.collectRangeBonus = COLLECT_RANGE_BONUS * this.level;
 
     // Apply new bonus
     this.applyCollectRangeBonus();
@@ -2055,10 +1991,8 @@ export class GoldenRopeImmortal extends Weapon {
   private ropeChains: number;
   private chainLength: number;
 
-  constructor(scene: Phaser.Scene, player: Player) {
+  constructor(scene: GameScene, player: Player) {
     super(scene, player, {
-      damage: 26,
-      coolDown: 1600,
       type: "golden_rope_immortal",
     });
     this.ropeChains = 3;
@@ -2068,7 +2002,7 @@ export class GoldenRopeImmortal extends Weapon {
   protected fire(enemies: Enemy[]): void {
     if (enemies.length === 0) return;
 
-    const playerPos = this.player.getPosition();
+    const playerPos = this.scene.getPlayerPosition();
     const sortedEnemies = enemies
       .filter((e) => !e.isDead)
       .sort((a, b) => {
@@ -2098,13 +2032,7 @@ export class GoldenRopeImmortal extends Weapon {
 
       if (distance <= this.chainLength) {
         // Create projectile using the weapon's SVG texture
-        const projectile = this.createProjectile(
-          playerPos.x,
-          playerPos.y,
-          this.type, // This uses the "golden_rope_immortal" SVG texture
-          32, // Size of the rope projectile
-        );
-        projectile.damage = this.damage;
+        const projectile = this.createProjectile();
         projectile.piercing = 0;
 
         // Move projectile instantly to target
@@ -2176,10 +2104,8 @@ export class DemonRevealingMirror extends Weapon {
   private revealRadius: number;
   private critBonus: number;
 
-  constructor(scene: Phaser.Scene, player: Player) {
+  constructor(scene: GameScene, player: Player) {
     super(scene, player, {
-      damage: 18,
-      coolDown: 2500,
       type: "demon_revealing_mirror",
     });
     this.revealRadius = scaleManager.scaleValue(200);
@@ -2187,7 +2113,7 @@ export class DemonRevealingMirror extends Weapon {
   }
 
   protected fire(enemies: Enemy[]): void {
-    const playerPos = this.player.getPosition();
+    const playerPos = this.scene.getPlayerPosition();
 
     // Create demon mirror aura
     const graphics = this.scene.add.graphics();
@@ -2251,10 +2177,8 @@ export class SeaCalmingNeedle extends Weapon {
   private sweepRange: number;
   private sweepAngle: number;
 
-  constructor(scene: Phaser.Scene, player: Player) {
+  constructor(scene: GameScene, player: Player) {
     super(scene, player, {
-      damage: 55,
-      coolDown: 2000,
       type: "sea_calming_needle",
     });
     this.sweepRange = scaleManager.scaleValue(300);
@@ -2262,7 +2186,7 @@ export class SeaCalmingNeedle extends Weapon {
   }
 
   protected fire(enemies: Enemy[]): void {
-    const playerPos = this.player.getPosition();
+    const playerPos = this.scene.getPlayerPosition();
     const targetAngle = this.getPlayerAngle();
 
     // Create huge sweeping effect
@@ -2334,10 +2258,8 @@ export class EightTrigramsFurnace extends Weapon {
   private burnDuration: number;
   private burnDamagePerTick: number;
 
-  constructor(scene: Phaser.Scene, player: Player) {
+  constructor(scene: GameScene, player: Player) {
     super(scene, player, {
-      damage: 32,
-      coolDown: 2800,
       type: "eight_trigrams_furnace",
     });
     this.furnaceRadius = scaleManager.scaleValue(250);
@@ -2346,7 +2268,7 @@ export class EightTrigramsFurnace extends Weapon {
   }
 
   protected fire(enemies: Enemy[]): void {
-    const playerPos = this.player.getPosition();
+    const playerPos = this.scene.getPlayerPosition();
 
     // Create Eight Trigrams Furnace effect - eight fire pillars
     const furnaceGraphics = this.scene.add.graphics();
@@ -2417,10 +2339,8 @@ export class DragonStaff extends Weapon {
   private tornadoRadius: number;
   private pullStrength: number;
 
-  constructor(scene: Phaser.Scene, player: Player) {
+  constructor(scene: GameScene, player: Player) {
     super(scene, player, {
-      damage: 36,
-      coolDown: 2300,
       type: "dragon_staff",
     });
     this.tornadoRadius = scaleManager.scaleValue(220);
@@ -2513,10 +2433,8 @@ export class SevenTreasureTree extends Weapon {
   private sweepRange: number;
   private purifyRadius: number;
 
-  constructor(scene: Phaser.Scene, player: Player) {
+  constructor(scene: GameScene, player: Player) {
     super(scene, player, {
-      damage: 38,
-      coolDown: 3200,
       type: "seven_treasure_tree",
     });
     this.sweepRange = scaleManager.scaleValue(280);
@@ -2524,7 +2442,7 @@ export class SevenTreasureTree extends Weapon {
   }
 
   protected fire(enemies: Enemy[]): void {
-    const playerPos = this.player.getPosition();
+    const playerPos = this.scene.getPlayerPosition();
     const targetAngle = this.getPlayerAngle();
 
     // Create Seven Treasure Tree refresh effect
@@ -2602,10 +2520,8 @@ export class ImmortalSlayingBlade extends Weapon {
   private lockOnDuration: number;
   private bladeSpeed: number;
 
-  constructor(scene: Phaser.Scene, player: Player) {
+  constructor(scene: GameScene, player: Player) {
     super(scene, player, {
-      damage: 48,
-      coolDown: 4000,
       type: "immortal_slaying_blade",
     });
     this.lockOnDuration = 1500; // 1.5 seconds lock-on duration
@@ -2626,7 +2542,7 @@ export class ImmortalSlayingBlade extends Weapon {
 
     if (!target) return;
 
-    const playerPos = this.player.getPosition();
+    const playerPos = this.scene.getPlayerPosition();
 
     // Create "Treasure, please turn" lock-on effect
     const lockGraphics = this.scene.add.graphics();
@@ -2647,7 +2563,7 @@ export class ImmortalSlayingBlade extends Weapon {
         // Fire decisive blade after lock-on
         if (target.isDead) return;
 
-        const projectileSize = scaleManager.getSpriteSize(28);
+        const projectileSize = scaleManager.scaleValue(28);
         const blade = this.projectiles?.create(
           playerPos.x,
           playerPos.y,
@@ -2712,10 +2628,8 @@ export class DiamondSnare extends Weapon {
   private armorBreak: number;
   private collectRangeBonus: number;
 
-  constructor(scene: Phaser.Scene, player: Player) {
+  constructor(scene: GameScene, player: Player) {
     super(scene, player, {
-      damage: 34,
-      coolDown: 1900,
       type: "diamond_snare",
     });
     this.snareSpeed = 500;
@@ -2730,7 +2644,7 @@ export class DiamondSnare extends Weapon {
     const closestEnemy = this.getClosestEnemy(enemies);
     if (!closestEnemy) return;
 
-    const playerPos = this.player.getPosition();
+    const playerPos = this.scene.getPlayerPosition();
     const angle = Phaser.Math.Angle.Between(
       playerPos.x,
       playerPos.y,
@@ -2738,7 +2652,7 @@ export class DiamondSnare extends Weapon {
       closestEnemy.sprite.y,
     );
 
-    const projectileSize = scaleManager.getSpriteSize(32);
+    const projectileSize = scaleManager.scaleValue(32);
     const snare = this.projectiles?.create(
       playerPos.x,
       playerPos.y,
@@ -2782,8 +2696,7 @@ export class DiamondSnare extends Weapon {
     // Remove old bonus
     this.player.collectRangeBonus -= this.collectRangeBonus;
 
-    // Calculate new bonus: 5% per level (0.05 * level)
-    this.collectRangeBonus = 0.05 * this.level;
+    this.collectRangeBonus = COLLECT_RANGE_BONUS * this.level;
 
     // Apply new bonus
     this.applyCollectRangeBonus();
@@ -2800,10 +2713,8 @@ export class ExquisitePagoda extends Weapon {
   private imprisonDuration: number;
   private damageOverTime: number;
 
-  constructor(scene: Phaser.Scene, player: Player) {
+  constructor(scene: GameScene, player: Player) {
     super(scene, player, {
-      damage: 40,
-      coolDown: 3600,
       type: "exquisite_pagoda",
     });
     this.pagodaRadius = scaleManager.scaleValue(200);
@@ -2902,17 +2813,15 @@ export class ExquisitePagoda extends Weapon {
 export class NineToothRake extends Weapon {
   private rakeRange: number;
 
-  constructor(scene: Phaser.Scene, player: Player) {
+  constructor(scene: GameScene, player: Player) {
     super(scene, player, {
-      damage: 35,
-      coolDown: 1600,
       type: "nine_tooth_rake",
     });
     this.rakeRange = scaleManager.scaleValue(200);
   }
 
   protected fire(enemies: Enemy[]): void {
-    const playerPos = this.player.getPosition();
+    const playerPos = this.scene.getPlayerPosition();
     const targetAngle = this.getPlayerAngle();
 
     // Create nine-tooth rake sweep effect - fan-shaped attack
@@ -3010,10 +2919,8 @@ export class DragonScaleSword extends Weapon {
   private swordSpeed: number;
   private swordCount: number;
 
-  constructor(scene: Phaser.Scene, player: Player) {
+  constructor(scene: GameScene, player: Player) {
     super(scene, player, {
-      damage: 26,
-      coolDown: 1200,
       type: "dragon_scale_sword",
     });
     this.swordSpeed = 450;
@@ -3023,7 +2930,7 @@ export class DragonScaleSword extends Weapon {
   protected fire(enemies: Enemy[]): void {
     if (enemies.length === 0) return;
 
-    const playerPos = this.player.getPosition();
+    const playerPos = this.scene.getPlayerPosition();
 
     // Find closest enemy
     const closestEnemy = this.getClosestEnemy(enemies);
@@ -3040,7 +2947,7 @@ export class DragonScaleSword extends Weapon {
     // Launch multiple dragon scale sword qi
     for (let i = 0; i < this.swordCount; i++) {
       const angle = baseAngle + (i - (this.swordCount - 1) / 2) * 0.2;
-      const projectileSize = scaleManager.getSpriteSize(32);
+      const projectileSize = scaleManager.scaleValue(32);
 
       const sword = this.projectiles?.create(
         playerPos.x,
@@ -3191,11 +3098,11 @@ export const WEAPON_MAP: Record<WeaponType, WeaponClass> = {
 
 // Weapon Manager
 export class WeaponManager {
-  private scene: Phaser.Scene;
+  private scene: GameScene;
   private player: Player;
   public weapons: Weapon[];
 
-  constructor(scene: Phaser.Scene, player: Player) {
+  constructor(scene: GameScene, player: Player) {
     this.scene = scene;
     this.player = player;
     this.weapons = [];
@@ -3268,202 +3175,5 @@ export class WeaponManager {
       weapon.orbs.forEach((orb: OrbData) => orb.sprite.destroy());
     });
     this.weapons = [];
-  }
-}
-
-export class WeaponSynergyManager {
-  private activeSynergies: Set<string> = new Set();
-  private synergyBonuses: Map<string, number> = new Map();
-
-  constructor() {
-    this.activeSynergies = new Set();
-    this.synergyBonuses = new Map();
-  }
-
-  /**
-   * Check and activate weapon synergy effects
-   * @param weapons All weapons currently owned by the player
-   * @returns List of activated synergy effects
-   */
-  public checkSynergies(weapons: Weapon[]): WeaponSynergyBonus[] {
-    const weaponTypes = weapons.map((w) => w.type);
-    const activeSynergies: WeaponSynergyBonus[] = [];
-    this.activeSynergies.clear();
-
-    WEAPON_SYNERGIES.forEach((synergy) => {
-      // Check if synergy conditions are met
-      const hasAllWeapons = synergy.weapons.every((weaponType) =>
-        weaponTypes.includes(weaponType),
-      );
-
-      // For "any weapon" synergies (e.g., Ginseng Fruit, Demon Mirror), only need that weapon to exist
-      const isSingleWeaponSynergy = synergy.weapons.length === 1;
-      const hasSingleWeapon =
-        isSingleWeaponSynergy && weaponTypes.includes(synergy.weapons[0]);
-
-      if (
-        hasAllWeapons ||
-        (isSingleWeaponSynergy && hasSingleWeapon && weaponTypes.length > 1)
-      ) {
-        this.activeSynergies.add(synergy.id);
-        activeSynergies.push(synergy);
-      }
-    });
-
-    return activeSynergies;
-  }
-
-  /**
-   * 获取总伤害加成
-   */
-  public getDamageBonus(): number {
-    let bonus = 0;
-    WEAPON_SYNERGIES.forEach((synergy) => {
-      if (this.activeSynergies.has(synergy.id) && synergy.effects.damageBonus) {
-        bonus += synergy.effects.damageBonus;
-      }
-      if (
-        this.activeSynergies.has(synergy.id) &&
-        synergy.effects.allStatsBonus
-      ) {
-        bonus += synergy.effects.allStatsBonus;
-      }
-    });
-    return bonus;
-  }
-
-  /**
-   * 获取攻速加成
-   */
-  public getAttackSpeedBonus(): number {
-    let bonus = 0;
-    WEAPON_SYNERGIES.forEach((synergy) => {
-      if (
-        this.activeSynergies.has(synergy.id) &&
-        synergy.effects.attackSpeedBonus
-      ) {
-        bonus += synergy.effects.attackSpeedBonus;
-      }
-      if (
-        this.activeSynergies.has(synergy.id) &&
-        synergy.effects.allStatsBonus
-      ) {
-        bonus += synergy.effects.allStatsBonus;
-      }
-    });
-    return bonus;
-  }
-
-  /**
-   * 获取范围加成
-   */
-  public getRangeBonus(): number {
-    let bonus = 0;
-    WEAPON_SYNERGIES.forEach((synergy) => {
-      if (this.activeSynergies.has(synergy.id) && synergy.effects.rangeBonus) {
-        bonus += synergy.effects.rangeBonus;
-      }
-    });
-    return bonus;
-  }
-
-  /**
-   * 获取暴击率加成
-   */
-  public getCritRateBonus(): number {
-    let bonus = 0;
-    WEAPON_SYNERGIES.forEach((synergy) => {
-      if (
-        this.activeSynergies.has(synergy.id) &&
-        synergy.effects.critRateBonus
-      ) {
-        bonus += synergy.effects.critRateBonus;
-      }
-    });
-    return bonus;
-  }
-
-  /**
-   * 获取暴击伤害加成
-   */
-  public getCritDamageBonus(): number {
-    let bonus = 0;
-    WEAPON_SYNERGIES.forEach((synergy) => {
-      if (
-        this.activeSynergies.has(synergy.id) &&
-        synergy.effects.critDamageBonus
-      ) {
-        bonus += synergy.effects.critDamageBonus;
-      }
-    });
-    return bonus;
-  }
-
-  /**
-   * 获取护甲加成
-   */
-  public getArmorBonus(): number {
-    let bonus = 0;
-    WEAPON_SYNERGIES.forEach((synergy) => {
-      if (this.activeSynergies.has(synergy.id) && synergy.effects.armorBonus) {
-        bonus += synergy.effects.armorBonus;
-      }
-      if (
-        this.activeSynergies.has(synergy.id) &&
-        synergy.effects.allStatsBonus
-      ) {
-        bonus += synergy.effects.allStatsBonus * 10; // 全属性10%转换为护甲
-      }
-    });
-    return bonus;
-  }
-
-  /**
-   * 获取生命恢复加成
-   */
-  public getHealthRegenBonus(): number {
-    let bonus = 0;
-    WEAPON_SYNERGIES.forEach((synergy) => {
-      if (
-        this.activeSynergies.has(synergy.id) &&
-        synergy.effects.healthRegenBonus
-      ) {
-        bonus += synergy.effects.healthRegenBonus;
-      }
-    });
-    return bonus;
-  }
-
-  /**
-   * 获取控制时长加成
-   */
-  public getControlDurationBonus(): number {
-    let bonus = 0;
-    WEAPON_SYNERGIES.forEach((synergy) => {
-      if (
-        this.activeSynergies.has(synergy.id) &&
-        synergy.effects.controlDurationBonus
-      ) {
-        bonus += synergy.effects.controlDurationBonus;
-      }
-    });
-    return bonus;
-  }
-
-  /**
-   * 获取所有激活的协同效果
-   */
-  public getActiveSynergies(): WeaponSynergyBonus[] {
-    return WEAPON_SYNERGIES.filter((synergy) =>
-      this.activeSynergies.has(synergy.id),
-    );
-  }
-
-  /**
-   * 清空所有协同效果
-   */
-  public clear(): void {
-    this.activeSynergies.clear();
-    this.synergyBonuses.clear();
   }
 }

@@ -12,6 +12,9 @@ import {
   EVENT_MAP,
   PERMANENT_UPGRADES,
   GEM_MAP,
+  WORLD_SIZE,
+  CHARACTER_SIZE,
+  ENEMY_SIZE,
 } from "../constant";
 import {
   getCharacterImagePath,
@@ -22,13 +25,7 @@ import {
 import i18n from "../i18n";
 import { scaleManager } from "./ScaleManager";
 import { RewardSelectionUI } from "./RewardSelectionUI";
-import type {
-  RewardOption,
-  ElixirData,
-  CharacterRankType,
-  EnemyRank,
-  WeaponData,
-} from "../types";
+import type { RewardOption, ElixirData, WeaponData } from "../types";
 import eventBus from "./eventBus";
 import { formatTime } from "../util";
 
@@ -72,15 +69,26 @@ export class GameScene extends Phaser.Scene {
     super({ key: "GameScene" });
   }
 
+  public getPlayTime() {
+    return useAppStore.getState().getSelectMap().gameTime - this.gameTime;
+  }
+
   public playPlayerFireSound = () => {
     this.audioManager?.playSfx(SoundEffect.PLAYER_FIRE);
   };
+
+  public getPlayerPosition() {
+    return {
+      x: this.player.sprite.x,
+      y: this.player.sprite.y,
+    };
+  }
 
   preload(): void {
     // Load audio assets
     AudioManager.preloadAudio(this);
 
-    const commonSize = scaleManager.getSpriteSize(32);
+    const commonSize = scaleManager.scaleValue(32);
 
     // Load experience gem textures - Buddhist beads and spirit essence
     Object.values(GEM_MAP).forEach((gem) => {
@@ -92,8 +100,8 @@ export class GameScene extends Phaser.Scene {
 
     const selectedCharacter = useAppStore.getState().getSelectCharacter();
 
-    const characterSize = scaleManager.getSpriteSize(
-      this.getCharacterSize(selectedCharacter.rank),
+    const characterSize = scaleManager.scaleValue(
+      CHARACTER_SIZE[selectedCharacter.rank],
     );
 
     this.load.svg(
@@ -109,7 +117,7 @@ export class GameScene extends Phaser.Scene {
 
     Object.values(ENEMIES_DATA).forEach((enemy) => {
       if (enemy.chapter === selectMap.id) {
-        const size = scaleManager.getSpriteSize(this.getEnemySize(enemy.rank));
+        const size = scaleManager.scaleValue(ENEMY_SIZE[enemy.rank]);
         this.load.svg(enemy.id, getEnemyImagePath(enemy.id), {
           width: size,
           height: size,
@@ -124,38 +132,12 @@ export class GameScene extends Phaser.Scene {
       });
     });
 
+    const worldSize = scaleManager.scaleValue(WORLD_SIZE);
+
     this.load.svg(selectMap.id, getMapImagePath(selectMap.id), {
-      width: scaleManager.getSpriteSize(window.innerWidth),
-      height: scaleManager.getSpriteSize(window.innerHeight),
+      width: worldSize,
+      height: worldSize,
     });
-  }
-
-  // Get character size
-  private getCharacterSize(rank: CharacterRankType): number {
-    switch (rank) {
-      case "hero":
-        return 48;
-      case "king":
-        return 56;
-      case "lord":
-        return 44;
-      case "boss":
-        return 64;
-      default:
-        return 48;
-    }
-  }
-
-  // Get enemy size
-  private getEnemySize(rank: EnemyRank): number {
-    switch (rank) {
-      case "minion":
-        return 32;
-      case "elite":
-        return 40;
-      default:
-        return 32;
-    }
   }
 
   public create(): void {
@@ -166,11 +148,20 @@ export class GameScene extends Phaser.Scene {
       this.endGame();
     });
 
-    // Set world bounds
-    this.physics.world.setBounds(-2000, -2000, 4000, 4000);
+    const worldSize = scaleManager.scaleValue(WORLD_SIZE);
 
-    // Create background
-    this.createBackground();
+    const worldX = Math.floor(worldSize / 2);
+
+    // Set world bounds
+    this.physics.world.setBounds(-worldX, -worldX, worldSize, worldSize);
+
+    // Load and display chapter map background
+    const selectedMap = useAppStore.getState().getSelectMap();
+
+    // Add the map image as background
+    const mapImage = this.add.image(0, 0, selectedMap.id);
+    mapImage.setOrigin(0.5, 0.5);
+    mapImage.setDepth(-2);
 
     // Get selected character
     const character = useAppStore.getState().getSelectCharacter();
@@ -227,8 +218,8 @@ export class GameScene extends Phaser.Scene {
 
     // Initialize virtual joystick for touch devices
     if (this.isTouchDevice) {
-      const padding = scaleManager.getUIElementSize(20);
-      const joystickRadius = scaleManager.getUIElementSize(60);
+      const padding = scaleManager.UIScaleValue(20);
+      const joystickRadius = scaleManager.UIScaleValue(60);
       this.virtualJoystick = new VirtualJoystick(
         this,
         padding + joystickRadius,
@@ -236,9 +227,6 @@ export class GameScene extends Phaser.Scene {
       );
       this.virtualJoystick.show();
     }
-
-    // Get selected map and its available enemies
-    const selectedMap = useAppStore.getState().getSelectMap();
 
     // Create enemy spawner with available enemies from selected map
     this.enemySpawner = new EnemySpawner(this, selectedMap.availableEnemies);
@@ -285,7 +273,9 @@ export class GameScene extends Phaser.Scene {
     scaleManager.updateScale();
 
     // Update camera bounds
-    this.cameras.main.setBounds(-2000, -2000, 4000, 4000);
+    const worldSize = scaleManager.scaleValue(WORLD_SIZE);
+    const worldX = Math.floor(worldSize / 2);
+    this.cameras.main.setBounds(-worldX, -worldX, worldSize, worldSize);
     this.cameras.main.setZoom(scaleManager.getCameraZoom());
 
     // Update UI positions and sizes
@@ -294,8 +284,8 @@ export class GameScene extends Phaser.Scene {
     // Update virtual joystick position and size
     if (this.virtualJoystick && this.isTouchDevice) {
       this.virtualJoystick.updateSize();
-      const padding = scaleManager.getUIElementSize(20);
-      const joystickRadius = scaleManager.getUIElementSize(60);
+      const padding = scaleManager.UIScaleValue(20);
+      const joystickRadius = scaleManager.UIScaleValue(60);
       this.virtualJoystick.setPosition(
         padding + joystickRadius,
         height - padding - joystickRadius,
@@ -304,10 +294,10 @@ export class GameScene extends Phaser.Scene {
   }
 
   private updateUILayout(width: number): void {
-    const padding = scaleManager.getUIElementSize(20);
-    const barWidth = scaleManager.getUIElementSize(200);
-    const barHeight = scaleManager.getUIElementSize(20);
-    const expBarHeight = scaleManager.getUIElementSize(15);
+    const padding = scaleManager.UIScaleValue(20);
+    const barWidth = scaleManager.UIScaleValue(200);
+    const barHeight = scaleManager.UIScaleValue(20);
+    const expBarHeight = scaleManager.UIScaleValue(15);
 
     // Update health bar
     if (this.healthBarBg && this.healthBar) {
@@ -321,12 +311,12 @@ export class GameScene extends Phaser.Scene {
     if (this.expBarBg && this.expBar) {
       this.expBarBg.setPosition(
         padding,
-        padding + barHeight + scaleManager.getUIElementSize(5),
+        padding + barHeight + scaleManager.UIScaleValue(5),
       );
       this.expBarBg.setSize(barWidth, expBarHeight);
       this.expBar.setPosition(
         padding,
-        padding + barHeight + scaleManager.getUIElementSize(5),
+        padding + barHeight + scaleManager.UIScaleValue(5),
       );
       this.expBar.height = expBarHeight;
     }
@@ -334,30 +324,30 @@ export class GameScene extends Phaser.Scene {
     // Update level text
     if (this.levelText) {
       this.levelText.setPosition(
-        padding + barWidth + scaleManager.getUIElementSize(10),
+        padding + barWidth + scaleManager.UIScaleValue(10),
         padding,
       );
       this.levelText.setFontSize(scaleManager.getNameSize());
     }
 
     const timeX = scaleManager.isMobile()
-      ? width - padding - scaleManager.getUIElementSize(40)
+      ? width - padding - scaleManager.UIScaleValue(40)
       : width / 2;
 
     // Center the time text at the top
     this.timeText?.setPosition(
       timeX,
-      padding - scaleManager.getUIElementSize(16) / 4,
+      padding - scaleManager.UIScaleValue(16) / 4,
     );
     this.timeText?.setFontSize(scaleManager.getNameSize());
 
     // Center the kill count
-    const goldTextY = padding + barHeight + scaleManager.getUIElementSize(5);
+    const goldTextY = padding + barHeight + scaleManager.UIScaleValue(5);
     this.goldText?.setPosition(timeX, goldTextY);
     this.goldText?.setFontSize(scaleManager.getDescSize());
 
-    const buttonHeight = scaleManager.getUIElementSize(40);
-    const buttonWidth = scaleManager.getUIElementSize(60);
+    const buttonHeight = scaleManager.UIScaleValue(40);
+    const buttonWidth = scaleManager.UIScaleValue(60);
     const x = scaleManager.isMobile()
       ? timeX
       : this.cameras.main.width - padding - buttonWidth / 2;
@@ -367,37 +357,6 @@ export class GameScene extends Phaser.Scene {
 
     this.closeButton?.setPosition(x, y);
     this.closeButtonText?.setPosition(x, y);
-  }
-
-  private createBackground(): void {
-    // Load and display chapter map background
-    const selectedMap = useAppStore.getState().getSelectMap();
-
-    // Add the map image as background
-    const mapImage = this.add.image(0, 0, selectedMap.id);
-    mapImage.setOrigin(0.5, 0.5);
-    mapImage.setDepth(-2);
-
-    // Scale the map to cover the world bounds
-    const scaleX = 4000 / 1280;
-    const scaleY = 4000 / 720;
-    mapImage.setScale(Math.max(scaleX, scaleY));
-
-    // Add a semi-transparent overlay grid for gameplay clarity
-    const graphics = this.add.graphics();
-    graphics.lineStyle(1, 0x333333, 0.2);
-
-    const gridSize = 50;
-    for (let x = -2000; x <= 2000; x += gridSize) {
-      graphics.moveTo(x, -2000);
-      graphics.lineTo(x, 2000);
-    }
-    for (let y = -2000; y <= 2000; y += gridSize) {
-      graphics.moveTo(-2000, y);
-      graphics.lineTo(2000, y);
-    }
-    graphics.strokePath();
-    graphics.setDepth(-1);
   }
 
   private collectRangeIndicator?: Phaser.GameObjects.Graphics;
@@ -414,10 +373,10 @@ export class GameScene extends Phaser.Scene {
     this.collectRangeIndicator.setDepth(scaleManager.getZIndex() - 1);
 
     // Responsive UI sizing
-    const barWidth = scaleManager.getUIElementSize(200);
-    const barHeight = scaleManager.getUIElementSize(20);
-    const expBarHeight = scaleManager.getUIElementSize(15);
-    const padding = scaleManager.getUIElementSize(20);
+    const barWidth = scaleManager.UIScaleValue(200);
+    const barHeight = scaleManager.UIScaleValue(20);
+    const expBarHeight = scaleManager.UIScaleValue(15);
+    const padding = scaleManager.UIScaleValue(20);
 
     // Health bar
     this.healthBarBg = this.add.rectangle(
@@ -441,7 +400,7 @@ export class GameScene extends Phaser.Scene {
     // Experience bar
     this.expBarBg = this.add.rectangle(
       padding,
-      padding + barHeight + scaleManager.getUIElementSize(5),
+      padding + barHeight + scaleManager.UIScaleValue(5),
       barWidth,
       expBarHeight,
       0x000000,
@@ -450,7 +409,7 @@ export class GameScene extends Phaser.Scene {
     this.expBarBg.setOrigin(0, 0);
     this.expBar = this.add.rectangle(
       padding,
-      padding + barHeight + scaleManager.getUIElementSize(5),
+      padding + barHeight + scaleManager.UIScaleValue(5),
       barWidth,
       expBarHeight,
       0x00ff00,
@@ -459,7 +418,7 @@ export class GameScene extends Phaser.Scene {
 
     // Level text
     this.levelText = this.add.text(
-      padding + barWidth + scaleManager.getUIElementSize(10),
+      padding + barWidth + scaleManager.UIScaleValue(10),
       padding,
       i18n.t("game.level", { level: 1 }),
       {
@@ -474,11 +433,11 @@ export class GameScene extends Phaser.Scene {
 
     // Time text (centered at top) - Countdown from 30 minutes
     const timeX = scaleManager.isMobile()
-      ? this.cameras.main.width - padding - scaleManager.getUIElementSize(40)
+      ? this.cameras.main.width - padding - scaleManager.UIScaleValue(40)
       : this.cameras.main.width / 2;
     this.timeText = this.add.text(
       timeX,
-      padding - scaleManager.getUIElementSize(16) / 4,
+      padding - scaleManager.UIScaleValue(16) / 4,
       "00:00",
       {
         fontSize: scaleManager.getNameSize(),
@@ -491,7 +450,7 @@ export class GameScene extends Phaser.Scene {
     );
     this.timeText.setOrigin(0.5, 0);
 
-    const goldTextY = padding + barHeight + scaleManager.getUIElementSize(5);
+    const goldTextY = padding + barHeight + scaleManager.UIScaleValue(5);
 
     // Kill count
     this.goldText = this.add.text(
@@ -510,8 +469,8 @@ export class GameScene extends Phaser.Scene {
 
     this.killCount = 0;
 
-    const buttonHeight = scaleManager.getUIElementSize(40);
-    const buttonWidth = scaleManager.getUIElementSize(60);
+    const buttonHeight = scaleManager.UIScaleValue(40);
+    const buttonWidth = scaleManager.UIScaleValue(60);
     const x = scaleManager.isMobile()
       ? timeX
       : this.cameras.main.width - padding - buttonWidth / 2;
@@ -568,11 +527,7 @@ export class GameScene extends Phaser.Scene {
   private endGame(): void {
     // Save game data
     useSaveStore.getState().addKills(this.killCount);
-    useSaveStore
-      .getState()
-      .updatePlayTime(
-        useAppStore.getState().getSelectMap().gameTime - this.gameTime,
-      );
+    useSaveStore.getState().updatePlayTime(this.getPlayTime());
 
     this.showModal({
       title: i18n.t("game.endGameTitle"),
@@ -597,7 +552,7 @@ export class GameScene extends Phaser.Scene {
     // Clear previous indicator
     this.collectRangeIndicator.clear();
 
-    const playerPos = this.player.getPosition();
+    const playerPos = this.getPlayerPosition();
     const baseCollectRadius = scaleManager.scaleValue(30);
     const baseMagnetRadius = scaleManager.scaleValue(150);
 
@@ -634,7 +589,7 @@ export class GameScene extends Phaser.Scene {
 
     // Update health bar
     const healthPercent = this.player.health / this.player.maxHealth;
-    const barWidth = scaleManager.getUIElementSize(200);
+    const barWidth = scaleManager.UIScaleValue(200);
     if (this.healthBar) {
       this.healthBar.width = barWidth * healthPercent;
     }
@@ -688,7 +643,7 @@ export class GameScene extends Phaser.Scene {
     this.player.update(this.cursors, this.wasd, joystickInput);
 
     // Update enemies
-    const playerPos = this.player.getPosition();
+    const playerPos = this.getPlayerPosition();
     this.enemySpawner?.update(time, delta, playerPos);
 
     // Update weapons
@@ -711,12 +666,14 @@ export class GameScene extends Phaser.Scene {
     // Player and enemy collision
     this.playerDamageCoolDown = Math.max(0, this.playerDamageCoolDown - delta);
 
+    const playerPos = this.getPlayerPosition();
+
     enemies.forEach((enemy) => {
       if (enemy.isDead) return;
 
       const distance = Phaser.Math.Distance.Between(
-        this.player.sprite.x,
-        this.player.sprite.y,
+        playerPos.x,
+        playerPos.y,
         enemy.sprite.x,
         enemy.sprite.y,
       );
@@ -954,7 +911,7 @@ export class GameScene extends Phaser.Scene {
     const title = this.add
       .text(
         centerX,
-        centerY - scaleManager.getUIElementSize(150),
+        centerY - scaleManager.UIScaleValue(150),
         i18n.t("game.levelUp"),
         {
           fontSize: scaleManager.getTitleSize(),
@@ -985,31 +942,25 @@ export class GameScene extends Phaser.Scene {
     };
 
     const width = Math.min(
-      scaleManager.getUIElementSize(500),
+      scaleManager.UIScaleValue(500),
       this.cameras.main.width - 40,
     );
 
     options.forEach((option, index) => {
       const y =
         centerY -
-        scaleManager.getUIElementSize(50) +
-        index * scaleManager.getUIElementSize(100);
+        scaleManager.UIScaleValue(50) +
+        index * scaleManager.UIScaleValue(100);
 
       const button = this.add
-        .rectangle(
-          centerX,
-          y,
-          width,
-          scaleManager.getUIElementSize(80),
-          0x333333,
-        )
+        .rectangle(centerX, y, width, scaleManager.UIScaleValue(80), 0x333333)
         .setStrokeStyle(3, 0xffffff)
         .setInteractive({ useHandCursor: true })
         .setScrollFactor(0)
         .setDepth(textDepth);
 
       const nameText = this.add
-        .text(centerX, y - scaleManager.getUIElementSize(15), option.name, {
+        .text(centerX, y - scaleManager.UIScaleValue(15), option.name, {
           fontSize: scaleManager.getNameSize(),
           fontFamily: scaleManager.getDefaultFont(),
           color: "#ffffff",
@@ -1020,17 +971,12 @@ export class GameScene extends Phaser.Scene {
         .setDepth(endDepth);
 
       const descText = this.add
-        .text(
-          centerX,
-          y + scaleManager.getUIElementSize(15),
-          option.description,
-          {
-            fontSize: scaleManager.getDescSize(),
-            fontFamily: scaleManager.getDefaultFont(),
-            color: "#cccccc",
-            wordWrap: { width: width - 20 },
-          },
-        )
+        .text(centerX, y + scaleManager.UIScaleValue(15), option.description, {
+          fontSize: scaleManager.getDescSize(),
+          fontFamily: scaleManager.getDefaultFont(),
+          color: "#cccccc",
+          wordWrap: { width: width - 20 },
+        })
         .setOrigin(0.5)
         .setScrollFactor(0)
         .setDepth(endDepth);
@@ -1110,7 +1056,7 @@ export class GameScene extends Phaser.Scene {
     result.push(container);
 
     const titleText = this.add
-      .text(centerX, centerY - scaleManager.getUIElementSize(100), title, {
+      .text(centerX, centerY - scaleManager.UIScaleValue(100), title, {
         fontSize: scaleManager.getTitleSize(),
         color: titleColor,
         fontStyle: "bold",
@@ -1140,14 +1086,14 @@ export class GameScene extends Phaser.Scene {
       result.push(descText);
     }
 
-    const paddingY = scaleManager.getUIElementSize(120);
+    const paddingY = scaleManager.UIScaleValue(120);
 
     const okButton = this.add
       .rectangle(
-        centerX - scaleManager.getUIElementSize(110),
+        centerX - scaleManager.UIScaleValue(110),
         centerY + paddingY,
-        scaleManager.getUIElementSize(180),
-        scaleManager.getUIElementSize(60),
+        scaleManager.UIScaleValue(180),
+        scaleManager.UIScaleValue(60),
         0x333333,
       )
       .setStrokeStyle(3, 0xffffff)
@@ -1157,7 +1103,7 @@ export class GameScene extends Phaser.Scene {
 
     result.push(okButton);
 
-    const paddingX = scaleManager.getUIElementSize(110);
+    const paddingX = scaleManager.UIScaleValue(110);
 
     const okObj = this.add
       .text(centerX - paddingX, centerY + paddingY, okText, {
@@ -1188,8 +1134,8 @@ export class GameScene extends Phaser.Scene {
       .rectangle(
         centerX + paddingX,
         centerY + paddingY,
-        scaleManager.getUIElementSize(180),
-        scaleManager.getUIElementSize(60),
+        scaleManager.UIScaleValue(180),
+        scaleManager.UIScaleValue(60),
         0x333333,
       )
       .setStrokeStyle(3, 0xffffff)
@@ -1231,7 +1177,7 @@ export class GameScene extends Phaser.Scene {
   }
 
   private getEndGameDesc() {
-    return `${i18n.t("stats.survivalTime")}: ${formatTime(useAppStore.getState().getSelectMap().gameTime - this.gameTime)}\n${i18n.t(
+    return `${i18n.t("stats.survivalTime")}: ${this.getPlayTime()}\n${i18n.t(
       "stats.kills",
     )}: ${this.killCount}\n${i18n.t("stats.level")}: ${this.player.level}\n${i18n.t("stats.gold")}: ${useSaveStore.getState().totalGold}`;
   }
@@ -1244,11 +1190,7 @@ export class GameScene extends Phaser.Scene {
 
     // Save game data
     useSaveStore.getState().addKills(this.killCount);
-    useSaveStore
-      .getState()
-      .updatePlayTime(
-        useAppStore.getState().getSelectMap().gameTime - this.gameTime,
-      );
+    useSaveStore.getState().updatePlayTime(this.getPlayTime());
 
     // Complete the chapter and unlock characters
     const selectedMap = useAppStore.getState().getSelectMap();
@@ -1279,11 +1221,7 @@ export class GameScene extends Phaser.Scene {
 
     // Save game data
     useSaveStore.getState().addKills(this.killCount);
-    useSaveStore
-      .getState()
-      .updatePlayTime(
-        useAppStore.getState().getSelectMap().gameTime - this.gameTime,
-      );
+    useSaveStore.getState().updatePlayTime(this.getPlayTime());
 
     this.showModal({
       title: i18n.t("game.gameOver"),

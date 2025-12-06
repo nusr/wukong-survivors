@@ -56,7 +56,7 @@ export class Player {
     this.scene = scene;
 
     // Get scaled sprite size
-    const spriteSize = scaleManager.getSpriteSize(48);
+    const spriteSize = scaleManager.scaleValue(48);
 
     // Create player sprite with loaded texture
     this.sprite = scene.physics.add.sprite(x, y, textureKey);
@@ -208,13 +208,5 @@ export class Player {
 
     // Show level up selection menu
     this.scene.showLevelUpMenu();
-  }
-
-  /**
-   * Get current player position
-   * @returns Position object with x and y coordinates
-   */
-  public getPosition(): Position {
-    return { x: this.sprite.x, y: this.sprite.y };
   }
 }

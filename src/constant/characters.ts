@@ -1,4 +1,4 @@
-import type { CharacterData, CharacterType } from "../types";
+import type { CharacterData, CharacterType, CharacterRankType } from "../types";
 
 // Wukong character configuration (organized by chapter)
 export const CHARACTERS_DATA: Record<CharacterType, CharacterData> = {
@@ -485,3 +485,10 @@ export const CHARACTERS_DATA: Record<CharacterType, CharacterData> = {
     color: "#A9A9A9",
   },
 } as const;
+
+export const CHARACTER_SIZE: Record<CharacterRankType, number> = {
+  hero: 48,
+  king: 56,
+  lord: 44,
+  boss: 64,
+};

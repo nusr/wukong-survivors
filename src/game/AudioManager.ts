@@ -1,5 +1,6 @@
 import Phaser from "phaser";
 import { useSaveStore } from "../store";
+import type { GameScene } from "./GameScene";
 
 // Audio types following Vampire Survivors style
 export enum SoundEffect {
@@ -15,18 +16,18 @@ export enum SoundEffect {
  * Following Vampire Survivors audio patterns
  */
 export class AudioManager {
-  private scene: Phaser.Scene;
+  private scene: GameScene;
   private isPlayerSoundEnabled = false;
   private music: Phaser.Sound.BaseSound | null = null;
 
-  constructor(scene: Phaser.Scene) {
+  constructor(scene: GameScene) {
     this.scene = scene;
   }
 
   /**
    * Preload all audio assets
    */
-  public static preloadAudio(scene: Phaser.Scene): void {
+  public static preloadAudio(scene: GameScene): void {
     for (const key of Object.values(SoundEffect)) {
       scene.load.audio(key, `assets/audio/${key}.wav`);
     }

@@ -4,7 +4,6 @@ import type {
   ElixirType,
   ElixirData,
   WeaponRarity,
-  WeaponSynergyBonus,
 } from "../types/";
 
 // Weapon configuration data
@@ -640,106 +639,12 @@ export const RARITY_COLORS: Record<WeaponRarity, number> = {
   epic: 0x9932cc,
   legendary: 0xffd700,
 };
-
-export const WEAPON_SYNERGIES: WeaponSynergyBonus[] = [
-  {
-    id: "fire_combo",
-    name: "Blazing Power",
-    description: "Fire Lance + Wind Fire Wheels = Fire damage + 30%",
-    weapons: ["fire_lance", "wind_fire_wheels"],
-    effects: {
-      damageBonus: 0.3,
-    },
-  },
-  {
-    id: "staff_master",
-    name: "Staff Master",
-    description:
-      "Golden Staff + Ruyi Golden Cudgel + Sea Calming Needle = Attack speed + 30%",
-    weapons: ["golden_staff", "ruyi_staff", "sea_calming_needle"],
-    effects: {
-      attackSpeedBonus: 0.3,
-    },
-  },
-  {
-    id: "storm_power",
-    name: "Storm Power",
-    description: "Wind Tamer + Plantain Fan = Range + 50%",
-    weapons: ["wind_tamer", "plantain_fan"],
-    effects: {
-      rangeBonus: 0.5,
-    },
-  },
-  {
-    id: "blade_resonance",
-    name: "Blade Resonance",
-    description: "Three Pointed Blade + Seven Star Sword = Critical rate + 15%",
-    weapons: ["three_pointed_blade", "seven_star_sword"],
-    effects: {
-      critRateBonus: 0.15,
-    },
-  },
-  {
-    id: "buddhist_guardian",
-    name: "Buddhist Guardian",
-    description: "Nine Ring Staff + Demon Mace = Armor + 10",
-    weapons: ["nine_ring_staff", "mace"],
-    effects: {
-      armorBonus: 10,
-    },
-  },
-  {
-    id: "heavy_weapons_master",
-    name: "Heavy Weapons Master",
-    description: "Crescent Blade + Iron Cudgel = Knockback distance + 50%",
-    weapons: ["crescent_blade", "iron_cudgel"],
-    effects: {
-      controlDurationBonus: 0.5,
-    },
-  },
-  {
-    id: "immortal_protection",
-    name: "Immortal Protection",
-    description: "Ginseng Fruit + Any weapon = Health regeneration + 5/sec",
-    weapons: ["ginseng_fruit"],
-    effects: {
-      healthRegenBonus: 5,
-    },
-  },
-  {
-    id: "nezha_trinity",
-    name: "Nezha's Trinity",
-    description:
-      "Heaven Earth Circle + Red Armillary Sash + Wind Fire Wheels = All stats + 10%",
-    weapons: ["heaven_earth_circle", "red_armillary_sash", "wind_fire_wheels"],
-    effects: {
-      allStatsBonus: 0.1,
-    },
-  },
-  {
-    id: "binding_mastery",
-    name: "Binding Mastery",
-    description: "Golden Rope + Golden Rope Immortal = Control duration + 50%",
-    weapons: ["golden_rope", "golden_rope_immortal"],
-    effects: {
-      controlDurationBonus: 0.5,
-    },
-  },
-  {
-    id: "absorption_master",
-    name: "Absorption Master",
-    description: "Purple Gold Gourd + Jade Clear Bottle = Damage +25%",
-    weapons: ["purple_gold_gourd", "jade_purity_bottle"],
-    effects: { damageBonus: 0.25 },
-  },
-  {
-    id: "weakness_detection",
-    name: "Weakness Detection",
-    description: "Demon Mirror + any attack weapon = Critical damage +30%",
-    weapons: ["demon_revealing_mirror"],
-    effects: { critDamageBonus: 0.3 },
-  },
-];
+export const RARITY_SIZE: Record<WeaponRarity, number> = {
+  common: 24,
+  rare: 28,
+  epic: 32,
+  legendary: 36,
+};
 
 export const GEM_MAP = {
   gemLow: "gem-low",
@@ -747,3 +652,5 @@ export const GEM_MAP = {
   gemHigh: "gem-high",
   coin: "coin",
 };
+
+export const COLLECT_RANGE_BONUS = 0.5;

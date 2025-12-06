@@ -95,39 +95,3 @@ export interface RewardOption {
   type: RewardType;
   data: WeaponData | ElixirData;
 }
-
-// 游戏内存档中添加的字段
-export interface GameProgress {
-  currentWeapons: WeaponType[]; // 当前拥有的武器
-  elixirEffects: {
-    // 丹药效果累积
-    healthBonus: number;
-    damageBonus: number;
-    armorBonus: number;
-    speedBonus: number;
-    expBonus: number;
-    critBonus: number;
-    magnetBonus: number; // 磁吸范围加成
-    hasRevive: boolean;
-  };
-  killsSinceLastReward: number; // 距离上次奖励的击杀数
-  totalRewardCount: number; // 总共获得的奖励次数
-}
-
-export interface WeaponSynergyBonus {
-  id: string;
-  name: string;
-  description: string;
-  weapons: WeaponType[];
-  effects: {
-    damageBonus?: number;
-    attackSpeedBonus?: number;
-    rangeBonus?: number;
-    critRateBonus?: number;
-    critDamageBonus?: number;
-    armorBonus?: number;
-    allStatsBonus?: number;
-    healthRegenBonus?: number;
-    controlDurationBonus?: number;
-  };
-}

@@ -157,3 +157,5 @@ export const DEFAULT_SAVE: GameSave = {
   enableAutoSelect: false,
   enableUnlockAll: false,
 };
+
+export const WORLD_SIZE = 4000;

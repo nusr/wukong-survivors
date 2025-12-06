@@ -1,4 +1,4 @@
-import type { EnemyData, EnemyType } from "../types/characters";
+import type { EnemyData, EnemyType, EnemyRank } from "../types/characters";
 
 // Wukong enemy configuration (organized by chapter and rank)
 export const ENEMIES_DATA: Record<EnemyType, EnemyData> = {
@@ -331,4 +331,9 @@ export const ENEMIES_DATA: Record<EnemyType, EnemyData> = {
     goldValue: 80,
     color: "#00CED1",
   },
+};
+
+export const ENEMY_SIZE: Record<EnemyRank, number> = {
+  minion: 32,
+  elite: 40,
 };
