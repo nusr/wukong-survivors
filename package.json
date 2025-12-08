@@ -29,9 +29,9 @@
     "i18next": "^25.7.1",
     "lodash": "^4.17.21",
     "phaser": "^3.90.0",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
-    "react-i18next": "^16.3.5",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1",
+    "react-i18next": "^16.4.0",
     "zustand": "^5.0.9"
   },
   "devDependencies": {
@@ -59,7 +59,7 @@
     "prettier": "^3.7.4",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.48.1",
-    "vite": "^7.2.6",
+    "vite": "^7.2.7",
     "vitest": "^4.0.15"
   }
 }
