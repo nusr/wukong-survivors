@@ -15,8 +15,6 @@ import {
   WORLD_SIZE,
   CHARACTER_SIZE,
   ENEMY_SIZE,
-  DEFAULT_COLLECT_RADIUS,
-  DEFAULT_MAGNET_RADIUS,
   DEFAULT_SPRITE_SIZE,
 } from "../constant";
 import {
@@ -351,18 +349,12 @@ export class GameScene extends Phaser.Scene {
     this.closeButtonText?.setPosition(x, y);
   }
 
-  private collectRangeIndicator?: Phaser.GameObjects.Graphics;
-
   private createUI(): void {
     // UI container (fixed on screen)
     this.uiContainer = this.add
       .container(0, 0)
       .setScrollFactor(0)
       .setDepth(scaleManager.getZIndex());
-
-    // Create collect range indicator
-    this.collectRangeIndicator = this.add.graphics();
-    this.collectRangeIndicator.setDepth(scaleManager.getZIndex());
 
     // Responsive UI sizing
     const barWidth = scaleManager.UIScaleValue(200);
@@ -538,51 +530,7 @@ export class GameScene extends Phaser.Scene {
     });
   }
 
-  private updateCollectRangeIndicator(): void {
-    if (!this.collectRangeIndicator) return;
-
-    // Clear previous indicator
-    this.collectRangeIndicator.clear();
-
-    const playerPos = this.getPlayerPosition();
-    const baseCollectRadius = DEFAULT_COLLECT_RADIUS;
-    const baseMagnetRadius = DEFAULT_MAGNET_RADIUS;
-
-    // Calculate adjusted ranges
-    const collectBonusFactor = 1 + this.player.collectRange;
-    const magnetBonusFactor = 1 + this.player.magnetBonus;
-
-    const adjustedCollectRadius = scaleManager.scaleValue(
-      baseCollectRadius * collectBonusFactor,
-    );
-    const adjustedMagnetRadius = scaleManager.scaleValue(
-      baseMagnetRadius * magnetBonusFactor,
-    );
-
-    // Only draw if there's a bonus or if magnet radius is increased
-    if (this.player.collectRange > 0 || this.player.magnetBonus > 0) {
-      // Draw collect radius (inner circle)
-      this.collectRangeIndicator.lineStyle(2, 0xffd700, 0.5);
-      this.collectRangeIndicator.strokeCircle(
-        playerPos.x,
-        playerPos.y,
-        adjustedCollectRadius,
-      );
-
-      // Draw magnet radius (outer circle)
-      this.collectRangeIndicator.lineStyle(2, 0x9932cc, 0.3);
-      this.collectRangeIndicator.strokeCircle(
-        playerPos.x,
-        playerPos.y,
-        adjustedMagnetRadius,
-      );
-    }
-  }
-
   private updateUI(): void {
-    // Update collect range indicator
-    this.updateCollectRangeIndicator();
-
     // Update health bar
     const healthPercent = this.player.health / this.player.maxHealth;
     const barWidth = scaleManager.UIScaleValue(200);
@@ -743,7 +691,7 @@ export class GameScene extends Phaser.Scene {
   }
 
   private spawnGoldCoin(x: number, y: number): void {
-    const dropRate = GOLD_DROP_PERCENTAGE + this.player.luck * 0.01;
+    const dropRate = GOLD_DROP_PERCENTAGE + this.player.luck * 0.02;
     if (Math.random() < dropRate) {
       this.experienceManager?.spawnCoin(x, y);
     }
