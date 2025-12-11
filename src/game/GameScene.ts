@@ -652,7 +652,11 @@ export class GameScene extends Phaser.Scene {
               this.killCount++;
               this.killsSinceLastReward++;
               this.checkRewardTrigger();
-              this.spawnGoldCoin(enemy.sprite.x, enemy.sprite.y);
+              this.spawnGoldCoin(
+                enemy.sprite.x,
+                enemy.sprite.y,
+                enemy.goldValue,
+              );
             }
 
             projectile.piercing--;
@@ -682,7 +686,11 @@ export class GameScene extends Phaser.Scene {
               this.killCount++;
               this.killsSinceLastReward++;
               this.checkRewardTrigger();
-              this.spawnGoldCoin(enemy.sprite.x, enemy.sprite.y);
+              this.spawnGoldCoin(
+                enemy.sprite.x,
+                enemy.sprite.y,
+                enemy.goldValue,
+              );
             }
           }
         });
@@ -690,10 +698,10 @@ export class GameScene extends Phaser.Scene {
     }
   }
 
-  private spawnGoldCoin(x: number, y: number): void {
-    const dropRate = GOLD_DROP_PERCENTAGE + this.player.luck * 0.02;
+  private spawnGoldCoin(x: number, y: number, value: number): void {
+    const dropRate = GOLD_DROP_PERCENTAGE + this.player.luck * 0.01;
     if (Math.random() < dropRate) {
-      this.experienceManager?.spawnCoin(x, y);
+      this.experienceManager?.spawnCoin(x, y, value);
     }
   }
 

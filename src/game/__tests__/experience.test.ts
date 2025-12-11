@@ -98,13 +98,13 @@ describe("CollectibleItem", () => {
 
   it("should handle coin collection and add gold", () => {
     // Create coin
-    const coin = new CollectibleItem(mockScene, 100, 100, "coin");
+    const coin = new CollectibleItem(mockScene, 100, 100, "coin", 10);
 
     // Call collect method
     coin.collect();
 
     // Verify gold was added
-    expect(mockAddGold).toHaveBeenCalledWith(1);
+    expect(mockAddGold).toHaveBeenCalledWith(10);
 
     // Verify sprite.destroy was called via onComplete callback
     expect(coin.sprite.destroy).toHaveBeenCalled();
@@ -210,7 +210,7 @@ describe("ExperienceManager", () => {
 
   it("should spawn coins using spawnCoin method", () => {
     // Spawn a coin
-    experienceManager.spawnCoin(200, 200);
+    experienceManager.spawnCoin(200, 200, 1);
 
     // Verify coin was created
     const collectibles = (experienceManager as any).collectibles;
@@ -222,7 +222,7 @@ describe("ExperienceManager", () => {
   it("should update all collectibles", () => {
     // Spawn two collectibles
     experienceManager.spawnGem(100, 100, 5);
-    experienceManager.spawnCoin(200, 200);
+    experienceManager.spawnCoin(200, 200, 1);
 
     // Mock update method of collectibles
     const collectibles = (experienceManager as any).collectibles;
@@ -260,7 +260,7 @@ describe("ExperienceManager", () => {
 
   it("should remove collected coins from collectibles array", () => {
     // Spawn a coin
-    experienceManager.spawnCoin(100, 100);
+    experienceManager.spawnCoin(100, 100, 1);
 
     // Get reference to the collectible from the array
     const collectibles = (experienceManager as any).collectibles;
@@ -282,7 +282,7 @@ describe("ExperienceManager", () => {
     // Spawn three collectibles
     experienceManager.spawnGem(100, 100, 5);
     experienceManager.spawnGem(200, 200, 10);
-    experienceManager.spawnCoin(300, 300);
+    experienceManager.spawnCoin(300, 300, 1);
 
     // Mock destroy method for each collectible
     const collectibles = (experienceManager as any).collectibles;
@@ -304,7 +304,7 @@ describe("ExperienceManager", () => {
     // Spawn three collectibles
     experienceManager.spawnGem(100, 100, 5);
     experienceManager.spawnGem(200, 200, 10);
-    experienceManager.spawnCoin(300, 300);
+    experienceManager.spawnCoin(300, 300, 1);
 
     // Save original collectibles
     const collectibles = [...(experienceManager as any).collectibles];

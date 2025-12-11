@@ -116,7 +116,7 @@ export class CollectibleItem {
 
     // Handle coin collection immediately
     if (this.type === "coin") {
-      useSaveStore.getState().addGold(1);
+      useSaveStore.getState().addGold(this.value);
     }
   }
 
@@ -160,9 +160,9 @@ export class ExperienceManager {
     this.collectibles.push(gem);
   }
 
-  // Spawn a gold coin at specified position
-  public spawnCoin(x: number, y: number): void {
-    const coin = new CollectibleItem(this.scene, x, y, "coin");
+  // Spawn a gold coin at specified position with given value
+  public spawnCoin(x: number, y: number, value: number): void {
+    const coin = new CollectibleItem(this.scene, x, y, "coin", value);
     this.collectibles.push(coin);
   }
 

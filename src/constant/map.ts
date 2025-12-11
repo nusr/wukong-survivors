@@ -97,7 +97,7 @@ export const MAPS: GameMap[] = [
 ];
 // Permanent upgrade configuration
 
-export const BASE_UPGRADE_PERCENTAGE = 0.02;
+export const BASE_UPGRADE_PERCENTAGE = 0.01;
 export const MAX_UPGRADE_LEVEL = 10;
 
 export const PERMANENT_UPGRADES: PermanentUpgrade[] = [
