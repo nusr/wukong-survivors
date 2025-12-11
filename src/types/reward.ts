@@ -1,3 +1,5 @@
+import type { PermanentUpgradeType } from "./types";
+
 // 武器和丹药类型定义
 
 // 武器类型（黑神话悟空）
@@ -67,6 +69,8 @@ export interface WeaponData {
   maxLevel: number;
 }
 
+export type ElixirEffectType = PermanentUpgradeType | "revive" | "all";
+
 // 丹药接口
 export interface ElixirData {
   id: ElixirType;
@@ -74,16 +78,7 @@ export interface ElixirData {
   description: string;
   rarity: WeaponRarity;
   effect: {
-    type:
-      | "health"
-      | "damage"
-      | "armor"
-      | "speed"
-      | "exp"
-      | "crit"
-      | "all"
-      | "revive"
-      | "magnet"; // 磁吸范围
+    type: ElixirEffectType;
     value: number;
   };
 }

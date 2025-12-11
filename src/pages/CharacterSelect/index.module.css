@@ -15,7 +15,6 @@
   transition: all 0.3s;
   position: relative;
   touch-action: manipulation;
-  min-height: 120px;
 }
 
 .characterCard.unlocked:hover {
@@ -38,6 +37,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+  height: 40px;
 }
 
 .unlockedChar {
@@ -50,6 +50,9 @@
 
 .lockedIcon {
   font-size: var(--subtitle-font-size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .characterName {
@@ -94,7 +97,6 @@
   margin-bottom: var(--content-padding);
 }
 
-
 .stat {
   display: flex;
   justify-content: space-between;
@@ -134,4 +136,4 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: var(--content-padding);
-}
+}

@@ -26,7 +26,7 @@ const Wiki = ({ onBack }: { onBack: () => void }) => {
       </button>
       <h1 data-testid="page-title">{t("wiki.title")}</h1>
 
-      <details className={styles.details}>
+      <details className={styles.details} data-testid="wiki-maps-section">
         <summary className={styles.title}>{t("maps.title")}</summary>
         {MAPS.map((v) => (
           <div key={v.id} className={styles.item}>
@@ -36,7 +36,7 @@ const Wiki = ({ onBack }: { onBack: () => void }) => {
         ))}
       </details>
 
-      <details className={styles.details}>
+      <details className={styles.details} data-testid="wiki-characters-section">
         <summary className={styles.title}>{t("characters.title")}</summary>
         {characters.map((v) => (
           <div key={v.id} className={styles.item}>
@@ -48,7 +48,7 @@ const Wiki = ({ onBack }: { onBack: () => void }) => {
         ))}
       </details>
 
-      <details className={styles.details}>
+      <details className={styles.details} data-testid="wiki-weapons-section">
         <summary className={styles.title}>{t("weapons.title")}</summary>
         {weapons.map((v) => (
           <div key={v.id} className={styles.item}>
@@ -60,7 +60,7 @@ const Wiki = ({ onBack }: { onBack: () => void }) => {
         ))}
       </details>
 
-      <details className={styles.details}>
+      <details className={styles.details} data-testid="wiki-elixirs-section">
         <summary className={styles.title}>{t("elixirs.title")}</summary>
         {elixirs.map((v) => (
           <div key={v.id} className={styles.item}>
@@ -72,7 +72,7 @@ const Wiki = ({ onBack }: { onBack: () => void }) => {
         ))}
       </details>
 
-      <details className={styles.details}>
+      <details className={styles.details} data-testid="wiki-enemies-section">
         <summary className={styles.title}>{t("enemies.title")}</summary>
         {enemies.map((v) => (
           <div key={v.id} className={styles.item}>

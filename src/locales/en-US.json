@@ -235,6 +235,22 @@
         "speed": {
             "name": "Movement Speed",
             "description": "+{value} speed per level"
+        },
+        "expBonus": {
+            "name": "Experience Bonus",
+            "description": "+{value}% experience per level"
+        },
+        "critRate": {
+            "name": "Critical Rate",
+            "description": "+{value}% crit rate per level"
+        },
+        "magnetBonus": {
+            "name": "Magnet Range Bonus",
+            "description": "+{value}% magnet range per level"
+        },
+        "collectRange": {
+            "name": "Collect Range Bonus",
+            "description": "+{value}% collect range per level"
         }
     },
     "weapons": {

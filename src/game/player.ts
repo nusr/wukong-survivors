@@ -1,6 +1,6 @@
 import Phaser from "phaser";
 import { scaleManager } from "./ScaleManager";
-import type { CharacterType } from "../types";
+import type { CharacterType, ElixirEffectType } from "../types";
 import type { GameScene } from "./GameScene";
 
 /**
@@ -36,9 +36,11 @@ export class Player {
   public critRate: number;
   public expBonus: number;
   public reviveCount: number;
-  public collectRangeBonus: number;
+  public collectRange: number;
   public magnetBonus: number;
+  public luck: number;
   public scene: GameScene;
+  public attack: number;
 
   /**
    * Create a new player instance
@@ -75,8 +77,10 @@ export class Player {
     this.critRate = 0;
     this.expBonus = 0;
     this.reviveCount = 0;
-    this.collectRangeBonus = 0;
+    this.collectRange = 0;
     this.magnetBonus = 0;
+    this.luck = 0;
+    this.attack = 0;
 
     // Set camera to follow with responsive zoom
     scene.cameras.main.startFollow(this.sprite);
@@ -207,5 +211,54 @@ export class Player {
 
     // Show level up selection menu
     this.scene.showLevelUpMenu();
+  }
+
+  public upgrade(type: ElixirEffectType, value: number, value2: number = 0) {
+    switch (type) {
+      case "health":
+        this.health += value;
+        this.maxHealth += value2;
+        break;
+      case "attack":
+        this.attack += value;
+        break;
+      case "armor":
+        this.armor += value;
+        break;
+      case "luck":
+        this.luck += value;
+        break;
+      case "speed":
+        this.speed += value;
+        break;
+      case "expBonus":
+        this.expBonus += value;
+        break;
+      case "critRate":
+        this.critRate += value;
+        break;
+      case "all": {
+        const radio = 1 + value;
+        this.maxHealth *= radio;
+        this.health += this.maxHealth * value;
+        this.speed *= radio;
+        this.magnetBonus *= radio;
+        this.critRate *= radio;
+        this.expBonus *= radio;
+        this.luck *= radio;
+        this.armor *= radio;
+        this.attack *= radio;
+        break;
+      }
+      case "revive":
+        this.reviveCount += value;
+        break;
+      case "magnetBonus":
+        this.magnetBonus += value;
+        break;
+      case "collectRange":
+        this.collectRange += value;
+        break;
+    }
   }
 }

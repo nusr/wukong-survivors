@@ -33,6 +33,8 @@ import eventBus from "./eventBus";
 import { formatTime } from "../util";
 import type { ProjectileSprite } from "./weapon";
 
+const GOLD_DROP_PERCENTAGE = 0.1;
+
 interface ButtonElement {
   button: Phaser.GameObjects.Rectangle;
   nameText: Phaser.GameObjects.Text;
@@ -177,6 +179,9 @@ export class GameScene extends Phaser.Scene {
     this.player.maxHealth = character.stats.baseHealth;
     this.player.health = character.stats.baseHealth;
     this.player.speed = character.stats.baseSpeed;
+    this.player.luck = character.stats.baseLuck;
+    this.player.armor = character.stats.baseArmor;
+    this.player.attack = character.stats.baseDamage;
 
     // Apply permanent upgrades
     const state = useSaveStore.getState();
@@ -184,24 +189,7 @@ export class GameScene extends Phaser.Scene {
       const level = state[upgrade.id] || 0;
       if (level > 0) {
         const effect = upgrade.effect(level);
-        switch (upgrade.id) {
-          case "attack":
-            // Weapon damage will be applied when weapon is created
-            break;
-          case "health":
-            this.player.maxHealth += effect;
-            this.player.health += effect;
-            break;
-          case "armor":
-            // Armor will be calculated when taking damage
-            break;
-          case "luck":
-            // Luck will affect drops
-            break;
-          case "speed":
-            this.player.speed += effect;
-            break;
-        }
+        this.player.upgrade(upgrade.id, effect, effect);
       }
     });
 
@@ -561,7 +549,7 @@ export class GameScene extends Phaser.Scene {
     const baseMagnetRadius = DEFAULT_MAGNET_RADIUS;
 
     // Calculate adjusted ranges
-    const collectBonusFactor = 1 + this.player.collectRangeBonus;
+    const collectBonusFactor = 1 + this.player.collectRange;
     const magnetBonusFactor = 1 + this.player.magnetBonus;
 
     const adjustedCollectRadius = scaleManager.scaleValue(
@@ -572,7 +560,7 @@ export class GameScene extends Phaser.Scene {
     );
 
     // Only draw if there's a bonus or if magnet radius is increased
-    if (this.player.collectRangeBonus > 0 || this.player.magnetBonus > 0) {
+    if (this.player.collectRange > 0 || this.player.magnetBonus > 0) {
       // Draw collect radius (inner circle)
       this.collectRangeIndicator.lineStyle(2, 0xffd700, 0.5);
       this.collectRangeIndicator.strokeCircle(
@@ -694,9 +682,9 @@ export class GameScene extends Phaser.Scene {
     });
 
     // Weapon and enemy collision
-    for (const weapon of this.weaponManager?.weapons || []) {
+    for (const weapon of this.weaponManager?.getWeapons() || []) {
       // Magic missile collision
-      weapon.projectiles?.children.entries.forEach((item) => {
+      weapon.projectiles.children.entries.forEach((item) => {
         const projectile = item as ProjectileSprite;
         if (!projectile.active) return;
 
@@ -755,10 +743,10 @@ export class GameScene extends Phaser.Scene {
   }
 
   private spawnGoldCoin(x: number, y: number): void {
-    if (Math.random() >= 0.1) {
-      return;
+    const dropRate = GOLD_DROP_PERCENTAGE + this.player.luck * 0.01;
+    if (Math.random() < dropRate) {
+      this.experienceManager?.spawnCoin(x, y);
     }
-    this.experienceManager?.spawnCoin(x, y);
   }
 
   public spawnExperience(x: number, y: number, value: number): void {
@@ -815,9 +803,7 @@ export class GameScene extends Phaser.Scene {
       } else {
         // If already owned, upgrade it
         const weapon = this.weaponManager?.getWeapon(WeaponClass);
-        if (weapon && weapon.level < weapon.maxLevel) {
-          weapon.upgrade();
-        }
+        weapon?.upgrade();
       }
 
       return;
@@ -827,60 +813,15 @@ export class GameScene extends Phaser.Scene {
       // Apply elixir effects
       const elixir = option.data as ElixirData;
 
-      switch (elixir.effect.type) {
-        case "health":
-          if (elixir.id === "jade_dew") {
-            // Jade Dew: Restore health
-            this.player.health = Math.min(
+      const effect =
+        elixir.id === "jade_dew"
+          ? Math.min(
               this.player.maxHealth,
               this.player.health + this.player.maxHealth * elixir.effect.value,
-            );
-          } else {
-            // Peach of Immortality: Increase max health
-            this.player.maxHealth += elixir.effect.value;
-            this.player.health += elixir.effect.value;
-          }
-          break;
-        case "damage":
-          // Golden Elixir: Increase attack power
-          this.weaponManager?.weapons.forEach((weapon) => {
-            weapon.damage *= 1 + elixir.effect.value;
-          });
-          break;
-        case "armor":
-          // Tiger Bone Wine/Dragon Scale: Increase armor
-          this.player.armor += elixir.effect.value;
-          break;
-        case "speed":
-          // Phoenix Feather: Increase movement speed
-          this.player.speed += elixir.effect.value;
-          break;
-        case "exp":
-          // Spirit Mushroom: Increase experience gain
-          this.player.expBonus += elixir.effect.value;
-          break;
-        case "crit":
-          // Soul Bead: Increase critical rate
-          this.player.critRate += elixir.effect.value;
-          break;
-        case "all":
-          // Inner Elixir: Increase all stats
-          this.player.maxHealth += this.player.maxHealth * elixir.effect.value;
-          this.player.health += this.player.maxHealth * elixir.effect.value;
-          this.player.speed += this.player.speed * elixir.effect.value;
-          this.weaponManager?.weapons.forEach((weapon) => {
-            weapon.damage *= 1 + elixir.effect.value;
-          });
-          break;
-        case "revive":
-          // Resurrection Pill: Revive upon death
-          this.player.reviveCount += 1;
-          break;
-        case "magnet":
-          // Universe Bag: Increase magnet range
-          this.player.magnetBonus += elixir.effect.value;
-          break;
-      }
+            )
+          : elixir.effect.value;
+
+      this.player.upgrade(elixir.effect.type, effect, this.player.maxHealth);
     }
   }
 

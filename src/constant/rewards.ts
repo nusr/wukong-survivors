@@ -394,7 +394,7 @@ export const ELIXIRS: Record<ElixirType, ElixirData> = {
     description: "提升10%攻击力",
     rarity: "rare",
     effect: {
-      type: "damage",
+      type: "attack",
       value: 0.1,
     },
   },
@@ -444,7 +444,7 @@ export const ELIXIRS: Record<ElixirType, ElixirData> = {
     description: "增加20%经验获取",
     rarity: "rare",
     effect: {
-      type: "exp",
+      type: "expBonus",
       value: 0.2,
     },
   },
@@ -454,7 +454,7 @@ export const ELIXIRS: Record<ElixirType, ElixirData> = {
     description: "增加10%暴击率",
     rarity: "epic",
     effect: {
-      type: "crit",
+      type: "critRate",
       value: 0.1,
     },
   },
@@ -484,7 +484,7 @@ export const ELIXIRS: Record<ElixirType, ElixirData> = {
     description: "显著增加金币和宝石的磁吸范围",
     rarity: "epic",
     effect: {
-      type: "magnet",
+      type: "magnetBonus",
       value: 1.5, // 50%磁吸范围加成
     },
   },
@@ -658,6 +658,20 @@ export const RARITY_SPEED: Record<WeaponRarity, number> = {
   rare: 300,
   epic: 350,
   legendary: 400,
+};
+
+export const RARITY_DAMAGE: Record<WeaponRarity, number> = {
+  common: 5,
+  rare: 8,
+  epic: 11,
+  legendary: 14,
+};
+
+export const RARITY_MAX_LEVEL: Record<WeaponRarity, number> = {
+  common: 5,
+  rare: 6,
+  epic: 7,
+  legendary: 8,
 };
 
 export const GEM_MAP = {

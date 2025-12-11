@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./index.module.css";
 import { GameScene } from "../../game/GameScene";
-import { EVENT_MAP } from "../../constant";
+import { EVENT_MAP, ENABLE_DEBUG } from "../../constant";
 import Phaser from "phaser";
 import EventBus from "../../game/eventBus";
 
@@ -19,7 +19,7 @@ const getConfig = (parent: HTMLElement) => {
       default: "arcade",
       arcade: {
         gravity: { y: 0, x: 0 },
-        debug: false,
+        debug: ENABLE_DEBUG,
       },
     },
     scene: [GameScene],

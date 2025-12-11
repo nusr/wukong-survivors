@@ -11,6 +11,9 @@ import {
   RARITY_SIZE,
   RARITY_DURATION,
   RARITY_SPEED,
+  RARITY_DAMAGE,
+  RARITY_MAX_LEVEL,
+  ENABLE_DEBUG,
 } from "../constant";
 import type { GameScene } from "./GameScene";
 
@@ -19,6 +22,7 @@ import type { GameScene } from "./GameScene";
  */
 export interface WeaponConfig {
   type: WeaponType;
+  isOrb?: boolean;
 }
 
 /**
@@ -49,13 +53,20 @@ export abstract class Weapon {
   protected player: Player;
   public level: number;
   public maxLevel: number;
-  public damage: number;
+  private _damage: number;
   public coolDown: number;
-  protected lastFired: number;
+  private lastFired: number;
   public type: WeaponType;
   public orbs: OrbData[] = [];
   public projectiles: Phaser.Physics.Arcade.Group;
-  public collectRangeBonus: number = 0;
+  private collectRangeBonus: number = 0;
+  public projectileCount: number = 1;
+  public projectileSpeed: number;
+  public piercing: number = 1;
+  public isOrb: boolean = false;
+  public rotationSpeed = 0;
+  public rotationAngle = 0;
+  public rotationRadius = 0;
 
   /**
    * Create a new weapon
@@ -75,12 +86,27 @@ export abstract class Weapon {
     this.scene = scene;
     this.player = player;
     this.level = 1;
-    this.maxLevel = 5;
-    this.damage = weaponData.baseDamage;
-    this.coolDown = weaponData.attackSpeed;
+    this.maxLevel = RARITY_MAX_LEVEL[weaponData.rarity] ?? 5;
+    this._damage = weaponData.baseDamage ?? 0;
+    this.coolDown = weaponData.attackSpeed ?? 0;
     this.lastFired = 0;
     this.type = config.type;
     this.projectiles = scene.physics.add.group();
+    this.projectileSpeed = RARITY_SPEED[weaponData.rarity] ?? 0;
+    this.isOrb = config.isOrb ?? false;
+  }
+
+  public get damage(): number {
+    const isCrit =
+      this.player.critRate > 0 && Math.random() <= this.player.critRate;
+
+    const damage = this._damage + this.player.attack;
+
+    return isCrit ? damage * 1.5 : damage;
+  }
+
+  public set damage(value: number) {
+    this._damage = value;
   }
 
   /**
@@ -88,21 +114,30 @@ export abstract class Weapon {
    * @param time Current game time
    * @param enemies Array of active enemies
    */
-  public update(time: number, enemies: Enemy[], sortedEnemies: Enemy[]): void {
+  public update(time: number, enemies: Enemy[]): void {
+    if (this.isOrb) {
+      this.rotationAngle += this.rotationSpeed * 0.016; // Assuming 60fps
+      const playerPos = this.scene.getPlayerPosition();
+
+      const radius = scaleManager.scaleValue(this.rotationRadius);
+
+      // Update each orb's position around the player
+      this.orbs.forEach((orb) => {
+        const adjustedAngle = this.rotationAngle + orb.offset;
+        orb.sprite.x = playerPos.x + Math.cos(adjustedAngle) * radius;
+        orb.sprite.y = playerPos.y + Math.sin(adjustedAngle) * radius;
+      });
+      return;
+    }
+
     if (time - this.lastFired >= this.coolDown) {
       if (enemies.length > 0) {
         this.scene.playPlayerFireSound();
       }
-      this.fire(enemies, sortedEnemies);
+      this.fire(enemies);
       this.lastFired = time;
     }
   }
-
-  /**
-   * Fire the weapon - must be implemented by subclasses
-   * @param enemies Array of enemies to potentially target
-   */
-  protected abstract fire(enemies: Enemy[], sortedEnemies: Enemy[]): void;
 
   /**
    * Upgrade the weapon if not at max level
@@ -110,6 +145,7 @@ export abstract class Weapon {
   public upgrade(): void {
     if (this.level < this.maxLevel) {
       this.level++;
+      this._damage += RARITY_DAMAGE[WEAPONS[this.type].rarity];
       this.applyUpgrade();
     }
   }
@@ -151,111 +187,107 @@ export abstract class Weapon {
       : 0;
   }
 
-  /**
-   * Create a projectile with consistent settings
-   */
-  protected createProjectile(distance = 20, x?: number): ProjectileSprite {
+  protected createProjectile(x?: number): ProjectileSprite {
     const playerPos = this.scene.getPlayerPosition();
 
     const weaponData = WEAPONS[this.type];
 
-    const size = RARITY_SIZE[weaponData.rarity];
+    const projectileSize = scaleManager.scaleValue(
+      RARITY_SIZE[weaponData.rarity],
+    );
 
-    // Create projectile with the specified texture
-    const projectileSize = scaleManager.scaleValue(size);
-    const projectile = this.projectiles.create(
-      x ?? playerPos.x,
-      playerPos.y,
-      this.type,
-    ) as ProjectileSprite;
+    let projectile: ProjectileSprite;
+
+    let distance = 20;
+
+    if (this.isOrb) {
+      distance = 25;
+      projectile = this.scene.physics.add.sprite(
+        0,
+        0,
+        this.type,
+      ) as ProjectileSprite;
+    } else {
+      projectile = this.projectiles.create(
+        x ?? playerPos.x,
+        playerPos.y,
+        this.type,
+      ) as ProjectileSprite;
+    }
 
     projectile.setCircle(projectileSize / 2);
     projectile.setDisplaySize(projectileSize, projectileSize);
     projectile.damage = this.damage;
-    projectile.piercing = 0;
+    projectile.piercing = this.piercing;
     projectile.distance = distance;
 
     return projectile;
   }
 
-  protected createOrb(distance = 25): ProjectileSprite {
-    const weaponData = WEAPONS[this.type];
+  protected createOrbs(): void {
+    if (this.orbs.length === this.projectileCount) {
+      return;
+    }
 
-    const orbSize = scaleManager.scaleValue(RARITY_SIZE[weaponData.rarity]);
+    this.orbs.forEach((orb) => orb.sprite.destroy());
+    this.orbs = [];
 
-    const orb = this.scene.physics.add.sprite(
-      0,
-      0,
-      this.type,
-    ) as ProjectileSprite;
-
-    orb.setCircle(orbSize / 2);
-    orb.setDisplaySize(orbSize, orbSize);
-    orb.damage = this.damage;
-    orb.distance = distance;
-    orb.piercing = 0;
-
-    return orb;
+    for (let i = 0; i < this.projectileCount; i++) {
+      const orb = this.createProjectile();
+      this.orbs.push({
+        sprite: orb,
+        offset: ((Math.PI * 2) / this.projectileCount) * i,
+      });
+    }
   }
 
-  protected fireWeapon(
-    enemies: Enemy[],
-    count: number = 1,
-    projectileSpeed?: number,
-    piercing: number = 1,
-    generateAngle?: (index: number) => number,
-  ) {
+  protected generateProjectileAngle(_index: number, enemy?: Enemy): number {
+    if (!enemy) {
+      return 0;
+    }
+    const playerPos = this.scene.getPlayerPosition();
+    return Phaser.Math.Angle.Between(
+      playerPos.x,
+      playerPos.y,
+      enemy.sprite.x,
+      enemy.sprite.y,
+    );
+  }
+
+  // Fire the weapon
+  protected fire(enemies: Enemy[]): void {
+    if (this.projectileCount === 0 || this.isOrb) {
+      return;
+    }
+
     const playerPos = this.scene.getPlayerPosition();
     const weaponData = WEAPONS[this.type];
     const duration = RARITY_DURATION[weaponData.rarity];
-    const speed = projectileSpeed ?? RARITY_SPEED[weaponData.rarity];
 
-    const list: ProjectileSprite[] = [];
-
-    for (let i = 0; i < count; i++) {
-      const target = enemies[i];
-
-      let angle = 0;
-
-      if (generateAngle) {
-        angle = generateAngle(i);
-      } else if (target) {
-        angle = Phaser.Math.Angle.Between(
-          playerPos.x,
-          playerPos.y,
-          target.sprite.x,
-          target.sprite.y,
-        );
-      } else {
-        continue;
-      }
-
+    for (let i = 0; i < this.projectileCount; i++) {
+      const angle = this.generateProjectileAngle(i, enemies[i]);
       const projectile = this.createProjectile(
-        20,
         playerPos.x + (i === 0 ? -10 : 10),
       );
 
-      projectile.setVelocity(Math.cos(angle) * speed, Math.sin(angle) * speed);
+      projectile.setVelocity(
+        Math.cos(angle) * this.projectileSpeed,
+        Math.sin(angle) * this.projectileSpeed,
+      );
       projectile.setRotation(angle);
-
-      projectile.piercing = piercing;
 
       this.scene.time.delayedCall(duration, () => {
         if (projectile.active) projectile.destroy();
       });
-
-      list.push(projectile);
     }
-
-    return list;
   }
 
   protected updateCollectRange(): void {
-    this.player.collectRangeBonus -= this.collectRangeBonus;
+    this.player.collectRange -= this.collectRangeBonus;
 
     this.collectRangeBonus = COLLECT_RANGE_BONUS * this.level;
 
-    this.player.collectRangeBonus += this.collectRangeBonus;
+    this.player.collectRange += this.collectRangeBonus;
   }
 }
 
@@ -264,34 +296,16 @@ export abstract class Weapon {
  * Fires auto-targeting magic missiles at the closest enemy
  */
 export class GoldenStaff extends Weapon {
-  private piercing: number;
-
-  /**
-   * Create a new Golden Staff weapon
-   * @param scene Game scene reference
-   * @param player Player reference
-   */
   constructor(scene: GameScene, player: Player) {
     super(scene, player, {
       type: "golden_staff",
     });
-    this.piercing = 1; // Base piercing value (number of enemies it can hit)
-  }
-
-  /**
-   * Fire magic missile at the closest enemy
-   */
-  protected fire(_enemies: Enemy[], sortedEnemies: Enemy[]): void {
-    this.fireWeapon(sortedEnemies, undefined, undefined, this.piercing);
   }
 
   /**
    * Apply upgrades when weapon levels up
    */
   protected applyUpgrade(): void {
-    // Increase damage with each level
-    this.damage += 5;
-
     // Decrease cool down with each level (capped at 300ms)
     this.coolDown = Math.max(300, this.coolDown - 100);
 
@@ -310,85 +324,24 @@ export class GoldenStaff extends Weapon {
  * Creates rotating fire orbs around the player that deal damage to nearby enemies
  */
 export class FireproofCloak extends Weapon {
-  private orbCount: number;
-  private radius: number;
-  private rotationSpeed: number;
-  private angle: number;
-
-  /**
-   * Create a new Fireproof Cloak weapon
-   * @param scene Game scene reference
-   * @param player Player reference
-   */
   constructor(scene: GameScene, player: Player) {
     super(scene, player, {
       type: "fireproof_cloak",
+      isOrb: true,
     });
-    this.orbCount = 1; // Start with 1 orb
-    this.radius = scaleManager.scaleValue(80); // Initial rotation radius
+    this.rotationRadius = 80;
     this.rotationSpeed = 2; // Initial rotation speed
-    this.angle = 0; // Current rotation angle
 
     // Initialize orbs on creation
     this.createOrbs();
   }
 
-  /**
-   * Create orbs for the fireproof cloak
-   * Destroys existing orbs and creates new ones based on current orbCount
-   */
-  private createOrbs(): void {
-    // Clear old orbs to prevent memory leaks
-    this.orbs.forEach((orb) => orb.sprite.destroy());
-    this.orbs = [];
-
-    for (let i = 0; i < this.orbCount; i++) {
-      // Create orb sprite
-      const orb = this.createOrb();
-
-      // Calculate angular offset for evenly spaced orbs
-      const offset = ((Math.PI * 2) / this.orbCount) * i;
-
-      // Add to orb collection
-      this.orbs.push({
-        sprite: orb,
-        offset: offset,
-      });
-    }
-  }
-
-  /**
-   * Update orb positions and rotation
-   */
-  public update(_time: number, _enemies: Enemy[]): void {
-    // Update rotation angle (deltaTime approximation)
-    this.angle += this.rotationSpeed * 0.016; // Assuming 60fps
-
-    // Get current player position
-    const playerPos = this.scene.getPlayerPosition();
-
-    // Update each orb's position around the player
-    this.orbs.forEach((orb) => {
-      const adjustedAngle = this.angle + orb.offset;
-      orb.sprite.x = playerPos.x + Math.cos(adjustedAngle) * this.radius;
-      orb.sprite.y = playerPos.y + Math.sin(adjustedAngle) * this.radius;
-    });
-  }
-
-  /**
-   * Fire method implementation (not used for persistent aura weapons)
-   */
-  protected fire(_enemies: Enemy[], _sortedEnemies: Enemy[]): void {
-    // Fireproof Cloak doesn't need a traditional fire method as it persists continuously
-  }
+  protected fire() {}
 
   /**
    * Apply upgrades when weapon levels up
    */
   protected applyUpgrade(): void {
-    // Increase damage with each level
-    this.damage += 5;
-
     // Update orbs with new damage value
     this.orbs.forEach((orb) => {
       orb.sprite.damage = this.damage;
@@ -397,14 +350,14 @@ export class FireproofCloak extends Weapon {
     // Level-based upgrades
     if (this.level === 2) {
       // Add second orb at level 2
-      this.orbCount = 2;
+      this.projectileCount = 2;
       this.createOrbs();
     } else if (this.level === 3) {
       // Increase radius at level 3
-      this.radius = scaleManager.scaleValue(100);
+      this.rotationRadius = 100;
     } else if (this.level === 4) {
       // Add third orb at level 4
-      this.orbCount = 3;
+      this.projectileCount = 3;
       this.createOrbs();
     } else if (this.level === 5) {
       // Increase rotation speed at max level
@@ -419,36 +372,11 @@ export class FireproofCloak extends Weapon {
  * Creates high damage projectiles with piercing capability
  */
 export class RuyiStaff extends Weapon {
-  private piercing: number;
-  private projectileCount: number;
-
-  /**
-   * Create a new Ruyi Staff weapon
-   * @param scene Game scene reference
-   * @param player Player reference
-   */
   constructor(scene: GameScene, player: Player) {
     super(scene, player, {
       type: "ruyi_staff",
     });
-
-    // Initialize weapon properties
-
     this.piercing = 3; // Can pierce through 3 enemies initially
-    this.projectileCount = 1; // Start with 1 projectile per shot
-  }
-
-  /**
-   * Fire projectiles at the nearest enemies
-   * @param enemies Array of active enemies
-   */
-  protected fire(_enemies: Enemy[], sortedEnemies: Enemy[]): void {
-    this.fireWeapon(
-      sortedEnemies,
-      this.projectileCount,
-      undefined,
-      this.piercing,
-    );
   }
 
   /**
@@ -456,9 +384,6 @@ export class RuyiStaff extends Weapon {
    * Enhances damage, reduces cool down, increases projectile count, and improves piercing
    */
   protected applyUpgrade(): void {
-    // Increase damage with each level
-    this.damage += 10;
-
     // Reduce cool down with a minimum of 500ms
     this.coolDown = Math.max(500, this.coolDown - 50);
 
@@ -476,35 +401,11 @@ export class RuyiStaff extends Weapon {
  * at higher levels
  */
 export class FireLance extends Weapon {
-  private projectileSpeed: number;
-  private piercing: number;
-
-  /**
-   * Create a new Fire Lance weapon
-   * @param scene Game scene reference
-   * @param player Player reference
-   */
   constructor(scene: GameScene, player: Player) {
     super(scene, player, {
       type: "fire_lance",
     });
-
-    // Initialize weapon properties
-    this.projectileSpeed = 500; // Responsive projectile speed
     this.piercing = 2; // Can pierce through 2 enemies initially
-  }
-
-  /**
-   * Fire a fast projectile at the closest enemy
-   * @param enemies Array of active enemies
-   */
-  protected fire(_enemies: Enemy[], sortedEnemies: Enemy[]): void {
-    this.fireWeapon(
-      sortedEnemies,
-      undefined,
-      this.projectileSpeed,
-      this.piercing,
-    );
   }
 
   /**
@@ -512,9 +413,6 @@ export class FireLance extends Weapon {
    * Enhances damage, piercing, speed, and reduces cool down
    */
   protected applyUpgrade(): void {
-    // Increase damage with each level
-    this.damage += 6;
-
     // Reduce cool down with a minimum of 600ms
     this.coolDown = Math.max(600, this.coolDown - 150);
 
@@ -528,66 +426,26 @@ export class FireLance extends Weapon {
 
 // Wind Tamer - Area damage pearl
 export class WindTamer extends Weapon {
-  private orbCount: number;
-  private angle: number;
-  private rotationSpeed: number;
-  private radius: number;
-
   constructor(scene: GameScene, player: Player) {
     super(scene, player, {
       type: "wind_tamer",
+      isOrb: true,
     });
-    this.orbCount = 1;
-    this.angle = 0; // Current rotation angle
     this.rotationSpeed = 2;
-    this.radius = scaleManager.scaleValue(60);
+    this.rotationRadius = 60;
     this.createOrbs();
   }
 
-  private createOrbs(): void {
-    this.orbs.forEach((orb) => orb.sprite.destroy());
-    this.orbs = [];
-    for (let i = 0; i < this.orbCount; i++) {
-      // Create orb sprite
-      const orb = this.createOrb();
-
-      // Calculate angular offset for evenly spaced orbs
-      const offset = ((Math.PI * 2) / this.orbCount) * i;
-
-      // Add to orb collection
-      this.orbs.push({
-        sprite: orb,
-        offset: offset,
-      });
-    }
-  }
-
-  public update(_time: number, _enemies: Enemy[]): void {
-    // Update rotation angle (deltaTime approximation)
-    this.angle += this.rotationSpeed * 0.016; // Assuming 60fps
-
-    // Get current player position
-    const playerPos = this.scene.getPlayerPosition();
-
-    // Update each orb's position around the player
-    this.orbs.forEach((orb) => {
-      const adjustedAngle = this.angle + orb.offset;
-      orb.sprite.x = playerPos.x + Math.cos(adjustedAngle) * this.radius;
-      orb.sprite.y = playerPos.y + Math.sin(adjustedAngle) * this.radius;
-    });
-  }
-
-  protected fire(_enemies: Enemy[]): void {}
+  protected fire() {}
 
   protected applyUpgrade(): void {
-    this.damage += 8;
     if (this.level >= 2) this.rotationSpeed = 3;
     if (this.level >= 3) {
-      this.radius = scaleManager.scaleValue(80);
+      this.rotationRadius = 80;
     }
     if (this.level >= 4) this.rotationSpeed = 4;
     if (this.level >= 5) {
-      this.orbCount = 2;
+      this.projectileCount = 2;
       this.createOrbs();
     }
   }
@@ -595,21 +453,19 @@ export class WindTamer extends Weapon {
 
 // Violet Bell - Sound wave weapon
 export class VioletBell extends Weapon {
-  private waveCount: number;
-
   constructor(scene: GameScene, player: Player) {
     super(scene, player, {
       type: "violet_bell",
     });
-    this.waveCount = 3;
+    this.projectileCount = 3;
   }
 
   protected fire(enemies: Enemy[]): void {
     const playerPos = this.scene.getPlayerPosition();
     const angles = [];
 
-    for (let i = 0; i < this.waveCount; i++) {
-      angles.push((Math.PI * 2 * i) / this.waveCount);
+    for (let i = 0; i < this.projectileCount; i++) {
+      angles.push((Math.PI * 2 * i) / this.projectileCount);
     }
 
     angles.forEach(() => {
@@ -646,31 +502,23 @@ export class VioletBell extends Weapon {
   }
 
   protected applyUpgrade(): void {
-    this.damage += 8;
-    if (this.level >= 2) this.waveCount = 4;
+    if (this.level >= 2) this.projectileCount = 4;
     if (this.level >= 3) this.coolDown = 1200;
-    if (this.level >= 4) this.waveCount = 5;
+    if (this.level >= 4) this.projectileCount = 5;
     if (this.level >= 5) this.coolDown = 1000;
   }
 }
 
 // Twin Blades - Fast dual strike
 export class TwinBlades extends Weapon {
-  private projectileSpeed: number;
-
   constructor(scene: GameScene, player: Player) {
     super(scene, player, {
       type: "twin_blades",
     });
-    this.projectileSpeed = 450;
-  }
-
-  protected fire(_enemies: Enemy[], sortEnemies: Enemy[]): void {
-    this.fireWeapon(sortEnemies, 2, this.projectileSpeed);
+    this.projectileCount = 2;
   }
 
   protected applyUpgrade(): void {
-    this.damage += 5;
     this.coolDown = Math.max(400, this.coolDown - 100);
     if (this.level >= 5) this.projectileSpeed += 150;
   }
@@ -684,14 +532,9 @@ export class Mace extends Weapon {
     });
   }
 
-  protected fire(_enemies: Enemy[], sortEnemies: Enemy[]): void {
-    this.fireWeapon(sortEnemies);
-  }
-
   protected applyUpgrade(): void {
-    this.damage += 10;
     if (this.level >= 3) this.coolDown = 1500;
-    if (this.level >= 5) this.damage += 15;
+    if (this.level >= 5) this.damage += 5;
   }
 }
 
@@ -738,29 +581,26 @@ export class BullHorns extends Weapon {
   }
 
   protected applyUpgrade(): void {
-    this.damage += 12;
     if (this.level >= 2) this.chargeRadius = 180;
     if (this.level >= 3) this.coolDown = 2000;
     if (this.level >= 4) this.chargeRadius = 200;
-    if (this.level >= 5) this.damage += 20;
+    if (this.level >= 5) this.damage += 5;
   }
 }
 
 // Thunder Drum - Lightning strikes
 export class ThunderDrum extends Weapon {
-  private strikeCount: number;
-
   constructor(scene: GameScene, player: Player) {
     super(scene, player, {
       type: "thunder_drum",
     });
-    this.strikeCount = 3;
+    this.projectileCount = 3;
   }
 
   protected fire(enemies: Enemy[]): void {
     const targets = enemies
       .sort(() => Math.random() - 0.5)
-      .slice(0, this.strikeCount);
+      .slice(0, this.projectileCount);
 
     targets.forEach((target) => {
       // Lightning strike effect
@@ -785,43 +625,27 @@ export class ThunderDrum extends Weapon {
   }
 
   protected applyUpgrade(): void {
-    this.damage += 6;
-    if (this.level >= 2) this.strikeCount = 4;
+    if (this.level >= 2) this.projectileCount = 4;
     if (this.level >= 3) this.coolDown = 1300;
-    if (this.level >= 4) this.strikeCount = 5;
-    if (this.level >= 5) this.damage += 10;
+    if (this.level >= 4) this.projectileCount = 5;
+    if (this.level >= 5) this.damage += 5;
   }
 }
 
 // Ice Needle - Slowing projectiles
 export class IceNeedle extends Weapon {
-  private projectileSpeed: number;
-  private projectileCount: number;
-
   constructor(scene: GameScene, player: Player) {
     super(scene, player, {
       type: "ice_needle",
     });
-    this.projectileSpeed = 550;
     this.projectileCount = 3;
   }
 
-  protected fire(_enemies: Enemy[], sortEnemies: Enemy[]): void {
-    const angleStep = (Math.PI * 2) / this.projectileCount;
-
-    this.fireWeapon(
-      sortEnemies,
-      this.projectileCount,
-      this.projectileSpeed,
-      1,
-      (index) => {
-        return angleStep * index;
-      },
-    );
+  protected generateProjectileAngle(i: number): number {
+    return ((Math.PI * 2) / this.projectileCount) * i;
   }
 
   protected applyUpgrade(): void {
-    this.damage += 5;
     if (this.level >= 2) this.projectileCount = 4;
     if (this.level >= 3) this.coolDown = 700;
     if (this.level >= 4) this.projectileCount = 5;
@@ -831,57 +655,24 @@ export class IceNeedle extends Weapon {
 
 // Wind Fire Wheels - Dual spinning wheels
 export class WindFireWheels extends Weapon {
-  private orbCount: number;
-  private radius: number;
-  private rotationSpeed: number;
-  private angle: number;
-
   constructor(scene: GameScene, player: Player) {
     super(scene, player, {
       type: "wind_fire_wheels",
+      isOrb: true,
     });
-    this.orbCount = 2;
-    this.radius = scaleManager.scaleValue(70);
+    this.projectileCount = 2;
+    this.rotationRadius = 70;
     this.rotationSpeed = 4;
-    this.angle = 0;
     this.createOrbs();
   }
 
-  private createOrbs(): void {
-    this.orbs.forEach((orb) => orb.sprite.destroy());
-    this.orbs = [];
-    for (let i = 0; i < this.orbCount; i++) {
-      const orb = this.createOrb();
-
-      this.orbs.push({
-        sprite: orb,
-        offset: ((Math.PI * 2) / this.orbCount) * i,
-      });
-    }
-  }
-
-  public update(_time: number, _enemies: Enemy[]): void {
-    this.angle += this.rotationSpeed * 0.016;
-    const playerPos = this.scene.getPlayerPosition();
-
-    this.orbs.forEach((orb) => {
-      const angle = this.angle + orb.offset;
-      orb.sprite.x = playerPos.x + Math.cos(angle) * this.radius;
-      orb.sprite.y = playerPos.y + Math.sin(angle) * this.radius;
-      orb.sprite.setRotation(angle);
-    });
-  }
-
-  protected fire(_enemies: Enemy[]): void {
-    // Continuous damage from spinning wheels
-  }
+  protected fire() {}
 
   protected applyUpgrade(): void {
-    this.damage += 7;
     if (this.level >= 2) this.rotationSpeed = 5;
-    if (this.level >= 3) this.radius = 90;
+    if (this.level >= 3) this.rotationRadius = 90;
     if (this.level >= 4) this.rotationSpeed = 6;
-    if (this.level >= 5) this.orbCount = 3;
+    if (this.level >= 5) this.projectileCount = 3;
   }
 }
 
@@ -948,33 +739,25 @@ export class JadePurityBottle extends Weapon {
   }
 
   protected applyUpgrade(): void {
-    this.damage += 10;
     if (this.level >= 2) this.pullRadius = 250;
     if (this.level >= 3) this.pullStrength = 200;
     if (this.level >= 4) this.coolDown = 1800;
-    if (this.level >= 5) this.damage += 15;
+    if (this.level >= 5) this.damage += 5;
   }
 }
 
 // Golden Rope - Binding weapon
 export class GoldenRope extends Weapon {
-  private maxTargets: number;
-
   constructor(scene: GameScene, player: Player) {
     super(scene, player, {
       type: "golden_rope",
     });
-    this.maxTargets = 2;
-  }
-
-  protected fire(_enemies: Enemy[], sortedEnemies: Enemy[]): void {
-    this.fireWeapon(sortedEnemies, this.maxTargets);
+    this.projectileCount = 2;
   }
 
   protected applyUpgrade(): void {
-    this.damage += 4;
-    if (this.level >= 2) this.maxTargets = 3;
-    if (this.level >= 4) this.maxTargets = 4;
+    if (this.level >= 2) this.projectileCount = 3;
+    if (this.level >= 4) this.projectileCount = 4;
     if (this.level >= 5) this.coolDown = 1000;
   }
 }
@@ -992,10 +775,10 @@ export class PlantainFan extends Weapon {
     this.fanRange = 250;
   }
 
-  protected fire(enemies: Enemy[], sortedEnemies: Enemy[]): void {
+  protected fire(enemies: Enemy[]): void {
     const playerPos = this.scene.getPlayerPosition();
 
-    const nearest = sortedEnemies[0];
+    const nearest = enemies[0];
     if (!nearest) {
       return;
     }
@@ -1052,7 +835,6 @@ export class PlantainFan extends Weapon {
   }
 
   protected applyUpgrade(): void {
-    this.damage += 12;
     if (this.level >= 2) this.fanAngle = Math.PI / 2.5;
     if (this.level >= 3) this.fanRange = 300;
     if (this.level >= 4) this.coolDown = 2500;
@@ -1062,35 +844,20 @@ export class PlantainFan extends Weapon {
 
 // Three Pointed Blade - Erlang Shen weapon
 export class ThreePointedBlade extends Weapon {
-  private projectileSpeed: number;
-  private slashCount: number;
-
   constructor(scene: GameScene, player: Player) {
     super(scene, player, {
       type: "three_pointed_blade",
     });
-    this.projectileSpeed = 400;
-    this.slashCount = 3;
+    this.projectileCount = 3;
   }
 
-  protected fire(_enemies: Enemy[], sortedEnemies: Enemy[]): void {
-    const baseAngle = this.getPlayerAngle();
-
-    this.fireWeapon(
-      sortedEnemies,
-      this.slashCount,
-      this.projectileSpeed,
-      1,
-      (i) => {
-        return baseAngle + ((i - 1) * Math.PI) / 6;
-      },
-    );
+  protected generateProjectileAngle(i: number): number {
+    return this.getPlayerAngle() + ((i - 1) * Math.PI) / 6;
   }
 
   protected applyUpgrade(): void {
-    this.damage += 8;
     this.coolDown = Math.max(600, this.coolDown - 100);
-    if (this.level >= 4) this.slashCount = 5;
+    if (this.level >= 4) this.projectileCount = 5;
   }
 }
 
@@ -1138,7 +905,6 @@ export class NineRingStaff extends Weapon {
   }
 
   protected applyUpgrade(): void {
-    this.damage += 7;
     this.soundWaveRadius += scaleManager.scaleValue(20);
     if (this.level >= 3) this.stunDuration = 1500;
     if (this.level >= 5) this.coolDown = 1200;
@@ -1147,36 +913,21 @@ export class NineRingStaff extends Weapon {
 
 // Crescent Blade - Sha Monk's crescent shovel
 export class CrescentBlade extends Weapon {
-  private bladeCount: number;
-  private returnSpeed: number;
-
   constructor(scene: GameScene, player: Player) {
     super(scene, player, {
       type: "crescent_blade",
     });
-    this.bladeCount = 2;
-    this.returnSpeed = 350;
+    this.projectileCount = 2;
   }
 
-  protected fire(_enemies: Enemy[], sortedEnemies: Enemy[]): void {
-    const baseAngle = this.getPlayerAngle();
-
-    this.fireWeapon(
-      sortedEnemies,
-      this.bladeCount,
-      this.returnSpeed,
-      1,
-      (i) => {
-        return baseAngle + ((i - 0.5) * Math.PI) / 4;
-      },
-    );
+  protected generateProjectileAngle(i: number): number {
+    return this.getPlayerAngle() + ((i - 0.5) * Math.PI) / 4;
   }
 
   protected applyUpgrade(): void {
-    this.damage += 7;
-    this.returnSpeed += 30;
-    if (this.level >= 3) this.bladeCount = 3;
-    if (this.level >= 5) this.bladeCount = 4;
+    this.projectileSpeed += 30;
+    if (this.level >= 3) this.projectileCount = 3;
+    if (this.level >= 5) this.projectileCount = 4;
   }
 }
 
@@ -1228,7 +979,6 @@ export class IronCudgel extends Weapon {
   }
 
   protected applyUpgrade(): void {
-    this.damage += 9;
     this.smashRadius += scaleManager.scaleValue(15);
     this.knockbackForce += 50;
     if (this.level >= 5) this.coolDown = 1700;
@@ -1237,55 +987,39 @@ export class IronCudgel extends Weapon {
 
 // Seven Star Sword - Daoist weapon
 export class SevenStarSword extends Weapon {
-  private swordCount: number;
-  private orbitRadius: number;
-
   constructor(scene: GameScene, player: Player) {
     super(scene, player, {
       type: "seven_star_sword",
+      isOrb: true,
     });
-    this.swordCount = 3;
-    this.orbitRadius = 90;
-    this.orbs = [];
+    this.projectileCount = 3;
+    this.rotationRadius = 90;
     this.createOrbs();
   }
 
-  private createOrbs(): void {
-    this.orbs.forEach((orb) => orb.sprite.destroy());
-    this.orbs = [];
-
-    for (let i = 0; i < this.swordCount; i++) {
-      this.orbs.push({
-        sprite: this.createOrb(),
-        offset: 0,
-      });
-    }
-  }
+  protected fire() {}
 
   public update(time: number): void {
     const playerPos = this.scene.getPlayerPosition();
-    const angleStep = (Math.PI * 2) / this.swordCount;
-    const rotation = (time / 1000) * 3; // Rotation speed
+    const rotation = (time / 1000) * 3;
 
-    this.orbs.forEach((orb, index) => {
-      const angle = rotation + angleStep * index;
-      orb.sprite.x = playerPos.x + Math.cos(angle) * this.orbitRadius;
-      orb.sprite.y = playerPos.y + Math.sin(angle) * this.orbitRadius;
+    const radius = scaleManager.scaleValue(this.rotationRadius);
+
+    this.orbs.forEach((orb) => {
+      const angle = rotation + orb.offset;
+      orb.sprite.x = playerPos.x + Math.cos(angle) * radius;
+      orb.sprite.y = playerPos.y + Math.sin(angle) * radius;
       orb.sprite.setRotation(angle + Math.PI / 2);
     });
   }
-
-  protected fire(): void {}
-
   protected applyUpgrade(): void {
-    this.damage += 5;
-    this.orbitRadius += 10;
+    this.rotationRadius += 10;
     if (this.level >= 3) {
-      this.swordCount = 5;
+      this.projectileCount = 5;
       this.createOrbs();
     }
     if (this.level >= 5) {
-      this.swordCount = 7;
+      this.projectileCount = 7;
       this.createOrbs();
     }
   }
@@ -1336,7 +1070,6 @@ export class GinsengFruit extends Weapon {
 
   protected applyUpgrade(): void {
     this.healAmount += 10;
-    this.damage += 5;
     if (this.level >= 2) this.maxHealthBonus = 20;
     if (this.level >= 3) this.coolDown = 4000;
     if (this.level >= 4) this.maxHealthBonus = 40;
@@ -1408,7 +1141,6 @@ export class HeavenEarthCircle extends Weapon {
   }
 
   protected applyUpgrade(): void {
-    this.damage += 8;
     this.circleSpeed += 50;
     if (this.level >= 5) this.returnDelay = 1500;
   }
@@ -1416,34 +1148,21 @@ export class HeavenEarthCircle extends Weapon {
 
 // Red Armillary Sash - Nezha's weapon
 export class RedArmillarySash extends Weapon {
-  private sashLength: number;
-  private whipCount: number;
-
   constructor(scene: GameScene, player: Player) {
     super(scene, player, {
       type: "red_armillary_sash",
     });
-    this.sashLength = scaleManager.scaleValue(200);
-    this.whipCount = 3;
+    this.projectileCount = 3;
   }
 
-  protected fire(): void {
-    const baseAngle = this.getPlayerAngle();
-
-    this.fireWeapon(
-      [],
-      this.whipCount,
-      this.sashLength,
-      1,
-      (i) => baseAngle + ((i - 1) * Math.PI) / 4,
-    );
+  protected generateProjectileAngle(i: number): number {
+    return this.getPlayerAngle() + ((i - 1) * Math.PI) / 4;
   }
 
   protected applyUpgrade(): void {
-    this.damage += 6;
-    this.sashLength += scaleManager.scaleValue(25);
-    if (this.level >= 3) this.whipCount = 4;
-    if (this.level >= 5) this.whipCount = 5;
+    this.projectileSpeed += 25;
+    if (this.level >= 3) this.projectileCount = 4;
+    if (this.level >= 5) this.projectileCount = 5;
   }
 }
 
@@ -1492,7 +1211,6 @@ export class PurpleGoldGourd extends Weapon {
   }
 
   protected applyUpgrade(): void {
-    this.damage += 10;
     this.absorbRadius += scaleManager.scaleValue(20);
     if (this.level >= 3) this.absorbDuration = 1500;
     if (this.level >= 5) this.coolDown = 2800;
@@ -1504,26 +1222,17 @@ export class PurpleGoldGourd extends Weapon {
 
 // Golden Rope Immortal - Immortality Binding Rope (Taishang Laojun)
 export class GoldenRopeImmortal extends Weapon {
-  private ropeChains: number;
-  private chainLength: number;
-
   constructor(scene: GameScene, player: Player) {
     super(scene, player, {
       type: "golden_rope_immortal",
     });
-    this.ropeChains = 3;
-    this.chainLength = 250;
-  }
-
-  protected fire(_enemies: Enemy[], sortedEnemies: Enemy[]): void {
-    this.fireWeapon(sortedEnemies, this.ropeChains, this.chainLength);
+    this.projectileCount = 3;
   }
 
   protected applyUpgrade(): void {
-    this.damage += 6;
-    this.chainLength += 30;
-    if (this.level >= 3) this.ropeChains = 4;
-    if (this.level >= 5) this.ropeChains = 5;
+    this.projectileSpeed += 30;
+    if (this.level >= 3) this.projectileCount = 4;
+    if (this.level >= 5) this.projectileCount = 5;
   }
 }
 
@@ -1537,7 +1246,7 @@ export class DemonRevealingMirror extends Weapon {
       type: "demon_revealing_mirror",
     });
     this.revealRadius = scaleManager.scaleValue(200);
-    this.critBonus = 1.5; // Critical hit multiplier
+    this.critBonus = 1.1;
   }
 
   protected fire(enemies: Enemy[]): void {
@@ -1550,10 +1259,7 @@ export class DemonRevealingMirror extends Weapon {
     graphics.setPosition(playerPos.x, playerPos.y);
 
     this.getEnemiesInRange(enemies, this.revealRadius).forEach((enemy) => {
-      // Critical hit damage
-      const isCrit = Math.random() < 0.6; // 60% critical hit chance
-      const finalDamage = isCrit ? this.damage * this.critBonus : this.damage;
-      enemy.takeDamage(finalDamage);
+      enemy.takeDamage(this.damage * this.critBonus);
 
       // Weakness marking effect
       const marker = this.scene.add.graphics();
@@ -1581,11 +1287,10 @@ export class DemonRevealingMirror extends Weapon {
   }
 
   protected applyUpgrade(): void {
-    this.damage += 5;
     this.revealRadius += scaleManager.scaleValue(25);
-    if (this.level >= 2) this.critBonus = 1.7;
-    if (this.level >= 3) this.critBonus = 2.0;
-    if (this.level >= 5) this.critBonus = 2.5;
+    if (this.level >= 2) this.critBonus = 1.2;
+    if (this.level >= 3) this.critBonus = 1.3;
+    if (this.level >= 5) this.critBonus = 1.4;
   }
 }
 
@@ -1660,7 +1365,6 @@ export class SeaCalmingNeedle extends Weapon {
   }
 
   protected applyUpgrade(): void {
-    this.damage += 12;
     this.sweepRange += scaleManager.scaleValue(30);
     if (this.level >= 3) this.sweepAngle = Math.PI * 1.2;
     if (this.level >= 5) this.coolDown = 1500;
@@ -1729,7 +1433,6 @@ export class EightTrigramsFurnace extends Weapon {
   }
 
   protected applyUpgrade(): void {
-    this.damage += 7;
     this.burnDamagePerTick += 2;
     if (this.level >= 3) this.furnaceRadius = scaleManager.scaleValue(300);
     if (this.level >= 5) this.burnDuration = 7000;
@@ -1749,8 +1452,8 @@ export class DragonStaff extends Weapon {
     this.pullStrength = 150;
   }
 
-  protected fire(_enemies: Enemy[], sortedEnemies: Enemy[]): void {
-    const closestEnemy = sortedEnemies[0];
+  protected fire(enemies: Enemy[]): void {
+    const closestEnemy = enemies[0];
     if (!closestEnemy) return;
 
     const targetX = closestEnemy.sprite.x;
@@ -1780,7 +1483,7 @@ export class DragonStaff extends Weapon {
       delay: damageInterval,
       repeat: damageTicks - 1,
       callback: () => {
-        sortedEnemies.forEach((enemy) => {
+        enemies.forEach((enemy) => {
           const distance = Phaser.Math.Distance.Between(
             targetX,
             targetY,
@@ -1818,7 +1521,6 @@ export class DragonStaff extends Weapon {
   }
 
   protected applyUpgrade(): void {
-    this.damage += 8;
     this.tornadoRadius += scaleManager.scaleValue(30);
     if (this.level >= 3) this.pullStrength = 200;
     if (this.level >= 5) this.coolDown = 1800;
@@ -1827,43 +1529,31 @@ export class DragonStaff extends Weapon {
 
 // Seven Treasure Tree - Zhunti's magical tree
 export class SevenTreasureTree extends Weapon {
-  private count: number;
-  private purifyRadius: number;
-
   constructor(scene: GameScene, player: Player) {
     super(scene, player, {
       type: "seven_treasure_tree",
     });
-    this.count = 7;
-    this.purifyRadius = 350;
-  }
-
-  protected fire(_enemies: Enemy[], sortedEnemies: Enemy[]): void {
-    this.fireWeapon(sortedEnemies, this.count, this.purifyRadius);
+    this.projectileCount = 7;
   }
 
   protected applyUpgrade(): void {
-    this.damage += 9;
-    this.purifyRadius += 40;
-    if (this.level >= 3) this.count = 8;
+    this.projectileSpeed += 40;
+    if (this.level >= 3) this.projectileCount = 8;
     if (this.level >= 5) this.coolDown = 2500;
   }
 }
 
 // Immortal Slaying Blade - Lu Ya's weapon
 export class ImmortalSlayingBlade extends Weapon {
-  private bladeSpeed: number;
-
   constructor(scene: GameScene, player: Player) {
     super(scene, player, {
       type: "immortal_slaying_blade",
     });
-    this.bladeSpeed = 400;
   }
 
-  protected fire(_enemies: Enemy[], sortedEnemies: Enemy[]): void {
-    let target: Enemy = sortedEnemies[0];
-    for (const item of sortedEnemies) {
+  protected fire(enemies: Enemy[]): void {
+    let target: Enemy = enemies[0];
+    for (const item of enemies) {
       if (item.health > target.health) {
         target = item;
       }
@@ -1871,38 +1561,35 @@ export class ImmortalSlayingBlade extends Weapon {
 
     if (!target) return;
 
-    this.fireWeapon([target], 1, this.bladeSpeed);
+    super.fire([target]);
   }
 
   protected applyUpgrade(): void {
-    this.damage += 12;
-    this.bladeSpeed += 50;
+    this.projectileSpeed += 50;
     if (this.level >= 5) this.coolDown = 3000;
   }
 }
 
 // Diamond Snare - Supreme Elder's weapon
 export class DiamondSnare extends Weapon {
-  private snareSpeed: number;
   private armorBreak: number;
 
   constructor(scene: GameScene, player: Player) {
     super(scene, player, {
       type: "diamond_snare",
     });
-    this.snareSpeed = 500;
     this.armorBreak = 0.5; // Ignore 50% defense
   }
 
-  protected fire(_enemies: Enemy[], sortedEnemies: Enemy[]): void {
-    this.fireWeapon(sortedEnemies, 1, this.snareSpeed).forEach((projectile) => {
-      projectile.damage = this.damage * (1 + this.armorBreak);
+  protected fire(enemies: Enemy[]): void {
+    super.fire(enemies);
+    this.projectiles.children.entries.forEach((item) => {
+      (item as ProjectileSprite).damage = this.damage * (1 + this.armorBreak);
     });
   }
 
   protected applyUpgrade(): void {
-    this.damage += 7;
-    this.snareSpeed += 50;
+    this.projectileSpeed += 50;
     if (this.level >= 2) this.armorBreak = 0.6;
     if (this.level >= 3) this.armorBreak = 0.7;
     if (this.level >= 5) this.armorBreak = 1.0; // Level 5 ignores all defense
@@ -1913,74 +1600,48 @@ export class DiamondSnare extends Weapon {
 
 // Exquisite Pagoda - Li Jing's Pagoda
 export class ExquisitePagoda extends Weapon {
-  private pagodaRadius: number;
-  private count = 1;
-
   constructor(scene: GameScene, player: Player) {
     super(scene, player, {
       type: "exquisite_pagoda",
     });
-    this.pagodaRadius = 200;
-  }
-
-  protected fire(_enemies: Enemy[], sortedEnemies: Enemy[]): void {
-    this.fireWeapon(sortedEnemies, this.count, this.pagodaRadius);
   }
 
   protected applyUpgrade(): void {
-    this.damage += 9;
-    if (this.level >= 3) this.pagodaRadius = 250;
-    if (this.level >= 5) this.count = 2;
+    if (this.level >= 3) this.projectileSpeed = 250;
+    if (this.level >= 5) this.projectileCount = 2;
   }
 }
 
 // Nine Tooth Rake - Zhu Bajie's weapon
 export class NineToothRake extends Weapon {
-  private rakeRange: number;
-
   constructor(scene: GameScene, player: Player) {
     super(scene, player, {
       type: "nine_tooth_rake",
     });
-    this.rakeRange = 200;
-  }
-
-  protected fire(_enemies: Enemy[], sortedEnemies: Enemy[]): void {
-    const teethCount = 4 + this.level;
-    this.fireWeapon(sortedEnemies, teethCount, this.rakeRange);
+    this.projectileCount = 4;
   }
 
   protected applyUpgrade(): void {
-    this.damage += 8;
-    this.rakeRange += 20;
+    this.projectileSpeed += 20;
+    this.projectileCount = this.level + 4;
     if (this.level >= 5) this.coolDown = 1200;
   }
 }
 
 // Dragon Scale Sword - White Dragon Horse's weapon
 export class DragonScaleSword extends Weapon {
-  private swordSpeed: number;
-  private swordCount: number;
-
   constructor(scene: GameScene, player: Player) {
     super(scene, player, {
       type: "dragon_scale_sword",
     });
-    this.swordSpeed = 450;
-    this.swordCount = 1;
-  }
-
-  protected fire(_enemies: Enemy[], sortedEnemies: Enemy[]): void {
-    this.fireWeapon(sortedEnemies, this.swordCount, this.swordSpeed);
   }
 
   protected applyUpgrade(): void {
-    this.damage += 6;
-    this.swordSpeed += 50;
-    if (this.level >= 2) this.swordCount = 2;
-    if (this.level >= 4) this.swordCount = 3;
+    this.projectileSpeed += 50;
+    if (this.level >= 2) this.projectileCount = 2;
+    if (this.level >= 4) this.projectileCount = 3;
     if (this.level >= 5) {
-      this.swordCount = 3;
+      this.projectileCount = 3;
       this.coolDown = 900;
     }
   }
@@ -2073,7 +1734,7 @@ export const WEAPON_MAP: Record<WeaponType, WeaponClass> = {
 export class WeaponManager {
   private scene: GameScene;
   private player: Player;
-  public weapons: Weapon[];
+  private weapons: Weapon[];
 
   constructor(scene: GameScene, player: Player) {
     this.scene = scene;
@@ -2100,13 +1761,17 @@ export class WeaponManager {
       return distA - distB;
     });
     this.weapons.forEach((weapon) => {
-      weapon.update(time, list, sortedEnemies);
+      weapon.update(time, sortedEnemies);
     });
   }
 
   public addWeapon(WeaponClass: WeaponClass): Weapon {
     const weapon = new WeaponClass(this.scene, this.player);
     this.weapons.push(weapon);
+    if (ENABLE_DEBUG) {
+      console.log("addWeapon", weapon);
+    }
+
     return weapon;
   }
 
@@ -2120,6 +1785,14 @@ export class WeaponManager {
 
   public getWeaponById(id: WeaponType): WeaponClass {
     return WEAPON_MAP[id] || GoldenStaff;
+  }
+
+  /**
+   * Get all weapons managed by this manager
+   * @returns Array of all weapons
+   */
+  public getWeapons(): Weapon[] {
+    return this.weapons;
   }
 
   public getUpgradeOptions(): UpgradeOption[] {

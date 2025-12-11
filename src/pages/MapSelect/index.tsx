@@ -10,8 +10,17 @@ interface MapSelectProps {
   onBack: () => void;
 }
 
+const MAP_COLORS: Record<MapType, string> = {
+  chapter1: "#4a6741",
+  chapter2: "#c9a227",
+  chapter3: "#5b7c99",
+  chapter4: "#7b4397",
+  chapter5: "#c94b4b",
+  chapter6: "#ffd700",
+};
+
 const MapSelect: React.FC<MapSelectProps> = ({ onConfirm, onBack }) => {
-  const { t } = useTranslation();
+  const [t] = useTranslation();
   const unlockedMaps = useUnlockedMaps();
 
   const mapId = useSelectedMap();
@@ -33,18 +42,6 @@ const MapSelect: React.FC<MapSelectProps> = ({ onConfirm, onBack }) => {
     }
   };
 
-  const getChapterColor = (id: MapType): string => {
-    const colors: Record<MapType, string> = {
-      chapter1: "#4a6741",
-      chapter2: "#c9a227",
-      chapter3: "#5b7c99",
-      chapter4: "#7b4397",
-      chapter5: "#c94b4b",
-      chapter6: "#ffd700",
-    };
-    return colors[id] || "#ffffff";
-  };
-
   return (
     <div className="common-container">
       <h1 className={styles.title} data-testid="page-title">
@@ -55,7 +52,7 @@ const MapSelect: React.FC<MapSelectProps> = ({ onConfirm, onBack }) => {
         {MAPS.map((map) => {
           const isUnlocked = unlockedMaps.includes(map.id);
           const isSelected = selectedMap?.id === map.id;
-          const chapterColor = getChapterColor(map.id);
+          const chapterColor = MAP_COLORS[map.id];
 
           return (
             <div
@@ -94,7 +91,7 @@ const MapSelect: React.FC<MapSelectProps> = ({ onConfirm, onBack }) => {
       </div>
 
       {selectedMap && (
-        <div className={styles.mapDetail}>
+        <div className={styles.mapDetail} data-testid="map-details">
           <h2>{t(`maps.${selectedMap.id}.name`)}</h2>
           <p className={styles.description}>
             {t(`maps.${selectedMap.id}.description`)}

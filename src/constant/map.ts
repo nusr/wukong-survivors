@@ -1,4 +1,5 @@
 import type { GameMap, PermanentUpgrade, GameSave } from "../types";
+import { upgradeLevelGold } from "../util";
 
 export const DEFAULT_GAME_TIME = 30 * 60; // 30 minutes in seconds
 // Map data - Wukong chapters
@@ -96,41 +97,63 @@ export const MAPS: GameMap[] = [
 ];
 // Permanent upgrade configuration
 
+export const BASE_UPGRADE_PERCENTAGE = 0.02;
+export const MAX_UPGRADE_LEVEL = 10;
+
 export const PERMANENT_UPGRADES: PermanentUpgrade[] = [
   {
     id: "attack",
-    level: 0,
-    maxLevel: 10,
-    cost: (level) => 50 + level * 50,
-    effect: (level) => level * 2,
+    maxLevel: MAX_UPGRADE_LEVEL,
+    cost: upgradeLevelGold,
+    effect: (level) => level * 3,
   },
   {
     id: "health",
-    level: 0,
-    maxLevel: 10,
-    cost: (level) => 40 + level * 40,
+    maxLevel: MAX_UPGRADE_LEVEL,
+    cost: upgradeLevelGold,
     effect: (level) => level * 10,
   },
   {
     id: "armor",
-    level: 0,
-    maxLevel: 10,
-    cost: (level) => 60 + level * 60,
-    effect: (level) => level * 1,
+    maxLevel: MAX_UPGRADE_LEVEL,
+    cost: upgradeLevelGold,
+    effect: (level) => level * 2,
   },
   {
     id: "luck",
-    level: 0,
-    maxLevel: 10,
-    cost: (level) => 80 + level * 80,
+    maxLevel: MAX_UPGRADE_LEVEL,
+    cost: upgradeLevelGold,
     effect: (level) => level * 2,
   },
   {
     id: "speed",
-    level: 0,
-    maxLevel: 5,
-    cost: (level) => 100 + level * 100,
-    effect: (level) => level * 10,
+    maxLevel: MAX_UPGRADE_LEVEL,
+    cost: upgradeLevelGold,
+    effect: (level) => level * 5,
+  },
+  {
+    id: "expBonus",
+    maxLevel: MAX_UPGRADE_LEVEL,
+    cost: upgradeLevelGold,
+    effect: (level) => level * BASE_UPGRADE_PERCENTAGE,
+  },
+  {
+    id: "critRate",
+    maxLevel: MAX_UPGRADE_LEVEL,
+    cost: upgradeLevelGold,
+    effect: (level) => level * BASE_UPGRADE_PERCENTAGE,
+  },
+  {
+    id: "magnetBonus",
+    maxLevel: MAX_UPGRADE_LEVEL,
+    cost: upgradeLevelGold,
+    effect: (level) => level * BASE_UPGRADE_PERCENTAGE,
+  },
+  {
+    id: "collectRange",
+    maxLevel: MAX_UPGRADE_LEVEL,
+    cost: upgradeLevelGold,
+    effect: (level) => level * BASE_UPGRADE_PERCENTAGE,
   },
 ];
 // Default save data
@@ -146,6 +169,10 @@ export const DEFAULT_SAVE: GameSave = {
   armor: 0,
   luck: 0,
   speed: 0,
+  expBonus: 0,
+  critRate: 0,
+  magnetBonus: 0,
+  collectRange: 0,
   musicVolume: 0.5,
   musicEnabled: true,
   enableAutoSelect: false,

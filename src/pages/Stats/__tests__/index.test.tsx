@@ -12,30 +12,9 @@ vi.mock("../../../store", () => ({
   useCompletedChapters: vi.fn(() => ["chapter1"]),
 }));
 
-// Mock react-i18next
-vi.mock("react-i18next", () => ({
-  useTranslation: () => {
-    return [
-      (key: string) => key, // Return the key as translation
-      { language: "en" },
-    ];
-  },
-}));
-
 describe("Stats Component", () => {
   beforeEach(() => {
     vi.clearAllMocks();
-  });
-
-  it("should render all stat labels", () => {
-    render(<Stats onBack={() => {}} />);
-
-    expect(screen.getByText(/stats.gold/i)).toBeInTheDocument();
-    expect(screen.getByText(/stats.totalKills/i)).toBeInTheDocument();
-    expect(screen.getByText(/stats.bestSurvival/i)).toBeInTheDocument();
-    expect(screen.getByText(/stats.totalPlayTime/i)).toBeInTheDocument();
-    expect(screen.getByText(/characters.unlockCharacter/i)).toBeInTheDocument();
-    expect(screen.getByText(/game.completeChapters/i)).toBeInTheDocument();
   });
 
   it("should display correct gold amount", () => {

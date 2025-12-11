@@ -51,10 +51,6 @@ describe("Toast Component", () => {
     });
   });
 
-  // Note: Testing the toast() function that directly manipulates the DOM
-  // is complex because it creates elements outside the React testing environment.
-  // These tests would require integration testing or E2E testing with a tool like Playwright.
-
   describe("toast function", () => {
     afterEach(() => {
       // Clean up any remaining toast containers

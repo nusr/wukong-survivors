@@ -235,6 +235,22 @@
     "speed": {
       "name": "移動速度",
       "description": "レベル毎に+{value}速度"
+    },
+    "expBonus": {
+      "name": "経験値ボーナス",
+      "description": "レベル毎に+{value}%経験値"
+    },
+    "critRate": {
+      "name": "クリティカル率",
+      "description": "レベル毎に+{value}%クリティカル率"
+    },
+    "magnetBonus": {
+      "name": "マグネット範囲ボーナス",
+      "description": "レベル毎に+{value}%マグネット範囲"
+    },
+    "collectRange": {
+      "name": "収集範囲ボーナス",
+      "description": "レベル毎に+{value}%収集範囲"
     }
   },
   "weapons": {

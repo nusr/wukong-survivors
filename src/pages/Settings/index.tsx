@@ -67,10 +67,10 @@ export const Settings = ({ onBack }: { onBack: () => void }) => {
           type="range"
           id="game-time"
           name="game-time"
-          min="10"
+          min="60"
           max="6000"
           value={gameTime}
-          step="1"
+          step="60"
           onChange={(e) => {
             const value = Number(e.target.value);
             useSaveStore.getState().setGameTime(value);

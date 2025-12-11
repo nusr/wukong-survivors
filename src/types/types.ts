@@ -25,12 +25,15 @@ export type PermanentUpgradeType =
   | "health"
   | "armor"
   | "luck"
-  | "speed";
+  | "speed"
+  | "expBonus"
+  | "critRate"
+  | "magnetBonus"
+  | "collectRange";
 
 // Permanent upgrade interface
 export interface PermanentUpgrade {
   id: PermanentUpgradeType;
-  level: number;
   maxLevel: number;
   cost: (level: number) => number;
   effect: (level: number) => number;

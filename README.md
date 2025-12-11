@@ -148,7 +148,6 @@ Weapons can be upgraded up to level 5, with each level improving damage, project
 - **Language**: TypeScript - Type-safe development
 - **i18n**: [react-i18next](https://react.i18next.com/) - Internationalization
 - **Testing**: [Vitest](https://vitest.dev/) - Unit testing
-- **E2E Testing**: [Playwright](https://playwright.dev/) - End-to-end testing
 
 ## 🙏 Acknowledgments
 

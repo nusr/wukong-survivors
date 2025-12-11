@@ -3,14 +3,27 @@ import { useTranslation } from "react-i18next";
 import { PERMANENT_UPGRADES } from "../../constant";
 import { useShopLevel, useTotalGold, useSaveStore } from "../../store";
 import styles from "./index.module.css";
-import type { PermanentUpgradeType } from "../../types/types";
+import type { PermanentUpgradeType } from "../../types/";
+import { upgradeLevelGold } from "../../util";
 
 interface ShopProps {
   onBack: () => void;
 }
 
+const ICONS_MAP: Record<PermanentUpgradeType, string> = {
+  attack: "⚔️",
+  health: "❤️",
+  armor: "🛡️",
+  luck: "🍀",
+  speed: "⚡",
+  expBonus: "📈",
+  critRate: "🔫",
+  magnetBonus: "🧲",
+  collectRange: "🔍",
+};
+
 const Shop: React.FC<ShopProps> = ({ onBack }) => {
-  const { t } = useTranslation();
+  const [t] = useTranslation();
   const [, setRefresh] = useState(0);
   const totalGold = useTotalGold();
 
@@ -29,17 +42,6 @@ const Shop: React.FC<ShopProps> = ({ onBack }) => {
     }
   };
 
-  const getUpgradeIcon = (stat: PermanentUpgradeType): string => {
-    const icons: Record<PermanentUpgradeType, string> = {
-      attack: "⚔️",
-      health: "❤️",
-      armor: "🛡️",
-      luck: "🍀",
-      speed: "⚡",
-    };
-    return icons[stat] || "📦";
-  };
-
   return (
     <div className="common-container">
       <h1 data-testid="shop-title">{t("shop.title")}</h1>
@@ -52,7 +54,7 @@ const Shop: React.FC<ShopProps> = ({ onBack }) => {
       <div className={styles.upgradesGrid} data-testid="upgrades-grid">
         {PERMANENT_UPGRADES.map((upgrade) => {
           const currentLevel = save[upgrade.id] || 0;
-          const cost = upgrade.cost(currentLevel);
+          const cost = upgradeLevelGold(currentLevel);
           const isMaxLevel = currentLevel >= upgrade.maxLevel;
           const canAfford = totalGold >= cost;
           const currentEffect = upgrade.effect(currentLevel);
@@ -65,7 +67,7 @@ const Shop: React.FC<ShopProps> = ({ onBack }) => {
               data-testid={`upgrade-card-${upgrade.id}`}
             >
               <h3 className={styles.upgradeName}>
-                {getUpgradeIcon(upgrade.id)} {t(`upgrades.${upgrade.id}.name`)}
+                {ICONS_MAP[upgrade.id]} {t(`upgrades.${upgrade.id}.name`)}
               </h3>
               <p className={styles.upgradeDescription}>
                 {t(`upgrades.${upgrade.id}.description`, {

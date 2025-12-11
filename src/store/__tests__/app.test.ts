@@ -1,15 +1,5 @@
-import { describe, it, expect, beforeEach, vi } from "vitest";
+import { describe, it, expect, beforeEach } from "vitest";
 import { useAppStore } from "../app";
-
-// Mock the save store
-vi.mock("../save", () => ({
-  useSaveStore: {
-    getState: vi.fn(() => ({
-      unlockedCharacters: ["destined_one", "erlang_shen"],
-      unlockedMaps: ["chapter1", "chapter2"],
-    })),
-  },
-}));
 
 describe("useAppStore", () => {
   beforeEach(() => {

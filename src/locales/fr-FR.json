@@ -235,6 +235,22 @@
         "speed": {
             "name": "Vitesse de déplacement",
             "description": "+{value} vitesse par niveau"
+        },
+        "expBonus": {
+            "name": "Bonus d'expérience",
+            "description": "+{value}% d'expérience par niveau"
+        },
+        "critRate": {
+            "name": "Taux de critique",
+            "description": "+{value}% de taux de critique par niveau"
+        },
+        "magnetBonus": {
+            "name": "Bonus de portée d'aimant",
+            "description": "+{value}% de portée d'aimant par niveau"
+        },
+        "collectRange": {
+            "name": "Bonus de portée de collecte",
+            "description": "+{value}% de portée de collecte par niveau"
         }
     },
     "weapons": {

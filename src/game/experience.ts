@@ -17,13 +17,9 @@ interface Position {
 
 export type CollectibleType = "coin" | "gem";
 
-interface CollectibleSprite extends Phaser.Physics.Arcade.Sprite {
-  collectibleRef?: CollectibleItem;
-}
-
 // Collectible item base class
 export class CollectibleItem {
-  public sprite: CollectibleSprite;
+  public sprite: Phaser.Physics.Arcade.Sprite;
   public type: CollectibleType;
   public value: number;
   private scene: GameScene;
@@ -62,16 +58,10 @@ export class CollectibleItem {
 
     // Create sprite with responsive scaling
     const itemSize = scaleManager.scaleValue(DEFAULT_SPRITE_SIZE);
-    this.sprite = scene.physics.add.sprite(
-      x,
-      y,
-      textureName,
-    ) as CollectibleSprite;
+    this.sprite = scene.physics.add.sprite(x, y, textureName);
     this.sprite.setDisplaySize(itemSize, itemSize);
     // Set collision body to match sprite size
     this.sprite.body?.setSize(itemSize, itemSize);
-
-    this.sprite.collectibleRef = this;
   }
 
   public update(
@@ -131,9 +121,7 @@ export class CollectibleItem {
   }
 
   public destroy(): void {
-    if (this.sprite && this.sprite.scene) {
-      this.sprite.destroy();
-    }
+    this.sprite?.destroy();
   }
 }
 
@@ -151,7 +139,7 @@ export class ExperienceManager {
   // Update all collectibles (gems and coins)
   public update(): void {
     const playerPos = this.scene.getPlayerPosition();
-    const collectRangeBonus = this.player?.collectRangeBonus || 0;
+    const collectRangeBonus = this.player?.collectRange || 0;
     const magnetBonus = this.player?.magnetBonus || 0;
     for (let i = this.collectibles.length - 1; i >= 0; i--) {
       const collectible = this.collectibles[i];

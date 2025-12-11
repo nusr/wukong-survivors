@@ -6,17 +6,10 @@ import type { GameScene } from "./GameScene";
 import type { Position } from "./player";
 
 /**
- * Extended sprite interface that includes a reference to the parent Enemy object
- */
-interface EnemySprite extends Phaser.Physics.Arcade.Sprite {
-  enemyRef?: Enemy;
-}
-
-/**
  * Enemy class represents hostile entities in the game that target the player
  */
 export class Enemy {
-  public sprite: EnemySprite;
+  public sprite: Phaser.Physics.Arcade.Sprite;
   public type: EnemyType;
   public maxHealth: number;
   public health: number;
@@ -51,7 +44,7 @@ export class Enemy {
     this.goldValue = enemyData.goldValue;
 
     // Create enemy sprite with loaded texture
-    this.sprite = scene.physics.add.sprite(x, y, enemyType) as EnemySprite;
+    this.sprite = scene.physics.add.sprite(x, y, enemyType);
 
     // Set display size based on enemy rank with responsive scaling
     const baseSize = ENEMY_SIZE[enemyData.rank];
@@ -60,9 +53,6 @@ export class Enemy {
 
     // Set collision body to match sprite size
     this.sprite.body?.setSize(displaySize, displaySize);
-
-    // Store reference to enemy object on sprite for collision handling
-    this.sprite.enemyRef = this;
   }
 
   /**
@@ -142,9 +132,7 @@ export class Enemy {
    * Explicitly destroy the enemy
    */
   public destroy(): void {
-    if (this.sprite && this.sprite.scene) {
-      this.sprite.destroy();
-    }
+    this.sprite?.destroy();
   }
 }
 

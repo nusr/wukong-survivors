@@ -110,6 +110,42 @@ describe("ScaleManager", () => {
     });
   });
 
+  describe("UI Scale and Font Methods", () => {
+    it("should return properly scaled title size", () => {
+      const titleSize = scaleManager.getTitleSize();
+      expect(titleSize).toMatch(/^\d+px$/);
+      const sizeValue = parseInt(titleSize, 10);
+      expect(sizeValue).toBeGreaterThan(0);
+    });
+
+    it("should return default font family", () => {
+      const font = scaleManager.getDefaultFont();
+      expect(font).toBe(
+        "PingFang SC, Microsoft YaHei, SimSun, Arial, sans-serif",
+      );
+    });
+
+    it("should return properly scaled name size", () => {
+      const nameSize = scaleManager.getNameSize();
+      expect(nameSize).toMatch(/^\d+px$/);
+      const sizeValue = parseInt(nameSize, 10);
+      expect(sizeValue).toBeGreaterThan(0);
+    });
+
+    it("should return properly scaled description size", () => {
+      const descSize = scaleManager.getDescSize();
+      expect(descSize).toMatch(/^\d+px$/);
+      const sizeValue = parseInt(descSize, 10);
+      expect(sizeValue).toBeGreaterThan(0);
+    });
+
+    it("should scale UI values correctly", () => {
+      const scaledValue = scaleManager.UIScaleValue(100);
+      expect(scaledValue).toBeGreaterThanOrEqual(100); // Min scale is 1
+      expect(Number.isInteger(scaledValue)).toBe(true);
+    });
+  });
+
   describe("Z-Index Management", () => {
     it("should return incrementing z-index", () => {
       const z1 = scaleManager.getZIndex();

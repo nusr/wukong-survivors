@@ -8,6 +8,8 @@ export const START_Z_INDEX = 2;
 
 export const MAX_SELECT_SIZE = 3;
 
+export const ENABLE_DEBUG = Boolean(localStorage.getItem("debug"));
+
 export * from "./characters";
 export * from "./enemies";
 export * from "./rewards";

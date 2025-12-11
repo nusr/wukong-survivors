@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach, afterEach } from "vitest";
+import { describe, it, expect, beforeEach } from "vitest";
 import { useSaveStore } from "../save";
 import { DEFAULT_SAVE, PERMANENT_UPGRADES } from "../../constant";
 
@@ -6,11 +6,6 @@ describe("SaveStore", () => {
   beforeEach(() => {
     // Reset store to default state before each test
     useSaveStore.getState().resetAll();
-    localStorage.clear();
-  });
-
-  afterEach(() => {
-    localStorage.clear();
   });
 
   describe("Initial State", () => {

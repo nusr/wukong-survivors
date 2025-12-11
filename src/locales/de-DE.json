@@ -235,6 +235,22 @@
         "speed": {
             "name": "Bewegungsgeschwindigkeit",
             "description": "+{value} Geschwindigkeit pro Level"
+        },
+        "expBonus": {
+            "name": "Erfahrungsbonus",
+            "description": "+{value}% Erfahrung pro Level"
+        },
+        "critRate": {
+            "name": "Kritischer Trefferchance",
+            "description": "+{value}% Kritischer Trefferchance pro Level"
+        },
+        "magnetBonus": {
+            "name": "Magnetbereichsbeschleunigung",
+            "description": "+{value}% Magnetbereich pro Level"
+        },
+        "collectRange": {
+            "name": "Sammelbereichsbeschleunigung",
+            "description": "+{value}% Sammelbereich pro Level"
         }
     },
     "weapons": {

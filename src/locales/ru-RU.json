@@ -235,6 +235,22 @@
         "speed": {
             "name": "Скорость передвижения",
             "description": "+{value} скорости за уровень"
+        },
+        "expBonus": {
+            "name": "Бонус опыта",
+            "description": "+{value}% опыта за уровень"
+        },
+        "critRate": {
+            "name": "Шанс критического удара",
+            "description": "+{value}% шанс критического удара за уровень"
+        },
+        "magnetBonus": {
+            "name": "Бонус области магнита",
+            "description": "+{value}% области магнита за уровень"
+        },
+        "collectRange": {
+            "name": "Бонус области сбора",
+            "description": "+{value}% области сбора за уровень"
         }
     },
     "weapons": {

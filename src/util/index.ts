@@ -125,3 +125,5 @@ export function getAvailableCrafts(ownedWeapons: WeaponType[]): WeaponType[] {
 
   return available;
 }
+
+export const upgradeLevelGold = (level: number) => level * 100 + 100;

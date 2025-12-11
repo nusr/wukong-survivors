@@ -235,6 +235,22 @@
         "speed": {
             "name": "移動速度",
             "description": "每級+{value}速度"
+        },
+        "expBonus": {
+            "name": "經驗值加成",
+            "description": "每級+{value}%經驗值"
+        },
+        "critRate": {
+            "name": "暴擊率",
+            "description": "每級+{value}%暴擊率"
+        },
+        "magnetBonus": {
+            "name": "磁吸範圍加成",
+            "description": "每級+{value}%磁吸範圍"
+        },
+        "collectRange": {
+            "name": "收集範圍加成",
+            "description": "每級+{value}%收集範圍"
         }
     },
     "weapons": {

@@ -1,17 +1,6 @@
 import { describe, it, expect, beforeEach, vi } from "vitest";
 import i18nConfig, { SupportLanguageCodes } from "../i18n";
 
-// Mock the store
-const mockSetLanguage = vi.fn();
-vi.mock("./store", () => ({
-  useSaveStore: {
-    getState: vi.fn(() => ({
-      language: "en-US",
-      setLanguage: mockSetLanguage,
-    })),
-  },
-}));
-
 // Mock navigator.language
 Object.defineProperty(window.navigator, "language", {
   writable: true,

@@ -179,12 +179,18 @@ const getMusicEnabled = (state: GameSave) => state.musicEnabled;
 const getMusicVolume = (state: GameSave) => state.musicVolume;
 const getGameTime = (state: GameSave) => state.gameTime;
 
-const getShopLevel = (state: GameSave) => ({
+const getShopLevel = (
+  state: GameSave,
+): Record<PermanentUpgradeType, number> => ({
   attack: state.attack,
   health: state.health,
   armor: state.armor,
   speed: state.speed,
   luck: state.luck,
+  expBonus: state.expBonus,
+  critRate: state.critRate,
+  magnetBonus: state.magnetBonus,
+  collectRange: state.collectRange,
 });
 
 export const useTotalGold = () => useSaveStore(useShallow(getTotalGold));

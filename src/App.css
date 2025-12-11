@@ -155,7 +155,7 @@ button.resetButton {
 h1 {
   color: var(--primary-color);
   font-size: var(--title-font-size);
-  padding-bottom: var(--content-padding);
+  padding-bottom: var(--container-padding);
   text-align: center;
   text-shadow:
     2px 2px 4px rgba(0, 0, 0, 0.8),

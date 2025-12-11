@@ -235,6 +235,22 @@
         "speed": {
             "name": "이동 속도",
             "description": "레벨 당 +{value} 속도"
+        },
+        "expBonus": {
+            "name": "경험치 보너스",
+            "description": "레벨 당 +{value}% 경험치"
+        },
+        "critRate": {
+            "name": "치명타 확률",
+            "description": "레벨 당 +{value}% 치명타 확률"
+        },
+        "magnetBonus": {
+            "name": "자석 범위 보너스",
+            "description": "레벨 당 +{value}% 자석 범위"
+        },
+        "collectRange": {
+            "name": "수집 범위 보너스",
+            "description": "레벨 당 +{value}% 수집 범위"
         }
     },
     "weapons": {

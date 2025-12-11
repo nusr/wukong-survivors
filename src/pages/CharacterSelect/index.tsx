@@ -17,7 +17,10 @@ interface CharacterSelectProps {
   onBack: () => void;
 }
 
-const Home: React.FC<CharacterSelectProps> = ({ onConfirm, onBack }) => {
+const CharacterSelect: React.FC<CharacterSelectProps> = ({
+  onConfirm,
+  onBack,
+}) => {
   const [t] = useTranslation();
   const unlockedCharacters = useUnlockedCharacters();
   const characterId = useSelectedCharacter();
@@ -70,23 +73,19 @@ const Home: React.FC<CharacterSelectProps> = ({ onConfirm, onBack }) => {
               </div>
 
               <div className={styles.characterName}>
-                {isUnlocked ? t(`characters.${character.id}.name`) : "???"}
+                {isUnlocked
+                  ? t(`characters.${character.id}.name`)
+                  : t(`unlockConditions.${character.unlockCondition.type}`, {
+                      value: character.unlockCondition.value,
+                    })}
               </div>
-
-              {!isUnlocked && (
-                <div className={styles.unlockCondition}>
-                  {t(`unlockConditions.${character.unlockCondition.type}`, {
-                    value: character.unlockCondition.value,
-                  })}
-                </div>
-              )}
             </div>
           );
         })}
       </div>
 
       {selectedCharacter && (
-        <div className={styles.characterDetail}>
+        <div className={styles.characterDetail} data-testid="character-details">
           <h2>{t(`characters.${selectedCharacter.id}.name`)}</h2>
           <p className={styles.description}>
             {t(`characters.${selectedCharacter.id}.description`)}
@@ -170,4 +169,4 @@ const Home: React.FC<CharacterSelectProps> = ({ onConfirm, onBack }) => {
   );
 };
 
-export default Home;
+export default CharacterSelect;

@@ -235,6 +235,22 @@
         "speed": {
             "name": "Velocidade de movimento",
             "description": "+{value} de velocidade por nível"
+        },
+        "expBonus": {
+            "name": "Bônus de experiência",
+            "description": "+{value}% de experiência por nível"
+        },
+        "critRate": {
+            "name": "Taxa de crítico",
+            "description": "+{value}% de taxa de crítico por nível"
+        },
+        "magnetBonus": {
+            "name": "Bônus de alcance do ímã",
+            "description": "+{value}% de alcance do ímã por nível"
+        },
+        "collectRange": {
+            "name": "Bônus de alcance de coleta",
+            "description": "+{value}% de alcance de coleta por nível"
         }
     },
     "weapons": {

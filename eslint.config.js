@@ -13,8 +13,6 @@ export default defineConfig(
       "**/dist/**",
       "**/build/**",
       "**/coverage/**",
-      "**/playwright-report/**",
-      "**/playwright-results/**",
       "**/scripts/**",
     ],
   },

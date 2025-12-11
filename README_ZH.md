@@ -148,7 +148,6 @@ const characters: Character[] = [
 - **开发语言**: TypeScript - 类型安全开发
 - **国际化**: [react-i18next](https://react.i18next.com/) - 多语言支持
 - **测试**: [Vitest](https://vitest.dev/) - 单元测试
-- **端到端测试**: [Playwright](https://playwright.dev/) - 端到端测试
 
 ## 🙏 致谢
 
