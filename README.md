@@ -36,7 +36,7 @@ Mobile users can scan the QR Code below to play instantly.
 
 ### Prerequisites
 
-- Node.js (version 18 or higher)
+- Node.js (version 20 or higher)
 - npm
 
 ### Installation Steps
@@ -67,17 +67,6 @@ npm run build
 npm run preview
 ```
 
-## 🎯 Usage Examples
-
-### Basic Gameplay
-
-1. **Character Selection** - Choose your character at the home screen. Each character has unique stats and starting weapons
-2. **Map Selection** - Select a chapter/map to begin your journey
-3. **Survive** - Move with WASD or Arrow keys, automatically attack nearby enemies
-4. **Level Up** - Gain experience from defeated enemies, level up to choose new weapons or upgrades
-5. **Collect Rewards** - Every 10 kills, select from powerful elixirs or new weapons
-6. **Permanent Progress** - Use collected gold in the Shop to purchase permanent upgrades
-
 ### Testing
 
 ```bash
@@ -97,54 +86,12 @@ npm run test:coverage
 npm run test:e2e
 ```
 
-### Linting and Formatting
-
-```bash
-# Run ESLint
-npm run lint
-
-# Fix linting issues
-npm run lint:fix
-```
-
-### Game Systems
-
-#### Character System
-
-```typescript
-// Character definition example
-const characters: Character[] = [
-  {
-    id: 'destined-one',
-    name: 'Destined One',
-    description: 'The chosen one with balanced stats',
-    stats: {
-      health: 100,
-      speed: 100,
-      damage: 100,
-      armor: 100,
-      luck: 100,
-    },
-    startingWeapons: ['golden-staff'],
-    unlockCondition: { chapter: 0, kills: 0 },
-  },
-];
-```
-
-#### Weapon System
-
-Weapons can be upgraded up to level 5, with each level improving damage, projectile count, or special effects.
-
-#### Elixir System
-
-10 types of elixirs with different effects, including health restoration, stat boosts, and special abilities.
-
 ## 🏗️ Tech Stack
 
-- **Game Engine**: [Phaser.js 3.90](https://phaser.io/) - HTML5 game framework
-- **Frontend Framework**: [React 19](https://react.dev/) - UI components
-- **Build Tool**: [Vite 7](https://vitejs.dev/) - Fast development and builds
-- **State Management**: [Zustand 5](https://github.com/pmndrs/zustand) - Lightweight state management
+- **Game Engine**: [Phaser.js](https://phaser.io/) - HTML5 game framework
+- **Frontend Framework**: [React](https://react.dev/) - UI components
+- **Build Tool**: [Vite](https://vitejs.dev/) - Fast development and builds
+- **State Management**: [Zustand](https://github.com/pmndrs/zustand) - Lightweight state management
 - **Language**: TypeScript - Type-safe development
 - **i18n**: [react-i18next](https://react.i18next.com/) - Internationalization
 - **Testing**: [Vitest](https://vitest.dev/) - Unit testing
