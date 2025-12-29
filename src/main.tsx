@@ -3,12 +3,13 @@ import "./i18n";
 import App from "./App";
 import "./App.css";
 import i18n from "./i18n";
-import { useSettingStore } from "./store";
 import "vite/modulepreload-polyfill";
+import { useSettingStore } from "./store";
+import { isFullScreen } from "./util";
 
 async function init() {
-  const currentLanguage = await i18n.changeLanguage();
-  useSettingStore.getState().setLanguage(currentLanguage);
+  await i18n.changeLanguage();
+  useSettingStore.getState().setFullScreenEnabled(isFullScreen());
   const root = createRoot(document.getElementById("root")!);
   root.render(<App />);
 }

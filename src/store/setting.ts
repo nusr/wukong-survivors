@@ -6,16 +6,6 @@ import { useShallow } from "zustand/react/shallow";
 import { useSaveStore } from "./save";
 import Phaser from "phaser";
 
-export const DEFAULT_SETTING: SettingState = {
-  musicVolume: 0.5,
-  musicEnabled: true,
-  enableAutoSelect: false,
-  enableUnlockAll: false,
-  gameTime: DEFAULT_GAME_TIME,
-};
-
-const SAVE_KEY = "wu_kong_survivors_setting";
-
 export type SettingState = {
   language?: Language;
   musicVolume: number;
@@ -23,7 +13,19 @@ export type SettingState = {
   enableAutoSelect: boolean;
   enableUnlockAll: boolean;
   gameTime: number;
+  enableFullScreen: boolean;
 };
+
+export const DEFAULT_SETTING: SettingState = {
+  musicVolume: 0.5,
+  musicEnabled: true,
+  enableAutoSelect: false,
+  enableUnlockAll: false,
+  gameTime: DEFAULT_GAME_TIME,
+  enableFullScreen: false,
+};
+
+const SAVE_KEY = "wu_kong_survivors_setting";
 
 // Zustand Store interface
 interface SettingStore extends SettingState {
@@ -34,12 +36,16 @@ interface SettingStore extends SettingState {
   setAutoSelectEnabled: (enabled: boolean) => void;
   setUnlockAllEnabled: (enabled: boolean) => void;
   setGameTime: (gameTime: number) => void;
+  setFullScreenEnabled: (enabled: boolean) => void;
 }
 
 export const useSettingStore = create<SettingStore>()(
   persist(
     (set) => ({
       ...DEFAULT_SETTING,
+      setFullScreenEnabled(enabled: boolean) {
+        set({ enableFullScreen: enabled });
+      },
       setGameTime(gameTime: number) {
         set({ gameTime });
       },
@@ -82,9 +88,9 @@ const getEnableUnlockAll = (state: SettingState) => state.enableUnlockAll;
 const getMusicEnabled = (state: SettingState) => state.musicEnabled;
 const getMusicVolume = (state: SettingState) => state.musicVolume;
 const getGameTime = (state: SettingState) => state.gameTime;
+const getEnableFullScreen = (state: SettingState) => state.enableFullScreen;
 
 export const useLanguage = () => useSettingStore(useShallow(getLanguage));
-
 export const useEnableAutoSelect = () =>
   useSettingStore(useShallow(getEnableAutoSelect));
 export const useEnableUnlockAll = () =>
@@ -93,3 +99,5 @@ export const useMusicEnabled = () =>
   useSettingStore(useShallow(getMusicEnabled));
 export const useMusicVolume = () => useSettingStore(useShallow(getMusicVolume));
 export const useGameTime = () => useSettingStore(useShallow(getGameTime));
+export const useEnableFullScreen = () =>
+  useSettingStore(useShallow(getEnableFullScreen));

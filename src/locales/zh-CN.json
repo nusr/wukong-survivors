@@ -166,10 +166,10 @@
     "unlockCharacter": "选择角色",
     "locked": "未解锁",
     "unlockCondition": "解锁条件",
-        "specialWeapon": "专属武器",
-        "selectCharacter": "选择角色",
-        "title": "角色"
-    },
+    "specialWeapon": "专属武器",
+    "selectCharacter": "选择角色",
+    "title": "角色"
+  },
   "maps": {
     "chapter1": {
       "name": "第一回 - 狼虎之穴",
@@ -197,8 +197,8 @@
     },
     "selectMap": "选择章节",
     "difficulty": "难度",
-        "title": "章节"
-    },
+    "title": "章节"
+  },
   "unlockConditions": {
     "default": "默认已解锁",
     "kills": "击败{value}个敌人",
@@ -532,7 +532,10 @@
     "musicVolume": "音乐音量",
     "gameTime": "章节时长 ({value} 分钟)",
     "resetSetting": "重置设置",
-    "resetConfirm": "确定要重置所有设置吗？"
+    "resetConfirm": "确定要重置所有设置吗？",
+    "enableFullScreen": "启用全屏",
+    "resetSuccess": "重置成功",
+    "exitToDesktop": "返回桌面"
   },
   "wiki": {
     "title": "百科"

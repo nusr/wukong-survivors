@@ -7,8 +7,10 @@ import {
   useMusicVolume,
   useGameTime,
   useSettingStore,
+  useEnableFullScreen,
 } from "../../store";
 import styles from "./index.module.css";
+import { toggleFullScreen, confirmModal } from "../../util";
 
 export const Settings = ({ onBack }: { onBack: () => void }) => {
   const [t] = useTranslation();
@@ -17,6 +19,7 @@ export const Settings = ({ onBack }: { onBack: () => void }) => {
   const musicEnabled = useMusicEnabled();
   const musicVolume = useMusicVolume();
   const gameTime = Math.floor(useGameTime() / 60);
+  const enableFullScreen = useEnableFullScreen();
   return (
     <div className="center-container">
       <button
@@ -57,6 +60,20 @@ export const Settings = ({ onBack }: { onBack: () => void }) => {
               .getState()
               .setUnlockAllEnabled(Boolean(e.target.checked))
           }
+        />
+      </div>
+      <div className={styles.list}>
+        <label htmlFor="full-screen">{t("settings.enableFullScreen")}</label>
+        <input
+          type="checkbox"
+          id="full-screen"
+          name="full-screen"
+          checked={enableFullScreen}
+          onChange={(e) => {
+            const enable = Boolean(e.target.checked);
+            useSettingStore.getState().setFullScreenEnabled(enable);
+            toggleFullScreen(enable);
+          }}
         />
       </div>
       <div className={styles.list}>
@@ -110,7 +127,7 @@ export const Settings = ({ onBack }: { onBack: () => void }) => {
       <button
         className={`resetButton ${styles.resetButton}`}
         onClick={() => {
-          if (window.confirm(t("settings.resetConfirm"))) {
+          if (confirmModal(t("settings.resetConfirm"))) {
             useSettingStore.getState().resetAll();
           }
         }}

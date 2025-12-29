@@ -4,7 +4,7 @@ import { PERMANENT_UPGRADES } from "../../constant";
 import { useShopLevel, useTotalGold, useSaveStore } from "../../store";
 import styles from "./index.module.css";
 import type { PermanentUpgradeType } from "../../types/";
-import { upgradeLevelGold } from "../../util";
+import { confirmModal } from "../../util";
 
 interface ShopProps {
   onBack: () => void;
@@ -36,7 +36,7 @@ const Shop: React.FC<ShopProps> = ({ onBack }) => {
   };
 
   const handleResetUpgrades = () => {
-    if (window.confirm(t("shop.resetConfirm"))) {
+    if (confirmModal(t("shop.resetConfirm"))) {
       useSaveStore.getState().resetPermanentUpgrades();
       setRefresh((prev) => prev + 1);
     }
@@ -54,7 +54,7 @@ const Shop: React.FC<ShopProps> = ({ onBack }) => {
       <div className={styles.upgradesGrid} data-testid="upgrades-grid">
         {PERMANENT_UPGRADES.map((upgrade) => {
           const currentLevel = save[upgrade.id] || 0;
-          const cost = upgradeLevelGold(currentLevel);
+          const cost = upgrade.cost(currentLevel);
           const isMaxLevel = currentLevel >= upgrade.maxLevel;
           const canAfford = totalGold >= cost;
           const currentEffect = upgrade.effect(currentLevel);

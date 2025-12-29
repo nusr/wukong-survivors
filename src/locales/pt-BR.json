@@ -1,536 +1,539 @@
 {
-    "game": {
-        "title": "Survivor Wukong",
-        "start": "Iniciar",
-        "restart": "Reiniciar",
-        "backToHome": "Voltar ao menu principal",
-        "gameOver": "Fim de jogo",
-        "chapterComplete": "Capítulo concluído",
-        "continueGame": "Continuar",
-        "levelUp": "Subiu de nível",
-        "paused": "Pausado",
-        "level": "Nível {level}",
-        "specialWeapon": "Arma especial",
-        "resetSave": "Redefinir save",
-        "endGame": "Sair",
-        "endGameTitle": "Sair",
-        "endGameDesc": "Deseja sair do jogo?",
-        "completeChapters": "Capítulos concluídos",
-        "stats": "Estatísticas",
-        "back": "Voltar"
+  "game": {
+    "title": "Survivor Wukong",
+    "start": "Iniciar",
+    "restart": "Reiniciar",
+    "backToHome": "Voltar ao menu principal",
+    "gameOver": "Fim de jogo",
+    "chapterComplete": "Capítulo concluído",
+    "continueGame": "Continuar",
+    "levelUp": "Subiu de nível",
+    "paused": "Pausado",
+    "level": "Nível {level}",
+    "specialWeapon": "Arma especial",
+    "resetSave": "Redefinir save",
+    "endGame": "Sair",
+    "endGameTitle": "Sair",
+    "endGameDesc": "Deseja sair do jogo?",
+    "completeChapters": "Capítulos concluídos",
+    "stats": "Estatísticas",
+    "back": "Voltar"
+  },
+  "languages": {
+    "zh-CN": "Chinês simplificado",
+    "zh-TW": "Chinês tradicional",
+    "en-US": "English",
+    "ja-JP": "日本語",
+    "ko-KR": "한국어",
+    "es-ES": "Español",
+    "ru-RU": "Русский",
+    "de-DE": "Deutsch",
+    "fr-FR": "Français",
+    "pt-BR": "Português-BR"
+  },
+  "stats": {
+    "title": "Estatísticas do jogo",
+    "gold": "Ouro",
+    "totalKills": "Total de abates",
+    "bestSurvival": "Melhor sobrevivência",
+    "totalPlayTime": "Tempo total de jogo",
+    "survivalTime": "Tempo de sobrevivência",
+    "kills": "Abates",
+    "level": "Nível",
+    "close": "Fechar"
+  },
+  "characters": {
+    "destined_one": {
+      "name": "O Destinado",
+      "description": "A lenda começa, guerreiro universal equilibrado"
     },
-    "languages": {
-        "zh-CN": "Chinês simplificado",
-        "zh-TW": "Chinês tradicional",
-        "en-US": "English",
-        "ja-JP": "日本語",
-        "ko-KR": "한국어",
-        "es-ES": "Español",
-        "ru-RU": "Русский",
-        "de-DE": "Deutsch",
-        "fr-FR": "Français",
-        "pt-BR": "Português-BR"
+    "black_bear_guai": {
+      "name": "Urso Negro Guai",
+      "description": "Poderoso demônio urso com muita vida e defesa"
     },
-    "stats": {
-        "title": "Estatísticas do jogo",
-        "gold": "Ouro",
-        "totalKills": "Total de abates",
-        "bestSurvival": "Melhor sobrevivência",
-        "totalPlayTime": "Tempo total de jogo",
-        "survivalTime": "Tempo de sobrevivência",
-        "kills": "Abates",
-        "level": "Nível",
-        "close": "Fechar"
+    "lingxuzi": {
+      "name": "Ling Xuzi",
+      "description": "Senhor da Montanha do Vento Negro, mestre das artes Dao"
     },
-    "characters": {
-        "destined_one": {
-            "name": "O Destinado",
-            "description": "A lenda começa, guerreiro universal equilibrado"
-        },
-        "black_bear_guai": {
-            "name": "Urso Negro Guai",
-            "description": "Poderoso demônio urso com muita vida e defesa"
-        },
-        "lingxuzi": {
-            "name": "Ling Xuzi",
-            "description": "Senhor da Montanha do Vento Negro, mestre das artes Dao"
-        },
-        "wandering_wight": {
-            "name": "Fantasma Errante",
-            "description": "Fantasma ruivo, selvagem e cruel"
-        },
-        "yellow_wind_sage": {
-            "name": "Sábio do Vento Amarelo",
-            "description": "Mestre das tempestades de areia, dano mágico alto"
-        },
-        "tiger_vanguard": {
-            "name": "Tigre Avançado",
-            "description": "Guerreiro tigre selvagem, rápido e forte"
-        },
-        "stone_vanguard": {
-            "name": "Pedra Avançada",
-            "description": "Senhor da Montanha do Vento Amarelo, duro como pedra"
-        },
-        "king_of_flowing_sand": {
-            "name": "Rei da Areia Flutuante",
-            "description": "Chefe da Montanha do Vento Amarelo, senhor do mar de areia"
-        },
-        "yellow_brow_king": {
-            "name": "Rei de Sobrancelhas Amarelas",
-            "description": "Traidor budista astuto, bem equilibrado"
-        },
-        "hundred_eyed": {
-            "name": "Taoísta de Cem Olhos",
-            "description": "Monstro misterioso com chance crítica ultra-alta"
-        },
-        "mad_tiger": {
-            "name": "Tigre Louco",
-            "description": "Senhor do Pequeno Céu Oeste, selvagem e cruel"
-        },
-        "kang_jin_loong": {
-            "name": "Estrela Kang Jin",
-            "description": "Senhor da estrela, enviado do céu"
-        },
-        "spider_celestial": {
-            "name": "Aranha Violeta",
-            "description": "Senhor da Aranha, mestre das teias de aranha"
-        },
-        "hundred_eyed_daoist": {
-            "name": "Taoísta de Cem Olhos",
-            "description": "Senhor da Aranha, inúmeros raios demoníacos"
-        },
-        "elder_jinchi": {
-            "name": "Ancião Jinchi",
-            "description": "Senhor da Aranha, monge budista"
-        },
-        "hundred_eyed_daoist_master": {
-            "name": "Vilão de Muitos Olhos",
-            "description": "A verdadeira forma do Demônio de Cem Olhos"
-        },
-        "bull_king": {
-            "name": "Rei Touro",
-            "description": "Demônio rei extremamente forte, tanque ideal"
-        },
-        "red_boy": {
-            "name": "Menino Vermelho",
-            "description": "Senhor das Montanhas Flamejantes, mestre do Fogo Samadhi"
-        },
-        "rakshasa": {
-            "name": "Princesa do Abanico de Ferro",
-            "description": "Senhor das Montanhas Flamejantes, dona do Abanico de Folha"
-        },
-        "yaksha_king": {
-            "name": "Rei Yaksha",
-            "description": "Chefe das Montanhas Flamejantes, rei dos Yaksha"
-        },
-        "erlang_shen": {
-            "name": "Erlang Shen",
-            "description": "Senhor da Montanha Sumeru, deus de três olhos"
-        },
-        "great_sage_heaven": {
-            "name": "Grande Sábio, Igual ao Céu",
-            "description": "Senhor da Montanha Sumeru, Buda da Vitória em Batalha"
-        },
-        "golden_cicada": {
-            "name": "Cigarra Dourada",
-            "description": "Senhor da Montanha Sumeru, vida anterior de Tang Sanzang"
-        },
-        "stone_monkey": {
-            "name": "Macaco de Pedra",
-            "description": "Chefe do Monte Sumeru, forma original do Grande Sábio"
-        },
-        "tang_monk": {
-            "name": "Monge Tang",
-            "description": "Mestre budista da Jornada ao Oeste, abençoado com sorte extraordinária"
-        },
-        "sha_monk": {
-            "name": "Monge Sha",
-            "description": "Ex-General das Cortinas, guerreiro equilibrado das areias do rio"
-        },
-        "zhu_bajie": {
-            "name": "Zhu Bajie",
-            "description": "Marechal Tianpeng reencarnado, tanque resistente com ancinho poderoso"
-        },
-        "white_dragon_horse": {
-            "name": "Cavalo Dragão Branco",
-            "description": "Príncipe Dragão em forma de cavalo, corcel celestial veloz"
-        },
-        "unlockCharacter": "Desbloquear personagem",
-        "locked": "Bloqueado",
-        "unlockCondition": "Condição de desbloqueio",
-        "specialWeapon": "Arma especial",
-        "selectCharacter": "Selecionar Personagem",
-        "title": "Personagem"
+    "wandering_wight": {
+      "name": "Fantasma Errante",
+      "description": "Fantasma ruivo, selvagem e cruel"
     },
-    "maps": {
-        "chapter1": {
-            "name": "Capítulo 1 - Caverna de Lobos e Tigres",
-            "description": "Primeiros passos da jornada, provações da Montanha do Vento Negro"
-        },
-        "chapter2": {
-            "name": "Capítulo 2 - Areia Amarela",
-            "description": "Ilusões das tempestades de areia da Montanha do Vento Amarelo"
-        },
-        "chapter3": {
-            "name": "Capítulo 3 - Neve e Gelo",
-            "description": "O mundo congelado do Pequeno Céu Oeste"
-        },
-        "chapter4": {
-            "name": "Capítulo 4 - Deserto da Aranha",
-            "description": "O ninho dos demônios aranhas na caverna"
-        },
-        "chapter5": {
-            "name": "Capítulo 5 - Montanhas Flamejantes",
-            "description": "Inferno de chamas queimantes"
-        },
-        "chapter6": {
-            "name": "Capítulo 6 - Paraíso Ocidental",
-            "description": "O desafio final, o caminho da iluminação"
-        },
-        "selectMap": "Selecionar capítulo",
-        "difficulty": "Dificuldade",
-        "title": "Capítulo"
+    "yellow_wind_sage": {
+      "name": "Sábio do Vento Amarelo",
+      "description": "Mestre das tempestades de areia, dano mágico alto"
     },
-    "unlockConditions": {
-        "default": "Desbloqueado por padrão",
-        "kills": "Derrote {value} inimigos",
-        "time": "Sobreviva {value} segundos",
-        "gold": "Coletar {value} ouro",
-        "chapter": "Completar capítulo {value} "
+    "tiger_vanguard": {
+      "name": "Tigre Avançado",
+      "description": "Guerreiro tigre selvagem, rápido e forte"
     },
-    "shop": {
-        "title": "Melhorias permanentes",
-        "hint": "Melhore as características permanentes para se tornar mais forte!",
-        "infoText": "* Reset devolve 100% do ouro gasto",
-        "resetMessage": "Devolve {refund} ouro",
-        "purchaseUpgrade": "Comprar melhoria",
-        "resetUpgrades": "Redefinir todas as melhorias",
-        "resetConfirm": "Redefinir todas as melhorias? Você receberá 100% do ouro gasto de volta.",
-        "confirm": "Confirmar",
-        "cancel": "Cancelar",
-        "maxLevel": "Nível máximo",
-        "currentLevel": "Nível {level}",
-        "cost": "Custo",
-        "notEnoughGold": "Ouro insuficiente",
-        "purchased": "Comprado",
-        "resetComplete": "Reset concluído! {amount} ouro devolvido"
+    "stone_vanguard": {
+      "name": "Pedra Avançada",
+      "description": "Senhor da Montanha do Vento Amarelo, duro como pedra"
     },
-    "upgrades": {
-        "attack": {
-            "name": "Força de ataque",
-            "description": "+{value} de dano por nível"
-        },
-        "health": {
-            "name": "Vida máxima",
-            "description": "+{value} de vida por nível"
-        },
-        "armor": {
-            "name": "Armadura",
-            "description": "+{value} de defesa por nível"
-        },
-        "luck": {
-            "name": "Sorte",
-            "description": "+{value} de chance de drop de itens por nível"
-        },
-        "speed": {
-            "name": "Velocidade de movimento",
-            "description": "+{value} de velocidade por nível"
-        },
-        "expBonus": {
-            "name": "Bônus de experiência",
-            "description": "+{value}% de experiência por nível"
-        },
-        "critRate": {
-            "name": "Taxa de crítico",
-            "description": "+{value}% de taxa de crítico por nível"
-        },
-        "magnetBonus": {
-            "name": "Bônus de alcance do ímã",
-            "description": "+{value}% de alcance do ímã por nível"
-        },
-        "collectRange": {
-            "name": "Bônus de alcance de coleta",
-            "description": "+{value}% de alcance de coleta por nível"
-        }
+    "king_of_flowing_sand": {
+      "name": "Rei da Areia Flutuante",
+      "description": "Chefe da Montanha do Vento Amarelo, senhor do mar de areia"
     },
-    "weapons": {
-        "golden_staff": {
-            "name": "Cajado Dourado",
-            "description": "Cajado mágico do Destinado"
-        },
-        "ruyi_staff": {
-            "name": "Cajado Dourado Ruyi",
-            "description": "Forma final do Cajado Dourado, força incrível"
-        },
-        "fire_lance": {
-            "name": "Lança de Fogo",
-            "description": "Lança envolta em fogo que queima inimigos"
-        },
-        "wind_tamer": {
-            "name": "Pérola Equilibradora do Vento",
-            "description": "Pérola divina que controla tempestades, ataque de área"
-        },
-        "violet_bell": {
-            "name": "Sino Violeta",
-            "description": "Jóia mágica que emite ondas sonoras mortais"
-        },
-        "fireproof_cloak": {
-            "name": "Manto Incombustível",
-            "description": "Luz divina protetora que resiste a danos"
-        },
-        "twin_blades": {
-            "name": "Duas Lâminas",
-            "description": "Duas lâminas do Tigre Avançado para ataques rápidos"
-        },
-        "mace": {
-            "name": "Maça Repulsiva de Demônios",
-            "description": "Arma budista pesada que intimida demônios"
-        },
-        "bull_horns": {
-            "name": "Chifres de Touro Demônio",
-            "description": "Poderosos chifres do Rei Touro, ataque ininterrupto"
-        },
-        "thunder_drum": {
-            "name": "Tambores do Trovão",
-            "description": "Chama a força do trovão"
-        },
-        "ice_needle": {
-            "name": "Agulha de Gelo Prateada",
-            "description": "Condensa gelo, congela inimigos"
-        },
-        "wind_fire_wheels": {
-            "name": "Rodas de Vento e Fogo",
-            "description": "Move-se sobre vento e fogo, rápido como relâmpago"
-        },
-        "jade_purity_bottle": {
-            "name": "Garrafa de Pureza Jade",
-            "description": "Garrafa de Guan Yin, submete demônios"
-        },
-        "golden_rope": {
-            "name": "Corda Dourada",
-            "description": "Amarra inimigos, restrição inigualável"
-        },
-        "plantain_fan": {
-            "name": "Abanico de Folha",
-            "description": "Jóia da Princesa do Abanico de Ferro, ventos rugentes"
-        },
-        "nine_tooth_rake": {
-            "name": "Ancinho de Nove Dentes",
-            "description": "Arma celestial de Zhu Bajie, ataque em leque que puxa inimigos"
-        },
-        "dragon_scale_sword": {
-            "name": "Espada Escama de Dragão",
-            "description": "Lâmina do Dragão Branco com escamas de dragão, dispara projéteis rastreadores"
-        },
-        "three_pointed_blade": {
-            "name": "Lâmina de Três Pontas",
-            "description": "Arma divina do Caçador de Demônios, três pontas afiadas cortam como raios"
-        },
-        "nine_ring_staff": {
-            "name": "Cajado de Nove Anéis",
-            "description": "Cajado budista de Tang Seng, nove anéis tinguem e intimidam demônios"
-        },
-        "crescent_blade": {
-            "name": "Lâmina Crescente",
-            "description": "Cajado contra demônios de Sha Seng, lâmina em forma de lua crescente que perfura armaduras"
-        },
-        "iron_cudgel": {
-            "name": "Porra de Ferro",
-            "description": "Porra gigante do Rei Touro, força suficiente para mover montanhas"
-        },
-        "seven_star_sword": {
-            "name": "Espada das Sete Estrelas",
-            "description": "Espada Xian da Doutrina Dao, sete estrelas se conectam em um espírito de espada infinito"
-        },
-        "ginseng_fruit": {
-            "name": "Fruta de Ginseng",
-            "description": "Fruta Xian do Grande Patriarca Zhenyuan, se você cheira, vive 360 anos, se você come, vive 47.000 anos"
-        },
-        "heaven_earth_circle": {
-            "name": "Círculo do Céu e Terra",
-            "description": "Artefato de Nezha, emite luz dourada, ataca inimigos e retorna automaticamente"
-        },
-        "red_armillary_sash": {
-            "name": "Faixa Armilar Vermelha",
-            "description": "Artefato de Nezha, 7 pés 2 polegadas de comprimento, amarra e chicoteia inimigos"
-        },
-        "purple_gold_gourd": {
-            "name": "Abóbora Roxa Dourada",
-            "description": "Artefato de Goldhorn e Silverhorn, absorve inimigos que respondem ao seu nome"
-        },
-        "golden_rope_immortal": {
-            "name": "Corda Dourada dos Imortais",
-            "description": "Artefato de Taishang Laojun, corda Xian com maior força de restrição"
-        },
-        "demon_revealing_mirror": {
-            "name": "Espelho Revelador de Demônios",
-            "description": "Descobre fraquezas de inimigos, aumenta significativamente a taxa de crítico e dano"
-        },
-        "sea_calming_needle": {
-            "name": "Aguja Calmante do Mar",
-            "description": "Outra forma do Cajado Dourado, tesouro calmante do Mar Celestial, mais poderoso em grandes áreas"
-        },
-        "eight_trigrams_furnace": {
-            "name": "Forno dos Oito Trigramas",
-            "description": "Forno alquímico de Taishang Laojun, chamas dos Oito Trigramas queimam inimigos continuamente"
-        },
-        "dragon_staff": {
-            "name": "Cajado de Dragão",
-            "description": "Arma de Guanyin, convoca tornados para eliminar grupos de inimigos"
-        },
-        "seven_treasure_tree": {
-            "name": "Árvore dos Sete Tesouros",
-            "description": "Artefato de Zhunti, renova tudo e purifica o mal"
-        },
-        "immortal_slaying_blade": {
-            "name": "Lâmina Matadora de Imortais",
-            "description": "Lâmina voadora de Lu Pressure, rastreia inimigos e atinge mortalmente"
-        },
-        "diamond_snare": {
-            "name": "Armadilha de Diamante",
-            "description": "Artefato de Taishang Laojun, arma perfurante de armaduras, indestrutível"
-        },
-        "exquisite_pagoda": {
-            "name": "Pagode Exquisita",
-            "description": "Pagode do Rei Guardião do Templo Li Jing, combate milhões de demônios e confina o mal"
-        },
-        "golden_staff": {
-            "name": "Cajado Dourado",
-            "description": "Cajado mágico do Destinado, cresce e encolhe a vontade"
-        },
-        "fireLance": {
-            "name": "Lança de Fogo",
-            "description": "Lança envolta em fogo que queima inimigos"
-        },
-        "windTamer": {
-            "name": "Pérola Equilibradora do Vento",
-            "description": "Pérola divina que controla tempestades"
-        },
-        "violetBell": {
-            "name": "Sino Violeta",
-            "description": "Jóia mágica que emite ondas sonoras mortais"
-        },
-        "fireproofCloak": {
-            "name": "Manto Incombustível",
-            "description": "Luz divina protetora que resiste a danos"
-        },
-        "twinBlades": {
-            "name": "Duas Lâminas",
-            "description": "Duas lâminas do Tigre Avançado para ataques rápidos"
-        },
-        "bullHorns": {
-            "name": "Chifres de Touro Demônio",
-            "description": "Poderosos chifres do Rei Touro, ataque ininterrupto"
-        },
-        "upgrade": "Melhorar {name}",
-        "addWeapon": "Adicionar {name}",
-        "upgradeToLevel": "{name} Nível {level}",
-        "title": "Arma"
+    "yellow_brow_king": {
+      "name": "Rei de Sobrancelhas Amarelas",
+      "description": "Traidor budista astuto, bem equilibrado"
     },
-    "elixirs": {
-        "peach_of_immortality": {
-            "name": "Pêssego da Imortalidade",
-            "description": "Aumenta a vida máxima em 20"
-        },
-        "golden_elixir": {
-            "name": "Elixir Dourado",
-            "description": "Aumenta o ataque em 10%"
-        },
-        "jade_dew": {
-            "name": "Orvalho de Jade",
-            "description": "Restaura 50% da vida"
-        },
-        "tiger_bone_wine": {
-            "name": "Vinho de Osso de Tigre",
-            "description": "Aumenta a armadura em 5"
-        },
-        "phoenix_feather": {
-            "name": "Pena de Fênix",
-            "description": "Aumenta a velocidade de movimento em 10"
-        },
-        "dragon_scale": {
-            "name": "Escama de Dragão",
-            "description": "Aumenta a defesa em 8"
-        },
-        "spirit_mushroom": {
-            "name": "Cogumelo Espiritual",
-            "description": "Aumenta a recepção de experiência em 20%"
-        },
-        "soul_bead": {
-            "name": "Pérola de Alma",
-            "description": "Aumenta a chance crítica em 10%"
-        },
-        "inner_elixir": {
-            "name": "Elixir Interior",
-            "description": "Aumenta todas as características em 5%"
-        },
-        "resurrection_pill": {
-            "name": "Pílula de Ressurreição",
-            "description": "Ressuscita com vida cheia uma vez após a morte"
-        },
-        "universe_bag": {
-            "name": "Saco do Universo",
-            "description": "Aumentar o alcance do imã em 50%"
-        },
-        "title": "Elíxir"
+    "hundred_eyed": {
+      "name": "Taoísta de Cem Olhos",
+      "description": "Monstro misterioso com chance crítica ultra-alta"
     },
-    "enemies": {
-        "wolf_minion": "Lobo-Demônio",
-        "ghost_minion": "Fantasma-Soldado",
-        "bear_elite": "Urso-Guardião",
-        "snake_elite": "Cobra-General",
-        "rat_minion": "Rato-Demônio",
-        "sand_minion": "Monstro de Areia",
-        "tiger_elite": "Tigre-Guerreiro",
-        "wind_elite": "Vento-Comandante",
-        "monk_minion": "Monge-Demônio",
-        "spider_minion": "Pequena Aranha",
-        "centipede_elite": "Centopeia-Comandante",
-        "scorpion_elite": "Escorpião-Demônio",
-        "spider_woman_minion": "Mulher-Aranha",
-        "centipede_minion": "Pequena Centopeia",
-        "violet_spider_elite": "Aranha Violeta",
-        "poison_centipede_elite": "Centopeia Venenosa",
-        "fire_demon_minion": "Fogo-Demônio",
-        "bull_soldier_minion": "Touro-Soldado",
-        "fire_general_elite": "Fogo-General",
-        "bull_captain_elite": "Touro-Capitão",
-        "celestial_guard_minion": "Guardião Celestial",
-        "thunder_minion": "Trovão-Demônio",
-        "celestial_general_elite": "General Celestial",
-        "dragon_guardian_elite": "Guardião de Dragão",
-        "title": "Inimigo"
+    "mad_tiger": {
+      "name": "Tigre Louco",
+      "description": "Senhor do Pequeno Céu Oeste, selvagem e cruel"
     },
-    "rewards": {
-        "title": "Escolher recompensa",
-        "refresh": "Atualizar",
-        "refreshCost": "Atualizar ({cost} 💰)",
-        "craftHint": "Dica: {count} armas lendárias podem ser fabricadas",
-        "selectReward": "Escolher recompensa",
-        "rarity": {
-            "common": "Comum",
-            "rare": "Raro",
-            "epic": "Épico",
-            "legendary": "Lendário"
-        }
+    "kang_jin_loong": {
+      "name": "Estrela Kang Jin",
+      "description": "Senhor da estrela, enviado do céu"
     },
-    "dialog": {
-        "resetSaveConfirm": "Tem certeza que deseja redefinir todos os dados salvos? Esta ação não pode ser desfeita.",
-        "yes": "Sim",
-        "no": "Não"
+    "spider_celestial": {
+      "name": "Aranha Violeta",
+      "description": "Senhor da Aranha, mestre das teias de aranha"
     },
-    "settings": {
-        "chooseLanguage": "Escolher idioma",
-        "title": "Configurações",
-        "autoSelect": "Hospedagem automática do jogo (seleciona arma e elixir aleatoriamente)",
-        "unlockAll": "Desbloquear todos os personagens e capítulos",
-        "enableMusic": "Ativar música",
-        "musicVolume": "Volume da música",
-        "gameTime": "Tempo do capítulo ({value} minutos)",
-        "resetSetting": "Redefinir configurações",
-        "resetConfirm": "Tem certeza que deseja redefinir todas as configurações?"
+    "hundred_eyed_daoist": {
+      "name": "Taoísta de Cem Olhos",
+      "description": "Senhor da Aranha, inúmeros raios demoníacos"
     },
-    "wiki": {
-        "title": "Wiki"
+    "elder_jinchi": {
+      "name": "Ancião Jinchi",
+      "description": "Senhor da Aranha, monge budista"
+    },
+    "hundred_eyed_daoist_master": {
+      "name": "Vilão de Muitos Olhos",
+      "description": "A verdadeira forma do Demônio de Cem Olhos"
+    },
+    "bull_king": {
+      "name": "Rei Touro",
+      "description": "Demônio rei extremamente forte, tanque ideal"
+    },
+    "red_boy": {
+      "name": "Menino Vermelho",
+      "description": "Senhor das Montanhas Flamejantes, mestre do Fogo Samadhi"
+    },
+    "rakshasa": {
+      "name": "Princesa do Abanico de Ferro",
+      "description": "Senhor das Montanhas Flamejantes, dona do Abanico de Folha"
+    },
+    "yaksha_king": {
+      "name": "Rei Yaksha",
+      "description": "Chefe das Montanhas Flamejantes, rei dos Yaksha"
+    },
+    "erlang_shen": {
+      "name": "Erlang Shen",
+      "description": "Senhor da Montanha Sumeru, deus de três olhos"
+    },
+    "great_sage_heaven": {
+      "name": "Grande Sábio, Igual ao Céu",
+      "description": "Senhor da Montanha Sumeru, Buda da Vitória em Batalha"
+    },
+    "golden_cicada": {
+      "name": "Cigarra Dourada",
+      "description": "Senhor da Montanha Sumeru, vida anterior de Tang Sanzang"
+    },
+    "stone_monkey": {
+      "name": "Macaco de Pedra",
+      "description": "Chefe do Monte Sumeru, forma original do Grande Sábio"
+    },
+    "tang_monk": {
+      "name": "Monge Tang",
+      "description": "Mestre budista da Jornada ao Oeste, abençoado com sorte extraordinária"
+    },
+    "sha_monk": {
+      "name": "Monge Sha",
+      "description": "Ex-General das Cortinas, guerreiro equilibrado das areias do rio"
+    },
+    "zhu_bajie": {
+      "name": "Zhu Bajie",
+      "description": "Marechal Tianpeng reencarnado, tanque resistente com ancinho poderoso"
+    },
+    "white_dragon_horse": {
+      "name": "Cavalo Dragão Branco",
+      "description": "Príncipe Dragão em forma de cavalo, corcel celestial veloz"
+    },
+    "unlockCharacter": "Desbloquear personagem",
+    "locked": "Bloqueado",
+    "unlockCondition": "Condição de desbloqueio",
+    "specialWeapon": "Arma especial",
+    "selectCharacter": "Selecionar Personagem",
+    "title": "Personagem"
+  },
+  "maps": {
+    "chapter1": {
+      "name": "Capítulo 1 - Caverna de Lobos e Tigres",
+      "description": "Primeiros passos da jornada, provações da Montanha do Vento Negro"
+    },
+    "chapter2": {
+      "name": "Capítulo 2 - Areia Amarela",
+      "description": "Ilusões das tempestades de areia da Montanha do Vento Amarelo"
+    },
+    "chapter3": {
+      "name": "Capítulo 3 - Neve e Gelo",
+      "description": "O mundo congelado do Pequeno Céu Oeste"
+    },
+    "chapter4": {
+      "name": "Capítulo 4 - Deserto da Aranha",
+      "description": "O ninho dos demônios aranhas na caverna"
+    },
+    "chapter5": {
+      "name": "Capítulo 5 - Montanhas Flamejantes",
+      "description": "Inferno de chamas queimantes"
+    },
+    "chapter6": {
+      "name": "Capítulo 6 - Paraíso Ocidental",
+      "description": "O desafio final, o caminho da iluminação"
+    },
+    "selectMap": "Selecionar capítulo",
+    "difficulty": "Dificuldade",
+    "title": "Capítulo"
+  },
+  "unlockConditions": {
+    "default": "Desbloqueado por padrão",
+    "kills": "Derrote {value} inimigos",
+    "time": "Sobreviva {value} segundos",
+    "gold": "Coletar {value} ouro",
+    "chapter": "Completar capítulo {value} "
+  },
+  "shop": {
+    "title": "Melhorias permanentes",
+    "hint": "Melhore as características permanentes para se tornar mais forte!",
+    "infoText": "* Reset devolve 100% do ouro gasto",
+    "resetMessage": "Devolve {refund} ouro",
+    "purchaseUpgrade": "Comprar melhoria",
+    "resetUpgrades": "Redefinir todas as melhorias",
+    "resetConfirm": "Redefinir todas as melhorias? Você receberá 100% do ouro gasto de volta.",
+    "confirm": "Confirmar",
+    "cancel": "Cancelar",
+    "maxLevel": "Nível máximo",
+    "currentLevel": "Nível {level}",
+    "cost": "Custo",
+    "notEnoughGold": "Ouro insuficiente",
+    "purchased": "Comprado",
+    "resetComplete": "Reset concluído! {amount} ouro devolvido"
+  },
+  "upgrades": {
+    "attack": {
+      "name": "Força de ataque",
+      "description": "+{value} de dano por nível"
+    },
+    "health": {
+      "name": "Vida máxima",
+      "description": "+{value} de vida por nível"
+    },
+    "armor": {
+      "name": "Armadura",
+      "description": "+{value} de defesa por nível"
+    },
+    "luck": {
+      "name": "Sorte",
+      "description": "+{value} de chance de drop de itens por nível"
+    },
+    "speed": {
+      "name": "Velocidade de movimento",
+      "description": "+{value} de velocidade por nível"
+    },
+    "expBonus": {
+      "name": "Bônus de experiência",
+      "description": "+{value}% de experiência por nível"
+    },
+    "critRate": {
+      "name": "Taxa de crítico",
+      "description": "+{value}% de taxa de crítico por nível"
+    },
+    "magnetBonus": {
+      "name": "Bônus de alcance do ímã",
+      "description": "+{value}% de alcance do ímã por nível"
+    },
+    "collectRange": {
+      "name": "Bônus de alcance de coleta",
+      "description": "+{value}% de alcance de coleta por nível"
     }
+  },
+  "weapons": {
+    "golden_staff": {
+      "name": "Cajado Dourado",
+      "description": "Cajado mágico do Destinado"
+    },
+    "ruyi_staff": {
+      "name": "Cajado Dourado Ruyi",
+      "description": "Forma final do Cajado Dourado, força incrível"
+    },
+    "fire_lance": {
+      "name": "Lança de Fogo",
+      "description": "Lança envolta em fogo que queima inimigos"
+    },
+    "wind_tamer": {
+      "name": "Pérola Equilibradora do Vento",
+      "description": "Pérola divina que controla tempestades, ataque de área"
+    },
+    "violet_bell": {
+      "name": "Sino Violeta",
+      "description": "Jóia mágica que emite ondas sonoras mortais"
+    },
+    "fireproof_cloak": {
+      "name": "Manto Incombustível",
+      "description": "Luz divina protetora que resiste a danos"
+    },
+    "twin_blades": {
+      "name": "Duas Lâminas",
+      "description": "Duas lâminas do Tigre Avançado para ataques rápidos"
+    },
+    "mace": {
+      "name": "Maça Repulsiva de Demônios",
+      "description": "Arma budista pesada que intimida demônios"
+    },
+    "bull_horns": {
+      "name": "Chifres de Touro Demônio",
+      "description": "Poderosos chifres do Rei Touro, ataque ininterrupto"
+    },
+    "thunder_drum": {
+      "name": "Tambores do Trovão",
+      "description": "Chama a força do trovão"
+    },
+    "ice_needle": {
+      "name": "Agulha de Gelo Prateada",
+      "description": "Condensa gelo, congela inimigos"
+    },
+    "wind_fire_wheels": {
+      "name": "Rodas de Vento e Fogo",
+      "description": "Move-se sobre vento e fogo, rápido como relâmpago"
+    },
+    "jade_purity_bottle": {
+      "name": "Garrafa de Pureza Jade",
+      "description": "Garrafa de Guan Yin, submete demônios"
+    },
+    "golden_rope": {
+      "name": "Corda Dourada",
+      "description": "Amarra inimigos, restrição inigualável"
+    },
+    "plantain_fan": {
+      "name": "Abanico de Folha",
+      "description": "Jóia da Princesa do Abanico de Ferro, ventos rugentes"
+    },
+    "nine_tooth_rake": {
+      "name": "Ancinho de Nove Dentes",
+      "description": "Arma celestial de Zhu Bajie, ataque em leque que puxa inimigos"
+    },
+    "dragon_scale_sword": {
+      "name": "Espada Escama de Dragão",
+      "description": "Lâmina do Dragão Branco com escamas de dragão, dispara projéteis rastreadores"
+    },
+    "three_pointed_blade": {
+      "name": "Lâmina de Três Pontas",
+      "description": "Arma divina do Caçador de Demônios, três pontas afiadas cortam como raios"
+    },
+    "nine_ring_staff": {
+      "name": "Cajado de Nove Anéis",
+      "description": "Cajado budista de Tang Seng, nove anéis tinguem e intimidam demônios"
+    },
+    "crescent_blade": {
+      "name": "Lâmina Crescente",
+      "description": "Cajado contra demônios de Sha Seng, lâmina em forma de lua crescente que perfura armaduras"
+    },
+    "iron_cudgel": {
+      "name": "Porra de Ferro",
+      "description": "Porra gigante do Rei Touro, força suficiente para mover montanhas"
+    },
+    "seven_star_sword": {
+      "name": "Espada das Sete Estrelas",
+      "description": "Espada Xian da Doutrina Dao, sete estrelas se conectam em um espírito de espada infinito"
+    },
+    "ginseng_fruit": {
+      "name": "Fruta de Ginseng",
+      "description": "Fruta Xian do Grande Patriarca Zhenyuan, se você cheira, vive 360 anos, se você come, vive 47.000 anos"
+    },
+    "heaven_earth_circle": {
+      "name": "Círculo do Céu e Terra",
+      "description": "Artefato de Nezha, emite luz dourada, ataca inimigos e retorna automaticamente"
+    },
+    "red_armillary_sash": {
+      "name": "Faixa Armilar Vermelha",
+      "description": "Artefato de Nezha, 7 pés 2 polegadas de comprimento, amarra e chicoteia inimigos"
+    },
+    "purple_gold_gourd": {
+      "name": "Abóbora Roxa Dourada",
+      "description": "Artefato de Goldhorn e Silverhorn, absorve inimigos que respondem ao seu nome"
+    },
+    "golden_rope_immortal": {
+      "name": "Corda Dourada dos Imortais",
+      "description": "Artefato de Taishang Laojun, corda Xian com maior força de restrição"
+    },
+    "demon_revealing_mirror": {
+      "name": "Espelho Revelador de Demônios",
+      "description": "Descobre fraquezas de inimigos, aumenta significativamente a taxa de crítico e dano"
+    },
+    "sea_calming_needle": {
+      "name": "Aguja Calmante do Mar",
+      "description": "Outra forma do Cajado Dourado, tesouro calmante do Mar Celestial, mais poderoso em grandes áreas"
+    },
+    "eight_trigrams_furnace": {
+      "name": "Forno dos Oito Trigramas",
+      "description": "Forno alquímico de Taishang Laojun, chamas dos Oito Trigramas queimam inimigos continuamente"
+    },
+    "dragon_staff": {
+      "name": "Cajado de Dragão",
+      "description": "Arma de Guanyin, convoca tornados para eliminar grupos de inimigos"
+    },
+    "seven_treasure_tree": {
+      "name": "Árvore dos Sete Tesouros",
+      "description": "Artefato de Zhunti, renova tudo e purifica o mal"
+    },
+    "immortal_slaying_blade": {
+      "name": "Lâmina Matadora de Imortais",
+      "description": "Lâmina voadora de Lu Pressure, rastreia inimigos e atinge mortalmente"
+    },
+    "diamond_snare": {
+      "name": "Armadilha de Diamante",
+      "description": "Artefato de Taishang Laojun, arma perfurante de armaduras, indestrutível"
+    },
+    "exquisite_pagoda": {
+      "name": "Pagode Exquisita",
+      "description": "Pagode do Rei Guardião do Templo Li Jing, combate milhões de demônios e confina o mal"
+    },
+    "golden_staff": {
+      "name": "Cajado Dourado",
+      "description": "Cajado mágico do Destinado, cresce e encolhe a vontade"
+    },
+    "fireLance": {
+      "name": "Lança de Fogo",
+      "description": "Lança envolta em fogo que queima inimigos"
+    },
+    "windTamer": {
+      "name": "Pérola Equilibradora do Vento",
+      "description": "Pérola divina que controla tempestades"
+    },
+    "violetBell": {
+      "name": "Sino Violeta",
+      "description": "Jóia mágica que emite ondas sonoras mortais"
+    },
+    "fireproofCloak": {
+      "name": "Manto Incombustível",
+      "description": "Luz divina protetora que resiste a danos"
+    },
+    "twinBlades": {
+      "name": "Duas Lâminas",
+      "description": "Duas lâminas do Tigre Avançado para ataques rápidos"
+    },
+    "bullHorns": {
+      "name": "Chifres de Touro Demônio",
+      "description": "Poderosos chifres do Rei Touro, ataque ininterrupto"
+    },
+    "upgrade": "Melhorar {name}",
+    "addWeapon": "Adicionar {name}",
+    "upgradeToLevel": "{name} Nível {level}",
+    "title": "Arma"
+  },
+  "elixirs": {
+    "peach_of_immortality": {
+      "name": "Pêssego da Imortalidade",
+      "description": "Aumenta a vida máxima em 20"
+    },
+    "golden_elixir": {
+      "name": "Elixir Dourado",
+      "description": "Aumenta o ataque em 10%"
+    },
+    "jade_dew": {
+      "name": "Orvalho de Jade",
+      "description": "Restaura 50% da vida"
+    },
+    "tiger_bone_wine": {
+      "name": "Vinho de Osso de Tigre",
+      "description": "Aumenta a armadura em 5"
+    },
+    "phoenix_feather": {
+      "name": "Pena de Fênix",
+      "description": "Aumenta a velocidade de movimento em 10"
+    },
+    "dragon_scale": {
+      "name": "Escama de Dragão",
+      "description": "Aumenta a defesa em 8"
+    },
+    "spirit_mushroom": {
+      "name": "Cogumelo Espiritual",
+      "description": "Aumenta a recepção de experiência em 20%"
+    },
+    "soul_bead": {
+      "name": "Pérola de Alma",
+      "description": "Aumenta a chance crítica em 10%"
+    },
+    "inner_elixir": {
+      "name": "Elixir Interior",
+      "description": "Aumenta todas as características em 5%"
+    },
+    "resurrection_pill": {
+      "name": "Pílula de Ressurreição",
+      "description": "Ressuscita com vida cheia uma vez após a morte"
+    },
+    "universe_bag": {
+      "name": "Saco do Universo",
+      "description": "Aumentar o alcance do imã em 50%"
+    },
+    "title": "Elíxir"
+  },
+  "enemies": {
+    "wolf_minion": "Lobo-Demônio",
+    "ghost_minion": "Fantasma-Soldado",
+    "bear_elite": "Urso-Guardião",
+    "snake_elite": "Cobra-General",
+    "rat_minion": "Rato-Demônio",
+    "sand_minion": "Monstro de Areia",
+    "tiger_elite": "Tigre-Guerreiro",
+    "wind_elite": "Vento-Comandante",
+    "monk_minion": "Monge-Demônio",
+    "spider_minion": "Pequena Aranha",
+    "centipede_elite": "Centopeia-Comandante",
+    "scorpion_elite": "Escorpião-Demônio",
+    "spider_woman_minion": "Mulher-Aranha",
+    "centipede_minion": "Pequena Centopeia",
+    "violet_spider_elite": "Aranha Violeta",
+    "poison_centipede_elite": "Centopeia Venenosa",
+    "fire_demon_minion": "Fogo-Demônio",
+    "bull_soldier_minion": "Touro-Soldado",
+    "fire_general_elite": "Fogo-General",
+    "bull_captain_elite": "Touro-Capitão",
+    "celestial_guard_minion": "Guardião Celestial",
+    "thunder_minion": "Trovão-Demônio",
+    "celestial_general_elite": "General Celestial",
+    "dragon_guardian_elite": "Guardião de Dragão",
+    "title": "Inimigo"
+  },
+  "rewards": {
+    "title": "Escolher recompensa",
+    "refresh": "Atualizar",
+    "refreshCost": "Atualizar ({cost} 💰)",
+    "craftHint": "Dica: {count} armas lendárias podem ser fabricadas",
+    "selectReward": "Escolher recompensa",
+    "rarity": {
+      "common": "Comum",
+      "rare": "Raro",
+      "epic": "Épico",
+      "legendary": "Lendário"
+    }
+  },
+  "dialog": {
+    "resetSaveConfirm": "Tem certeza que deseja redefinir todos os dados salvos? Esta ação não pode ser desfeita.",
+    "yes": "Sim",
+    "no": "Não"
+  },
+  "settings": {
+    "chooseLanguage": "Escolher idioma",
+    "title": "Configurações",
+    "autoSelect": "Hospedagem automática do jogo (seleciona arma e elixir aleatoriamente)",
+    "unlockAll": "Desbloquear todos os personagens e capítulos",
+    "enableMusic": "Ativar música",
+    "musicVolume": "Volume da música",
+    "gameTime": "Tempo do capítulo ({value} minutos)",
+    "resetSetting": "Redefinir configurações",
+    "resetConfirm": "Tem certeza que deseja redefinir todas as configurações?",
+    "enableFullScreen": "Ativar tela cheia",
+    "resetSuccess": "Redefinido com sucesso",
+    "exitToDesktop": "Voltar para a área de trabalho"
+  },
+  "wiki": {
+    "title": "Wiki"
+  }
 }

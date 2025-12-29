@@ -81,14 +81,14 @@ function I18nConfig() {
   return {
     changeLanguage: async (lang?: Language) => {
       if (!initialized) {
-        return await initialize(lang);
-      }
-      if (lang === currentLanguage) {
-        return currentLanguage;
+        await initialize(lang);
+      } else if (lang && lang !== currentLanguage) {
+        currentLanguage = getSelectedLang(lang);
+        await i18n.changeLanguage(currentLanguage);
       }
 
-      currentLanguage = getSelectedLang(lang);
-      await i18n.changeLanguage(currentLanguage);
+      useSettingStore.getState().setLanguage(currentLanguage);
+
       return currentLanguage;
     },
     t: i18n.t,

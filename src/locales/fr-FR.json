@@ -1,536 +1,539 @@
 {
-    "game": {
-        "title": "Survivor Wukong",
-        "start": "Commencer",
-        "restart": "Redémarrer",
-        "backToHome": "Retour au menu principal",
-        "gameOver": "Game Over",
-        "chapterComplete": "Chapitre terminé",
-        "continueGame": "Continuer",
-        "levelUp": "Niveau augmenté",
-        "paused": "En pause",
-        "level": "Niveau {level}",
-        "specialWeapon": "Arme spéciale",
-        "resetSave": "Réinitialiser la sauvegarde",
-        "endGame": "Quitter",
-        "endGameTitle": "Quitter",
-        "endGameDesc": "Voulez-vous quitter le jeu ?",
-        "completeChapters": "Chapitres terminés",
-        "stats": "Statistiques",
-        "back": "Retour"
+  "game": {
+    "title": "Survivor Wukong",
+    "start": "Commencer",
+    "restart": "Redémarrer",
+    "backToHome": "Retour au menu principal",
+    "gameOver": "Game Over",
+    "chapterComplete": "Chapitre terminé",
+    "continueGame": "Continuer",
+    "levelUp": "Niveau augmenté",
+    "paused": "En pause",
+    "level": "Niveau {level}",
+    "specialWeapon": "Arme spéciale",
+    "resetSave": "Réinitialiser la sauvegarde",
+    "endGame": "Quitter",
+    "endGameTitle": "Quitter",
+    "endGameDesc": "Voulez-vous quitter le jeu ?",
+    "completeChapters": "Chapitres terminés",
+    "stats": "Statistiques",
+    "back": "Retour"
+  },
+  "languages": {
+    "zh-CN": "Chinois simplifié",
+    "zh-TW": "Chinois traditionnel",
+    "en-US": "English",
+    "ja-JP": "日本語",
+    "ko-KR": "한국어",
+    "es-ES": "Español",
+    "ru-RU": "Русский",
+    "de-DE": "Deutsch",
+    "fr-FR": "Français",
+    "pt-BR": "Português-BR"
+  },
+  "stats": {
+    "title": "Statistiques du jeu",
+    "gold": "Or",
+    "totalKills": "Tués au total",
+    "bestSurvival": "Meilleure survie",
+    "totalPlayTime": "Temps de jeu total",
+    "survivalTime": "Temps de survie",
+    "kills": "Tués",
+    "level": "Niveau",
+    "close": "Fermer"
+  },
+  "characters": {
+    "destined_one": {
+      "name": "L'Élu",
+      "description": "La légende commence, guerrier universel équilibré"
     },
-    "languages": {
-        "zh-CN": "Chinois simplifié",
-        "zh-TW": "Chinois traditionnel",
-        "en-US": "English",
-        "ja-JP": "日本語",
-        "ko-KR": "한국어",
-        "es-ES": "Español",
-        "ru-RU": "Русский",
-        "de-DE": "Deutsch",
-        "fr-FR": "Français",
-        "pt-BR": "Português-BR"
+    "black_bear_guai": {
+      "name": "Ours Noir Guai",
+      "description": "Puissant démon ours avec beaucoup de vie et de défense"
     },
-    "stats": {
-        "title": "Statistiques du jeu",
-        "gold": "Or",
-        "totalKills": "Tués au total",
-        "bestSurvival": "Meilleure survie",
-        "totalPlayTime": "Temps de jeu total",
-        "survivalTime": "Temps de survie",
-        "kills": "Tués",
-        "level": "Niveau",
-        "close": "Fermer"
+    "lingxuzi": {
+      "name": "Ling Xuzi",
+      "description": "Maître de la Montagne du Vent Noir, maître des arts Dao"
     },
-    "characters": {
-        "destined_one": {
-            "name": "L'Élu",
-            "description": "La légende commence, guerrier universel équilibré"
-        },
-        "black_bear_guai": {
-            "name": "Ours Noir Guai",
-            "description": "Puissant démon ours avec beaucoup de vie et de défense"
-        },
-        "lingxuzi": {
-            "name": "Ling Xuzi",
-            "description": "Maître de la Montagne du Vent Noir, maître des arts Dao"
-        },
-        "wandering_wight": {
-            "name": "Fantôme Errant",
-            "description": "Fantôme roux, sauvage et cruel"
-        },
-        "yellow_wind_sage": {
-            "name": "Sage du Vent Jaune",
-            "description": "Maître des tempêtes de sable, dégâts magiques élevés"
-        },
-        "tiger_vanguard": {
-            "name": "Tigre Avanguardiste",
-            "description": "Guerrier tigre sauvage, rapide et fort"
-        },
-        "stone_vanguard": {
-            "name": "Pierre Avanguardiste",
-            "description": "Maître de la Montagne du Vent Jaune, dur comme la pierre"
-        },
-        "king_of_flowing_sand": {
-            "name": "Roi du Sable Flottant",
-            "description": "Boss de la Montagne du Vent Jaune, maître de la mer de sable"
-        },
-        "yellow_brow_king": {
-            "name": "Roi à Sourcils Jaunes",
-            "description": "Traître bouddhiste rusé, bien équilibré"
-        },
-        "hundred_eyed": {
-            "name": "Daoïste aux Cent Yeux",
-            "description": "Monstre mystérieux avec chance critique ultra-élevée"
-        },
-        "mad_tiger": {
-            "name": "Tigre Fou",
-            "description": "Maître du Petit Ciel de l'Ouest, sauvage et cruel"
-        },
-        "kang_jin_loong": {
-            "name": "Étoile Kang Jin",
-            "description": "Maître de l'étoile, envoyé du ciel"
-        },
-        "spider_celestial": {
-            "name": "Araignée Violette",
-            "description": "Maître de l'Araignée, maître de la toile d'araignée"
-        },
-        "hundred_eyed_daoist": {
-            "name": "Daoïste aux Cent Yeux",
-            "description": "Maître de l'Araignée, innombrables rayons démoniaques"
-        },
-        "elder_jinchi": {
-            "name": "Ancien Jinchi",
-            "description": "Maître de l'Araignée, moine bouddhiste"
-        },
-        "hundred_eyed_daoist_master": {
-            "name": "Vilain aux Plusieurs Yeux",
-            "description": "La véritable forme du Démon aux Cent Yeux"
-        },
-        "bull_king": {
-            "name": "Roi Taureau",
-            "description": "Démon roi extrêmement fort, tank idéal"
-        },
-        "red_boy": {
-            "name": "Garçon Rouge",
-            "description": "Maître des Montagnes Flamboyantes, maître du Feu Samadhi"
-        },
-        "rakshasa": {
-            "name": "Princesse à l'Éventail de Fer",
-            "description": "Maître des Montagnes Flamboyantes, maîtresse de l'Éventail à Feuilles"
-        },
-        "yaksha_king": {
-            "name": "Roi Yaksha",
-            "description": "Boss des Montagnes Flamboyantes, roi des Yaksha"
-        },
-        "erlang_shen": {
-            "name": "Erlang Shen",
-            "description": "Maître de la Montagne Sumeru, dieu aux trois yeux"
-        },
-        "great_sage_heaven": {
-            "name": "Grand Sage, Égal au Ciel",
-            "description": "Maître de la Montagne Sumeru, Bouddha de la Victoire au Combat"
-        },
-        "golden_cicada": {
-            "name": "Cigale Dorée",
-            "description": "Maître de la Montagne Sumeru, vie antérieure de Tang Sanzang"
-        },
-        "stone_monkey": {
-            "name": "Singe de Pierre",
-            "description": "Boss du Mont Sumeru, forme originale du Grand Sage"
-        },
-        "tang_monk": {
-            "name": "Moine Tang",
-            "description": "Maître bouddhiste du Voyage vers l'Ouest, béni d'une chance extraordinaire"
-        },
-        "sha_monk": {
-            "name": "Moine Sha",
-            "description": "Ancien Général des Rideaux, guerrier équilibré des sables fluviaux"
-        },
-        "zhu_bajie": {
-            "name": "Zhu Bajie",
-            "description": "Maréchal Tianpeng réincarné, tank endurant avec râteau puissant"
-        },
-        "white_dragon_horse": {
-            "name": "Cheval Dragon Blanc",
-            "description": "Prince Dragon sous forme de cheval, coursier céleste rapide"
-        },
-        "unlockCharacter": "Débloquer un personnage",
-        "locked": "Verrouillé",
-        "unlockCondition": "Condition de déblocage",
-        "specialWeapon": "Arme spéciale",
-        "selectCharacter": "Sélectionner Personnage",
-        "title": "Personnage"
+    "wandering_wight": {
+      "name": "Fantôme Errant",
+      "description": "Fantôme roux, sauvage et cruel"
     },
-    "maps": {
-        "chapter1": {
-            "name": "Chapitre 1 - Caverne de Loups et Tigres",
-            "description": "Les premiers pas du voyage, épreuves de la Montagne du Vent Noir"
-        },
-        "chapter2": {
-            "name": "Chapitre 2 - Sable Jaune",
-            "description": "Illusions des tempêtes de sable de la Montagne du Vent Jaune"
-        },
-        "chapter3": {
-            "name": "Chapitre 3 - Neige et Glace",
-            "description": "Le monde gelé du Petit Ciel de l'Ouest"
-        },
-        "chapter4": {
-            "name": "Chapitre 4 - Désert Araignée",
-            "description": "Le nid des démons araignées dans la caverne"
-        },
-        "chapter5": {
-            "name": "Chapitre 5 - Montagnes Flamboyantes",
-            "description": "Enfer de flammes brûlantes"
-        },
-        "chapter6": {
-            "name": "Chapitre 6 - Paradis de l'Ouest",
-            "description": "La dernière épreuve, le chemin de l'éveil"
-        },
-        "selectMap": "Sélectionner le chapitre",
-        "difficulty": "Difficulté",
-        "title": "Chapitre"
+    "yellow_wind_sage": {
+      "name": "Sage du Vent Jaune",
+      "description": "Maître des tempêtes de sable, dégâts magiques élevés"
     },
-    "unlockConditions": {
-        "default": "Débloqué par défaut",
-        "kills": "Vaincre {value} ennemis",
-        "time": "Survivre {value} secondes",
-        "gold": "Collecter {value} or",
-        "chapter": "Terminer le chapitre {value} "
+    "tiger_vanguard": {
+      "name": "Tigre Avanguardiste",
+      "description": "Guerrier tigre sauvage, rapide et fort"
     },
-    "shop": {
-        "title": "Améliorations permanentes",
-        "hint": "Améliorez les caractéristiques permanentes pour devenir plus fort!",
-        "infoText": "* Réinitialiser rend 100% de l'or dépensé",
-        "resetMessage": "Rend {refund} or",
-        "purchaseUpgrade": "Acheter l'amélioration",
-        "resetUpgrades": "Réinitialiser toutes les améliorations",
-        "resetConfirm": "Réinitialiser toutes les améliorations ? Vous récupérerez 100% de l'or dépensé.",
-        "confirm": "Confirmer",
-        "cancel": "Annuler",
-        "maxLevel": "Niveau maximum",
-        "currentLevel": "Niveau {level}",
-        "cost": "Coût",
-        "notEnoughGold": "Pas assez d'or",
-        "purchased": "Acheté",
-        "resetComplete": "Réinitialisation terminée ! {amount} or rendu"
+    "stone_vanguard": {
+      "name": "Pierre Avanguardiste",
+      "description": "Maître de la Montagne du Vent Jaune, dur comme la pierre"
     },
-    "upgrades": {
-        "attack": {
-            "name": "Force d'attaque",
-            "description": "+{value} dégâts par niveau"
-        },
-        "health": {
-            "name": "Santé maximale",
-            "description": "+{value} santé par niveau"
-        },
-        "armor": {
-            "name": "Armure",
-            "description": "+{value} défense par niveau"
-        },
-        "luck": {
-            "name": "Chance",
-            "description": "+{value} chance de drops d'objets par niveau"
-        },
-        "speed": {
-            "name": "Vitesse de déplacement",
-            "description": "+{value} vitesse par niveau"
-        },
-        "expBonus": {
-            "name": "Bonus d'expérience",
-            "description": "+{value}% d'expérience par niveau"
-        },
-        "critRate": {
-            "name": "Taux de critique",
-            "description": "+{value}% de taux de critique par niveau"
-        },
-        "magnetBonus": {
-            "name": "Bonus de portée d'aimant",
-            "description": "+{value}% de portée d'aimant par niveau"
-        },
-        "collectRange": {
-            "name": "Bonus de portée de collecte",
-            "description": "+{value}% de portée de collecte par niveau"
-        }
+    "king_of_flowing_sand": {
+      "name": "Roi du Sable Flottant",
+      "description": "Boss de la Montagne du Vent Jaune, maître de la mer de sable"
     },
-    "weapons": {
-        "golden_staff": {
-            "name": "Bâton Doré",
-            "description": "Bâton magique de l'Élu"
-        },
-        "ruyi_staff": {
-            "name": "Bâton Doré Ruyi",
-            "description": "Forme finale du Bâton Doré, force incroyable"
-        },
-        "fire_lance": {
-            "name": "Lance de Feu",
-            "description": "Lance enveloppée de feu qui brûle les ennemis"
-        },
-        "wind_tamer": {
-            "name": "Perle Équilibratrice du Vent",
-            "description": "Perle divine qui contrôle les tempêtes, attaque d'aire"
-        },
-        "violet_bell": {
-            "name": "Cloche Violette",
-            "description": "Joyau magique qui émet des ondes sonores mortelles"
-        },
-        "fireproof_cloak": {
-            "name": "Manteau Ignifugé",
-            "description": "Lumière divine protectrice qui résiste aux dégâts"
-        },
-        "twin_blades": {
-            "name": "Deux Lames",
-            "description": "Deux lames du Tigre Avanguardiste pour attaques rapides"
-        },
-        "mace": {
-            "name": "Masse Répulsive de Démons",
-            "description": "Arme bouddhiste lourde qui effraie les démons"
-        },
-        "bull_horns": {
-            "name": "Cornes de Taureau Démon",
-            "description": "Puissantes cornes du Roi Taureau, attaque ininterrompue"
-        },
-        "thunder_drum": {
-            "name": "Tamboir de Tonnerre",
-            "description": "Appelle la force du tonnerre"
-        },
-        "ice_needle": {
-            "name": "Aiguille de Glace Argentée",
-            "description": "Condense la glace, gèle les ennemis"
-        },
-        "wind_fire_wheels": {
-            "name": "Roues de Vent et Feu",
-            "description": "Se déplace sur vent et feu, rapide comme l'éclair"
-        },
-        "jade_purity_bottle": {
-            "name": "Bouteille de Pureté Jade",
-            "description": "Bouteille de Guan Yin, soumet les démons"
-        },
-        "golden_rope": {
-            "name": "Corde Dorée",
-            "description": "Lie les ennemis, restriction inégalée"
-        },
-        "plantain_fan": {
-            "name": "Éventail à Feuilles",
-            "description": "Joyau de la Princesse à l'Éventail de Fer, vents rugissants"
-        },
-        "nine_tooth_rake": {
-            "name": "Râteau à Neuf Dents",
-            "description": "Arme céleste de Zhu Bajie, attaque en éventail attirant les ennemis"
-        },
-        "dragon_scale_sword": {
-            "name": "Épée Écaille de Dragon",
-            "description": "Lame du Dragon Blanc couverte d'écailles, lance des projectiles guidés"
-        },
-        "three_pointed_blade": {
-            "name": "Lame à Trois Pointes",
-            "description": "Arme divine du Chasseur de Démons, trois pointes tranchantes coupent comme des éclairs"
-        },
-        "nine_ring_staff": {
-            "name": "Bâton à Neuf Anneaux",
-            "description": "Bâton bouddhiste de Tang Seng, neuf anneaux tintent et effraient les démons"
-        },
-        "crescent_blade": {
-            "name": "Lame en Croissant",
-            "description": "Bâton anti-démons de Sha Seng, lame en forme de croissant qui perce les armures"
-        },
-        "iron_cudgel": {
-            "name": "Gourdin de Fer",
-            "description": "Gourdin géant du Roi Taureau, force suffisante pour déplacer des montagnes"
-        },
-        "seven_star_sword": {
-            "name": "Épée des Sept Étoiles",
-            "description": "Épée Xian de la Doctrine Dao, sept étoiles se connectent en un esprit d'épée infini"
-        },
-        "ginseng_fruit": {
-            "name": "Fruit de Ginseng",
-            "description": "Fruit Xian du Grand Patriarche Zhenyuan, si vous le sentez, vous vivez 360 ans, si vous le mangez, vous vivez 47.000 ans"
-        },
-        "heaven_earth_circle": {
-            "name": "Cercle Ciel-Terre",
-            "description": "Artéfact de Nezha, émet une lumière dorée, attaque les ennemis et revient automatiquement"
-        },
-        "red_armillary_sash": {
-            "name": "Cinte Armillaire Rouge",
-            "description": "Artéfact de Nezha, 7 pieds 2 pouces de long, lie et fouette les ennemis"
-        },
-        "purple_gold_gourd": {
-            "name": "Courge Pourpre Dorée",
-            "description": "Artéfact de Goldhorn et Silverhorn, absorbe les ennemis qui répondent à leur nom"
-        },
-        "golden_rope_immortal": {
-            "name": "Corde Dorée des Immortels",
-            "description": "Artéfact de Taishang Laojun, corde Xian avec plus de force de contrainte"
-        },
-        "demon_revealing_mirror": {
-            "name": "Miroir Révélateur de Démons",
-            "description": "Découvre les faiblesses des ennemis, augmente considérablement le taux de coup critique et les dégâts"
-        },
-        "sea_calming_needle": {
-            "name": "Aiguille Calmant la Mer",
-            "description": "Autre forme du Bâton Doré, trésor calmant la Mer du Ciel, plus puissant dans de grandes zones"
-        },
-        "eight_trigrams_furnace": {
-            "name": "Four à Huit Trigrammes",
-            "description": "Four alchimique de Taishang Laojun, flammes des Huit Trigrammes brûlent les ennemis en continu"
-        },
-        "dragon_staff": {
-            "name": "Bâton de Dragon",
-            "description": "Arme de Guanyin, invoque des tornades pour éliminer des groupes d'ennemis"
-        },
-        "seven_treasure_tree": {
-            "name": "Arbre aux Sept Trésors",
-            "description": "Artéfact de Zhunti, renouvelle tout et purifie le mal"
-        },
-        "immortal_slaying_blade": {
-            "name": "Lame Tuant les Immortels",
-            "description": "Lame volante de Lu Pressure, suit les ennemis et frappe mortellement"
-        },
-        "diamond_snare": {
-            "name": "Piège de Diamant",
-            "description": "Artéfact de Taishang Laojun, arme perçant les armures, indestructible"
-        },
-        "exquisite_pagoda": {
-            "name": "Pagode Exquise",
-            "description": "Pagode du Roi Gardien du Temple Li Jing, combat des millions de démons et confine le mal"
-        },
-        "golden_staff": {
-            "name": "Bâton Doré",
-            "description": "Bâton magique de l'Élu, grandit et rétrécit à volonté"
-        },
-        "fireLance": {
-            "name": "Lance de Feu",
-            "description": "Lance enveloppée de feu qui brûle les ennemis"
-        },
-        "windTamer": {
-            "name": "Perle Équilibratrice du Vent",
-            "description": "Perle divine qui contrôle les tempêtes"
-        },
-        "violetBell": {
-            "name": "Cloche Violette",
-            "description": "Joyau magique qui émet des ondes sonores mortelles"
-        },
-        "fireproofCloak": {
-            "name": "Manteau Ignifugé",
-            "description": "Lumière divine protectrice qui résiste aux dégâts"
-        },
-        "twinBlades": {
-            "name": "Deux Lames",
-            "description": "Deux lames du Tigre Avanguardiste pour attaques rapides"
-        },
-        "bullHorns": {
-            "name": "Cornes de Taureau Démon",
-            "description": "Puissantes cornes du Roi Taureau, attaque ininterrompue"
-        },
-        "upgrade": "Améliorer {name}",
-        "addWeapon": "Ajouter {name}",
-        "upgradeToLevel": "{name} Niveau {level}",
-        "title": "Arme"
+    "yellow_brow_king": {
+      "name": "Roi à Sourcils Jaunes",
+      "description": "Traître bouddhiste rusé, bien équilibré"
     },
-    "elixirs": {
-        "peach_of_immortality": {
-            "name": "Pêche d'Immortalité",
-            "description": "Augmente la santé maximale de 20"
-        },
-        "golden_elixir": {
-            "name": "Élixir Doré",
-            "description": "Augmente l'attaque de 10%"
-        },
-        "jade_dew": {
-            "name": "Rosée de Jade",
-            "description": "Restaure 50% de la santé"
-        },
-        "tiger_bone_wine": {
-            "name": "Vin de Os de Tigre",
-            "description": "Augmente l'armure de 5"
-        },
-        "phoenix_feather": {
-            "name": "Plume de Phénix",
-            "description": "Augmente la vitesse de déplacement de 10"
-        },
-        "dragon_scale": {
-            "name": "Écaille de Dragon",
-            "description": "Augmente la défense de 8"
-        },
-        "spirit_mushroom": {
-            "name": "Champignon Spirituel",
-            "description": "Augmente la réception d'expérience de 20%"
-        },
-        "soul_bead": {
-            "name": "Perle d'Âme",
-            "description": "Augmente la chance critique de 10%"
-        },
-        "inner_elixir": {
-            "name": "Élixir Intérieur",
-            "description": "Augmente toutes les caractéristiques de 5%"
-        },
-        "resurrection_pill": {
-            "name": "Pilule de Résurrection",
-            "description": "Ressuscite avec la santé complète une fois après la mort"
-        },
-        "universe_bag": {
-            "name": "Sac de l'Univers",
-            "description": "Augmente la portée du aimant de 50%"
-        },
-        "title": "Élixir"
+    "hundred_eyed": {
+      "name": "Daoïste aux Cent Yeux",
+      "description": "Monstre mystérieux avec chance critique ultra-élevée"
     },
-    "enemies": {
-        "wolf_minion": "Loup-Démon",
-        "ghost_minion": "Fantôme-Soldat",
-        "bear_elite": "Ours-Gardien",
-        "snake_elite": "Serpent-Général",
-        "rat_minion": "Rat-Démon",
-        "sand_minion": "Monstre de Sable",
-        "tiger_elite": "Tigre-Guerrier",
-        "wind_elite": "Vent-Commandant",
-        "monk_minion": "Moine-Démon",
-        "spider_minion": "Petite Araignée",
-        "centipede_elite": "Centipède-Commandant",
-        "scorpion_elite": "Scorpion-Démon",
-        "spider_woman_minion": "Femme-Araignée",
-        "centipede_minion": "Petit Centipède",
-        "violet_spider_elite": "Araignée Violette",
-        "poison_centipede_elite": "Centipède Vénéneux",
-        "fire_demon_minion": "Feu-Démon",
-        "bull_soldier_minion": "Taureau-Soldat",
-        "fire_general_elite": "Feu-Général",
-        "bull_captain_elite": "Taureau-Capitaine",
-        "celestial_guard_minion": "Gardien Céleste",
-        "thunder_minion": "Tonnerre-Démon",
-        "celestial_general_elite": "Général Céleste",
-        "dragon_guardian_elite": "Gardien de Dragon",
-        "title": "Ennemi"
+    "mad_tiger": {
+      "name": "Tigre Fou",
+      "description": "Maître du Petit Ciel de l'Ouest, sauvage et cruel"
     },
-    "rewards": {
-        "title": "Choisir la récompense",
-        "refresh": "Actualiser",
-        "refreshCost": "Actualiser ({cost} 💰)",
-        "craftHint": "Astuce : {count} armes légendaires peuvent être fabriquées",
-        "selectReward": "Choisir la récompense",
-        "rarity": {
-            "common": "Commun",
-            "rare": "Rare",
-            "epic": "Épique",
-            "legendary": "Légendaire"
-        }
+    "kang_jin_loong": {
+      "name": "Étoile Kang Jin",
+      "description": "Maître de l'étoile, envoyé du ciel"
     },
-    "dialog": {
-        "resetSaveConfirm": "Êtes-vous sûr de vouloir réinitialiser toutes les données sauvegardées ? Cette action est irréversible.",
-        "yes": "Oui",
-        "no": "Non"
+    "spider_celestial": {
+      "name": "Araignée Violette",
+      "description": "Maître de l'Araignée, maître de la toile d'araignée"
     },
-    "settings": {
-        "chooseLanguage": "Choisir une langue",
-        "title": "Paramètres",
-        "autoSelect": "Hébergement automatique du jeu (sélection aléatoire d'arme et d'élixir)",
-        "unlockAll": "Déverrouiller tous les personnages et chapitres",
-        "enableMusic": "Activer la musique",
-        "musicVolume": "Volume de la musique",
-        "gameTime": "Temps de chapitre ({value} minutes)",
-        "resetSetting": "Réinitialiser les paramètres",
-        "resetConfirm": "Êtes-vous sûr de vouloir réinitialiser tous les paramètres ?"
+    "hundred_eyed_daoist": {
+      "name": "Daoïste aux Cent Yeux",
+      "description": "Maître de l'Araignée, innombrables rayons démoniaques"
     },
-    "wiki": {
-        "title": "Wiki"
+    "elder_jinchi": {
+      "name": "Ancien Jinchi",
+      "description": "Maître de l'Araignée, moine bouddhiste"
+    },
+    "hundred_eyed_daoist_master": {
+      "name": "Vilain aux Plusieurs Yeux",
+      "description": "La véritable forme du Démon aux Cent Yeux"
+    },
+    "bull_king": {
+      "name": "Roi Taureau",
+      "description": "Démon roi extrêmement fort, tank idéal"
+    },
+    "red_boy": {
+      "name": "Garçon Rouge",
+      "description": "Maître des Montagnes Flamboyantes, maître du Feu Samadhi"
+    },
+    "rakshasa": {
+      "name": "Princesse à l'Éventail de Fer",
+      "description": "Maître des Montagnes Flamboyantes, maîtresse de l'Éventail à Feuilles"
+    },
+    "yaksha_king": {
+      "name": "Roi Yaksha",
+      "description": "Boss des Montagnes Flamboyantes, roi des Yaksha"
+    },
+    "erlang_shen": {
+      "name": "Erlang Shen",
+      "description": "Maître de la Montagne Sumeru, dieu aux trois yeux"
+    },
+    "great_sage_heaven": {
+      "name": "Grand Sage, Égal au Ciel",
+      "description": "Maître de la Montagne Sumeru, Bouddha de la Victoire au Combat"
+    },
+    "golden_cicada": {
+      "name": "Cigale Dorée",
+      "description": "Maître de la Montagne Sumeru, vie antérieure de Tang Sanzang"
+    },
+    "stone_monkey": {
+      "name": "Singe de Pierre",
+      "description": "Boss du Mont Sumeru, forme originale du Grand Sage"
+    },
+    "tang_monk": {
+      "name": "Moine Tang",
+      "description": "Maître bouddhiste du Voyage vers l'Ouest, béni d'une chance extraordinaire"
+    },
+    "sha_monk": {
+      "name": "Moine Sha",
+      "description": "Ancien Général des Rideaux, guerrier équilibré des sables fluviaux"
+    },
+    "zhu_bajie": {
+      "name": "Zhu Bajie",
+      "description": "Maréchal Tianpeng réincarné, tank endurant avec râteau puissant"
+    },
+    "white_dragon_horse": {
+      "name": "Cheval Dragon Blanc",
+      "description": "Prince Dragon sous forme de cheval, coursier céleste rapide"
+    },
+    "unlockCharacter": "Débloquer un personnage",
+    "locked": "Verrouillé",
+    "unlockCondition": "Condition de déblocage",
+    "specialWeapon": "Arme spéciale",
+    "selectCharacter": "Sélectionner Personnage",
+    "title": "Personnage"
+  },
+  "maps": {
+    "chapter1": {
+      "name": "Chapitre 1 - Caverne de Loups et Tigres",
+      "description": "Les premiers pas du voyage, épreuves de la Montagne du Vent Noir"
+    },
+    "chapter2": {
+      "name": "Chapitre 2 - Sable Jaune",
+      "description": "Illusions des tempêtes de sable de la Montagne du Vent Jaune"
+    },
+    "chapter3": {
+      "name": "Chapitre 3 - Neige et Glace",
+      "description": "Le monde gelé du Petit Ciel de l'Ouest"
+    },
+    "chapter4": {
+      "name": "Chapitre 4 - Désert Araignée",
+      "description": "Le nid des démons araignées dans la caverne"
+    },
+    "chapter5": {
+      "name": "Chapitre 5 - Montagnes Flamboyantes",
+      "description": "Enfer de flammes brûlantes"
+    },
+    "chapter6": {
+      "name": "Chapitre 6 - Paradis de l'Ouest",
+      "description": "La dernière épreuve, le chemin de l'éveil"
+    },
+    "selectMap": "Sélectionner le chapitre",
+    "difficulty": "Difficulté",
+    "title": "Chapitre"
+  },
+  "unlockConditions": {
+    "default": "Débloqué par défaut",
+    "kills": "Vaincre {value} ennemis",
+    "time": "Survivre {value} secondes",
+    "gold": "Collecter {value} or",
+    "chapter": "Terminer le chapitre {value} "
+  },
+  "shop": {
+    "title": "Améliorations permanentes",
+    "hint": "Améliorez les caractéristiques permanentes pour devenir plus fort!",
+    "infoText": "* Réinitialiser rend 100% de l'or dépensé",
+    "resetMessage": "Rend {refund} or",
+    "purchaseUpgrade": "Acheter l'amélioration",
+    "resetUpgrades": "Réinitialiser toutes les améliorations",
+    "resetConfirm": "Réinitialiser toutes les améliorations ? Vous récupérerez 100% de l'or dépensé.",
+    "confirm": "Confirmer",
+    "cancel": "Annuler",
+    "maxLevel": "Niveau maximum",
+    "currentLevel": "Niveau {level}",
+    "cost": "Coût",
+    "notEnoughGold": "Pas assez d'or",
+    "purchased": "Acheté",
+    "resetComplete": "Réinitialisation terminée ! {amount} or rendu"
+  },
+  "upgrades": {
+    "attack": {
+      "name": "Force d'attaque",
+      "description": "+{value} dégâts par niveau"
+    },
+    "health": {
+      "name": "Santé maximale",
+      "description": "+{value} santé par niveau"
+    },
+    "armor": {
+      "name": "Armure",
+      "description": "+{value} défense par niveau"
+    },
+    "luck": {
+      "name": "Chance",
+      "description": "+{value} chance de drops d'objets par niveau"
+    },
+    "speed": {
+      "name": "Vitesse de déplacement",
+      "description": "+{value} vitesse par niveau"
+    },
+    "expBonus": {
+      "name": "Bonus d'expérience",
+      "description": "+{value}% d'expérience par niveau"
+    },
+    "critRate": {
+      "name": "Taux de critique",
+      "description": "+{value}% de taux de critique par niveau"
+    },
+    "magnetBonus": {
+      "name": "Bonus de portée d'aimant",
+      "description": "+{value}% de portée d'aimant par niveau"
+    },
+    "collectRange": {
+      "name": "Bonus de portée de collecte",
+      "description": "+{value}% de portée de collecte par niveau"
     }
+  },
+  "weapons": {
+    "golden_staff": {
+      "name": "Bâton Doré",
+      "description": "Bâton magique de l'Élu"
+    },
+    "ruyi_staff": {
+      "name": "Bâton Doré Ruyi",
+      "description": "Forme finale du Bâton Doré, force incroyable"
+    },
+    "fire_lance": {
+      "name": "Lance de Feu",
+      "description": "Lance enveloppée de feu qui brûle les ennemis"
+    },
+    "wind_tamer": {
+      "name": "Perle Équilibratrice du Vent",
+      "description": "Perle divine qui contrôle les tempêtes, attaque d'aire"
+    },
+    "violet_bell": {
+      "name": "Cloche Violette",
+      "description": "Joyau magique qui émet des ondes sonores mortelles"
+    },
+    "fireproof_cloak": {
+      "name": "Manteau Ignifugé",
+      "description": "Lumière divine protectrice qui résiste aux dégâts"
+    },
+    "twin_blades": {
+      "name": "Deux Lames",
+      "description": "Deux lames du Tigre Avanguardiste pour attaques rapides"
+    },
+    "mace": {
+      "name": "Masse Répulsive de Démons",
+      "description": "Arme bouddhiste lourde qui effraie les démons"
+    },
+    "bull_horns": {
+      "name": "Cornes de Taureau Démon",
+      "description": "Puissantes cornes du Roi Taureau, attaque ininterrompue"
+    },
+    "thunder_drum": {
+      "name": "Tamboir de Tonnerre",
+      "description": "Appelle la force du tonnerre"
+    },
+    "ice_needle": {
+      "name": "Aiguille de Glace Argentée",
+      "description": "Condense la glace, gèle les ennemis"
+    },
+    "wind_fire_wheels": {
+      "name": "Roues de Vent et Feu",
+      "description": "Se déplace sur vent et feu, rapide comme l'éclair"
+    },
+    "jade_purity_bottle": {
+      "name": "Bouteille de Pureté Jade",
+      "description": "Bouteille de Guan Yin, soumet les démons"
+    },
+    "golden_rope": {
+      "name": "Corde Dorée",
+      "description": "Lie les ennemis, restriction inégalée"
+    },
+    "plantain_fan": {
+      "name": "Éventail à Feuilles",
+      "description": "Joyau de la Princesse à l'Éventail de Fer, vents rugissants"
+    },
+    "nine_tooth_rake": {
+      "name": "Râteau à Neuf Dents",
+      "description": "Arme céleste de Zhu Bajie, attaque en éventail attirant les ennemis"
+    },
+    "dragon_scale_sword": {
+      "name": "Épée Écaille de Dragon",
+      "description": "Lame du Dragon Blanc couverte d'écailles, lance des projectiles guidés"
+    },
+    "three_pointed_blade": {
+      "name": "Lame à Trois Pointes",
+      "description": "Arme divine du Chasseur de Démons, trois pointes tranchantes coupent comme des éclairs"
+    },
+    "nine_ring_staff": {
+      "name": "Bâton à Neuf Anneaux",
+      "description": "Bâton bouddhiste de Tang Seng, neuf anneaux tintent et effraient les démons"
+    },
+    "crescent_blade": {
+      "name": "Lame en Croissant",
+      "description": "Bâton anti-démons de Sha Seng, lame en forme de croissant qui perce les armures"
+    },
+    "iron_cudgel": {
+      "name": "Gourdin de Fer",
+      "description": "Gourdin géant du Roi Taureau, force suffisante pour déplacer des montagnes"
+    },
+    "seven_star_sword": {
+      "name": "Épée des Sept Étoiles",
+      "description": "Épée Xian de la Doctrine Dao, sept étoiles se connectent en un esprit d'épée infini"
+    },
+    "ginseng_fruit": {
+      "name": "Fruit de Ginseng",
+      "description": "Fruit Xian du Grand Patriarche Zhenyuan, si vous le sentez, vous vivez 360 ans, si vous le mangez, vous vivez 47.000 ans"
+    },
+    "heaven_earth_circle": {
+      "name": "Cercle Ciel-Terre",
+      "description": "Artéfact de Nezha, émet une lumière dorée, attaque les ennemis et revient automatiquement"
+    },
+    "red_armillary_sash": {
+      "name": "Cinte Armillaire Rouge",
+      "description": "Artéfact de Nezha, 7 pieds 2 pouces de long, lie et fouette les ennemis"
+    },
+    "purple_gold_gourd": {
+      "name": "Courge Pourpre Dorée",
+      "description": "Artéfact de Goldhorn et Silverhorn, absorbe les ennemis qui répondent à leur nom"
+    },
+    "golden_rope_immortal": {
+      "name": "Corde Dorée des Immortels",
+      "description": "Artéfact de Taishang Laojun, corde Xian avec plus de force de contrainte"
+    },
+    "demon_revealing_mirror": {
+      "name": "Miroir Révélateur de Démons",
+      "description": "Découvre les faiblesses des ennemis, augmente considérablement le taux de coup critique et les dégâts"
+    },
+    "sea_calming_needle": {
+      "name": "Aiguille Calmant la Mer",
+      "description": "Autre forme du Bâton Doré, trésor calmant la Mer du Ciel, plus puissant dans de grandes zones"
+    },
+    "eight_trigrams_furnace": {
+      "name": "Four à Huit Trigrammes",
+      "description": "Four alchimique de Taishang Laojun, flammes des Huit Trigrammes brûlent les ennemis en continu"
+    },
+    "dragon_staff": {
+      "name": "Bâton de Dragon",
+      "description": "Arme de Guanyin, invoque des tornades pour éliminer des groupes d'ennemis"
+    },
+    "seven_treasure_tree": {
+      "name": "Arbre aux Sept Trésors",
+      "description": "Artéfact de Zhunti, renouvelle tout et purifie le mal"
+    },
+    "immortal_slaying_blade": {
+      "name": "Lame Tuant les Immortels",
+      "description": "Lame volante de Lu Pressure, suit les ennemis et frappe mortellement"
+    },
+    "diamond_snare": {
+      "name": "Piège de Diamant",
+      "description": "Artéfact de Taishang Laojun, arme perçant les armures, indestructible"
+    },
+    "exquisite_pagoda": {
+      "name": "Pagode Exquise",
+      "description": "Pagode du Roi Gardien du Temple Li Jing, combat des millions de démons et confine le mal"
+    },
+    "golden_staff": {
+      "name": "Bâton Doré",
+      "description": "Bâton magique de l'Élu, grandit et rétrécit à volonté"
+    },
+    "fireLance": {
+      "name": "Lance de Feu",
+      "description": "Lance enveloppée de feu qui brûle les ennemis"
+    },
+    "windTamer": {
+      "name": "Perle Équilibratrice du Vent",
+      "description": "Perle divine qui contrôle les tempêtes"
+    },
+    "violetBell": {
+      "name": "Cloche Violette",
+      "description": "Joyau magique qui émet des ondes sonores mortelles"
+    },
+    "fireproofCloak": {
+      "name": "Manteau Ignifugé",
+      "description": "Lumière divine protectrice qui résiste aux dégâts"
+    },
+    "twinBlades": {
+      "name": "Deux Lames",
+      "description": "Deux lames du Tigre Avanguardiste pour attaques rapides"
+    },
+    "bullHorns": {
+      "name": "Cornes de Taureau Démon",
+      "description": "Puissantes cornes du Roi Taureau, attaque ininterrompue"
+    },
+    "upgrade": "Améliorer {name}",
+    "addWeapon": "Ajouter {name}",
+    "upgradeToLevel": "{name} Niveau {level}",
+    "title": "Arme"
+  },
+  "elixirs": {
+    "peach_of_immortality": {
+      "name": "Pêche d'Immortalité",
+      "description": "Augmente la santé maximale de 20"
+    },
+    "golden_elixir": {
+      "name": "Élixir Doré",
+      "description": "Augmente l'attaque de 10%"
+    },
+    "jade_dew": {
+      "name": "Rosée de Jade",
+      "description": "Restaure 50% de la santé"
+    },
+    "tiger_bone_wine": {
+      "name": "Vin de Os de Tigre",
+      "description": "Augmente l'armure de 5"
+    },
+    "phoenix_feather": {
+      "name": "Plume de Phénix",
+      "description": "Augmente la vitesse de déplacement de 10"
+    },
+    "dragon_scale": {
+      "name": "Écaille de Dragon",
+      "description": "Augmente la défense de 8"
+    },
+    "spirit_mushroom": {
+      "name": "Champignon Spirituel",
+      "description": "Augmente la réception d'expérience de 20%"
+    },
+    "soul_bead": {
+      "name": "Perle d'Âme",
+      "description": "Augmente la chance critique de 10%"
+    },
+    "inner_elixir": {
+      "name": "Élixir Intérieur",
+      "description": "Augmente toutes les caractéristiques de 5%"
+    },
+    "resurrection_pill": {
+      "name": "Pilule de Résurrection",
+      "description": "Ressuscite avec la santé complète une fois après la mort"
+    },
+    "universe_bag": {
+      "name": "Sac de l'Univers",
+      "description": "Augmente la portée du aimant de 50%"
+    },
+    "title": "Élixir"
+  },
+  "enemies": {
+    "wolf_minion": "Loup-Démon",
+    "ghost_minion": "Fantôme-Soldat",
+    "bear_elite": "Ours-Gardien",
+    "snake_elite": "Serpent-Général",
+    "rat_minion": "Rat-Démon",
+    "sand_minion": "Monstre de Sable",
+    "tiger_elite": "Tigre-Guerrier",
+    "wind_elite": "Vent-Commandant",
+    "monk_minion": "Moine-Démon",
+    "spider_minion": "Petite Araignée",
+    "centipede_elite": "Centipède-Commandant",
+    "scorpion_elite": "Scorpion-Démon",
+    "spider_woman_minion": "Femme-Araignée",
+    "centipede_minion": "Petit Centipède",
+    "violet_spider_elite": "Araignée Violette",
+    "poison_centipede_elite": "Centipède Vénéneux",
+    "fire_demon_minion": "Feu-Démon",
+    "bull_soldier_minion": "Taureau-Soldat",
+    "fire_general_elite": "Feu-Général",
+    "bull_captain_elite": "Taureau-Capitaine",
+    "celestial_guard_minion": "Gardien Céleste",
+    "thunder_minion": "Tonnerre-Démon",
+    "celestial_general_elite": "Général Céleste",
+    "dragon_guardian_elite": "Gardien de Dragon",
+    "title": "Ennemi"
+  },
+  "rewards": {
+    "title": "Choisir la récompense",
+    "refresh": "Actualiser",
+    "refreshCost": "Actualiser ({cost} 💰)",
+    "craftHint": "Astuce : {count} armes légendaires peuvent être fabriquées",
+    "selectReward": "Choisir la récompense",
+    "rarity": {
+      "common": "Commun",
+      "rare": "Rare",
+      "epic": "Épique",
+      "legendary": "Légendaire"
+    }
+  },
+  "dialog": {
+    "resetSaveConfirm": "Êtes-vous sûr de vouloir réinitialiser toutes les données sauvegardées ? Cette action est irréversible.",
+    "yes": "Oui",
+    "no": "Non"
+  },
+  "settings": {
+    "chooseLanguage": "Choisir une langue",
+    "title": "Paramètres",
+    "autoSelect": "Hébergement automatique du jeu (sélection aléatoire d'arme et d'élixir)",
+    "unlockAll": "Déverrouiller tous les personnages et chapitres",
+    "enableMusic": "Activer la musique",
+    "musicVolume": "Volume de la musique",
+    "gameTime": "Temps de chapitre ({value} minutes)",
+    "resetSetting": "Réinitialiser les paramètres",
+    "resetConfirm": "Êtes-vous sûr de vouloir réinitialiser tous les paramètres ?",
+    "enableFullScreen": "Activer l'écran entier",
+    "resetSuccess": "Réinitialisé avec succès",
+    "exitToDesktop": "Retour au bureau"
+  },
+  "wiki": {
+    "title": "Wiki"
+  }
 }

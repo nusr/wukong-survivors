@@ -1,508 +1,511 @@
 {
-    "game": {
-        "title": "Wukong Survivors",
-        "start": "Start",
-        "restart": "Restart",
-        "backToHome": "Back to Home",
-        "gameOver": "Game Over",
-        "chapterComplete": "Chapter Complete",
-        "continueGame": "Continue",
-        "levelUp": "Level Up",
-        "paused": "Paused",
-        "level": "Lv.{level}",
-        "specialWeapon": "Special Weapon",
-        "resetSave": "Reset Save",
-        "endGame": "End",
-        "endGameTitle": "End",
-        "endGameDesc": "Do you want to end the game?",
-        "completeChapters": "Complete Chapters",
-        "stats": "Statistics",
-        "back": "Back"
+  "game": {
+    "title": "Wukong Survivors",
+    "start": "Start",
+    "restart": "Restart",
+    "backToHome": "Back to Home",
+    "gameOver": "Game Over",
+    "chapterComplete": "Chapter Complete",
+    "continueGame": "Continue",
+    "levelUp": "Level Up",
+    "paused": "Paused",
+    "level": "Lv.{level}",
+    "specialWeapon": "Special Weapon",
+    "resetSave": "Reset Save",
+    "endGame": "End",
+    "endGameTitle": "End",
+    "endGameDesc": "Do you want to end the game?",
+    "completeChapters": "Complete Chapters",
+    "stats": "Statistics",
+    "back": "Back"
+  },
+  "languages": {
+    "en-US": "English",
+    "zh-CN": "中文",
+    "ja-JP": "日本語",
+    "ko-KR": "한국어",
+    "fr-FR": "Français",
+    "de-DE": "Deutsch",
+    "es-ES": "Español",
+    "pt-BR": "Português (Brasil)",
+    "ru-RU": "Русский",
+    "zh-TW": "繁體中文"
+  },
+  "stats": {
+    "title": "Game Statistics",
+    "gold": "Gold",
+    "totalKills": "Total Kills",
+    "bestSurvival": "Best Survival",
+    "totalPlayTime": "Total Play Time",
+    "survivalTime": "Survival Time",
+    "kills": "Kills",
+    "level": "Level",
+    "close": "Close"
+  },
+  "characters": {
+    "destined_one": {
+      "name": "Destined One",
+      "description": "The legendary journey begins, balanced all-rounder"
     },
-    "languages": {
-        "en-US": "English",
-        "zh-CN": "中文",
-        "ja-JP": "日本語",
-        "ko-KR": "한국어",
-        "fr-FR": "Français",
-        "de-DE": "Deutsch",
-        "es-ES": "Español",
-        "pt-BR": "Português (Brasil)",
-        "ru-RU": "Русский",
-        "zh-TW": "繁體中文"
+    "black_bear_guai": {
+      "name": "Black Bear Guai",
+      "description": "Powerful bear demon with high HP and defense"
     },
-    "stats": {
-        "title": "Game Statistics",
-        "gold": "Gold",
-        "totalKills": "Total Kills",
-        "bestSurvival": "Best Survival",
-        "totalPlayTime": "Total Play Time",
-        "survivalTime": "Survival Time",
-        "kills": "Kills",
-        "level": "Level",
-        "close": "Close"
+    "lingxuzi": {
+      "name": "Lingxuzi",
+      "description": "Black Wind Mountain lord, master of Taoist arts"
     },
-    "characters": {
-        "destined_one": {
-            "name": "Destined One",
-            "description": "The legendary journey begins, balanced all-rounder"
-        },
-        "black_bear_guai": {
-            "name": "Black Bear Guai",
-            "description": "Powerful bear demon with high HP and defense"
-        },
-        "lingxuzi": {
-            "name": "Lingxuzi",
-            "description": "Black Wind Mountain lord, master of Taoist arts"
-        },
-        "wandering_wight": {
-            "name": "Wandering Wight",
-            "description": "Red-haired ghost, fierce and brutal"
-        },
-        "yellow_wind_sage": {
-            "name": "Yellow Wind Sage",
-            "description": "Master of sandstorms, high magic damage"
-        },
-        "tiger_vanguard": {
-            "name": "Tiger Vanguard",
-            "description": "Fierce tiger warrior, fast and powerful"
-        },
-        "stone_vanguard": {
-            "name": "Stone Vanguard",
-            "description": "Yellow Wind Ridge lord, solid as rock"
-        },
-        "king_of_flowing_sand": {
-            "name": "King of Flowing Sand",
-            "description": "Yellow Wind Ridge boss, lord of sand sea"
-        },
-        "yellow_brow_king": {
-            "name": "Yellow Brow King",
-            "description": "Cunning Buddhist traitor, well-balanced"
-        },
-        "hundred_eyed": {
-            "name": "Hundred-Eyed Daoist Master",
-            "description": "Mysterious monster with ultra-high critical hits"
-        },
-        "mad_tiger": {
-            "name": "Mad Tiger",
-            "description": "Little Western Heaven lord, wild and ferocious"
-        },
-        "kang_jin_loong": {
-            "name": "Kang-Jin Star",
-            "description": "Star lord descended from heaven"
-        },
-        "spider_celestial": {
-            "name": "Violet Spider",
-            "description": "Silk Cave lord, web binding expert"
-        },
-        "hundred_eyed_daoist": {
-            "name": "Hundred-Eyed Daoist",
-            "description": "Silk Cave lord, hundred-eyed demon light"
-        },
-        "elder_jinchi": {
-            "name": "Elder Jinchi",
-            "description": "Silk Cave lord, Buddhist monk"
-        },
-        "hundred_eyed_daoist_master": {
-            "name": "Multi-Eyed Centipede",
-            "description": "True form of Hundred-Eyed Demon"
-        },
-        "bull_king": {
-            "name": "Bull King",
-            "description": "Immensely powerful demon king, ultimate tank"
-        },
-        "red_boy": {
-            "name": "Red Boy",
-            "description": "Flaming Mountains lord, master of Samadhi Fire"
-        },
-        "rakshasa": {
-            "name": "Princess Iron Fan",
-            "description": "Flaming Mountains lord, wielder of Plantain Fan"
-        },
-        "yaksha_king": {
-            "name": "Yaksha King",
-            "description": "Flaming Mountains boss, king of yakshas"
-        },
-        "erlang_shen": {
-            "name": "Erlang Shen",
-            "description": "Mount Sumeru lord, three-eyed deity"
-        },
-        "great_sage_heaven": {
-            "name": "Great Sage Equal to Heaven",
-            "description": "Mount Sumeru lord, Victorious Fighting Buddha"
-        },
-        "golden_cicada": {
-            "name": "Golden Cicada",
-            "description": "Mount Sumeru lord, past life of Tang Sanzang"
-        },
-        "stone_monkey": {
-            "name": "Stone Monkey",
-            "description": "Mount Sumeru boss, original form of Great Sage"
-        },
-        "tang_monk": {
-            "name": "Tang Monk",
-            "description": "Buddhist master on Journey to the West, blessed with extraordinary luck"
-        },
-        "sha_monk": {
-            "name": "Sha Monk",
-            "description": "Former Curtain-Lifting General, balanced warrior of the river sands"
-        },
-        "zhu_bajie": {
-            "name": "Zhu Bajie",
-            "description": "Marshal Tianpeng reborn, high endurance tank with mighty rake"
-        },
-        "white_dragon_horse": {
-            "name": "White Dragon Horse",
-            "description": "Dragon Prince in horse form, swift celestial steed"
-        },
-        "unlockCharacter": "Unlock Character",
-        "locked": "Locked",
-        "unlockCondition": "Unlock Condition",
-        "specialWeapon": "Special Weapon",
-        "selectCharacter": "Select Character",
-        "title": "Character"
+    "wandering_wight": {
+      "name": "Wandering Wight",
+      "description": "Red-haired ghost, fierce and brutal"
     },
-    "maps": {
-        "chapter1": {
-            "name": "Chapter 1 - Lair of Wolves and Tigers",
-            "description": "First steps in the journey, trials of Black Wind Mountain"
-        },
-        "chapter2": {
-            "name": "Chapter 2 - Yellow Sands",
-            "description": "Sandstorm illusions of Yellow Wind Ridge"
-        },
-        "chapter3": {
-            "name": "Chapter 3 - Snow and Ice",
-            "description": "Frozen world of Little Western Heaven"
-        },
-        "chapter4": {
-            "name": "Chapter 4 - Webbed Hollow",
-            "description": "Spider demon nest in the cave"
-        },
-        "chapter5": {
-            "name": "Chapter 5 - Flaming Mountains",
-            "description": "Blazing inferno of flames"
-        },
-        "chapter6": {
-            "name": "Chapter 6 - Western Paradise",
-            "description": "Ultimate challenge, path to enlightenment"
-        },
-        "selectMap": "Select Chapter",
-        "difficulty": "Difficulty",
-        "title": "Chapter"
+    "yellow_wind_sage": {
+      "name": "Yellow Wind Sage",
+      "description": "Master of sandstorms, high magic damage"
     },
-    "unlockConditions": {
-        "default": "Default unlocked",
-        "kills": "Defeat {value} enemies",
-        "time": "Survive for {value} seconds",
-        "gold": "Collect {value} gold",
-        "chapter": "Complete Chapter {value}"
+    "tiger_vanguard": {
+      "name": "Tiger Vanguard",
+      "description": "Fierce tiger warrior, fast and powerful"
     },
-    "shop": {
-        "title": "Permanent Upgrades",
-        "hint": "Upgrade permanent stats to become stronger!",
-        "infoText": "* Reset refunds 100% of spent gold",
-        "resetMessage": "Will refund {refund} gold",
-        "purchaseUpgrade": "Purchase Upgrade",
-        "resetUpgrades": "Reset All Upgrades",
-        "resetConfirm": "Reset all upgrades? You will get back 100% of spent gold.",
-        "confirm": "Confirm",
-        "cancel": "Cancel",
-        "maxLevel": "Max Level",
-        "currentLevel": "Level {level}",
-        "cost": "Cost",
-        "notEnoughGold": "Not enough gold",
-        "purchased": "Purchased",
-        "resetComplete": "Reset complete! Refunded {amount} gold"
+    "stone_vanguard": {
+      "name": "Stone Vanguard",
+      "description": "Yellow Wind Ridge lord, solid as rock"
     },
-    "upgrades": {
-        "attack": {
-            "name": "Attack Power",
-            "description": "+{value} damage per level"
-        },
-        "health": {
-            "name": "Max Health",
-            "description": "+{value} HP per level"
-        },
-        "armor": {
-            "name": "Armor",
-            "description": "+{value} defense per level"
-        },
-        "luck": {
-            "name": "Luck",
-            "description": "+{value} item drop rate per level"
-        },
-        "speed": {
-            "name": "Movement Speed",
-            "description": "+{value} speed per level"
-        },
-        "expBonus": {
-            "name": "Experience Bonus",
-            "description": "+{value}% experience per level"
-        },
-        "critRate": {
-            "name": "Critical Rate",
-            "description": "+{value}% crit rate per level"
-        },
-        "magnetBonus": {
-            "name": "Magnet Range Bonus",
-            "description": "+{value}% magnet range per level"
-        },
-        "collectRange": {
-            "name": "Collect Range Bonus",
-            "description": "+{value}% collect range per level"
-        }
+    "king_of_flowing_sand": {
+      "name": "King of Flowing Sand",
+      "description": "Yellow Wind Ridge boss, lord of sand sea"
     },
-    "weapons": {
-        "golden_staff": {
-            "name": "Golden Staff",
-            "description": "Destined One's magical staff"
-        },
-        "ruyi_staff": {
-            "name": "Ruyi Golden Staff",
-            "description": "Ultimate form of Golden Staff, immense power"
-        },
-        "fire_lance": {
-            "name": "Fire-Tipped Spear",
-            "description": "Flame-wreathed lance that burns enemies"
-        },
-        "wind_tamer": {
-            "name": "Wind Tamer Bead",
-            "description": "Divine pearl that controls storms, area attack"
-        },
-        "violet_bell": {
-            "name": "Violet Bell",
-            "description": "Magical treasure that emits deadly sound waves"
-        },
-        "fireproof_cloak": {
-            "name": "Fireproof Mantle",
-            "description": "Protective divine light that resists damage"
-        },
-        "twin_blades": {
-            "name": "Twin Blades",
-            "description": "Tiger Vanguard's dual swords for rapid strikes"
-        },
-        "mace": {
-            "name": "Demon-Subduing Mace",
-            "description": "Heavy Buddhist weapon that strikes fear in demons"
-        },
-        "bull_horns": {
-            "name": "Bull Demon Horns",
-            "description": "Bull King's mighty horns, unstoppable charge"
-        },
-        "thunder_drum": {
-            "name": "Thunder Drum",
-            "description": "Summons thunder power"
-        },
-        "ice_needle": {
-            "name": "Ice Soul Silver Needle",
-            "description": "Condenses ice, freezes enemies"
-        },
-        "wind_fire_wheels": {
-            "name": "Wind Fire Wheels",
-            "description": "Ride wind and fire, swift as lightning"
-        },
-        "jade_purity_bottle": {
-            "name": "Jade Purity Bottle",
-            "description": "Guanyin's bottle, subdues demons"
-        },
-        "golden_rope": {
-            "name": "Golden Rope",
-            "description": "Binds enemies, unmatched restraint"
-        },
-        "plantain_fan": {
-            "name": "Plantain Fan",
-            "description": "Iron Fan Princess's treasure, howling winds"
-        },
-        "nine_tooth_rake": {
-            "name": "Nine-Tooth Rake",
-            "description": "Zhu Bajie's celestial weapon, fan-shaped attack pulls enemies close"
-        },
-        "dragon_scale_sword": {
-            "name": "Dragon Scale Sword",
-            "description": "White Dragon's blade with dragon scales, launches tracking projectiles"
-        },
-        "three_pointed_blade": {
-            "name": "Three-Pointed Blade",
-            "description": "Erlang Shen's divine weapon, sharp triple points, blade like lightning"
-        },
-        "nine_ring_staff": {
-            "name": "Nine-Ring Staff",
-            "description": "Tang Sanzang's Buddhist staff, nine rings chime to intimidate demons"
-        },
-        "crescent_blade": {
-            "name": "Crescent Moon Blade",
-            "description": "Sha Wujing's demon-subduing staff, crescent hook pierces armor"
-        },
-        "iron_cudgel": {
-            "name": "Iron Cudgel",
-            "description": "Bull Demon King's massive staff, weighing thousands of jin, immense strength"
-        },
-        "seven_star_sword": {
-            "name": "Seven Star Sword",
-            "description": "Taoist immortal sword, seven stars aligned, sword qi crisscrosses"
-        },
-        "ginseng_fruit": {
-            "name": "Ginseng Fruit",
-            "description": "Zhen Yuan Daxian's immortal fruit, smell it live 360 years, eat it live 47,000 years"
-        },
-        "heaven_earth_circle": {
-            "name": "Heaven-Earth Circle",
-            "description": "Nezha's divine weapon, golden light, flies out to attack and returns automatically"
-        },
-        "red_armillary_sash": {
-            "name": "Red Armillary Sash",
-            "description": "Nezha's treasure, 7.2 feet long, binds and whips enemies"
-        },
-        "purple_gold_gourd": {
-            "name": "Purple Gold Gourd",
-            "description": "Golden Horn and Silver Horn's treasure, calls name, absorbs enemies"
-        },
-        "golden_rope_immortal": {
-            "name": "Golden Rope",
-            "description": "Laojun's treasure, stronger binding version, immortal-binding rope"
-        },
-        "demon_revealing_mirror": {
-            "name": "Demon Revealing Mirror",
-            "description": "Sees enemy weaknesses, greatly increases crit rate and crit damage"
-        },
-        "sea_calming_needle": {
-            "name": "Sea-Calming Needle",
-            "description": "Another form of Golden Staff, Tianhe Sea-Suppressing treasure, larger range and stronger power"
-        },
-        "eight_trigrams_furnace": {
-            "name": "Eight Trigrams Furnace",
-            "description": "Laojun's alchemy furnace, eight trigrams flames, continuous burning damage"
-        },
-        "dragon_staff": {
-            "name": "Dragon Staff",
-            "description": "Guanyin's divine weapon, summons tornado storms to sweep enemies"
-        },
-        "seven_treasure_tree": {
-            "name": "Seven Treasure Tree",
-            "description": "Zhunti Daoren's treasure, refreshes all things, purifies evil"
-        },
-        "immortal_slaying_blade": {
-            "name": "Immortal-Slaying Blade",
-            "description": "Lu Ya Daoren's flying blade, locks onto targets, sure kill"
-        },
-        "diamond_snare": {
-            "name": "Diamond Snare",
-            "description": "Laojun's treasure, armor-piercing artifact, invincible"
-        },
-        "exquisite_pagoda": {
-            "name": "Exquisite Pagoda",
-            "description": "Li Jing's pagoda, suppresses all demons, imprisons evil"
-        },
-        "upgrade": "Upgrade {name}",
-        "addWeapon": "Add {name}",
-        "upgradeToLevel": "{name} Lv.{level}",
-        "title": "Weapon"
+    "yellow_brow_king": {
+      "name": "Yellow Brow King",
+      "description": "Cunning Buddhist traitor, well-balanced"
     },
-    "elixirs": {
-        "peach_of_immortality": {
-            "name": "Peach of Immortality",
-            "description": "Increase max health by 20"
-        },
-        "golden_elixir": {
-            "name": "Golden Elixir",
-            "description": "Increase attack by 10%"
-        },
-        "jade_dew": {
-            "name": "Jade Dew",
-            "description": "Restore 50% health"
-        },
-        "tiger_bone_wine": {
-            "name": "Tiger Bone Wine",
-            "description": "Increase armor by 5"
-        },
-        "phoenix_feather": {
-            "name": "Phoenix Feather",
-            "description": "Increase movement speed by 10"
-        },
-        "dragon_scale": {
-            "name": "Dragon Scale",
-            "description": "Increase defense by 8"
-        },
-        "spirit_mushroom": {
-            "name": "Spirit Mushroom",
-            "description": "Increase experience gain by 20%"
-        },
-        "soul_bead": {
-            "name": "Soul Bead",
-            "description": "Increase critical rate by 10%"
-        },
-        "inner_elixir": {
-            "name": "Inner Elixir",
-            "description": "Increase all stats by 5%"
-        },
-        "resurrection_pill": {
-            "name": "Resurrection Pill",
-            "description": "Revive once at full health upon death"
-        },
-        "universe_bag": {
-            "name": "Universe Bag",
-            "description": "Increase magnet range by 50%"
-        },
-        "title": "Elixir"
+    "hundred_eyed": {
+      "name": "Hundred-Eyed Daoist Master",
+      "description": "Mysterious monster with ultra-high critical hits"
     },
-    "enemies": {
-        "wolf_minion": "Wolf Demon",
-        "ghost_minion": "Ghost Soldier",
-        "bear_elite": "Bear Guardian",
-        "snake_elite": "Snake General",
-        "rat_minion": "Rat Demon",
-        "sand_minion": "Sand Monster",
-        "tiger_elite": "Tiger Warrior",
-        "wind_elite": "Wind Commander",
-        "monk_minion": "Demon Monk",
-        "spider_minion": "Small Spider",
-        "centipede_elite": "Centipede Commander",
-        "scorpion_elite": "Scorpion Demon",
-        "spider_woman_minion": "Spider Woman",
-        "centipede_minion": "Small Centipede",
-        "violet_spider_elite": "Violet Spider",
-        "poison_centipede_elite": "Poison Centipede",
-        "fire_demon_minion": "Fire Demon",
-        "bull_soldier_minion": "Bull Soldier",
-        "fire_general_elite": "Fire General",
-        "bull_captain_elite": "Bull Captain",
-        "celestial_guard_minion": "Celestial Guard",
-        "thunder_minion": "Thunder Demon",
-        "celestial_general_elite": "Celestial General",
-        "dragon_guardian_elite": "Dragon Guardian",
-        "title": "Enemy"
+    "mad_tiger": {
+      "name": "Mad Tiger",
+      "description": "Little Western Heaven lord, wild and ferocious"
     },
-    "rewards": {
-        "title": "Select Reward",
-        "refresh": "Refresh",
-        "refreshCost": "Refresh ({cost} 💰)",
-        "craftHint": "Hint: Can craft {count} legendary weapons",
-        "selectReward": "Select Reward",
-        "rarity": {
-            "common": "Common",
-            "rare": "Rare",
-            "epic": "Epic",
-            "legendary": "Legendary"
-        }
+    "kang_jin_loong": {
+      "name": "Kang-Jin Star",
+      "description": "Star lord descended from heaven"
     },
-    "dialog": {
-        "resetSaveConfirm": "Are you sure you want to reset all save data? This cannot be undone.",
-        "yes": "Yes",
-        "no": "No"
+    "spider_celestial": {
+      "name": "Violet Spider",
+      "description": "Silk Cave lord, web binding expert"
     },
-    "settings": {
-        "chooseLanguage": "Choose a language",
-        "title": "Settings",
-        "autoSelect": "Game auto hosting(random select weapon and elixir)",
-        "unlockAll": "Unlock all characters and chapters",
-        "enableMusic": "Enable music",
-        "musicVolume": "Music volume",
-        "gameTime": "Chapter time ({value} minutes)",
-        "resetSetting": "Reset Settings",
-        "resetConfirm": "Are you sure you want to reset all settings?"
+    "hundred_eyed_daoist": {
+      "name": "Hundred-Eyed Daoist",
+      "description": "Silk Cave lord, hundred-eyed demon light"
     },
-    "wiki": {
-        "title": "Wiki"
+    "elder_jinchi": {
+      "name": "Elder Jinchi",
+      "description": "Silk Cave lord, Buddhist monk"
+    },
+    "hundred_eyed_daoist_master": {
+      "name": "Multi-Eyed Centipede",
+      "description": "True form of Hundred-Eyed Demon"
+    },
+    "bull_king": {
+      "name": "Bull King",
+      "description": "Immensely powerful demon king, ultimate tank"
+    },
+    "red_boy": {
+      "name": "Red Boy",
+      "description": "Flaming Mountains lord, master of Samadhi Fire"
+    },
+    "rakshasa": {
+      "name": "Princess Iron Fan",
+      "description": "Flaming Mountains lord, wielder of Plantain Fan"
+    },
+    "yaksha_king": {
+      "name": "Yaksha King",
+      "description": "Flaming Mountains boss, king of yakshas"
+    },
+    "erlang_shen": {
+      "name": "Erlang Shen",
+      "description": "Mount Sumeru lord, three-eyed deity"
+    },
+    "great_sage_heaven": {
+      "name": "Great Sage Equal to Heaven",
+      "description": "Mount Sumeru lord, Victorious Fighting Buddha"
+    },
+    "golden_cicada": {
+      "name": "Golden Cicada",
+      "description": "Mount Sumeru lord, past life of Tang Sanzang"
+    },
+    "stone_monkey": {
+      "name": "Stone Monkey",
+      "description": "Mount Sumeru boss, original form of Great Sage"
+    },
+    "tang_monk": {
+      "name": "Tang Monk",
+      "description": "Buddhist master on Journey to the West, blessed with extraordinary luck"
+    },
+    "sha_monk": {
+      "name": "Sha Monk",
+      "description": "Former Curtain-Lifting General, balanced warrior of the river sands"
+    },
+    "zhu_bajie": {
+      "name": "Zhu Bajie",
+      "description": "Marshal Tianpeng reborn, high endurance tank with mighty rake"
+    },
+    "white_dragon_horse": {
+      "name": "White Dragon Horse",
+      "description": "Dragon Prince in horse form, swift celestial steed"
+    },
+    "unlockCharacter": "Unlock Character",
+    "locked": "Locked",
+    "unlockCondition": "Unlock Condition",
+    "specialWeapon": "Special Weapon",
+    "selectCharacter": "Select Character",
+    "title": "Character"
+  },
+  "maps": {
+    "chapter1": {
+      "name": "Chapter 1 - Lair of Wolves and Tigers",
+      "description": "First steps in the journey, trials of Black Wind Mountain"
+    },
+    "chapter2": {
+      "name": "Chapter 2 - Yellow Sands",
+      "description": "Sandstorm illusions of Yellow Wind Ridge"
+    },
+    "chapter3": {
+      "name": "Chapter 3 - Snow and Ice",
+      "description": "Frozen world of Little Western Heaven"
+    },
+    "chapter4": {
+      "name": "Chapter 4 - Webbed Hollow",
+      "description": "Spider demon nest in the cave"
+    },
+    "chapter5": {
+      "name": "Chapter 5 - Flaming Mountains",
+      "description": "Blazing inferno of flames"
+    },
+    "chapter6": {
+      "name": "Chapter 6 - Western Paradise",
+      "description": "Ultimate challenge, path to enlightenment"
+    },
+    "selectMap": "Select Chapter",
+    "difficulty": "Difficulty",
+    "title": "Chapter"
+  },
+  "unlockConditions": {
+    "default": "Default unlocked",
+    "kills": "Defeat {value} enemies",
+    "time": "Survive for {value} seconds",
+    "gold": "Collect {value} gold",
+    "chapter": "Complete Chapter {value}"
+  },
+  "shop": {
+    "title": "Permanent Upgrades",
+    "hint": "Upgrade permanent stats to become stronger!",
+    "infoText": "* Reset refunds 100% of spent gold",
+    "resetMessage": "Will refund {refund} gold",
+    "purchaseUpgrade": "Purchase Upgrade",
+    "resetUpgrades": "Reset All Upgrades",
+    "resetConfirm": "Reset all upgrades? You will get back 100% of spent gold.",
+    "confirm": "Confirm",
+    "cancel": "Cancel",
+    "maxLevel": "Max Level",
+    "currentLevel": "Level {level}",
+    "cost": "Cost",
+    "notEnoughGold": "Not enough gold",
+    "purchased": "Purchased",
+    "resetComplete": "Reset complete! Refunded {amount} gold"
+  },
+  "upgrades": {
+    "attack": {
+      "name": "Attack Power",
+      "description": "+{value} damage per level"
+    },
+    "health": {
+      "name": "Max Health",
+      "description": "+{value} HP per level"
+    },
+    "armor": {
+      "name": "Armor",
+      "description": "+{value} defense per level"
+    },
+    "luck": {
+      "name": "Luck",
+      "description": "+{value} item drop rate per level"
+    },
+    "speed": {
+      "name": "Movement Speed",
+      "description": "+{value} speed per level"
+    },
+    "expBonus": {
+      "name": "Experience Bonus",
+      "description": "+{value}% experience per level"
+    },
+    "critRate": {
+      "name": "Critical Rate",
+      "description": "+{value}% crit rate per level"
+    },
+    "magnetBonus": {
+      "name": "Magnet Range Bonus",
+      "description": "+{value}% magnet range per level"
+    },
+    "collectRange": {
+      "name": "Collect Range Bonus",
+      "description": "+{value}% collect range per level"
     }
+  },
+  "weapons": {
+    "golden_staff": {
+      "name": "Golden Staff",
+      "description": "Destined One's magical staff"
+    },
+    "ruyi_staff": {
+      "name": "Ruyi Golden Staff",
+      "description": "Ultimate form of Golden Staff, immense power"
+    },
+    "fire_lance": {
+      "name": "Fire-Tipped Spear",
+      "description": "Flame-wreathed lance that burns enemies"
+    },
+    "wind_tamer": {
+      "name": "Wind Tamer Bead",
+      "description": "Divine pearl that controls storms, area attack"
+    },
+    "violet_bell": {
+      "name": "Violet Bell",
+      "description": "Magical treasure that emits deadly sound waves"
+    },
+    "fireproof_cloak": {
+      "name": "Fireproof Mantle",
+      "description": "Protective divine light that resists damage"
+    },
+    "twin_blades": {
+      "name": "Twin Blades",
+      "description": "Tiger Vanguard's dual swords for rapid strikes"
+    },
+    "mace": {
+      "name": "Demon-Subduing Mace",
+      "description": "Heavy Buddhist weapon that strikes fear in demons"
+    },
+    "bull_horns": {
+      "name": "Bull Demon Horns",
+      "description": "Bull King's mighty horns, unstoppable charge"
+    },
+    "thunder_drum": {
+      "name": "Thunder Drum",
+      "description": "Summons thunder power"
+    },
+    "ice_needle": {
+      "name": "Ice Soul Silver Needle",
+      "description": "Condenses ice, freezes enemies"
+    },
+    "wind_fire_wheels": {
+      "name": "Wind Fire Wheels",
+      "description": "Ride wind and fire, swift as lightning"
+    },
+    "jade_purity_bottle": {
+      "name": "Jade Purity Bottle",
+      "description": "Guanyin's bottle, subdues demons"
+    },
+    "golden_rope": {
+      "name": "Golden Rope",
+      "description": "Binds enemies, unmatched restraint"
+    },
+    "plantain_fan": {
+      "name": "Plantain Fan",
+      "description": "Iron Fan Princess's treasure, howling winds"
+    },
+    "nine_tooth_rake": {
+      "name": "Nine-Tooth Rake",
+      "description": "Zhu Bajie's celestial weapon, fan-shaped attack pulls enemies close"
+    },
+    "dragon_scale_sword": {
+      "name": "Dragon Scale Sword",
+      "description": "White Dragon's blade with dragon scales, launches tracking projectiles"
+    },
+    "three_pointed_blade": {
+      "name": "Three-Pointed Blade",
+      "description": "Erlang Shen's divine weapon, sharp triple points, blade like lightning"
+    },
+    "nine_ring_staff": {
+      "name": "Nine-Ring Staff",
+      "description": "Tang Sanzang's Buddhist staff, nine rings chime to intimidate demons"
+    },
+    "crescent_blade": {
+      "name": "Crescent Moon Blade",
+      "description": "Sha Wujing's demon-subduing staff, crescent hook pierces armor"
+    },
+    "iron_cudgel": {
+      "name": "Iron Cudgel",
+      "description": "Bull Demon King's massive staff, weighing thousands of jin, immense strength"
+    },
+    "seven_star_sword": {
+      "name": "Seven Star Sword",
+      "description": "Taoist immortal sword, seven stars aligned, sword qi crisscrosses"
+    },
+    "ginseng_fruit": {
+      "name": "Ginseng Fruit",
+      "description": "Zhen Yuan Daxian's immortal fruit, smell it live 360 years, eat it live 47,000 years"
+    },
+    "heaven_earth_circle": {
+      "name": "Heaven-Earth Circle",
+      "description": "Nezha's divine weapon, golden light, flies out to attack and returns automatically"
+    },
+    "red_armillary_sash": {
+      "name": "Red Armillary Sash",
+      "description": "Nezha's treasure, 7.2 feet long, binds and whips enemies"
+    },
+    "purple_gold_gourd": {
+      "name": "Purple Gold Gourd",
+      "description": "Golden Horn and Silver Horn's treasure, calls name, absorbs enemies"
+    },
+    "golden_rope_immortal": {
+      "name": "Golden Rope",
+      "description": "Laojun's treasure, stronger binding version, immortal-binding rope"
+    },
+    "demon_revealing_mirror": {
+      "name": "Demon Revealing Mirror",
+      "description": "Sees enemy weaknesses, greatly increases crit rate and crit damage"
+    },
+    "sea_calming_needle": {
+      "name": "Sea-Calming Needle",
+      "description": "Another form of Golden Staff, Tianhe Sea-Suppressing treasure, larger range and stronger power"
+    },
+    "eight_trigrams_furnace": {
+      "name": "Eight Trigrams Furnace",
+      "description": "Laojun's alchemy furnace, eight trigrams flames, continuous burning damage"
+    },
+    "dragon_staff": {
+      "name": "Dragon Staff",
+      "description": "Guanyin's divine weapon, summons tornado storms to sweep enemies"
+    },
+    "seven_treasure_tree": {
+      "name": "Seven Treasure Tree",
+      "description": "Zhunti Daoren's treasure, refreshes all things, purifies evil"
+    },
+    "immortal_slaying_blade": {
+      "name": "Immortal-Slaying Blade",
+      "description": "Lu Ya Daoren's flying blade, locks onto targets, sure kill"
+    },
+    "diamond_snare": {
+      "name": "Diamond Snare",
+      "description": "Laojun's treasure, armor-piercing artifact, invincible"
+    },
+    "exquisite_pagoda": {
+      "name": "Exquisite Pagoda",
+      "description": "Li Jing's pagoda, suppresses all demons, imprisons evil"
+    },
+    "upgrade": "Upgrade {name}",
+    "addWeapon": "Add {name}",
+    "upgradeToLevel": "{name} Lv.{level}",
+    "title": "Weapon"
+  },
+  "elixirs": {
+    "peach_of_immortality": {
+      "name": "Peach of Immortality",
+      "description": "Increase max health by 20"
+    },
+    "golden_elixir": {
+      "name": "Golden Elixir",
+      "description": "Increase attack by 10%"
+    },
+    "jade_dew": {
+      "name": "Jade Dew",
+      "description": "Restore 50% health"
+    },
+    "tiger_bone_wine": {
+      "name": "Tiger Bone Wine",
+      "description": "Increase armor by 5"
+    },
+    "phoenix_feather": {
+      "name": "Phoenix Feather",
+      "description": "Increase movement speed by 10"
+    },
+    "dragon_scale": {
+      "name": "Dragon Scale",
+      "description": "Increase defense by 8"
+    },
+    "spirit_mushroom": {
+      "name": "Spirit Mushroom",
+      "description": "Increase experience gain by 20%"
+    },
+    "soul_bead": {
+      "name": "Soul Bead",
+      "description": "Increase critical rate by 10%"
+    },
+    "inner_elixir": {
+      "name": "Inner Elixir",
+      "description": "Increase all stats by 5%"
+    },
+    "resurrection_pill": {
+      "name": "Resurrection Pill",
+      "description": "Revive once at full health upon death"
+    },
+    "universe_bag": {
+      "name": "Universe Bag",
+      "description": "Increase magnet range by 50%"
+    },
+    "title": "Elixir"
+  },
+  "enemies": {
+    "wolf_minion": "Wolf Demon",
+    "ghost_minion": "Ghost Soldier",
+    "bear_elite": "Bear Guardian",
+    "snake_elite": "Snake General",
+    "rat_minion": "Rat Demon",
+    "sand_minion": "Sand Monster",
+    "tiger_elite": "Tiger Warrior",
+    "wind_elite": "Wind Commander",
+    "monk_minion": "Demon Monk",
+    "spider_minion": "Small Spider",
+    "centipede_elite": "Centipede Commander",
+    "scorpion_elite": "Scorpion Demon",
+    "spider_woman_minion": "Spider Woman",
+    "centipede_minion": "Small Centipede",
+    "violet_spider_elite": "Violet Spider",
+    "poison_centipede_elite": "Poison Centipede",
+    "fire_demon_minion": "Fire Demon",
+    "bull_soldier_minion": "Bull Soldier",
+    "fire_general_elite": "Fire General",
+    "bull_captain_elite": "Bull Captain",
+    "celestial_guard_minion": "Celestial Guard",
+    "thunder_minion": "Thunder Demon",
+    "celestial_general_elite": "Celestial General",
+    "dragon_guardian_elite": "Dragon Guardian",
+    "title": "Enemy"
+  },
+  "rewards": {
+    "title": "Select Reward",
+    "refresh": "Refresh",
+    "refreshCost": "Refresh ({cost} 💰)",
+    "craftHint": "Hint: Can craft {count} legendary weapons",
+    "selectReward": "Select Reward",
+    "rarity": {
+      "common": "Common",
+      "rare": "Rare",
+      "epic": "Epic",
+      "legendary": "Legendary"
+    }
+  },
+  "dialog": {
+    "resetSaveConfirm": "Are you sure you want to reset all save data? This cannot be undone.",
+    "yes": "Yes",
+    "no": "No"
+  },
+  "settings": {
+    "chooseLanguage": "Choose a language",
+    "title": "Settings",
+    "autoSelect": "Game auto hosting(random select weapon and elixir)",
+    "unlockAll": "Unlock all characters and chapters",
+    "enableMusic": "Enable music",
+    "musicVolume": "Music volume",
+    "gameTime": "Chapter time ({value} minutes)",
+    "resetSetting": "Reset Settings",
+    "resetConfirm": "Are you sure you want to reset all settings?",
+    "enableFullScreen": "Enable full screen",
+    "resetSuccess": "Reset successfully",
+    "exitToDesktop": "Exit to desktop"
+  },
+  "wiki": {
+    "title": "Wiki"
+  }
 }

@@ -1,536 +1,539 @@
 {
-    "game": {
-        "title": "오공 서바이버",
-        "start": "시작",
-        "restart": "다시 시작",
-        "backToHome": "홈으로 돌아가기",
-        "gameOver": "게임 오버",
-        "chapterComplete": "챕터 완료",
-        "continueGame": "계속",
-        "levelUp": "레벨 업",
-        "paused": "일시 정지",
-        "level": "레벨 {level}",
-        "specialWeapon": "특수 무기",
-        "resetSave": "저장 초기화",
-        "endGame": "종료",
-        "endGameTitle": "종료",
-        "endGameDesc": "게임을 종료하시겠습니까?",
-        "completeChapters": "완료한 챕터",
-        "stats": "통계",
-        "back": "뒤로"
+  "game": {
+    "title": "오공 서바이버",
+    "start": "시작",
+    "restart": "다시 시작",
+    "backToHome": "홈으로 돌아가기",
+    "gameOver": "게임 오버",
+    "chapterComplete": "챕터 완료",
+    "continueGame": "계속",
+    "levelUp": "레벨 업",
+    "paused": "일시 정지",
+    "level": "레벨 {level}",
+    "specialWeapon": "특수 무기",
+    "resetSave": "저장 초기화",
+    "endGame": "종료",
+    "endGameTitle": "종료",
+    "endGameDesc": "게임을 종료하시겠습니까?",
+    "completeChapters": "완료한 챕터",
+    "stats": "통계",
+    "back": "뒤로"
+  },
+  "languages": {
+    "zh-CN": "중국어 간체",
+    "zh-TW": "중국어 번체",
+    "en-US": "English",
+    "ja-JP": "日本語",
+    "ko-KR": "한국어",
+    "es-ES": "Español",
+    "ru-RU": "Русский",
+    "de-DE": "Deutsch",
+    "fr-FR": "Français",
+    "pt-BR": "Português-BR"
+  },
+  "stats": {
+    "title": "게임 통계",
+    "gold": "골드",
+    "totalKills": "총 처치 수",
+    "bestSurvival": "최고 생존 시간",
+    "totalPlayTime": "총 플레이 시간",
+    "survivalTime": "생존 시간",
+    "kills": "처치 수",
+    "level": "레벨",
+    "close": "닫기"
+  },
+  "characters": {
+    "destined_one": {
+      "name": "운명의 자",
+      "description": "전설의 여정이 시작된다, 균형 잡힌 만능 전사"
     },
-    "languages": {
-        "zh-CN": "중국어 간체",
-        "zh-TW": "중국어 번체",
-        "en-US": "English",
-        "ja-JP": "日本語",
-        "ko-KR": "한국어",
-        "es-ES": "Español",
-        "ru-RU": "Русский",
-        "de-DE": "Deutsch",
-        "fr-FR": "Français",
-        "pt-BR": "Português-BR"
+    "black_bear_guai": {
+      "name": "흑곰 요괴",
+      "description": "강력한 곰 악마, 높은 HP와 방어력"
     },
-    "stats": {
-        "title": "게임 통계",
-        "gold": "골드",
-        "totalKills": "총 처치 수",
-        "bestSurvival": "최고 생존 시간",
-        "totalPlayTime": "총 플레이 시간",
-        "survivalTime": "생존 시간",
-        "kills": "처치 수",
-        "level": "레벨",
-        "close": "닫기"
+    "lingxuzi": {
+      "name": "영허자",
+      "description": "흑풍산 산주, 도교술사의 달인"
     },
-    "characters": {
-        "destined_one": {
-            "name": "운명의 자",
-            "description": "전설의 여정이 시작된다, 균형 잡힌 만능 전사"
-        },
-        "black_bear_guai": {
-            "name": "흑곰 요괴",
-            "description": "강력한 곰 악마, 높은 HP와 방어력"
-        },
-        "lingxuzi": {
-            "name": "영허자",
-            "description": "흑풍산 산주, 도교술사의 달인"
-        },
-        "wandering_wight": {
-            "name": "배회하는 유령",
-            "description": "붉은 머리 귀신, 사나우고 잔인함"
-        },
-        "yellow_wind_sage": {
-            "name": "황풍 대왕",
-            "description": "황사폭풍의 달인, 높은 마법 피해"
-        },
-        "tiger_vanguard": {
-            "name": "호선봉",
-            "description": "사나운 호랑이 전사, 빠르고 강력함"
-        },
-        "stone_vanguard": {
-            "name": "석선봉",
-            "description": "황풍령 산주, 바위처럼 단단함"
-        },
-        "king_of_flowing_sand": {
-            "name": "유사하 왕",
-            "description": "황풍령 보스, 사막의 주인"
-        },
-        "yellow_brow_king": {
-            "name": "황미 대왕",
-            "description": "교활한 불교 배신자, 균형 잡힌 능력"
-        },
-        "hundred_eyed": {
-            "name": "백안 도사",
-            "description": "신비한 요괴, 초고 치명타율"
-        },
-        "mad_tiger": {
-            "name": "광호",
-            "description": "소서천 산주, 사나우고 폭력적"
-        },
-        "kang_jin_loong": {
-            "name": "항금성군",
-            "description": "하늘에서 내려온 성군"
-        },
-        "spider_celestial": {
-            "name": "자색 거미",
-            "description": "거미굴 굴주, 거미줄 매듭 전문가"
-        },
-        "hundred_eyed_daoist": {
-            "name": "백안 도인",
-            "description": "거미굴 굴주, 백안마광"
-        },
-        "elder_jinchi": {
-            "name": "금지 장로",
-            "description": "거미굴 굴주, 불교 승려"
-        },
-        "hundred_eyed_daoist_master": {
-            "name": "다눈 지네",
-            "description": "백안마귀의 진정한 형태"
-        },
-        "bull_king": {
-            "name": "소마왕",
-            "description": "무한히 강력한 마왕, 궁극의 탱크"
-        },
-        "red_boy": {
-            "name": "홍해아",
-            "description": "화염산 산주, 삼매真火의 달인"
-        },
-        "rakshasa": {
-            "name": "철선공주",
-            "description": "화염산 산주, 파초선의 주인"
-        },
-        "yaksha_king": {
-            "name": "야차왕",
-            "description": "화염산 보스, 야차의 왕"
-        },
-        "erlang_shen": {
-            "name": "이랑신",
-            "description": "수미산 산주, 삼안 천신"
-        },
-        "great_sage_heaven": {
-            "name": "제갈공명",
-            "description": "수미산 산주, 투전승불"
-        },
-        "golden_cicada": {
-            "name": "금잠자리",
-            "description": "수미산 산주, 당삼장의 전생"
-        },
-        "stone_monkey": {
-            "name": "돌원숭이",
-            "description": "수미산 보스, 대성의 원형"
-        },
-        "tang_monk": {
-            "name": "당삼장",
-            "description": "서천취경의 불문고승, 행운으로 축복받은 성자"
-        },
-        "sha_monk": {
-            "name": "사오정",
-            "description": "전 권렴대장, 유사하의 균형잡힌 전사"
-        },
-        "zhu_bajie": {
-            "name": "저팔계",
-            "description": "천봉원수 환생, 구치정파를 든 고내구 탱커"
-        },
-        "white_dragon_horse": {
-            "name": "백룡마",
-            "description": "용왕 삼태자의 화신, 신속한 천계의 신마"
-        },
-        "unlockCharacter": "캐릭터 해금",
-        "locked": "잠금",
-        "unlockCondition": "해금 조건",
-        "specialWeapon": "특수 무기",
-        "selectCharacter": "캐릭터 선택",
-        "title": "캐릭터"
+    "wandering_wight": {
+      "name": "배회하는 유령",
+      "description": "붉은 머리 귀신, 사나우고 잔인함"
     },
-    "maps": {
-        "chapter1": {
-            "name": "챕터 1 - 늑대와 호랑이의 소굴",
-            "description": "여정의 첫 걸음, 흑풍산의 시련"
-        },
-        "chapter2": {
-            "name": "챕터 2 - 황사",
-            "description": "황풍령의 모래바람 환상"
-        },
-        "chapter3": {
-            "name": "챕터 3 - 눈과 얼음",
-            "description": "소서천의 얼어붙은 세계"
-        },
-        "chapter4": {
-            "name": "챕터 4 - 거미줄 구덩이",
-            "description": "거미 악마의 둥지"
-        },
-        "chapter5": {
-            "name": "챕터 5 - 화염산",
-            "description": "불타는 지옥의 불꽃"
-        },
-        "chapter6": {
-            "name": "챕터 6 - 서방극락",
-            "description": "최종 도전, 깨달음의 길"
-        },
-        "selectMap": "챕터 선택",
-        "difficulty": "난이도",
-        "title": "챕터"
+    "yellow_wind_sage": {
+      "name": "황풍 대왕",
+      "description": "황사폭풍의 달인, 높은 마법 피해"
     },
-    "unlockConditions": {
-        "default": "기본 해금",
-        "kills": "{value}마리의 적 처치",
-        "time": "{value}초 동안 생존",
-        "gold": "{value}골드 수집",
-        "chapter": "{value}챕터 클리어 "
+    "tiger_vanguard": {
+      "name": "호선봉",
+      "description": "사나운 호랑이 전사, 빠르고 강력함"
     },
-    "shop": {
-        "title": "영구 강화",
-        "hint": "영구 스탯을 강화하여 더 강해지세요!",
-        "infoText": "* 초기화 시 사용한 골드의 100% 환급",
-        "resetMessage": "{refund}골드 환급",
-        "purchaseUpgrade": "강화 구매",
-        "resetUpgrades": "모든 강화 초기화",
-        "resetConfirm": "모든 강화를 초기화하시겠습니까? 사용한 골드의 100%를 돌려받습니다.",
-        "confirm": "확인",
-        "cancel": "취소",
-        "maxLevel": "최대 레벨",
-        "currentLevel": "레벨 {level}",
-        "cost": "비용",
-        "notEnoughGold": "골드가 부족합니다",
-        "purchased": "구매 완료",
-        "resetComplete": "초기화 완료! {amount}골드 환급"
+    "stone_vanguard": {
+      "name": "석선봉",
+      "description": "황풍령 산주, 바위처럼 단단함"
     },
-    "upgrades": {
-        "attack": {
-            "name": "공격력",
-            "description": "레벨 당 +{value} 피해"
-        },
-        "health": {
-            "name": "최대 체력",
-            "description": "레벨 당 +{value} 체력"
-        },
-        "armor": {
-            "name": "방어력",
-            "description": "레벨 당 +{value} 방어력"
-        },
-        "luck": {
-            "name": "행운",
-            "description": "레벨 당 +{value} 아이템 드롭율"
-        },
-        "speed": {
-            "name": "이동 속도",
-            "description": "레벨 당 +{value} 속도"
-        },
-        "expBonus": {
-            "name": "경험치 보너스",
-            "description": "레벨 당 +{value}% 경험치"
-        },
-        "critRate": {
-            "name": "치명타 확률",
-            "description": "레벨 당 +{value}% 치명타 확률"
-        },
-        "magnetBonus": {
-            "name": "자석 범위 보너스",
-            "description": "레벨 당 +{value}% 자석 범위"
-        },
-        "collectRange": {
-            "name": "수집 범위 보너스",
-            "description": "레벨 당 +{value}% 수집 범위"
-        }
+    "king_of_flowing_sand": {
+      "name": "유사하 왕",
+      "description": "황풍령 보스, 사막의 주인"
     },
-    "weapons": {
-        "golden_staff": {
-            "name": "금골봉",
-            "description": "운명의 자의 마법봉"
-        },
-        "ruyi_staff": {
-            "name": "여의금골봉",
-            "description": "금골봉의 궁극 형태, 엄청난 힘"
-        },
-        "fire_lance": {
-            "name": "화염창",
-            "description": "불꽃으로 둘러싸인 창, 적을 불태움"
-        },
-        "wind_tamer": {
-            "name": "풍요제주",
-            "description": "폭풍을 제어하는 신비한 구슬, 범위 공격"
-        },
-        "violet_bell": {
-            "name": "자금령",
-            "description": "치명적인 음파를 내보내는 마법 보물"
-        },
-        "fireproof_cloak": {
-            "name": "화염차단 망토",
-            "description": "피해를 저항하는 보호의 신광"
-        },
-        "twin_blades": {
-            "name": "쌍검",
-            "description": "호선봉의 쌍검, 신속한 타격"
-        },
-        "mace": {
-            "name": "마교정복 봉",
-            "description": "악마를 두려워하게 하는 무거운 불교 무기"
-        },
-        "bull_horns": {
-            "name": "소마의 뿔",
-            "description": "소마왕의 강력한 뿔, 멈출 수 없는 돌진"
-        },
-        "thunder_drum": {
-            "name": "천둥 북",
-            "description": "천둥의 힘을 소환"
-        },
-        "ice_needle": {
-            "name": "빙혼은침",
-            "description": "얼음을 응축하고, 적을 얼림"
-        },
-        "wind_fire_wheels": {
-            "name": "풍화륜",
-            "description": "바람과 불을 타고, 번개처럼 빠름"
-        },
-        "jade_purity_bottle": {
-            "name": "옥정병",
-            "description": "관음의 병, 악마를 복종시킴"
-        },
-        "golden_rope": {
-            "name": "금색 로프",
-            "description": "적을 묶어, 비교할 수 없는 구속력"
-        },
-        "plantain_fan": {
-            "name": "파초선",
-            "description": "철선공주의 보물, 광풍을 일으킴"
-        },
-        "nine_tooth_rake": {
-            "name": "구치정파",
-            "description": "저팔계의 천계신병, 부채꼴 공격으로 적을 끌어당김"
-        },
-        "dragon_scale_sword": {
-            "name": "용린검",
-            "description": "용의 비늘로 덮인 백룡의 검, 추적 탄환 발사"
-        },
-        "three_pointed_blade": {
-            "name": "삼지량인도",
-            "description": "이선생의 신병, 세 개의 날이 번개처럼 찢어듦"
-        },
-        "nine_ring_staff": {
-            "name": "구환석장",
-            "description": "당승의 선봉, 아홉 개의 고리가 울려 악마를 두려워하게 함"
-        },
-        "crescent_blade": {
-            "name": "월야찬",
-            "description": "사승의 악마 정복봉, 초승달 모양의 칼날이 갑옷을 관통함"
-        },
-        "iron_cudgel": {
-            "name": "혼철봉",
-            "description": "소마왕의 거대한 봉, 산을 움직일 만큼의 힘"
-        },
-        "seven_star_sword": {
-            "name": "칠성검",
-            "description": "도교의 선검, 일곱 별이 연결되어 무한한 검기"
-        },
-        "ginseng_fruit": {
-            "name": "인삼과일",
-            "description": "진원대현의 선과일, 맡기만 해도 360년 살고, 먹으면 47,000년 산다"
-        },
-        "heaven_earth_circle": {
-            "name": "건坤권",
-            "description": "나자의 신기, 금색 빛을 내며 적을 공격하고 자동으로 돌아옴"
-        },
-        "red_armillary_sash": {
-            "name": "혼천령",
-            "description": "나자의 법보, 7척 2치 길이로 적을 묶고 채찍질함"
-        },
-        "purple_gold_gourd": {
-            "name": "자금호루",
-            "description": "금각과 은각의 법보, 이름에 응하는 적을 빨아들임"
-        },
-        "golden_rope_immortal": {
-            "name": "황금로프",
-            "description": "태상로군의 법보, 강력한 구속력을 가진 선령의 밧줄"
-        },
-        "demon_revealing_mirror": {
-            "name": "조요경",
-            "description": "적의 약점을 밝혀 치명타율과 대미지를 크게 증가시킴"
-        },
-        "sea_calming_needle": {
-            "name": "정해침",
-            "description": "금골봉의 다른 형태, 천하의 바다를 가라앉히는 보물, 더 넓은 범위에서 강력한 위력"
-        },
-        "eight_trigrams_furnace": {
-            "name": "팔괘로",
-            "description": "태상로군의 연금로, 팔괘의 염불로 적을 지속적으로 불태움"
-        },
-        "dragon_staff": {
-            "name": "반용장",
-            "description": "관음의 신병, 토네이도를 소환하여 적 무리를 한꺼번에 없앰"
-        },
-        "seven_treasure_tree": {
-            "name": "칠보묘수",
-            "description": "준제도인의 법보, 모든 것을 새롭게 하고 악을 정화함"
-        },
-        "immortal_slaying_blade": {
-            "name": "찬선비도",
-            "description": "육압도인의 날개칼, 적을 추적하고 필살적인 일격"
-        },
-        "diamond_snare": {
-            "name": "금剛琢",
-            "description": "태상로군의 법보, 갑옷을 관통하는 신병, 파괴 불가"
-        },
-        "exquisite_pagoda": {
-            "name": "영롱보탑",
-            "description": "탑수왕 이경의 보탑, 수백만 악마를 물리치고 악을 가두어둠"
-        },
-        "golden_staff": {
-            "name": "금골봉",
-            "description": "운명의 자의 마법봉, 마음대로 자라거나 줄어듦"
-        },
-        "fireLance": {
-            "name": "화염창",
-            "description": "불꽃으로 둘러싸인 창, 적을 불태움"
-        },
-        "windTamer": {
-            "name": "풍요제주",
-            "description": "폭풍을 제어하는 신비한 구슬"
-        },
-        "violetBell": {
-            "name": "자금령",
-            "description": "치명적인 음파를 내보내는 마법 보물"
-        },
-        "fireproofCloak": {
-            "name": "화염차단 망토",
-            "description": "피해를 저항하는 보호의 신광"
-        },
-        "twinBlades": {
-            "name": "쌍검",
-            "description": "호선봉의 쌍검, 신속한 타격"
-        },
-        "bullHorns": {
-            "name": "소마의 뿔",
-            "description": "소마왕의 강력한 뿔, 멈출 수 없는 돌진"
-        },
-        "upgrade": "{name} 강화",
-        "addWeapon": "{name} 추가",
-        "upgradeToLevel": "{name} 레벨 {level}",
-        "title": "무기"
+    "yellow_brow_king": {
+      "name": "황미 대왕",
+      "description": "교활한 불교 배신자, 균형 잡힌 능력"
     },
-    "elixirs": {
-        "peach_of_immortality": {
-            "name": "불사의 복숭아",
-            "description": "최대 체력 20 증가"
-        },
-        "golden_elixir": {
-            "name": "황금 엘릭서",
-            "description": "공격력 10% 증가"
-        },
-        "jade_dew": {
-            "name": "옥露",
-            "description": "체력 50% 회복"
-        },
-        "tiger_bone_wine": {
-            "name": "호골주",
-            "description": "방어력 5 증가"
-        },
-        "phoenix_feather": {
-            "name": "봉황의 깃털",
-            "description": "이동 속도 10 증가"
-        },
-        "dragon_scale": {
-            "name": "용의 비늘",
-            "description": "방어력 8 증가"
-        },
-        "spirit_mushroom": {
-            "name": "영灵芝",
-            "description": "경험치 획득 20% 증가"
-        },
-        "soul_bead": {
-            "name": "영혼의 구슬",
-            "description": "치명타율 10% 증가"
-        },
-        "inner_elixir": {
-            "name": "내단",
-            "description": "모든 스탯 5% 증가"
-        },
-        "resurrection_pill": {
-            "name": "부활환",
-            "description": "죽을 때 최대 체력으로 한 번 부활합니다"
-        },
-        "universe_bag": {
-            "name": "건곤대",
-            "description": "자석 범위 50% 증가"
-        },
-        "title": "엘릭서"
+    "hundred_eyed": {
+      "name": "백안 도사",
+      "description": "신비한 요괴, 초고 치명타율"
     },
-    "enemies": {
-        "wolf_minion": "늑대 악마",
-        "ghost_minion": "유령 병사",
-        "bear_elite": "곰 수호자",
-        "snake_elite": "뱀 장군",
-        "rat_minion": "쥐 악마",
-        "sand_minion": "모래 괴물",
-        "tiger_elite": "호랑이 전사",
-        "wind_elite": "바람 지휘관",
-        "monk_minion": "악마 승려",
-        "spider_minion": "작은 거미",
-        "centipede_elite": "지네 지휘관",
-        "scorpion_elite": "전갈 악마",
-        "spider_woman_minion": "거미 여인",
-        "centipede_minion": "작은 지네",
-        "violet_spider_elite": "자색 거미",
-        "poison_centipede_elite": "독성 지네",
-        "fire_demon_minion": "불 악마",
-        "bull_soldier_minion": "소 병사",
-        "fire_general_elite": "불 장군",
-        "bull_captain_elite": "소 대장",
-        "celestial_guard_minion": "천사 경비병",
-        "thunder_minion": "천둥 악마",
-        "celestial_general_elite": "천사 장군",
-        "dragon_guardian_elite": "용 수호자",
-        "title": "적"
+    "mad_tiger": {
+      "name": "광호",
+      "description": "소서천 산주, 사나우고 폭력적"
     },
-    "rewards": {
-        "title": "보상 선택",
-        "refresh": "새로고침",
-        "refreshCost": "새로고침 ({cost} 💰)",
-        "craftHint": "힌트: {count}가지 전설 무기를 제작할 수 있습니다",
-        "selectReward": "보상 선택",
-        "rarity": {
-            "common": "일반",
-            "rare": "희귀",
-            "epic": "전설",
-            "legendary": "신화"
-        }
+    "kang_jin_loong": {
+      "name": "항금성군",
+      "description": "하늘에서 내려온 성군"
     },
-    "dialog": {
-        "resetSaveConfirm": "모든 저장 데이터를 초기화하시겠습니까? 이 작업은 취소할 수 없습니다.",
-        "yes": "예",
-        "no": "아니오"
+    "spider_celestial": {
+      "name": "자색 거미",
+      "description": "거미굴 굴주, 거미줄 매듭 전문가"
     },
-    "settings": {
-        "chooseLanguage": "언어 선택",
-        "title": "설정",
-        "autoSelect": "게임 자동 호스팅 (무기와 엘릭서를 무작위로 선택)",
-        "unlockAll": "모든 캐릭터와 챕터 잠금 해제",
-        "enableMusic": "음악 활성화",
-        "musicVolume": "음악 볼륨",
-        "gameTime": "챕터 시간 ({value}분)",
-        "resetSetting": "설정 초기화",
-        "resetConfirm": "모든 설정을 초기화하시겠습니까?"
+    "hundred_eyed_daoist": {
+      "name": "백안 도인",
+      "description": "거미굴 굴주, 백안마광"
     },
-    "wiki": {
-        "title": "위키"
+    "elder_jinchi": {
+      "name": "금지 장로",
+      "description": "거미굴 굴주, 불교 승려"
+    },
+    "hundred_eyed_daoist_master": {
+      "name": "다눈 지네",
+      "description": "백안마귀의 진정한 형태"
+    },
+    "bull_king": {
+      "name": "소마왕",
+      "description": "무한히 강력한 마왕, 궁극의 탱크"
+    },
+    "red_boy": {
+      "name": "홍해아",
+      "description": "화염산 산주, 삼매真火의 달인"
+    },
+    "rakshasa": {
+      "name": "철선공주",
+      "description": "화염산 산주, 파초선의 주인"
+    },
+    "yaksha_king": {
+      "name": "야차왕",
+      "description": "화염산 보스, 야차의 왕"
+    },
+    "erlang_shen": {
+      "name": "이랑신",
+      "description": "수미산 산주, 삼안 천신"
+    },
+    "great_sage_heaven": {
+      "name": "제갈공명",
+      "description": "수미산 산주, 투전승불"
+    },
+    "golden_cicada": {
+      "name": "금잠자리",
+      "description": "수미산 산주, 당삼장의 전생"
+    },
+    "stone_monkey": {
+      "name": "돌원숭이",
+      "description": "수미산 보스, 대성의 원형"
+    },
+    "tang_monk": {
+      "name": "당삼장",
+      "description": "서천취경의 불문고승, 행운으로 축복받은 성자"
+    },
+    "sha_monk": {
+      "name": "사오정",
+      "description": "전 권렴대장, 유사하의 균형잡힌 전사"
+    },
+    "zhu_bajie": {
+      "name": "저팔계",
+      "description": "천봉원수 환생, 구치정파를 든 고내구 탱커"
+    },
+    "white_dragon_horse": {
+      "name": "백룡마",
+      "description": "용왕 삼태자의 화신, 신속한 천계의 신마"
+    },
+    "unlockCharacter": "캐릭터 해금",
+    "locked": "잠금",
+    "unlockCondition": "해금 조건",
+    "specialWeapon": "특수 무기",
+    "selectCharacter": "캐릭터 선택",
+    "title": "캐릭터"
+  },
+  "maps": {
+    "chapter1": {
+      "name": "챕터 1 - 늑대와 호랑이의 소굴",
+      "description": "여정의 첫 걸음, 흑풍산의 시련"
+    },
+    "chapter2": {
+      "name": "챕터 2 - 황사",
+      "description": "황풍령의 모래바람 환상"
+    },
+    "chapter3": {
+      "name": "챕터 3 - 눈과 얼음",
+      "description": "소서천의 얼어붙은 세계"
+    },
+    "chapter4": {
+      "name": "챕터 4 - 거미줄 구덩이",
+      "description": "거미 악마의 둥지"
+    },
+    "chapter5": {
+      "name": "챕터 5 - 화염산",
+      "description": "불타는 지옥의 불꽃"
+    },
+    "chapter6": {
+      "name": "챕터 6 - 서방극락",
+      "description": "최종 도전, 깨달음의 길"
+    },
+    "selectMap": "챕터 선택",
+    "difficulty": "난이도",
+    "title": "챕터"
+  },
+  "unlockConditions": {
+    "default": "기본 해금",
+    "kills": "{value}마리의 적 처치",
+    "time": "{value}초 동안 생존",
+    "gold": "{value}골드 수집",
+    "chapter": "{value}챕터 클리어 "
+  },
+  "shop": {
+    "title": "영구 강화",
+    "hint": "영구 스탯을 강화하여 더 강해지세요!",
+    "infoText": "* 초기화 시 사용한 골드의 100% 환급",
+    "resetMessage": "{refund}골드 환급",
+    "purchaseUpgrade": "강화 구매",
+    "resetUpgrades": "모든 강화 초기화",
+    "resetConfirm": "모든 강화를 초기화하시겠습니까? 사용한 골드의 100%를 돌려받습니다.",
+    "confirm": "확인",
+    "cancel": "취소",
+    "maxLevel": "최대 레벨",
+    "currentLevel": "레벨 {level}",
+    "cost": "비용",
+    "notEnoughGold": "골드가 부족합니다",
+    "purchased": "구매 완료",
+    "resetComplete": "초기화 완료! {amount}골드 환급"
+  },
+  "upgrades": {
+    "attack": {
+      "name": "공격력",
+      "description": "레벨 당 +{value} 피해"
+    },
+    "health": {
+      "name": "최대 체력",
+      "description": "레벨 당 +{value} 체력"
+    },
+    "armor": {
+      "name": "방어력",
+      "description": "레벨 당 +{value} 방어력"
+    },
+    "luck": {
+      "name": "행운",
+      "description": "레벨 당 +{value} 아이템 드롭율"
+    },
+    "speed": {
+      "name": "이동 속도",
+      "description": "레벨 당 +{value} 속도"
+    },
+    "expBonus": {
+      "name": "경험치 보너스",
+      "description": "레벨 당 +{value}% 경험치"
+    },
+    "critRate": {
+      "name": "치명타 확률",
+      "description": "레벨 당 +{value}% 치명타 확률"
+    },
+    "magnetBonus": {
+      "name": "자석 범위 보너스",
+      "description": "레벨 당 +{value}% 자석 범위"
+    },
+    "collectRange": {
+      "name": "수집 범위 보너스",
+      "description": "레벨 당 +{value}% 수집 범위"
     }
+  },
+  "weapons": {
+    "golden_staff": {
+      "name": "금골봉",
+      "description": "운명의 자의 마법봉"
+    },
+    "ruyi_staff": {
+      "name": "여의금골봉",
+      "description": "금골봉의 궁극 형태, 엄청난 힘"
+    },
+    "fire_lance": {
+      "name": "화염창",
+      "description": "불꽃으로 둘러싸인 창, 적을 불태움"
+    },
+    "wind_tamer": {
+      "name": "풍요제주",
+      "description": "폭풍을 제어하는 신비한 구슬, 범위 공격"
+    },
+    "violet_bell": {
+      "name": "자금령",
+      "description": "치명적인 음파를 내보내는 마법 보물"
+    },
+    "fireproof_cloak": {
+      "name": "화염차단 망토",
+      "description": "피해를 저항하는 보호의 신광"
+    },
+    "twin_blades": {
+      "name": "쌍검",
+      "description": "호선봉의 쌍검, 신속한 타격"
+    },
+    "mace": {
+      "name": "마교정복 봉",
+      "description": "악마를 두려워하게 하는 무거운 불교 무기"
+    },
+    "bull_horns": {
+      "name": "소마의 뿔",
+      "description": "소마왕의 강력한 뿔, 멈출 수 없는 돌진"
+    },
+    "thunder_drum": {
+      "name": "천둥 북",
+      "description": "천둥의 힘을 소환"
+    },
+    "ice_needle": {
+      "name": "빙혼은침",
+      "description": "얼음을 응축하고, 적을 얼림"
+    },
+    "wind_fire_wheels": {
+      "name": "풍화륜",
+      "description": "바람과 불을 타고, 번개처럼 빠름"
+    },
+    "jade_purity_bottle": {
+      "name": "옥정병",
+      "description": "관음의 병, 악마를 복종시킴"
+    },
+    "golden_rope": {
+      "name": "금색 로프",
+      "description": "적을 묶어, 비교할 수 없는 구속력"
+    },
+    "plantain_fan": {
+      "name": "파초선",
+      "description": "철선공주의 보물, 광풍을 일으킴"
+    },
+    "nine_tooth_rake": {
+      "name": "구치정파",
+      "description": "저팔계의 천계신병, 부채꼴 공격으로 적을 끌어당김"
+    },
+    "dragon_scale_sword": {
+      "name": "용린검",
+      "description": "용의 비늘로 덮인 백룡의 검, 추적 탄환 발사"
+    },
+    "three_pointed_blade": {
+      "name": "삼지량인도",
+      "description": "이선생의 신병, 세 개의 날이 번개처럼 찢어듦"
+    },
+    "nine_ring_staff": {
+      "name": "구환석장",
+      "description": "당승의 선봉, 아홉 개의 고리가 울려 악마를 두려워하게 함"
+    },
+    "crescent_blade": {
+      "name": "월야찬",
+      "description": "사승의 악마 정복봉, 초승달 모양의 칼날이 갑옷을 관통함"
+    },
+    "iron_cudgel": {
+      "name": "혼철봉",
+      "description": "소마왕의 거대한 봉, 산을 움직일 만큼의 힘"
+    },
+    "seven_star_sword": {
+      "name": "칠성검",
+      "description": "도교의 선검, 일곱 별이 연결되어 무한한 검기"
+    },
+    "ginseng_fruit": {
+      "name": "인삼과일",
+      "description": "진원대현의 선과일, 맡기만 해도 360년 살고, 먹으면 47,000년 산다"
+    },
+    "heaven_earth_circle": {
+      "name": "건坤권",
+      "description": "나자의 신기, 금색 빛을 내며 적을 공격하고 자동으로 돌아옴"
+    },
+    "red_armillary_sash": {
+      "name": "혼천령",
+      "description": "나자의 법보, 7척 2치 길이로 적을 묶고 채찍질함"
+    },
+    "purple_gold_gourd": {
+      "name": "자금호루",
+      "description": "금각과 은각의 법보, 이름에 응하는 적을 빨아들임"
+    },
+    "golden_rope_immortal": {
+      "name": "황금로프",
+      "description": "태상로군의 법보, 강력한 구속력을 가진 선령의 밧줄"
+    },
+    "demon_revealing_mirror": {
+      "name": "조요경",
+      "description": "적의 약점을 밝혀 치명타율과 대미지를 크게 증가시킴"
+    },
+    "sea_calming_needle": {
+      "name": "정해침",
+      "description": "금골봉의 다른 형태, 천하의 바다를 가라앉히는 보물, 더 넓은 범위에서 강력한 위력"
+    },
+    "eight_trigrams_furnace": {
+      "name": "팔괘로",
+      "description": "태상로군의 연금로, 팔괘의 염불로 적을 지속적으로 불태움"
+    },
+    "dragon_staff": {
+      "name": "반용장",
+      "description": "관음의 신병, 토네이도를 소환하여 적 무리를 한꺼번에 없앰"
+    },
+    "seven_treasure_tree": {
+      "name": "칠보묘수",
+      "description": "준제도인의 법보, 모든 것을 새롭게 하고 악을 정화함"
+    },
+    "immortal_slaying_blade": {
+      "name": "찬선비도",
+      "description": "육압도인의 날개칼, 적을 추적하고 필살적인 일격"
+    },
+    "diamond_snare": {
+      "name": "금剛琢",
+      "description": "태상로군의 법보, 갑옷을 관통하는 신병, 파괴 불가"
+    },
+    "exquisite_pagoda": {
+      "name": "영롱보탑",
+      "description": "탑수왕 이경의 보탑, 수백만 악마를 물리치고 악을 가두어둠"
+    },
+    "golden_staff": {
+      "name": "금골봉",
+      "description": "운명의 자의 마법봉, 마음대로 자라거나 줄어듦"
+    },
+    "fireLance": {
+      "name": "화염창",
+      "description": "불꽃으로 둘러싸인 창, 적을 불태움"
+    },
+    "windTamer": {
+      "name": "풍요제주",
+      "description": "폭풍을 제어하는 신비한 구슬"
+    },
+    "violetBell": {
+      "name": "자금령",
+      "description": "치명적인 음파를 내보내는 마법 보물"
+    },
+    "fireproofCloak": {
+      "name": "화염차단 망토",
+      "description": "피해를 저항하는 보호의 신광"
+    },
+    "twinBlades": {
+      "name": "쌍검",
+      "description": "호선봉의 쌍검, 신속한 타격"
+    },
+    "bullHorns": {
+      "name": "소마의 뿔",
+      "description": "소마왕의 강력한 뿔, 멈출 수 없는 돌진"
+    },
+    "upgrade": "{name} 강화",
+    "addWeapon": "{name} 추가",
+    "upgradeToLevel": "{name} 레벨 {level}",
+    "title": "무기"
+  },
+  "elixirs": {
+    "peach_of_immortality": {
+      "name": "불사의 복숭아",
+      "description": "최대 체력 20 증가"
+    },
+    "golden_elixir": {
+      "name": "황금 엘릭서",
+      "description": "공격력 10% 증가"
+    },
+    "jade_dew": {
+      "name": "옥露",
+      "description": "체력 50% 회복"
+    },
+    "tiger_bone_wine": {
+      "name": "호골주",
+      "description": "방어력 5 증가"
+    },
+    "phoenix_feather": {
+      "name": "봉황의 깃털",
+      "description": "이동 속도 10 증가"
+    },
+    "dragon_scale": {
+      "name": "용의 비늘",
+      "description": "방어력 8 증가"
+    },
+    "spirit_mushroom": {
+      "name": "영灵芝",
+      "description": "경험치 획득 20% 증가"
+    },
+    "soul_bead": {
+      "name": "영혼의 구슬",
+      "description": "치명타율 10% 증가"
+    },
+    "inner_elixir": {
+      "name": "내단",
+      "description": "모든 스탯 5% 증가"
+    },
+    "resurrection_pill": {
+      "name": "부활환",
+      "description": "죽을 때 최대 체력으로 한 번 부활합니다"
+    },
+    "universe_bag": {
+      "name": "건곤대",
+      "description": "자석 범위 50% 증가"
+    },
+    "title": "엘릭서"
+  },
+  "enemies": {
+    "wolf_minion": "늑대 악마",
+    "ghost_minion": "유령 병사",
+    "bear_elite": "곰 수호자",
+    "snake_elite": "뱀 장군",
+    "rat_minion": "쥐 악마",
+    "sand_minion": "모래 괴물",
+    "tiger_elite": "호랑이 전사",
+    "wind_elite": "바람 지휘관",
+    "monk_minion": "악마 승려",
+    "spider_minion": "작은 거미",
+    "centipede_elite": "지네 지휘관",
+    "scorpion_elite": "전갈 악마",
+    "spider_woman_minion": "거미 여인",
+    "centipede_minion": "작은 지네",
+    "violet_spider_elite": "자색 거미",
+    "poison_centipede_elite": "독성 지네",
+    "fire_demon_minion": "불 악마",
+    "bull_soldier_minion": "소 병사",
+    "fire_general_elite": "불 장군",
+    "bull_captain_elite": "소 대장",
+    "celestial_guard_minion": "천사 경비병",
+    "thunder_minion": "천둥 악마",
+    "celestial_general_elite": "천사 장군",
+    "dragon_guardian_elite": "용 수호자",
+    "title": "적"
+  },
+  "rewards": {
+    "title": "보상 선택",
+    "refresh": "새로고침",
+    "refreshCost": "새로고침 ({cost} 💰)",
+    "craftHint": "힌트: {count}가지 전설 무기를 제작할 수 있습니다",
+    "selectReward": "보상 선택",
+    "rarity": {
+      "common": "일반",
+      "rare": "희귀",
+      "epic": "전설",
+      "legendary": "신화"
+    }
+  },
+  "dialog": {
+    "resetSaveConfirm": "모든 저장 데이터를 초기화하시겠습니까? 이 작업은 취소할 수 없습니다.",
+    "yes": "예",
+    "no": "아니오"
+  },
+  "settings": {
+    "chooseLanguage": "언어 선택",
+    "title": "설정",
+    "autoSelect": "게임 자동 호스팅 (무기와 엘릭서를 무작위로 선택)",
+    "unlockAll": "모든 캐릭터와 챕터 잠금 해제",
+    "enableMusic": "음악 활성화",
+    "musicVolume": "음악 볼륨",
+    "gameTime": "챕터 시간 ({value}분)",
+    "resetSetting": "설정 초기화",
+    "resetConfirm": "모든 설정을 초기화하시겠습니까?",
+    "enableFullScreen": "전체 화면 활성화",
+    "resetSuccess": "초기화 성공",
+    "exitToDesktop": "데스크톱으로 돌아가기"
+  },
+  "wiki": {
+    "title": "위키"
+  }
 }

@@ -1,6 +1,7 @@
 import type { Screen } from "../../types";
 import { useTranslation } from "react-i18next";
 import { useSaveStore } from "../../store";
+import { confirmModal } from "../../util";
 
 interface HomeProps {
   changeScreen: (screen: Screen) => void;
@@ -10,7 +11,7 @@ export const Home = ({ changeScreen }: HomeProps) => {
   const [t] = useTranslation();
 
   const handleResetSave = () => {
-    if (window.confirm(t("dialog.resetSaveConfirm"))) {
+    if (confirmModal(t("dialog.resetSaveConfirm"))) {
       useSaveStore.getState().resetAll();
       window.location.reload();
     }

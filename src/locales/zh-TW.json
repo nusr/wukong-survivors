@@ -1,536 +1,539 @@
 {
-    "game": {
-        "title": "悟空倖存者",
-        "start": "開始",
-        "restart": "重新開始",
-        "backToHome": "返回主畫面",
-        "gameOver": "遊戲結束",
-        "chapterComplete": "章節完成",
-        "continueGame": "繼續",
-        "levelUp": "升級",
-        "paused": "暫停",
-        "level": "等級{level}",
-        "specialWeapon": "專屬武器",
-        "resetSave": "重置存檔",
-        "endGame": "結束",
-        "endGameTitle": "結束",
-        "endGameDesc": "你想要結束遊戲嗎？",
-        "completeChapters": "完成章節",
-        "stats": "統計",
-        "back": "返回"
+  "game": {
+    "title": "悟空倖存者",
+    "start": "開始",
+    "restart": "重新開始",
+    "backToHome": "返回主畫面",
+    "gameOver": "遊戲結束",
+    "chapterComplete": "章節完成",
+    "continueGame": "繼續",
+    "levelUp": "升級",
+    "paused": "暫停",
+    "level": "等級{level}",
+    "specialWeapon": "專屬武器",
+    "resetSave": "重置存檔",
+    "endGame": "結束",
+    "endGameTitle": "結束",
+    "endGameDesc": "你想要結束遊戲嗎？",
+    "completeChapters": "完成章節",
+    "stats": "統計",
+    "back": "返回"
+  },
+  "languages": {
+    "zh-CN": "簡體中文",
+    "zh-TW": "繁體中文",
+    "en-US": "English",
+    "ja-JP": "日本語",
+    "ko-KR": "한국어",
+    "es-ES": "Español",
+    "ru-RU": "Русский",
+    "de-DE": "Deutsch",
+    "fr-FR": "Français",
+    "pt-BR": "Português-BR"
+  },
+  "stats": {
+    "title": "遊戲統計",
+    "gold": "金幣",
+    "totalKills": "總擊殺數",
+    "bestSurvival": "最佳存活",
+    "totalPlayTime": "總遊戲時間",
+    "survivalTime": "存活時間",
+    "kills": "擊殺數",
+    "level": "等級",
+    "close": "關閉"
+  },
+  "characters": {
+    "destined_one": {
+      "name": "天命人",
+      "description": "傳奇旅程的開始，平衡的全能戰士"
     },
-    "languages": {
-        "zh-CN": "簡體中文",
-        "zh-TW": "繁體中文",
-        "en-US": "English",
-        "ja-JP": "日本語",
-        "ko-KR": "한국어",
-        "es-ES": "Español",
-        "ru-RU": "Русский",
-        "de-DE": "Deutsch",
-        "fr-FR": "Français",
-        "pt-BR": "Português-BR"
+    "black_bear_guai": {
+      "name": "黑熊精",
+      "description": "強大的熊妖，高生命值和防禦力"
     },
-    "stats": {
-        "title": "遊戲統計",
-        "gold": "金幣",
-        "totalKills": "總擊殺數",
-        "bestSurvival": "最佳存活",
-        "totalPlayTime": "總遊戲時間",
-        "survivalTime": "存活時間",
-        "kills": "擊殺數",
-        "level": "等級",
-        "close": "關閉"
+    "lingxuzi": {
+      "name": "靈虛子",
+      "description": "黑風山山主，道法大師"
     },
-    "characters": {
-        "destined_one": {
-            "name": "天命人",
-            "description": "傳奇旅程的開始，平衡的全能戰士"
-        },
-        "black_bear_guai": {
-            "name": "黑熊精",
-            "description": "強大的熊妖，高生命值和防禦力"
-        },
-        "lingxuzi": {
-            "name": "靈虛子",
-            "description": "黑風山山主，道法大師"
-        },
-        "wandering_wight": {
-            "name": "紅髮野鬼",
-            "description": "兇殘野蠻的紅髮幽靈"
-        },
-        "yellow_wind_sage": {
-            "name": "黃風大王",
-            "description": "沙塵暴大師，高魔法傷害"
-        },
-        "tiger_vanguard": {
-            "name": "虎先鋒",
-            "description": "兇猛的虎戰士，快速而強大"
-        },
-        "stone_vanguard": {
-            "name": "石先鋒",
-            "description": "黃風嶺山主，堅如磐石"
-        },
-        "king_of_flowing_sand": {
-            "name": "流沙河大王",
-            "description": "黃風嶺首領，沙海之主"
-        },
-        "yellow_brow_king": {
-            "name": "黃眉大王",
-            "description": "狡猾的佛教叛徒，能力均衡"
-        },
-        "hundred_eyed": {
-            "name": "百眼道士",
-            "description": "神秘妖怪，超高暴擊"
-        },
-        "mad_tiger": {
-            "name": "瘋虎",
-            "description": "小西天山主，狂暴兇猛"
-        },
-        "kang_jin_loong": {
-            "name": "亢金星君",
-            "description": "下凡的星君"
-        },
-        "spider_celestial": {
-            "name": "紫蜘蛛",
-            "description": "蜘蛛洞洞主，結網高手"
-        },
-        "hundred_eyed_daoist": {
-            "name": "百眼道人",
-            "description": "蜘蛛洞洞主，百眼神光"
-        },
-        "elder_jinchi": {
-            "name": "金池長老",
-            "description": "蜘蛛洞洞主，佛教僧人"
-        },
-        "hundred_eyed_daoist_master": {
-            "name": "多眼蜈蚣",
-            "description": "百眼妖魔的真實形態"
-        },
-        "bull_king": {
-            "name": "牛魔王",
-            "description": "強大無比的魔王，終極坦克"
-        },
-        "red_boy": {
-            "name": "紅孩兒",
-            "description": "火焰山山主，三昧真火大師"
-        },
-        "rakshasa": {
-            "name": "鐵扇公主",
-            "description": "火焰山山主，芭蕉扇使用者"
-        },
-        "yaksha_king": {
-            "name": "夜叉王",
-            "description": "火焰山首領，夜叉之王"
-        },
-        "erlang_shen": {
-            "name": "二郎神",
-            "description": "須彌山山主，三眼天神"
-        },
-        "great_sage_heaven": {
-            "name": "齊天大聖",
-            "description": "須彌山山主，鬥戰勝佛"
-        },
-        "golden_cicada": {
-            "name": "金蟬子",
-            "description": "須彌山山主，唐三藏前世"
-        },
-        "stone_monkey": {
-            "name": "石猴",
-            "description": "須彌山首領，齊天大聖原身"
-        },
-        "tang_monk": {
-            "name": "唐僧",
-            "description": "西天取經的佛門高僧，氣運加身福澤深厚"
-        },
-        "sha_monk": {
-            "name": "沙僧",
-            "description": "前捲簾大將，流沙河中的平衡戰士"
-        },
-        "zhu_bajie": {
-            "name": "豬八戒",
-            "description": "天蓬元帥轉世，高耐久坦克手持九齒釘耙"
-        },
-        "white_dragon_horse": {
-            "name": "白龍馬",
-            "description": "龍王三太子化身，迅捷的天界神駒"
-        },
-        "unlockCharacter": "選擇角色",
-        "selectCharacter": "選擇角色",
-        "locked": "已鎖定",
-        "unlockCondition": "解鎖條件",
-        "specialWeapon": "專屬武器",
-        "title": "角色"
+    "wandering_wight": {
+      "name": "紅髮野鬼",
+      "description": "兇殘野蠻的紅髮幽靈"
     },
-    "maps": {
-        "chapter1": {
-            "name": "第1章 - 狼虎之穴",
-            "description": "旅程的第一步，黑風山的考驗"
-        },
-        "chapter2": {
-            "name": "第2章 - 黃沙漫天",
-            "description": "黃風嶺的沙塵幻景"
-        },
-        "chapter3": {
-            "name": "第3章 - 冰天雪地",
-            "description": "小西天的冰凍世界"
-        },
-        "chapter4": {
-            "name": "第4章 - 網羅深淵",
-            "description": "蜘蛛精巢穴"
-        },
-        "chapter5": {
-            "name": "第5章 - 火焰山",
-            "description": "熾熱的地獄火焰"
-        },
-        "chapter6": {
-            "name": "第6章 - 西方極樂",
-            "description": "最終挑戰，成佛之路"
-        },
-        "selectMap": "選擇章節",
-        "difficulty": "難度",
-        "title": "章節"
+    "yellow_wind_sage": {
+      "name": "黃風大王",
+      "description": "沙塵暴大師，高魔法傷害"
     },
-    "unlockConditions": {
-        "default": "默認解鎖",
-        "kills": "擊敗{value}個敵人",
-        "time": "存活{value}秒",
-        "gold": "收集{value}金幣",
-        "chapter": "通關第{value}章 "
+    "tiger_vanguard": {
+      "name": "虎先鋒",
+      "description": "兇猛的虎戰士，快速而強大"
     },
-    "shop": {
-        "title": "永久升級",
-        "hint": "升級永久屬性變得更強！",
-        "infoText": "* 重置返還100%花費的金幣",
-        "resetMessage": "將返還{refund}金幣",
-        "purchaseUpgrade": "購買升級",
-        "resetUpgrades": "重置所有升級",
-        "resetConfirm": "重置所有升級？你將獲得花費金幣的100%返還。",
-        "confirm": "確認",
-        "cancel": "取消",
-        "maxLevel": "最高等級",
-        "currentLevel": "等級{level}",
-        "cost": "價格",
-        "notEnoughGold": "金幣不足",
-        "purchased": "已購買",
-        "resetComplete": "重置完成！返還{amount}金幣"
+    "stone_vanguard": {
+      "name": "石先鋒",
+      "description": "黃風嶺山主，堅如磐石"
     },
-    "upgrades": {
-        "attack": {
-            "name": "攻擊力",
-            "description": "每級+{value}傷害"
-        },
-        "health": {
-            "name": "最大生命值",
-            "description": "每級+{value}生命值"
-        },
-        "armor": {
-            "name": "護甲",
-            "description": "每級+{value}防禦力"
-        },
-        "luck": {
-            "name": "幸運",
-            "description": "每級+{value}物品掉落率"
-        },
-        "speed": {
-            "name": "移動速度",
-            "description": "每級+{value}速度"
-        },
-        "expBonus": {
-            "name": "經驗值加成",
-            "description": "每級+{value}%經驗值"
-        },
-        "critRate": {
-            "name": "暴擊率",
-            "description": "每級+{value}%暴擊率"
-        },
-        "magnetBonus": {
-            "name": "磁吸範圍加成",
-            "description": "每級+{value}%磁吸範圍"
-        },
-        "collectRange": {
-            "name": "收集範圍加成",
-            "description": "每級+{value}%收集範圍"
-        }
+    "king_of_flowing_sand": {
+      "name": "流沙河大王",
+      "description": "黃風嶺首領，沙海之主"
     },
-    "weapons": {
-        "golden_staff": {
-            "name": "金箍棒",
-            "description": "天命人的神奇棍棒"
-        },
-        "ruyi_staff": {
-            "name": "如意金箍棒",
-            "description": "金箍棒的終極形態，威力無窮"
-        },
-        "fire_lance": {
-            "name": "火尖槍",
-            "description": "燃燒敵人的火焰長槍"
-        },
-        "wind_tamer": {
-            "name": "定風珠",
-            "description": "控制風暴的神珠，範圍攻擊"
-        },
-        "violet_bell": {
-            "name": "紫金鈴",
-            "description": "發出致命音波的法寶"
-        },
-        "fireproof_cloak": {
-            "name": "避火罩",
-            "description": "抵抗傷害的護體神光"
-        },
-        "twin_blades": {
-            "name": "雙刃刀",
-            "description": "虎先鋒的雙劍，快速攻擊"
-        },
-        "mace": {
-            "name": "降魔杵",
-            "description": "讓妖魔膽寒的沉重佛教武器"
-        },
-        "bull_horns": {
-            "name": "牛魔雙角",
-            "description": "牛魔王的強大牛角，無敵衝鋒"
-        },
-        "thunder_drum": {
-            "name": "雷鼓",
-            "description": "召喚雷電之力"
-        },
-        "ice_needle": {
-            "name": "冰魄銀針",
-            "description": "凝結寒冰，凍結敵人"
-        },
-        "wind_fire_wheels": {
-            "name": "風火輪",
-            "description": "騎乘風火，快如閃電"
-        },
-        "jade_purity_bottle": {
-            "name": "淨水瓶",
-            "description": "觀音的淨水瓶，降服妖魔"
-        },
-        "golden_rope": {
-            "name": "捆仙繩",
-            "description": "束縛敵人，無與倫比的約束力"
-        },
-        "plantain_fan": {
-            "name": "芭蕉扇",
-            "description": "鐵扇公主的法寶，狂風呼嘯"
-        },
-        "nine_tooth_rake": {
-            "name": "九齒釘耙",
-            "description": "豬八戒的天界神兵，扇形攻擊並拉拽敵人"
-        },
-        "dragon_scale_sword": {
-            "name": "龍鱗劍",
-            "description": "白龍之劍佈滿龍鱗，發射追蹤彈幕"
-        },
-        "three_pointed_blade": {
-            "name": "三尖兩刃刀",
-            "description": "二郎神的神兵，三尖鋒利，刀刃如電"
-        },
-        "nine_ring_staff": {
-            "name": "九環錫杖",
-            "description": "唐僧的禪杖，九環鳴響，震懾妖魔"
-        },
-        "crescent_blade": {
-            "name": "月牙鏟",
-            "description": "沙僧的降妖寶杖，月牙如鉤，破甲無雙"
-        },
-        "iron_cudgel": {
-            "name": "混鐵棍",
-            "description": "牛魔王的巨棍，重逾千斤，力拔山兮"
-        },
-        "seven_star_sword": {
-            "name": "七星劍",
-            "description": "道家仙劍，七星連珠，劍氣縱橫"
-        },
-        "ginseng_fruit": {
-            "name": "人參果",
-            "description": "鎮元大仙的仙果，聞一聞活三百六十歲，吃一個活四萬七千年"
-        },
-        "heaven_earth_circle": {
-            "name": "乾坤圈",
-            "description": "哪吒的神器，金光萬丈，飛出攻擊後自動返回"
-        },
-        "red_armillary_sash": {
-            "name": "混天綾",
-            "description": "哪吒的法寶，長達七尺二寸，束縛和鞭打攻擊"
-        },
-        "purple_gold_gourd": {
-            "name": "紫金葫蘆",
-            "description": "金角銀角的法寶，呼名答應，吸收敵人"
-        },
-        "golden_rope_immortal": {
-            "name": "幌金繩",
-            "description": "太上老君的法寶，束縛更強版本，捆仙索"
-        },
-        "demon_revealing_mirror": {
-            "name": "照妖鏡",
-            "description": "識破敵人弱點，大幅增加暴擊率和暴擊傷害"
-        },
-        "sea_calming_needle": {
-            "name": "定海神針",
-            "description": "金箍棒的另一形態，天河鎮海之寶，範圍更大威力更強"
-        },
-        "eight_trigrams_furnace": {
-            "name": "八卦爐",
-            "description": "太上老君的煉丹爐，八卦烈焰，持續灼燒敵人"
-        },
-        "dragon_staff": {
-            "name": "盤龍杖",
-            "description": "觀音座下的神兵，召喚龍卷風暴，席捲群敵"
-        },
-        "seven_treasure_tree": {
-            "name": "七寶妙樹",
-            "description": "準提道人的法寶，刷新萬物，淨化邪祟"
-        },
-        "immortal_slaying_blade": {
-            "name": "斬仙飛刀",
-            "description": "陸壓道人的飛刀，鎖定必殺，請寶貝轉身"
-        },
-        "diamond_snare": {
-            "name": "金剛琢",
-            "description": "太上老君的法寶，破防神器，無堅不摧"
-        },
-        "exquisite_pagoda": {
-            "name": "玲瓏寶塔",
-            "description": "托塔天王李靖的寶塔，鎮壓萬魔，禁錮邪祟"
-        },
-        "golden_staff": {
-            "name": "金箍棒",
-            "description": "天命人的神奇棍棒，能隨意伸縮"
-        },
-        "fireLance": {
-            "name": "火尖槍",
-            "description": "燃燒敵人的火焰長槍"
-        },
-        "windTamer": {
-            "name": "定風珠",
-            "description": "控制風暴的神珠"
-        },
-        "violetBell": {
-            "name": "紫金鈴",
-            "description": "發出致命音波的法寶"
-        },
-        "fireproofCloak": {
-            "name": "避火罩",
-            "description": "抵抗傷害的護體神光"
-        },
-        "twinBlades": {
-            "name": "雙刃刀",
-            "description": "虎先鋒的雙劍，快速攻擊"
-        },
-        "bullHorns": {
-            "name": "牛魔雙角",
-            "description": "牛魔王的強大牛角，無敵衝鋒"
-        },
-        "upgrade": "升級{name}",
-        "addWeapon": "添加{name}",
-        "upgradeToLevel": "{name}等級{level}",
-        "title": "武器"
+    "yellow_brow_king": {
+      "name": "黃眉大王",
+      "description": "狡猾的佛教叛徒，能力均衡"
     },
-    "elixirs": {
-        "peach_of_immortality": {
-            "name": "蟠桃",
-            "description": "最大生命值+20"
-        },
-        "golden_elixir": {
-            "name": "金丹",
-            "description": "攻擊力+10%"
-        },
-        "jade_dew": {
-            "name": "玉露",
-            "description": "回復50%生命值"
-        },
-        "tiger_bone_wine": {
-            "name": "虎骨酒",
-            "description": "護甲+5"
-        },
-        "phoenix_feather": {
-            "name": "鳳凰羽",
-            "description": "移動速度+10"
-        },
-        "dragon_scale": {
-            "name": "龍鱗",
-            "description": "防禦力+8"
-        },
-        "spirit_mushroom": {
-            "name": "靈芝",
-            "description": "經驗值獲得+20%"
-        },
-        "soul_bead": {
-            "name": "舍利子",
-            "description": "暴擊率+10%"
-        },
-        "inner_elixir": {
-            "name": "內丹",
-            "description": "所有屬性+5%"
-        },
-        "resurrection_pill": {
-            "name": "還魂丹",
-            "description": "死亡時滿血復活一次"
-        },
-        "universe_bag": {
-            "name": "乾坤袋",
-            "description": "增加50%磁吸範圍"
-        },
-        "title": "丹藥"
+    "hundred_eyed": {
+      "name": "百眼道士",
+      "description": "神秘妖怪，超高暴擊"
     },
-    "enemies": {
-        "wolf_minion": "狼妖",
-        "ghost_minion": "鬼兵",
-        "bear_elite": "熊護衛",
-        "snake_elite": "蛇將軍",
-        "rat_minion": "鼠妖",
-        "sand_minion": "沙怪",
-        "tiger_elite": "虎戰士",
-        "wind_elite": "風將領",
-        "monk_minion": "妖僧",
-        "spider_minion": "小蜘蛛",
-        "centipede_elite": "蜈蚣將領",
-        "scorpion_elite": "蠍子精",
-        "spider_woman_minion": "蜘蛛精",
-        "centipede_minion": "小蜈蚣",
-        "violet_spider_elite": "紫蜘蛛",
-        "poison_centipede_elite": "毒蜈蚣",
-        "fire_demon_minion": "火妖",
-        "bull_soldier_minion": "牛兵",
-        "fire_general_elite": "火將軍",
-        "bull_captain_elite": "牛隊長",
-        "celestial_guard_minion": "天兵",
-        "thunder_minion": "雷妖",
-        "celestial_general_elite": "天將",
-        "dragon_guardian_elite": "龍衛",
-        "title": "敵人"
+    "mad_tiger": {
+      "name": "瘋虎",
+      "description": "小西天山主，狂暴兇猛"
     },
-    "rewards": {
-        "title": "選擇獎勵",
-        "refresh": "刷新",
-        "refreshCost": "刷新 ({cost} 💰)",
-        "craftHint": "提示：可合成{count}種傳說武器",
-        "selectReward": "選擇獎勵",
-        "rarity": {
-            "common": "普通",
-            "rare": "稀有",
-            "epic": "史詩",
-            "legendary": "傳說"
-        }
+    "kang_jin_loong": {
+      "name": "亢金星君",
+      "description": "下凡的星君"
     },
-    "dialog": {
-        "resetSaveConfirm": "確定要重置所有存檔數據嗎？此操作無法撤銷。",
-        "yes": "是",
-        "no": "否"
+    "spider_celestial": {
+      "name": "紫蜘蛛",
+      "description": "蜘蛛洞洞主，結網高手"
     },
-    "settings": {
-        "chooseLanguage": "選擇語言",
-        "title": "設定",
-        "autoSelect": "遊戲自動托管（隨機選擇武器和仙丹）",
-        "unlockAll": "解鎖所有角色和章節",
-        "enableMusic": "啟用音樂",
-        "musicVolume": "音樂音量",
-        "gameTime": "章節時長 ({value} 分鐘)",
-        "resetSetting": "重置設定",
-        "resetConfirm": "確定要重置所有設定嗎？"
+    "hundred_eyed_daoist": {
+      "name": "百眼道人",
+      "description": "蜘蛛洞洞主，百眼神光"
     },
-    "wiki": {
-        "title": "百科"
+    "elder_jinchi": {
+      "name": "金池長老",
+      "description": "蜘蛛洞洞主，佛教僧人"
+    },
+    "hundred_eyed_daoist_master": {
+      "name": "多眼蜈蚣",
+      "description": "百眼妖魔的真實形態"
+    },
+    "bull_king": {
+      "name": "牛魔王",
+      "description": "強大無比的魔王，終極坦克"
+    },
+    "red_boy": {
+      "name": "紅孩兒",
+      "description": "火焰山山主，三昧真火大師"
+    },
+    "rakshasa": {
+      "name": "鐵扇公主",
+      "description": "火焰山山主，芭蕉扇使用者"
+    },
+    "yaksha_king": {
+      "name": "夜叉王",
+      "description": "火焰山首領，夜叉之王"
+    },
+    "erlang_shen": {
+      "name": "二郎神",
+      "description": "須彌山山主，三眼天神"
+    },
+    "great_sage_heaven": {
+      "name": "齊天大聖",
+      "description": "須彌山山主，鬥戰勝佛"
+    },
+    "golden_cicada": {
+      "name": "金蟬子",
+      "description": "須彌山山主，唐三藏前世"
+    },
+    "stone_monkey": {
+      "name": "石猴",
+      "description": "須彌山首領，齊天大聖原身"
+    },
+    "tang_monk": {
+      "name": "唐僧",
+      "description": "西天取經的佛門高僧，氣運加身福澤深厚"
+    },
+    "sha_monk": {
+      "name": "沙僧",
+      "description": "前捲簾大將，流沙河中的平衡戰士"
+    },
+    "zhu_bajie": {
+      "name": "豬八戒",
+      "description": "天蓬元帥轉世，高耐久坦克手持九齒釘耙"
+    },
+    "white_dragon_horse": {
+      "name": "白龍馬",
+      "description": "龍王三太子化身，迅捷的天界神駒"
+    },
+    "unlockCharacter": "選擇角色",
+    "selectCharacter": "選擇角色",
+    "locked": "已鎖定",
+    "unlockCondition": "解鎖條件",
+    "specialWeapon": "專屬武器",
+    "title": "角色"
+  },
+  "maps": {
+    "chapter1": {
+      "name": "第1章 - 狼虎之穴",
+      "description": "旅程的第一步，黑風山的考驗"
+    },
+    "chapter2": {
+      "name": "第2章 - 黃沙漫天",
+      "description": "黃風嶺的沙塵幻景"
+    },
+    "chapter3": {
+      "name": "第3章 - 冰天雪地",
+      "description": "小西天的冰凍世界"
+    },
+    "chapter4": {
+      "name": "第4章 - 網羅深淵",
+      "description": "蜘蛛精巢穴"
+    },
+    "chapter5": {
+      "name": "第5章 - 火焰山",
+      "description": "熾熱的地獄火焰"
+    },
+    "chapter6": {
+      "name": "第6章 - 西方極樂",
+      "description": "最終挑戰，成佛之路"
+    },
+    "selectMap": "選擇章節",
+    "difficulty": "難度",
+    "title": "章節"
+  },
+  "unlockConditions": {
+    "default": "默認解鎖",
+    "kills": "擊敗{value}個敵人",
+    "time": "存活{value}秒",
+    "gold": "收集{value}金幣",
+    "chapter": "通關第{value}章 "
+  },
+  "shop": {
+    "title": "永久升級",
+    "hint": "升級永久屬性變得更強！",
+    "infoText": "* 重置返還100%花費的金幣",
+    "resetMessage": "將返還{refund}金幣",
+    "purchaseUpgrade": "購買升級",
+    "resetUpgrades": "重置所有升級",
+    "resetConfirm": "重置所有升級？你將獲得花費金幣的100%返還。",
+    "confirm": "確認",
+    "cancel": "取消",
+    "maxLevel": "最高等級",
+    "currentLevel": "等級{level}",
+    "cost": "價格",
+    "notEnoughGold": "金幣不足",
+    "purchased": "已購買",
+    "resetComplete": "重置完成！返還{amount}金幣"
+  },
+  "upgrades": {
+    "attack": {
+      "name": "攻擊力",
+      "description": "每級+{value}傷害"
+    },
+    "health": {
+      "name": "最大生命值",
+      "description": "每級+{value}生命值"
+    },
+    "armor": {
+      "name": "護甲",
+      "description": "每級+{value}防禦力"
+    },
+    "luck": {
+      "name": "幸運",
+      "description": "每級+{value}物品掉落率"
+    },
+    "speed": {
+      "name": "移動速度",
+      "description": "每級+{value}速度"
+    },
+    "expBonus": {
+      "name": "經驗值加成",
+      "description": "每級+{value}%經驗值"
+    },
+    "critRate": {
+      "name": "暴擊率",
+      "description": "每級+{value}%暴擊率"
+    },
+    "magnetBonus": {
+      "name": "磁吸範圍加成",
+      "description": "每級+{value}%磁吸範圍"
+    },
+    "collectRange": {
+      "name": "收集範圍加成",
+      "description": "每級+{value}%收集範圍"
     }
+  },
+  "weapons": {
+    "golden_staff": {
+      "name": "金箍棒",
+      "description": "天命人的神奇棍棒"
+    },
+    "ruyi_staff": {
+      "name": "如意金箍棒",
+      "description": "金箍棒的終極形態，威力無窮"
+    },
+    "fire_lance": {
+      "name": "火尖槍",
+      "description": "燃燒敵人的火焰長槍"
+    },
+    "wind_tamer": {
+      "name": "定風珠",
+      "description": "控制風暴的神珠，範圍攻擊"
+    },
+    "violet_bell": {
+      "name": "紫金鈴",
+      "description": "發出致命音波的法寶"
+    },
+    "fireproof_cloak": {
+      "name": "避火罩",
+      "description": "抵抗傷害的護體神光"
+    },
+    "twin_blades": {
+      "name": "雙刃刀",
+      "description": "虎先鋒的雙劍，快速攻擊"
+    },
+    "mace": {
+      "name": "降魔杵",
+      "description": "讓妖魔膽寒的沉重佛教武器"
+    },
+    "bull_horns": {
+      "name": "牛魔雙角",
+      "description": "牛魔王的強大牛角，無敵衝鋒"
+    },
+    "thunder_drum": {
+      "name": "雷鼓",
+      "description": "召喚雷電之力"
+    },
+    "ice_needle": {
+      "name": "冰魄銀針",
+      "description": "凝結寒冰，凍結敵人"
+    },
+    "wind_fire_wheels": {
+      "name": "風火輪",
+      "description": "騎乘風火，快如閃電"
+    },
+    "jade_purity_bottle": {
+      "name": "淨水瓶",
+      "description": "觀音的淨水瓶，降服妖魔"
+    },
+    "golden_rope": {
+      "name": "捆仙繩",
+      "description": "束縛敵人，無與倫比的約束力"
+    },
+    "plantain_fan": {
+      "name": "芭蕉扇",
+      "description": "鐵扇公主的法寶，狂風呼嘯"
+    },
+    "nine_tooth_rake": {
+      "name": "九齒釘耙",
+      "description": "豬八戒的天界神兵，扇形攻擊並拉拽敵人"
+    },
+    "dragon_scale_sword": {
+      "name": "龍鱗劍",
+      "description": "白龍之劍佈滿龍鱗，發射追蹤彈幕"
+    },
+    "three_pointed_blade": {
+      "name": "三尖兩刃刀",
+      "description": "二郎神的神兵，三尖鋒利，刀刃如電"
+    },
+    "nine_ring_staff": {
+      "name": "九環錫杖",
+      "description": "唐僧的禪杖，九環鳴響，震懾妖魔"
+    },
+    "crescent_blade": {
+      "name": "月牙鏟",
+      "description": "沙僧的降妖寶杖，月牙如鉤，破甲無雙"
+    },
+    "iron_cudgel": {
+      "name": "混鐵棍",
+      "description": "牛魔王的巨棍，重逾千斤，力拔山兮"
+    },
+    "seven_star_sword": {
+      "name": "七星劍",
+      "description": "道家仙劍，七星連珠，劍氣縱橫"
+    },
+    "ginseng_fruit": {
+      "name": "人參果",
+      "description": "鎮元大仙的仙果，聞一聞活三百六十歲，吃一個活四萬七千年"
+    },
+    "heaven_earth_circle": {
+      "name": "乾坤圈",
+      "description": "哪吒的神器，金光萬丈，飛出攻擊後自動返回"
+    },
+    "red_armillary_sash": {
+      "name": "混天綾",
+      "description": "哪吒的法寶，長達七尺二寸，束縛和鞭打攻擊"
+    },
+    "purple_gold_gourd": {
+      "name": "紫金葫蘆",
+      "description": "金角銀角的法寶，呼名答應，吸收敵人"
+    },
+    "golden_rope_immortal": {
+      "name": "幌金繩",
+      "description": "太上老君的法寶，束縛更強版本，捆仙索"
+    },
+    "demon_revealing_mirror": {
+      "name": "照妖鏡",
+      "description": "識破敵人弱點，大幅增加暴擊率和暴擊傷害"
+    },
+    "sea_calming_needle": {
+      "name": "定海神針",
+      "description": "金箍棒的另一形態，天河鎮海之寶，範圍更大威力更強"
+    },
+    "eight_trigrams_furnace": {
+      "name": "八卦爐",
+      "description": "太上老君的煉丹爐，八卦烈焰，持續灼燒敵人"
+    },
+    "dragon_staff": {
+      "name": "盤龍杖",
+      "description": "觀音座下的神兵，召喚龍卷風暴，席捲群敵"
+    },
+    "seven_treasure_tree": {
+      "name": "七寶妙樹",
+      "description": "準提道人的法寶，刷新萬物，淨化邪祟"
+    },
+    "immortal_slaying_blade": {
+      "name": "斬仙飛刀",
+      "description": "陸壓道人的飛刀，鎖定必殺，請寶貝轉身"
+    },
+    "diamond_snare": {
+      "name": "金剛琢",
+      "description": "太上老君的法寶，破防神器，無堅不摧"
+    },
+    "exquisite_pagoda": {
+      "name": "玲瓏寶塔",
+      "description": "托塔天王李靖的寶塔，鎮壓萬魔，禁錮邪祟"
+    },
+    "golden_staff": {
+      "name": "金箍棒",
+      "description": "天命人的神奇棍棒，能隨意伸縮"
+    },
+    "fireLance": {
+      "name": "火尖槍",
+      "description": "燃燒敵人的火焰長槍"
+    },
+    "windTamer": {
+      "name": "定風珠",
+      "description": "控制風暴的神珠"
+    },
+    "violetBell": {
+      "name": "紫金鈴",
+      "description": "發出致命音波的法寶"
+    },
+    "fireproofCloak": {
+      "name": "避火罩",
+      "description": "抵抗傷害的護體神光"
+    },
+    "twinBlades": {
+      "name": "雙刃刀",
+      "description": "虎先鋒的雙劍，快速攻擊"
+    },
+    "bullHorns": {
+      "name": "牛魔雙角",
+      "description": "牛魔王的強大牛角，無敵衝鋒"
+    },
+    "upgrade": "升級{name}",
+    "addWeapon": "添加{name}",
+    "upgradeToLevel": "{name}等級{level}",
+    "title": "武器"
+  },
+  "elixirs": {
+    "peach_of_immortality": {
+      "name": "蟠桃",
+      "description": "最大生命值+20"
+    },
+    "golden_elixir": {
+      "name": "金丹",
+      "description": "攻擊力+10%"
+    },
+    "jade_dew": {
+      "name": "玉露",
+      "description": "回復50%生命值"
+    },
+    "tiger_bone_wine": {
+      "name": "虎骨酒",
+      "description": "護甲+5"
+    },
+    "phoenix_feather": {
+      "name": "鳳凰羽",
+      "description": "移動速度+10"
+    },
+    "dragon_scale": {
+      "name": "龍鱗",
+      "description": "防禦力+8"
+    },
+    "spirit_mushroom": {
+      "name": "靈芝",
+      "description": "經驗值獲得+20%"
+    },
+    "soul_bead": {
+      "name": "舍利子",
+      "description": "暴擊率+10%"
+    },
+    "inner_elixir": {
+      "name": "內丹",
+      "description": "所有屬性+5%"
+    },
+    "resurrection_pill": {
+      "name": "還魂丹",
+      "description": "死亡時滿血復活一次"
+    },
+    "universe_bag": {
+      "name": "乾坤袋",
+      "description": "增加50%磁吸範圍"
+    },
+    "title": "丹藥"
+  },
+  "enemies": {
+    "wolf_minion": "狼妖",
+    "ghost_minion": "鬼兵",
+    "bear_elite": "熊護衛",
+    "snake_elite": "蛇將軍",
+    "rat_minion": "鼠妖",
+    "sand_minion": "沙怪",
+    "tiger_elite": "虎戰士",
+    "wind_elite": "風將領",
+    "monk_minion": "妖僧",
+    "spider_minion": "小蜘蛛",
+    "centipede_elite": "蜈蚣將領",
+    "scorpion_elite": "蠍子精",
+    "spider_woman_minion": "蜘蛛精",
+    "centipede_minion": "小蜈蚣",
+    "violet_spider_elite": "紫蜘蛛",
+    "poison_centipede_elite": "毒蜈蚣",
+    "fire_demon_minion": "火妖",
+    "bull_soldier_minion": "牛兵",
+    "fire_general_elite": "火將軍",
+    "bull_captain_elite": "牛隊長",
+    "celestial_guard_minion": "天兵",
+    "thunder_minion": "雷妖",
+    "celestial_general_elite": "天將",
+    "dragon_guardian_elite": "龍衛",
+    "title": "敵人"
+  },
+  "rewards": {
+    "title": "選擇獎勵",
+    "refresh": "刷新",
+    "refreshCost": "刷新 ({cost} 💰)",
+    "craftHint": "提示：可合成{count}種傳說武器",
+    "selectReward": "選擇獎勵",
+    "rarity": {
+      "common": "普通",
+      "rare": "稀有",
+      "epic": "史詩",
+      "legendary": "傳說"
+    }
+  },
+  "dialog": {
+    "resetSaveConfirm": "確定要重置所有存檔數據嗎？此操作無法撤銷。",
+    "yes": "是",
+    "no": "否"
+  },
+  "settings": {
+    "chooseLanguage": "選擇語言",
+    "title": "設定",
+    "autoSelect": "遊戲自動托管（隨機選擇武器和仙丹）",
+    "unlockAll": "解鎖所有角色和章節",
+    "enableMusic": "啟用音樂",
+    "musicVolume": "音樂音量",
+    "gameTime": "章節時長 ({value} 分鐘)",
+    "resetSetting": "重置設定",
+    "resetConfirm": "確定要重置所有設定嗎？",
+    "enableFullScreen": "啟用全螢幕",
+    "resetSuccess": "重置成功",
+    "exitToDesktop": "返回桌面"
+  },
+  "wiki": {
+    "title": "百科"
+  }
 }

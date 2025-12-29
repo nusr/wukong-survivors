@@ -158,10 +158,10 @@
     "unlockCharacter": "キャラクター選択",
     "locked": "ロック中",
     "unlockCondition": "解放条件",
-        "specialWeapon": "専用武器",
-        "selectCharacter": "キャラクターを選択",
-        "title": "キャラクター"
-    },
+    "specialWeapon": "専用武器",
+    "selectCharacter": "キャラクターを選択",
+    "title": "キャラクター"
+  },
   "maps": {
     "chapter1": {
       "name": "第一回 - 狼虎の巣",
@@ -524,7 +524,10 @@
     "musicVolume": "音楽の音量",
     "gameTime": "チャプター時間 ({value}分)",
     "resetSetting": "設定をリセット",
-    "resetConfirm": "すべての設定をリセットしますか？"
+    "resetConfirm": "すべての設定をリセットしますか？",
+    "enableFullScreen": "フルスクリーンを有効にする",
+    "resetSuccess": "リセット成功",
+    "exitToDesktop": "デスクトップに戻る"
   },
   "wiki": {
     "title": "ウィキ"
