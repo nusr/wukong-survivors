@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="bladeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E0E0E0;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#C0C0C0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#A8A8A8;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="handleGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B4513;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#A0522D;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#654321;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#FFA500;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#DAA520;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Left crescent blade -->
+  <path d="M 60 80 Q 50 100, 55 120 Q 58 130, 65 135 Q 70 138, 75 135 Q 80 130, 78 120 Q 75 100, 70 85 Z" 
+        fill="url(#bladeGrad)" stroke="#606060" stroke-width="1.5"/>
+  <path d="M 62 85 Q 55 100, 58 118" 
+        stroke="#ffffff" stroke-width="1" opacity="0.5" fill="none"/>
+  
+  <!-- Right crescent blade -->
+  <path d="M 140 80 Q 150 100, 145 120 Q 142 130, 135 135 Q 130 138, 125 135 Q 120 130, 122 120 Q 125 100, 130 85 Z" 
+        fill="url(#bladeGrad)" stroke="#606060" stroke-width="1.5"/>
+  <path d="M 138 85 Q 145 100, 142 118" 
+        stroke="#ffffff" stroke-width="1" opacity="0.5" fill="none"/>
+  
+  <!-- Center pole -->
+  <rect x="95" y="20" width="10" height="160" 
+        fill="url(#handleGrad)" stroke="#4d2600" stroke-width="1"/>
+  
+  <!-- Gold decorative bands -->
+  <rect x="92" y="18" width="16" height="6" rx="1"
+        fill="url(#goldGrad)" stroke="#B8860B" stroke-width="0.5"/>
+  <rect x="92" y="75" width="16" height="4" rx="1"
+        fill="url(#goldGrad)" stroke="#B8860B" stroke-width="0.5"/>
+  <rect x="92" y="105" width="16" height="4" rx="1"
+        fill="url(#goldGrad)" stroke="#B8860B" stroke-width="0.5"/>
+  <rect x="92" y="172" width="16" height="6" rx="1"
+        fill="url(#goldGrad)" stroke="#B8860B" stroke-width="0.5"/>
+  
+  <!-- Blade connectors -->
+  <line x1="75" y1="90" x2="95" y2="90" stroke="url(#goldGrad)" stroke-width="3"/>
+  <line x1="105" y1="90" x2="125" y2="90" stroke="url(#goldGrad)" stroke-width="3"/>
+  
+  <!-- Decorative circles -->
+  <circle cx="80" cy="90" r="4" fill="url(#goldGrad)" stroke="#B8860B" stroke-width="0.5"/>
+  <circle cx="120" cy="90" r="4" fill="url(#goldGrad)" stroke="#B8860B" stroke-width="0.5"/>
+  
+  <!-- Top ornament -->
+  <path d="M 100 10 L 95 20 L 105 20 Z" 
+        fill="url(#bladeGrad)" stroke="#606060" stroke-width="1"/>
+  
+  <!-- Bottom cap -->
+  <ellipse cx="100" cy="182" rx="8" ry="5" 
+           fill="url(#goldGrad)" stroke="#B8860B" stroke-width="1"/>
+  
+  <!-- Crescent patterns -->
+  <path d="M 65 100 Q 68 110, 65 120" 
+        stroke="#DAA520" stroke-width="0.5" fill="none" opacity="0.6"/>
+  <path d="M 135 100 Q 132 110, 135 120" 
+        stroke="#DAA520" stroke-width="0.5" fill="none" opacity="0.6"/>
+</svg>

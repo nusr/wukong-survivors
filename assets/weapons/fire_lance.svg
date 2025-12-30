@@ -1,0 +1,17 @@
+<svg width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fire Lance - 火尖枪 -->
+  <!-- Spear shaft -->
+  <rect x="15" y="8" width="2" height="20" fill="#8B4513"/>
+  <!-- Spearhead -->
+  <polygon points="16,2 12,8 20,8" fill="#C0C0C0"/>
+  <polygon points="16,4 14,8 18,8" fill="#E8E8E8"/>
+  <!-- Fire effect -->
+  <rect x="12" y="6" width="2" height="3" fill="#FF4500" opacity="0.7"/>
+  <rect x="18" y="6" width="2" height="3" fill="#FF4500" opacity="0.7"/>
+  <rect x="13" y="4" width="1" height="2" fill="#FFD700" opacity="0.8"/>
+  <rect x="18" y="4" width="1" height="2" fill="#FFD700" opacity="0.8"/>
+  <!-- Red tassel -->
+  <rect x="13" y="10" width="6" height="2" fill="#DC143C"/>
+  <rect x="12" y="12" width="2" height="3" fill="#DC143C" opacity="0.8"/>
+  <rect x="18" y="12" width="2" height="3" fill="#DC143C" opacity="0.8"/>
+</svg>

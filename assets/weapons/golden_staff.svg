@@ -1,0 +1,9 @@
+<svg width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+  <!-- Golden Staff projectile - 金箍棒 -->
+  <rect x="14" y="2" width="4" height="28" fill="#FFD700"/>
+  <rect x="12" y="0" width="8" height="4" fill="#B8860B"/>
+  <rect x="12" y="28" width="8" height="4" fill="#B8860B"/>
+  <!-- Glow effect -->
+  <rect x="10" y="4" width="2" height="24" fill="#FFED4E" opacity="0.5"/>
+  <rect x="20" y="4" width="2" height="24" fill="#FFED4E" opacity="0.5"/>
+</svg>

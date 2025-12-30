@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" width="56" height="56">
+  <rect width="28" height="28" fill="none"/>
+  <!-- 熊罴精 - 精英怪 -->
+  <!-- 耳朵 -->
+  <rect x="6" y="6" width="3" height="3" fill="#4B3621"/>
+  <rect x="19" y="6" width="3" height="3" fill="#4B3621"/>
+  <rect x="7" y="7" width="1" height="1" fill="#654321"/>
+  <rect x="20" y="7" width="1" height="1" fill="#654321"/>
+  
+  <!-- 头部 -->
+  <rect x="8" y="8" width="12" height="6" fill="#4B3621"/>
+  <rect x="7" y="9" width="1" height="4" fill="#4B3621"/>
+  <rect x="20" y="9" width="1" height="4" fill="#4B3621"/>
+  
+  <!-- 眼睛 - 凶狠 -->
+  <rect x="10" y="10" width="2" height="2" fill="#8B0000"/>
+  <rect x="16" y="10" width="2" height="2" fill="#8B0000"/>
+  <rect x="11" y="11" width="1" height="1" fill="#FF0000"/>
+  <rect x="17" y="11" width="1" height="1" fill="#FF0000"/>
+  
+  <!-- 鼻子 -->
+  <rect x="12" y="13" width="4" height="2" fill="#654321"/>
+  <rect x="13" y="13" width="1" height="1" fill="#2F4F4F"/>
+  <rect x="14" y="13" width="1" height="1" fill="#2F4F4F"/>
+  
+  <!-- 身体 - 强壮 -->
+  <rect x="7" y="14" width="14" height="8" fill="#4B3621"/>
+  <rect x="6" y="15" width="1" height="6" fill="#4B3621"/>
+  <rect x="21" y="15" width="1" height="6" fill="#4B3621"/>
+  <rect x="9" y="16" width="3" height="3" fill="#654321"/>
+  <rect x="16" y="16" width="3" height="3" fill="#654321"/>
+  
+  <!-- 腹部 -->
+  <rect x="11" y="19" width="6" height="2" fill="#8B4513"/>
+  
+  <!-- 腿部 -->
+  <rect x="8" y="22" width="4" height="4" fill="#4B3621"/>
+  <rect x="16" y="22" width="4" height="4" fill="#4B3621"/>
+  <rect x="9" y="23" width="2" height="2" fill="#654321"/>
+  <rect x="17" y="23" width="2" height="2" fill="#654321"/>
+  
+  <!-- 爪子 -->
+  <rect x="7" y="26" width="5" height="1" fill="#2F4F4F"/>
+  <rect x="16" y="26" width="5" height="1" fill="#2F4F4F"/>
+</svg>

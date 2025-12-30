@@ -1,0 +1,177 @@
+<svg width="1280" height="720" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
+  <!-- Chapter 5: Flaming Mountains - 火焰山 -->
+  <!-- Intense fire and volcanic atmosphere -->
+  <defs>
+    <linearGradient id="skyGrad5" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#3d0814;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#8b0000;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff4500;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="mountainFire" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff6b35;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#8b0000;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2c0a0e;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="fireGlow" cx="50%" cy="80%" r="60%">
+      <stop offset="0%" style="stop-color:#ff4500;stop-opacity:0.8" />
+      <stop offset="50%" style="stop-color:#ff6b35;stop-opacity:0.4" />
+      <stop offset="100%" style="stop-color:#8b0000;stop-opacity:0" />
+    </radialGradient>
+    <linearGradient id="lavaGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff4500;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#ffff00;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff4500;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Burning sky -->
+  <rect width="1280" height="720" fill="url(#skyGrad5)" />
+
+  <!-- Fire glow from below -->
+  <ellipse cx="640" cy="720" rx="800" ry="400" fill="url(#fireGlow)" />
+
+  <!-- Volcanic mountains -->
+  <path d="M 0 500 L 150 350 L 250 380 L 350 320 L 450 450 L 0 720 Z"
+    fill="url(#mountainFire)" opacity="0.9" />
+  <path d="M 400 480 L 550 300 L 640 340 L 730 280 L 850 500 L 400 720 Z"
+    fill="url(#mountainFire)" />
+  <path d="M 800 520 L 950 350 L 1050 380 L 1150 320 L 1280 500 L 1280 720 L 800 720 Z"
+    fill="url(#mountainFire)" opacity="0.9" />
+
+  <!-- Glowing cracks in mountains -->
+  <g opacity="0.8">
+    <path d="M 640 340 L 645 420 L 650 450 L 640 500"
+      stroke="url(#lavaGrad)" stroke-width="4" fill="none">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite" />
+    </path>
+    <path d="M 620 360 L 615 410 L 610 440"
+      stroke="url(#lavaGrad)" stroke-width="3" fill="none">
+      <animate attributeName="opacity" values="0.5;0.9;0.5" dur="2.5s" repeatCount="indefinite" />
+    </path>
+    <path d="M 660 355 L 668 400 L 675 435"
+      stroke="url(#lavaGrad)" stroke-width="3" fill="none">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="2.2s" repeatCount="indefinite" />
+    </path>
+
+    <!-- Left mountain cracks -->
+    <path d="M 180 370 L 185 430 L 190 480"
+      stroke="#ff6b35" stroke-width="3" fill="none">
+      <animate attributeName="opacity" values="0.5;0.9;0.5" dur="3s" repeatCount="indefinite" />
+    </path>
+
+    <!-- Right mountain cracks -->
+    <path d="M 1020 400 L 1025 450 L 1030 500"
+      stroke="#ff6b35" stroke-width="3" fill="none">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="2.8s" repeatCount="indefinite" />
+    </path>
+  </g>
+
+  <!-- Flames rising from mountains -->
+  <g opacity="0.7">
+    <!-- Center flames -->
+    <path d="M 640 500 Q 635 450 640 400 Q 645 450 640 500" fill="#ff4500">
+      <animate attributeName="d"
+        values="M 640 500 Q 635 450 640 400 Q 645 450 640 500;
+                       M 640 500 Q 645 450 640 380 Q 635 450 640 500;
+                       M 640 500 Q 635 450 640 400 Q 645 450 640 500"
+        dur="1.5s" repeatCount="indefinite" />
+    </path>
+    <path d="M 620 500 Q 615 460 620 420 Q 625 460 620 500" fill="#ff6b35">
+      <animate attributeName="d"
+        values="M 620 500 Q 615 460 620 420 Q 625 460 620 500;
+                       M 620 500 Q 625 460 620 410 Q 615 460 620 500;
+                       M 620 500 Q 615 460 620 420 Q 625 460 620 500"
+        dur="1.8s" repeatCount="indefinite" />
+    </path>
+    <path d="M 660 500 Q 655 460 660 420 Q 665 460 660 500" fill="#ff6b35">
+      <animate attributeName="d"
+        values="M 660 500 Q 655 460 660 420 Q 665 460 660 500;
+                       M 660 500 Q 665 460 660 410 Q 655 460 660 500;
+                       M 660 500 Q 655 460 660 420 Q 665 460 660 500"
+        dur="1.6s" repeatCount="indefinite" />
+    </path>
+
+    <!-- Left flames -->
+    <path d="M 180 480 Q 175 440 180 400 Q 185 440 180 480" fill="#ff4500">
+      <animate attributeName="d"
+        values="M 180 480 Q 175 440 180 400 Q 185 440 180 480;
+                       M 180 480 Q 185 440 180 390 Q 175 440 180 480;
+                       M 180 480 Q 175 440 180 400 Q 185 440 180 480"
+        dur="2s" repeatCount="indefinite" />
+    </path>
+
+    <!-- Right flames -->
+    <path d="M 1020 500 Q 1015 460 1020 420 Q 1025 460 1020 500" fill="#ff4500">
+      <animate attributeName="d"
+        values="M 1020 500 Q 1015 460 1020 420 Q 1025 460 1020 500;
+                       M 1020 500 Q 1025 460 1020 410 Q 1015 460 1020 500;
+                       M 1020 500 Q 1015 460 1020 420 Q 1025 460 1020 500"
+        dur="1.7s" repeatCount="indefinite" />
+    </path>
+  </g>
+
+  <!-- Fire embers/particles -->
+  <g opacity="0.8">
+    <circle cx="400" cy="500" r="3" fill="#ffff00">
+      <animate attributeName="cy" values="500;300;500" dur="4s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="1;0;1" dur="4s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="550" cy="520" r="4" fill="#ff6b35">
+      <animate attributeName="cy" values="520;280;520" dur="5s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="1;0;1" dur="5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="700" cy="510" r="3" fill="#ffff00">
+      <animate attributeName="cy" values="510;290;510" dur="4.5s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="1;0;1" dur="4.5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="850" cy="530" r="4" fill="#ff4500">
+      <animate attributeName="cy" values="530;310;530" dur="5.5s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="1;0;1" dur="5.5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="300" cy="490" r="3" fill="#ff6b35">
+      <animate attributeName="cy" values="490;270;490" dur="6s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="1;0;1" dur="6s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="950" cy="540" r="3" fill="#ffff00">
+      <animate attributeName="cy" values="540;320;540" dur="5.2s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="1;0;1" dur="5.2s" repeatCount="indefinite" />
+    </circle>
+  </g>
+
+  <!-- Heat waves -->
+  <g opacity="0.2">
+    <path d="M 0 400 Q 160 390 320 400 T 640 400 T 960 400 T 1280 400"
+      stroke="#ff4500" stroke-width="2" fill="none">
+      <animate attributeName="d"
+        values="M 0 400 Q 160 390 320 400 T 640 400 T 960 400 T 1280 400;
+                       M 0 400 Q 160 410 320 400 T 640 400 T 960 400 T 1280 400;
+                       M 0 400 Q 160 390 320 400 T 640 400 T 960 400 T 1280 400"
+        dur="2s" repeatCount="indefinite" />
+    </path>
+    <path d="M 0 450 Q 160 440 320 450 T 640 450 T 960 450 T 1280 450"
+      stroke="#ff6b35" stroke-width="2" fill="none">
+      <animate attributeName="d"
+        values="M 0 450 Q 160 440 320 450 T 640 450 T 960 450 T 1280 450;
+                       M 0 450 Q 160 460 320 450 T 640 450 T 960 450 T 1280 450;
+                       M 0 450 Q 160 440 320 450 T 640 450 T 960 450 T 1280 450"
+        dur="2.5s" repeatCount="indefinite" />
+    </path>
+  </g>
+
+  <!-- Lava ground -->
+  <rect y="650" width="1280" height="70" fill="#2c0a0e" />
+  <g opacity="0.9">
+    <ellipse cx="200" cy="670" rx="60" ry="10" fill="url(#lavaGrad)">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite" />
+    </ellipse>
+    <ellipse cx="500" cy="675" rx="80" ry="12" fill="url(#lavaGrad)">
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="2.5s" repeatCount="indefinite" />
+    </ellipse>
+    <ellipse cx="800" cy="670" rx="70" ry="11" fill="url(#lavaGrad)">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="3.2s" repeatCount="indefinite" />
+    </ellipse>
+    <ellipse cx="1100" cy="673" rx="65" ry="10" fill="url(#lavaGrad)">
+      <animate attributeName="opacity" values="0.7;0.9;0.7" dur="2.8s" repeatCount="indefinite" />
+    </ellipse>
+  </g>
+</svg>

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48">
+  <rect width="24" height="24" fill="none"/>
+  <!-- 狼妖 - 小怪 -->
+  <!-- 耳朵 -->
+  <rect x="6" y="6" width="2" height="3" fill="#696969"/>
+  <rect x="16" y="6" width="2" height="3" fill="#696969"/>
+  <rect x="7" y="7" width="1" height="1" fill="#4a4a4a"/>
+  <rect x="16" y="7" width="1" height="1" fill="#4a4a4a"/>
+  
+  <!-- 头部 -->
+  <rect x="8" y="8" width="8" height="4" fill="#696969"/>
+  <rect x="7" y="9" width="1" height="2" fill="#696969"/>
+  <rect x="16" y="9" width="1" height="2" fill="#696969"/>
+  
+  <!-- 眼睛 - 红色 -->
+  <rect x="9" y="9" width="2" height="1" fill="#FF0000"/>
+  <rect x="13" y="9" width="2" height="1" fill="#FF0000"/>
+  
+  <!-- 鼻子 -->
+  <rect x="11" y="11" width="2" height="1" fill="#2F4F4F"/>
+  
+  <!-- 身体 -->
+  <rect x="8" y="12" width="8" height="4" fill="#696969"/>
+  <rect x="9" y="13" width="2" height="2" fill="#4a4a4a"/>
+  <rect x="13" y="13" width="2" height="2" fill="#4a4a4a"/>
+  
+  <!-- 腿 -->
+  <rect x="8" y="16" width="2" height="3" fill="#696969"/>
+  <rect x="14" y="16" width="2" height="3" fill="#696969"/>
+  
+  <!-- 爪子 -->
+  <rect x="7" y="19" width="3" height="1" fill="#2F4F4F"/>
+  <rect x="14" y="19" width="3" height="1" fill="#2F4F4F"/>
+  
+  <!-- 尾巴 -->
+  <rect x="16" y="14" width="2" height="1" fill="#696969"/>
+  <rect x="17" y="15" width="2" height="1" fill="#696969"/>
+</svg>

@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="furnaceGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B4513;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#A0522D;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#654321;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="fireGrad" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#FFFF00;stop-opacity:1" />
+      <stop offset="30%" style="stop-color:#FFA500;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#FF4500;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8B0000;stop-opacity:0.8" />
+    </radialGradient>
+    <linearGradient id="goldTrimGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#FFA500;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#DAA520;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="heatGrad" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#FF6347;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#FF4500;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Heat waves -->
+  <ellipse cx="100" cy="100" rx="80" ry="90" fill="url(#heatGrad)" opacity="0.5">
+    <animate attributeName="opacity" values="0.5;0.3;0.5" dur="2s" repeatCount="indefinite"/>
+  </ellipse>
+  
+  <!-- Furnace legs (tripod) -->
+  <path d="M 100 165 L 70 185 L 75 187 L 102 168 Z" 
+        fill="url(#furnaceGrad)" stroke="#4d2600" stroke-width="1.5"/>
+  <path d="M 100 165 L 130 185 L 125 187 L 98 168 Z" 
+        fill="url(#furnaceGrad)" stroke="#4d2600" stroke-width="1.5"/>
+  <path d="M 100 165 L 100 190" 
+        stroke="url(#furnaceGrad)" stroke-width="12" stroke-linecap="round"/>
+  
+  <!-- Main furnace body (octagonal) -->
+  <path d="M 100 60 L 130 75 L 135 105 L 130 135 L 100 150 L 70 135 L 65 105 L 70 75 Z" 
+        fill="url(#furnaceGrad)" stroke="#4d2600" stroke-width="2.5"/>
+  
+  <!-- Inner fire glow -->
+  <path d="M 100 70 L 122 82 L 125 105 L 122 128 L 100 140 L 78 128 L 75 105 L 78 82 Z" 
+        fill="url(#fireGrad)" opacity="0.8">
+    <animate attributeName="opacity" values="0.8;0.5;0.8" dur="1.5s" repeatCount="indefinite"/>
+  </path>
+  
+  <!-- Bagua (Eight Trigrams) symbols on each face -->
+  <!-- Top -->
+  <g transform="translate(100, 65)">
+    <line x1="-4" y1="0" x2="4" y2="0" stroke="#FFD700" stroke-width="1.5"/>
+    <line x1="-4" y1="3" x2="4" y2="3" stroke="#FFD700" stroke-width="1.5"/>
+    <line x1="-4" y1="6" x2="4" y2="6" stroke="#FFD700" stroke-width="1.5"/>
+  </g>
+  
+  <!-- Top-right -->
+  <g transform="translate(125, 80) rotate(45)">
+    <line x1="-4" y1="0" x2="4" y2="0" stroke="#FFD700" stroke-width="1.5"/>
+    <line x1="-4" y1="3" x2="-1" y2="3" stroke="#FFD700" stroke-width="1.5"/>
+    <line x1="1" y1="3" x2="4" y2="3" stroke="#FFD700" stroke-width="1.5"/>
+    <line x1="-4" y1="6" x2="4" y2="6" stroke="#FFD700" stroke-width="1.5"/>
+  </g>
+  
+  <!-- Right -->
+  <g transform="translate(132, 105)">
+    <line x1="-4" y1="0" x2="-1" y2="0" stroke="#FFD700" stroke-width="1.5"/>
+    <line x1="1" y1="0" x2="4" y2="0" stroke="#FFD700" stroke-width="1.5"/>
+    <line x1="-4" y1="3" x2="4" y2="3" stroke="#FFD700" stroke-width="1.5"/>
+    <line x1="-4" y1="6" x2="-1" y2="6" stroke="#FFD700" stroke-width="1.5"/>
+    <line x1="1" y1="6" x2="4" y2="6" stroke="#FFD700" stroke-width="1.5"/>
+  </g>
+  
+  <!-- Bottom-right -->
+  <g transform="translate(125, 130) rotate(-45)">
+    <line x1="-4" y1="0" x2="-1" y2="0" stroke="#FFD700" stroke-width="1.5"/>
+    <line x1="1" y1="0" x2="4" y2="0" stroke="#FFD700" stroke-width="1.5"/>
+    <line x1="-4" y1="3" x2="-1" y2="3" stroke="#FFD700" stroke-width="1.5"/>
+    <line x1="1" y1="3" x2="4" y2="3" stroke="#FFD700" stroke-width="1.5"/>
+    <line x1="-4" y1="6" x2="-1" y2="6" stroke="#FFD700" stroke-width="1.5"/>
+    <line x1="1" y1="6" x2="4" y2="6" stroke="#FFD700" stroke-width="1.5"/>
+  </g>
+  
+  <!-- Bottom -->
+  <g transform="translate(100, 145)">
+    <line x1="-4" y1="0" x2="-1" y2="0" stroke="#FFD700" stroke-width="1.5"/>
+    <line x1="1" y1="0" x2="4" y2="0" stroke="#FFD700" stroke-width="1.5"/>
+    <line x1="-4" y1="3" x2="-1" y2="3" stroke="#FFD700" stroke-width="1.5"/>
+    <line x1="1" y1="3" x2="4" y2="3" stroke="#FFD700" stroke-width="1.5"/>
+    <line x1="-4" y1="6" x2="4" y2="6" stroke="#FFD700" stroke-width="1.5"/>
+  </g>
+  
+  <!-- Bottom-left -->
+  <g transform="translate(75, 130) rotate(45)">
+    <line x1="-4" y1="0" x2="4" y2="0" stroke="#FFD700" stroke-width="1.5"/>
+    <line x1="-4" y1="3" x2="-1" y2="3" stroke="#FFD700" stroke-width="1.5"/>
+    <line x1="1" y1="3" x2="4" y2="3" stroke="#FFD700" stroke-width="1.5"/>
+    <line x1="-4" y1="6" x2="-1" y2="6" stroke="#FFD700" stroke-width="1.5"/>
+    <line x1="1" y1="6" x2="4" y2="6" stroke="#FFD700" stroke-width="1.5"/>
+  </g>
+  
+  <!-- Left -->
+  <g transform="translate(68, 105)">
+    <line x1="-4" y1="0" x2="4" y2="0" stroke="#FFD700" stroke-width="1.5"/>
+    <line x1="-4" y1="3" x2="4" y2="3" stroke="#FFD700" stroke-width="1.5"/>
+    <line x1="-4" y1="6" x2="-1" y2="6" stroke="#FFD700" stroke-width="1.5"/>
+    <line x1="1" y1="6" x2="4" y2="6" stroke="#FFD700" stroke-width="1.5"/>
+  </g>
+  
+  <!-- Top-left -->
+  <g transform="translate(75, 80) rotate(-45)">
+    <line x1="-4" y1="0" x2="-1" y2="0" stroke="#FFD700" stroke-width="1.5"/>
+    <line x1="1" y1="0" x2="4" y2="0" stroke="#FFD700" stroke-width="1.5"/>
+    <line x1="-4" y1="3" x2="4" y2="3" stroke="#FFD700" stroke-width="1.5"/>
+    <line x1="-4" y1="6" x2="4" y2="6" stroke="#FFD700" stroke-width="1.5"/>
+  </g>
+  
+  <!-- Furnace lid/cover -->
+  <ellipse cx="100" cy="55" rx="35" ry="12" 
+           fill="url(#furnaceGrad)" stroke="#4d2600" stroke-width="2"/>
+  <ellipse cx="100" cy="53" rx="30" ry="8" 
+           fill="#654321"/>
+  
+  <!-- Lid handle -->
+  <path d="M 90 45 Q 100 35, 110 45" 
+        stroke="url(#goldTrimGrad)" stroke-width="4" fill="none" 
+        stroke-linecap="round"/>
+  <circle cx="90" cy="45" r="3" fill="url(#goldTrimGrad)"/>
+  <circle cx="110" cy="45" r="3" fill="url(#goldTrimGrad)"/>
+  
+  <!-- Gold decorative bands -->
+  <ellipse cx="100" cy="75" rx="32" ry="5" 
+           fill="url(#goldTrimGrad)" opacity="0.8"/>
+  <ellipse cx="100" cy="135" rx="32" ry="5" 
+           fill="url(#goldTrimGrad)" opacity="0.8"/>
+  
+  <!-- Fire flames coming out -->
+  <path d="M 100 50 Q 95 40, 98 32" 
+        stroke="#FF4500" stroke-width="2.5" fill="none" opacity="0.7" 
+        stroke-linecap="round">
+    <animate attributeName="d" values="M 100 50 Q 95 40, 98 32;M 100 50 Q 93 38, 95 28;M 100 50 Q 95 40, 98 32" dur="1s" repeatCount="indefinite"/>
+  </path>
+  <path d="M 100 50 Q 105 40, 102 32" 
+        stroke="#FFA500" stroke-width="2.5" fill="none" opacity="0.7" 
+        stroke-linecap="round">
+    <animate attributeName="d" values="M 100 50 Q 105 40, 102 32;M 100 50 Q 107 38, 105 28;M 100 50 Q 105 40, 102 32" dur="1s" repeatCount="indefinite"/>
+  </path>
+  
+  <!-- Smoke wisps -->
+  <path d="M 95 30 Q 90 25, 92 20" 
+        stroke="#808080" stroke-width="1.5" fill="none" opacity="0.4" 
+        stroke-linecap="round"/>
+  <path d="M 105 30 Q 110 25, 108 20" 
+        stroke="#808080" stroke-width="1.5" fill="none" opacity="0.4" 
+        stroke-linecap="round"/>
+</svg>

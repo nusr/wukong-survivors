@@ -1,0 +1,70 @@
+<svg width="1280" height="720" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
+  <!-- Chapter 1: Black Wind Mountain - 黑风山 -->
+  <!-- Background gradient - dark mountainous atmosphere -->
+  <defs>
+    <linearGradient id="skyGrad1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f3460;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="mountainGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#2d2d44;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1a2e;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="fogGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#666;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#333;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Sky background -->
+  <rect width="1280" height="720" fill="url(#skyGrad1)"/>
+  
+  <!-- Distant mountains -->
+  <path d="M 0 400 Q 200 300 400 350 T 800 320 T 1280 380 L 1280 720 L 0 720 Z" 
+        fill="url(#mountainGrad)" opacity="0.6"/>
+  
+  <!-- Mid mountains -->
+  <path d="M 0 450 Q 150 380 300 420 T 600 400 T 900 440 T 1280 420 L 1280 720 L 0 720 Z" 
+        fill="url(#mountainGrad)" opacity="0.8"/>
+  
+  <!-- Main mountain peaks -->
+  <path d="M 0 520 L 200 420 L 280 460 L 400 380 L 520 480 L 640 360 L 760 440 L 880 400 L 1000 500 L 1120 420 L 1280 520 L 1280 720 L 0 720 Z" 
+        fill="#1a1a2e"/>
+  
+  <!-- Forest silhouettes -->
+  <g opacity="0.7">
+    <ellipse cx="100" cy="520" rx="80" ry="120" fill="#0d1b2a"/>
+    <ellipse cx="250" cy="540" rx="100" ry="140" fill="#0d1b2a"/>
+    <ellipse cx="450" cy="520" rx="90" ry="130" fill="#0d1b2a"/>
+    <ellipse cx="650" cy="540" rx="110" ry="150" fill="#0d1b2a"/>
+    <ellipse cx="850" cy="530" rx="95" ry="135" fill="#0d1b2a"/>
+    <ellipse cx="1050" cy="550" rx="105" ry="145" fill="#0d1b2a"/>
+    <ellipse cx="1200" cy="540" rx="80" ry="125" fill="#0d1b2a"/>
+  </g>
+  
+  <!-- Fog layers -->
+  <ellipse cx="300" cy="450" rx="400" ry="150" fill="url(#fogGrad)"/>
+  <ellipse cx="800" cy="480" rx="450" ry="180" fill="url(#fogGrad)"/>
+  
+  <!-- Ancient temple silhouette -->
+  <g opacity="0.5" transform="translate(900, 350)">
+    <rect x="0" y="60" width="150" height="100" fill="#1a1520"/>
+    <polygon points="75,0 0,60 150,60" fill="#1a1520"/>
+    <rect x="30" y="80" width="20" height="40" fill="#0a0a0f"/>
+    <rect x="100" y="80" width="20" height="40" fill="#0a0a0f"/>
+  </g>
+  
+  <!-- Mystical wisps -->
+  <circle cx="400" cy="380" r="3" fill="#4ecdc4" opacity="0.6">
+    <animate attributeName="opacity" values="0.3;0.8;0.3" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="700" cy="420" r="3" fill="#4ecdc4" opacity="0.5">
+    <animate attributeName="opacity" values="0.2;0.7;0.2" dur="4s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="950" cy="400" r="3" fill="#4ecdc4" opacity="0.7">
+    <animate attributeName="opacity" values="0.4;0.9;0.4" dur="3.5s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Ground texture -->
+  <rect y="650" width="1280" height="70" fill="#0a0a0f" opacity="0.8"/>
+</svg>

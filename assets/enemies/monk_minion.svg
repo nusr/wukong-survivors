@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48">
+  <rect width="24" height="24" fill="none"/>
+  <!-- 妖僧 -->
+  <!-- 头部 - 秃头 -->
+  <rect x="9" y="6" width="6" height="4" fill="#D2691E"/>
+  <rect x="8" y="7" width="1" height="2" fill="#D2691E"/>
+  <rect x="15" y="7" width="1" height="2" fill="#D2691E"/>
+  
+  <!-- 戒疤 -->
+  <rect x="11" y="6" width="1" height="1" fill="#8B4513"/>
+  <rect x="12" y="6" width="1" height="1" fill="#8B4513"/>
+  <rect x="11" y="7" width="1" height="1" fill="#A0522D"/>
+  
+  <!-- 眼睛 - 邪恶 -->
+  <rect x="10" y="8" width="2" height="1" fill="#8B0000"/>
+  <rect x="12" y="8" width="2" height="1" fill="#8B0000"/>
+  
+  <!-- 袈裟 -->
+  <rect x="8" y="10" width="8" height="5" fill="#8B4513"/>
+  <rect x="7" y="11" width="1" height="3" fill="#8B4513"/>
+  <rect x="16" y="11" width="1" height="3" fill="#8B4513"/>
+  
+  <!-- 破损袈裟 -->
+  <rect x="9" y="11" width="6" height="3" fill="#A0522D"/>
+  <rect x="10" y="12" width="4" height="1" fill="#CD853F"/>
+  <rect x="9" y="14" width="2" height="1" fill="#2F4F4F"/>
+  <rect x="13" y="14" width="2" height="1" fill="#2F4F4F"/>
+  
+  <!-- 腰部 -->
+  <rect x="8" y="15" width="8" height="1" fill="#8B4513"/>
+  
+  <!-- 腿部 -->
+  <rect x="9" y="16" width="2" height="3" fill="#D2691E"/>
+  <rect x="13" y="16" width="2" height="3" fill="#D2691E"/>
+  
+  <!-- 僧鞋 -->
+  <rect x="8" y="19" width="3" height="1" fill="#2F4F4F"/>
+  <rect x="13" y="19" width="3" height="1" fill="#2F4F4F"/>
+  
+  <!-- 禅杖 -->
+  <rect x="17" y="9" width="1" height="8" fill="#696969"/>
+  <rect x="16" y="8" width="1" height="1" fill="#8B4513"/>
+  <rect x="18" y="8" width="1" height="1" fill="#8B4513"/>
+</svg>

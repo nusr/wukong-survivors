@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="silkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF6B6B;stop-opacity:0.9" />
+      <stop offset="30%" style="stop-color:#FF4444;stop-opacity:0.8" />
+      <stop offset="70%" style="stop-color:#DC143C;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#C71585;stop-opacity:0.9" />
+    </linearGradient>
+    <linearGradient id="goldEdge" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#FFA500;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FF8C00;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="shimmerGrad" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#FFB6C1;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#FF1493;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Flowing silk ribbons -->
+  <!-- Left main ribbon -->
+  <path d="M 40 30 Q 30 50, 35 70 Q 40 90, 30 110 Q 20 130, 25 150 Q 30 170, 20 185" 
+        stroke="url(#silkGrad)" stroke-width="25" fill="none" 
+        stroke-linecap="round" opacity="0.9"/>
+  
+  <!-- Left ribbon gold edge -->
+  <path d="M 40 30 Q 30 50, 35 70 Q 40 90, 30 110 Q 20 130, 25 150 Q 30 170, 20 185" 
+        stroke="url(#goldEdge)" stroke-width="3" fill="none" 
+        stroke-linecap="round" opacity="0.8"/>
+  
+  <!-- Center main ribbon -->
+  <path d="M 100 20 Q 90 45, 95 70 Q 100 95, 95 120 Q 90 145, 95 170 Q 100 190, 100 195" 
+        stroke="url(#silkGrad)" stroke-width="30" fill="none" 
+        stroke-linecap="round" opacity="0.9"/>
+  
+  <!-- Center ribbon gold edge -->
+  <path d="M 100 20 Q 90 45, 95 70 Q 100 95, 95 120 Q 90 145, 95 170 Q 100 190, 100 195" 
+        stroke="url(#goldEdge)" stroke-width="3" fill="none" 
+        stroke-linecap="round" opacity="0.8"/>
+  
+  <!-- Right main ribbon -->
+  <path d="M 160 30 Q 170 50, 165 70 Q 160 90, 170 110 Q 180 130, 175 150 Q 170 170, 180 185" 
+        stroke="url(#silkGrad)" stroke-width="25" fill="none" 
+        stroke-linecap="round" opacity="0.9"/>
+  
+  <!-- Right ribbon gold edge -->
+  <path d="M 160 30 Q 170 50, 165 70 Q 160 90, 170 110 Q 180 130, 175 150 Q 170 170, 180 185" 
+        stroke="url(#goldEdge)" stroke-width="3" fill="none" 
+        stroke-linecap="round" opacity="0.8"/>
+  
+  <!-- Additional flowing ribbons for depth -->
+  <path d="M 70 25 Q 60 60, 65 95 Q 70 130, 60 165" 
+        stroke="url(#silkGrad)" stroke-width="18" fill="none" 
+        stroke-linecap="round" opacity="0.7"/>
+  
+  <path d="M 130 25 Q 140 60, 135 95 Q 130 130, 140 165" 
+        stroke="url(#silkGrad)" stroke-width="18" fill="none" 
+        stroke-linecap="round" opacity="0.7"/>
+  
+  <!-- Shimmer effects -->
+  <ellipse cx="50" cy="60" rx="15" ry="20" fill="url(#shimmerGrad)" opacity="0.6">
+    <animate attributeName="opacity" values="0.6;0.2;0.6" dur="3s" repeatCount="indefinite"/>
+  </ellipse>
+  <ellipse cx="100" cy="80" rx="20" ry="25" fill="url(#shimmerGrad)" opacity="0.6">
+    <animate attributeName="opacity" values="0.2;0.6;0.2" dur="3s" repeatCount="indefinite"/>
+  </ellipse>
+  <ellipse cx="150" cy="100" rx="15" ry="20" fill="url(#shimmerGrad)" opacity="0.6">
+    <animate attributeName="opacity" values="0.6;0.2;0.6" dur="3s" repeatCount="indefinite"/>
+  </ellipse>
+  
+  <!-- Cloud patterns on silk -->
+  <path d="M 90 50 Q 95 48, 100 50 Q 105 48, 110 50" 
+        stroke="#FFD700" stroke-width="1.5" fill="none" opacity="0.6"/>
+  <path d="M 85 100 Q 90 98, 95 100 Q 100 98, 105 100" 
+        stroke="#FFD700" stroke-width="1.5" fill="none" opacity="0.6"/>
+  <path d="M 95 150 Q 100 148, 105 150 Q 110 148, 115 150" 
+        stroke="#FFD700" stroke-width="1.5" fill="none" opacity="0.6"/>
+  
+  <!-- Flying motion lines -->
+  <path d="M 45 40 Q 50 42, 55 40" 
+        stroke="#FFF0F5" stroke-width="1" fill="none" opacity="0.5"/>
+  <path d="M 145 55 Q 150 57, 155 55" 
+        stroke="#FFF0F5" stroke-width="1" fill="none" opacity="0.5"/>
+  <path d="M 75 120 Q 80 122, 85 120" 
+        stroke="#FFF0F5" stroke-width="1" fill="none" opacity="0.5"/>
+  
+  <!-- Sparkle effects -->
+  <circle cx="60" cy="75" r="2" fill="#FFD700" opacity="0.8">
+    <animate attributeName="r" values="2;3;2" dur="1.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="140" cy="90" r="2" fill="#FFD700" opacity="0.8">
+    <animate attributeName="r" values="2;3;2" dur="1.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="100" cy="140" r="2" fill="#FFD700" opacity="0.8">
+    <animate attributeName="r" values="2;3;2" dur="1.5s" repeatCount="indefinite"/>
+  </circle>
+</svg>

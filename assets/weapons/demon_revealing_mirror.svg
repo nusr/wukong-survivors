@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="bronzeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#CD7F32;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#B8860B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8B6914;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="mirrorGrad" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:1" />
+      <stop offset="30%" style="stop-color:#E0E0E0;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#C0C0C0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#A0A0A0;stop-opacity:1" />
+    </radialGradient>
+    <radialGradient id="lightGrad" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#FFFACD;stop-opacity:0.9" />
+      <stop offset="50%" style="stop-color:#FFD700;stop-opacity:0.5" />
+      <stop offset="100%" style="stop-color:#FFA500;stop-opacity:0" />
+    </radialGradient>
+    <radialGradient id="demonGrad" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#FF0000;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#8B0000;stop-opacity:0.1" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Mystical light emanation -->
+  <circle cx="100" cy="100" r="80" fill="url(#lightGrad)" opacity="0.6">
+    <animate attributeName="r" values="80;85;80" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Mirror handle -->
+  <rect x="92" y="140" width="16" height="50" rx="3"
+        fill="url(#bronzeGrad)" stroke="#654321" stroke-width="1.5"/>
+  
+  <!-- Handle decorative rings -->
+  <ellipse cx="100" cy="145" rx="10" ry="4" 
+           fill="#8B6914" opacity="0.8"/>
+  <ellipse cx="100" cy="165" rx="10" ry="4" 
+           fill="#8B6914" opacity="0.8"/>
+  <ellipse cx="100" cy="185" rx="10" ry="4" 
+           fill="#8B6914" opacity="0.8"/>
+  
+  <!-- Handle pommel -->
+  <circle cx="100" cy="188" r="8" 
+          fill="url(#bronzeGrad)" stroke="#654321" stroke-width="1"/>
+  
+  <!-- Mirror frame - outer bronze ring -->
+  <circle cx="100" cy="85" r="60" 
+          fill="none" stroke="url(#bronzeGrad)" stroke-width="12"/>
+  
+  <!-- Decorative patterns on frame -->
+  <circle cx="100" cy="85" r="60" 
+          fill="none" stroke="#DAA520" stroke-width="2" 
+          stroke-dasharray="8,4" opacity="0.8"/>
+  
+  <!-- Inner decorative ring -->
+  <circle cx="100" cy="85" r="54" 
+          fill="none" stroke="#B8860B" stroke-width="3"/>
+  
+  <!-- Mirror surface -->
+  <circle cx="100" cy="85" r="48" 
+          fill="url(#mirrorGrad)" stroke="#909090" stroke-width="1"/>
+  
+  <!-- Demon revealing effect (red tint) -->
+  <circle cx="100" cy="85" r="45" 
+          fill="url(#demonGrad)">
+    <animate attributeName="opacity" values="0.5;0.8;0.5" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Mirror reflection highlights -->
+  <ellipse cx="90" cy="70" rx="15" ry="20" 
+           fill="#FFFFFF" opacity="0.4" transform="rotate(-30 90 70)"/>
+  <ellipse cx="115" cy="95" rx="10" ry="12" 
+           fill="#FFFFFF" opacity="0.3"/>
+  
+  <!-- Mystical runes in mirror -->
+  <circle cx="100" cy="85" r="25" 
+          fill="none" stroke="#FFD700" stroke-width="1" opacity="0.5">
+    <animate attributeName="r" values="25;28;25" dur="2.5s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Bagua pattern (8 trigrams) -->
+  <g opacity="0.6">
+    <!-- Top trigram lines -->
+    <line x1="96" y1="55" x2="104" y2="55" stroke="#8B0000" stroke-width="1.5"/>
+    <line x1="96" y1="58" x2="104" y2="58" stroke="#8B0000" stroke-width="1.5"/>
+    <line x1="96" y1="61" x2="104" y2="61" stroke="#8B0000" stroke-width="1.5"/>
+  </g>
+  
+  <!-- Energy sparkles around mirror -->
+  <circle cx="65" cy="50" r="2" fill="#FFD700" opacity="0.8">
+    <animate attributeName="opacity" values="0.8;0.2;0.8" dur="1.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="135" cy="60" r="2" fill="#FFD700" opacity="0.8">
+    <animate attributeName="opacity" values="0.2;0.8;0.2" dur="1.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="140" cy="110" r="2" fill="#FFD700" opacity="0.8">
+    <animate attributeName="opacity" values="0.8;0.2;0.8" dur="1.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="60" cy="120" r="2" fill="#FFD700" opacity="0.8">
+    <animate attributeName="opacity" values="0.2;0.8;0.2" dur="1.5s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Demon silhouette appearing in mirror -->
+  <ellipse cx="100" cy="85" rx="8" ry="12" fill="#8B0000" opacity="0.4">
+    <animate attributeName="opacity" values="0.4;0.7;0.4" dur="2s" repeatCount="indefinite"/>
+  </ellipse>
+</svg>

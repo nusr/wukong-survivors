@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Sha Monk / Sha Wujing - River Guardian -->
+  <defs>
+    <linearGradient id="shaRobe" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#4682B4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1E4D7B;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="beardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B0000;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4A0000;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="skullGlow" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#FFF;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#DDD;stop-opacity:0.2" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Body - blue monk robe -->
+  <ellipse cx="32" cy="45" rx="15" ry="18" fill="url(#shaRobe)"/>
+  
+  <!-- Shoulder armor/padding -->
+  <ellipse cx="20" cy="35" rx="5" ry="4" fill="#2F4F4F"/>
+  <ellipse cx="44" cy="35" rx="5" ry="4" fill="#2F4F4F"/>
+  
+  <!-- Rope belt with skull beads -->
+  <path d="M 18 42 Q 32 44 46 42" stroke="#8B4513" stroke-width="2.5" fill="none"/>
+  <circle cx="26" cy="43" r="2" fill="url(#skullGlow)"/>
+  <circle cx="32" cy="44" r="2" fill="url(#skullGlow)"/>
+  <circle cx="38" cy="43" r="2" fill="url(#skullGlow)"/>
+  
+  <!-- Skull necklace - signature item -->
+  <ellipse cx="28" cy="32" rx="2.5" ry="3" fill="#E8E8E8"/>
+  <ellipse cx="36" cy="32" rx="2.5" ry="3" fill="#E8E8E8"/>
+  <circle cx="32" cy="30" r="3" fill="#F0F0F0"/>
+  <circle cx="30.5" cy="29" r="0.8" fill="#000"/>
+  <circle cx="33.5" cy="29" r="0.8" fill="#000"/>
+  
+  <!-- Head - darker skin tone -->
+  <circle cx="32" cy="20" r="10" fill="#8B7355"/>
+  
+  <!-- Red beard (iconic feature) -->
+  <path d="M 32 26 L 30 32 L 28 34 L 26 32 L 27 30 L 28 28 Z" fill="url(#beardGrad)"/>
+  <path d="M 32 26 L 34 32 L 36 34 L 38 32 L 37 30 L 36 28 Z" fill="url(#beardGrad)"/>
+  <path d="M 28 28 L 26 30 L 25 33" stroke="url(#beardGrad)" stroke-width="1.5" fill="none"/>
+  <path d="M 36 28 L 38 30 L 39 33" stroke="url(#beardGrad)" stroke-width="1.5" fill="none"/>
+  
+  <!-- Hair - tied up in warrior style -->
+  <ellipse cx="32" cy="12" rx="8" ry="5" fill="#2F2F2F"/>
+  <circle cx="32" cy="10" r="3" fill="#2F2F2F"/>
+  
+  <!-- Fierce eyes -->
+  <ellipse cx="28" cy="19" rx="2" ry="2.5" fill="#FFF"/>
+  <circle cx="28.5" cy="19.5" r="1.2" fill="#4A0000"/>
+  <ellipse cx="36" cy="19" rx="2" ry="2.5" fill="#FFF"/>
+  <circle cx="36.5" cy="19.5" r="1.2" fill="#4A0000"/>
+  
+  <!-- Strong eyebrows -->
+  <path d="M 24 17 L 30 16.5" stroke="#2F2F2F" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M 40 17 L 34 16.5" stroke="#2F2F2F" stroke-width="1.5" stroke-linecap="round"/>
+  
+  <!-- Nose -->
+  <line x1="32" y1="22" x2="32" y2="24" stroke="#6B5345" stroke-width="1"/>
+  
+  <!-- Ears -->
+  <ellipse cx="22" cy="20" rx="2.5" ry="4" fill="#8B7355"/>
+  <ellipse cx="42" cy="20" rx="2.5" ry="4" fill="#8B7355"/>
+  
+  <!-- Crescent blade staff (held diagonally) -->
+  <rect x="8" y="15" width="4" height="45" fill="#654321" rx="1" transform="rotate(-20 10 37)"/>
+  <path d="M 6 12 Q 10 8 14 12 Q 12 14 10 16 Q 8 14 6 12 Z" fill="#C0C0C0" transform="rotate(-20 10 37)"/>
+  <circle cx="10" cy="14" r="1.5" fill="#B8860B" transform="rotate(-20 10 37)"/>
+  
+  <!-- Muscular arms -->
+  <ellipse cx="18" cy="40" rx="3" ry="8" fill="#8B7355"/>
+  <ellipse cx="46" cy="40" rx="3" ry="8" fill="#8B7355"/>
+  
+  <!-- Hands gripping -->
+  <circle cx="16" cy="48" r="3" fill="#8B7355"/>
+  <circle cx="48" cy="48" r="3" fill="#8B7355"/>
+  
+  <!-- Feet in straw sandals -->
+  <ellipse cx="26" cy="62" rx="4" ry="3" fill="#654321"/>
+  <ellipse cx="38" cy="62" rx="4" ry="3" fill="#654321"/>
+  
+  <!-- Battle scars -->
+  <path d="M 35 18 L 38 19" stroke="#6B5345" stroke-width="0.8"/>
+  <path d="M 20 38 L 22 42" stroke="#4A0000" stroke-width="0.8"/>
+</svg>

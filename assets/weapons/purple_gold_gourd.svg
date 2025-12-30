@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#9370DB;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#8B008B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4B0082;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="goldRimGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#FFA500;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FF8C00;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="glowEffect" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#DA70D6;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#8B008B;stop-opacity:0" />
+    </radialGradient>
+    <linearGradient id="stopper" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#DAA520;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Mystical glow -->
+  <ellipse cx="100" cy="110" rx="50" ry="60" fill="url(#glowEffect)" opacity="0.5"/>
+  
+  <!-- Gourd body - bottom bulb -->
+  <ellipse cx="100" cy="135" rx="45" ry="55" 
+           fill="url(#purpleGrad)" stroke="url(#goldRimGrad)" stroke-width="3"/>
+  
+  <!-- Gourd body - top bulb -->
+  <ellipse cx="100" cy="65" rx="35" ry="40" 
+           fill="url(#purpleGrad)" stroke="url(#goldRimGrad)" stroke-width="3"/>
+  
+  <!-- Middle connecting neck -->
+  <rect x="85" y="90" width="30" height="30" rx="5"
+        fill="url(#purpleGrad)" stroke="url(#goldRimGrad)" stroke-width="2.5"/>
+  
+  <!-- Decorative gold bands -->
+  <ellipse cx="100" cy="100" rx="38" ry="8" 
+           fill="url(#goldRimGrad)" opacity="0.8"/>
+  <ellipse cx="100" cy="110" rx="38" ry="5" 
+           fill="url(#goldRimGrad)" opacity="0.6"/>
+  
+  <!-- Top neck -->
+  <rect x="92" y="25" width="16" height="15" rx="2"
+        fill="url(#purpleGrad)" stroke="url(#goldRimGrad)" stroke-width="2"/>
+  
+  <!-- Stopper/cork -->
+  <ellipse cx="100" cy="25" rx="12" ry="8" 
+           fill="url(#stopper)" stroke="#B8860B" stroke-width="1.5"/>
+  <rect x="96" y="18" width="8" height="8" rx="2"
+        fill="url(#stopper)" stroke="#B8860B" stroke-width="1"/>
+  <circle cx="100" cy="22" r="2" fill="#8B0000"/>
+  
+  
+  <!-- Ancient patterns on gourd -->
+  <path d="M 70 135 Q 75 140, 70 145" 
+        stroke="#DAA520" stroke-width="1" fill="none" opacity="0.7"/>
+  <path d="M 130 135 Q 125 140, 130 145" 
+        stroke="#DAA520" stroke-width="1" fill="none" opacity="0.7"/>
+  
+  <!-- Cloud patterns -->
+  <path d="M 80 65 Q 85 63, 90 65 Q 95 63, 100 65" 
+        stroke="#FFD700" stroke-width="1" fill="none" opacity="0.6"/>
+  <path d="M 100 150 Q 105 148, 110 150 Q 115 148, 120 150" 
+        stroke="#FFD700" stroke-width="1" fill="none" opacity="0.6"/>
+  
+  <!-- Highlights -->
+  <ellipse cx="85" cy="70" rx="8" ry="12" 
+           fill="#FFFFFF" opacity="0.2"/>
+  <ellipse cx="115" cy="140" rx="10" ry="15" 
+           fill="#FFFFFF" opacity="0.15"/>
+  
+  <!-- Mystical symbols -->
+  <circle cx="75" cy="120" r="3" stroke="#FFD700" stroke-width="1" fill="none" opacity="0.7"/>
+  <circle cx="125" cy="120" r="3" stroke="#FFD700" stroke-width="1" fill="none" opacity="0.7"/>
+  <circle cx="100" cy="165" r="3" stroke="#FFD700" stroke-width="1" fill="none" opacity="0.7"/>
+  
+  <!-- Energy wisps -->
+  <path d="M 100 40 Q 95 35, 90 32" 
+        stroke="#DA70D6" stroke-width="2" fill="none" opacity="0.6" 
+        stroke-linecap="round">
+    <animate attributeName="opacity" values="0.6;0.2;0.6" dur="2s" repeatCount="indefinite"/>
+  </path>
+  <path d="M 100 40 Q 105 35, 110 32" 
+        stroke="#DA70D6" stroke-width="2" fill="none" opacity="0.6" 
+        stroke-linecap="round">
+    <animate attributeName="opacity" values="0.2;0.6;0.2" dur="2s" repeatCount="indefinite"/>
+  </path>
+</svg>

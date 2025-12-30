@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="ironGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#4A4A4A;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#696969;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#505050;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="rustGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B4513;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#654321;stop-opacity:0.2" />
+    </linearGradient>
+    <radialGradient id="metalGrad" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#808080;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#505050;stop-opacity:1" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Main cudgel body -->
+  <rect x="85" y="25" width="30" height="150" rx="3"
+        fill="url(#ironGrad)" stroke="#303030" stroke-width="2"/>
+  
+  <!-- Top thicker section -->
+  <ellipse cx="100" cy="25" rx="15" ry="8" 
+           fill="url(#metalGrad)" stroke="#303030" stroke-width="1.5"/>
+  
+  <!-- Metal bands -->
+  <rect x="82" y="35" width="36" height="6" 
+        fill="#606060" stroke="#404040" stroke-width="1" opacity="0.8"/>
+  <rect x="82" y="55" width="36" height="5" 
+        fill="#606060" stroke="#404040" stroke-width="1" opacity="0.8"/>
+  <rect x="82" y="75" width="36" height="5" 
+        fill="#606060" stroke="#404040" stroke-width="1" opacity="0.8"/>
+  <rect x="82" y="95" width="36" height="5" 
+        fill="#606060" stroke="#404040" stroke-width="1" opacity="0.8"/>
+  <rect x="82" y="115" width="36" height="5" 
+        fill="#606060" stroke="#404040" stroke-width="1" opacity="0.8"/>
+  <rect x="82" y="135" width="36" height="5" 
+        fill="#606060" stroke="#404040" stroke-width="1" opacity="0.8"/>
+  <rect x="82" y="155" width="36" height="6" 
+        fill="#606060" stroke="#404040" stroke-width="1" opacity="0.8"/>
+  
+  <!-- Rivets on bands -->
+  <circle cx="88" cy="38" r="1.5" fill="#404040"/>
+  <circle cx="112" cy="38" r="1.5" fill="#404040"/>
+  <circle cx="88" cy="58" r="1.5" fill="#404040"/>
+  <circle cx="112" cy="58" r="1.5" fill="#404040"/>
+  
+  <!-- Rust/wear marks -->
+  <ellipse cx="92" cy="65" rx="3" ry="2" fill="url(#rustGrad)"/>
+  <ellipse cx="107" cy="85" rx="2.5" ry="2" fill="url(#rustGrad)"/>
+  <ellipse cx="95" cy="125" rx="3" ry="2.5" fill="url(#rustGrad)"/>
+  <ellipse cx="105" cy="145" rx="2" ry="2" fill="url(#rustGrad)"/>
+  
+  <!-- Scratches and battle damage -->
+  <path d="M 90 48 L 95 52" stroke="#303030" stroke-width="0.8" opacity="0.6"/>
+  <path d="M 108 68 L 112 73" stroke="#303030" stroke-width="0.8" opacity="0.6"/>
+  <path d="M 88 105 L 92 110" stroke="#303030" stroke-width="0.8" opacity="0.6"/>
+  <path d="M 110 128 L 114 132" stroke="#303030" stroke-width="0.8" opacity="0.6"/>
+  
+  <!-- Bottom thicker section -->
+  <ellipse cx="100" cy="175" rx="15" ry="8" 
+           fill="url(#metalGrad)" stroke="#303030" stroke-width="1.5"/>
+  
+  <!-- Highlight on body -->
+  <path d="M 100 30 L 102 170" 
+        stroke="#909090" stroke-width="1.5" opacity="0.4" fill="none"/>
+  
+  <!-- Dents -->
+  <ellipse cx="97" cy="80" rx="2" ry="1.5" fill="#404040" opacity="0.5"/>
+  <ellipse cx="103" cy="110" rx="2.5" ry="2" fill="#404040" opacity="0.5"/>
+</svg>

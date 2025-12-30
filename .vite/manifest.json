@@ -1,0 +1,41 @@
+{
+  "_i18next-vendor-CxwOOByA.js": {
+    "file": "assets/i18next-vendor-CxwOOByA.js",
+    "name": "i18next-vendor"
+  },
+  "_phaser-vendor-D4qQPf22.js": {
+    "file": "assets/phaser-vendor-D4qQPf22.js",
+    "name": "phaser-vendor"
+  },
+  "_react-vendor-CMKTGSFK.js": {
+    "file": "assets/react-vendor-CMKTGSFK.js",
+    "name": "react-vendor",
+    "imports": [
+      "_i18next-vendor-CxwOOByA.js",
+      "_phaser-vendor-D4qQPf22.js"
+    ]
+  },
+  "_util-vendor-CYvobzpF.js": {
+    "file": "assets/util-vendor-CYvobzpF.js",
+    "name": "util-vendor",
+    "imports": [
+      "_react-vendor-CMKTGSFK.js",
+      "_phaser-vendor-D4qQPf22.js"
+    ]
+  },
+  "index.html": {
+    "file": "assets/index-BjWpkgJK.js",
+    "name": "index",
+    "src": "index.html",
+    "isEntry": true,
+    "imports": [
+      "_react-vendor-CMKTGSFK.js",
+      "_i18next-vendor-CxwOOByA.js",
+      "_util-vendor-CYvobzpF.js",
+      "_phaser-vendor-D4qQPf22.js"
+    ],
+    "css": [
+      "assets/index-jM7lWKRW.css"
+    ]
+  }
+}

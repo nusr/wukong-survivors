@@ -1,0 +1,22 @@
+<svg width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+  <!-- Plantain Fan - 芭蕉扇 -->
+  <!-- Fan handle -->
+  <rect x="2" y="14" width="8" height="4" fill="#8B4513"/>
+  <rect x="3" y="15" width="6" height="2" fill="#A0522D"/>
+  <!-- Fan leaf shape -->
+  <ellipse cx="20" cy="16" rx="10" ry="12" fill="#228B22" opacity="0.8"/>
+  <ellipse cx="20" cy="16" rx="8" ry="10" fill="#32CD32" opacity="0.7"/>
+  <!-- Leaf veins -->
+  <line x1="20" y1="6" x2="20" y2="26" stroke="#006400" stroke-width="1.5"/>
+  <line x1="15" y1="10" x2="20" y2="16" stroke="#006400" stroke-width="1"/>
+  <line x1="25" y1="10" x2="20" y2="16" stroke="#006400" stroke-width="1"/>
+  <line x1="15" y1="22" x2="20" y2="16" stroke="#006400" stroke-width="1"/>
+  <line x1="25" y1="22" x2="20" y2="16" stroke="#006400" stroke-width="1"/>
+  <!-- Wind effect -->
+  <path d="M 28,12 Q 30,14 28,16" stroke="#87CEEB" stroke-width="2" fill="none" opacity="0.7"/>
+  <path d="M 28,16 Q 30,18 28,20" stroke="#87CEEB" stroke-width="2" fill="none" opacity="0.7"/>
+  <path d="M 26,10 Q 28,11 26,12" stroke="#B0E0E6" stroke-width="1.5" fill="none" opacity="0.6"/>
+  <path d="M 26,20 Q 28,21 26,22" stroke="#B0E0E6" stroke-width="1.5" fill="none" opacity="0.6"/>
+  <!-- Decorative binding -->
+  <rect x="9" y="14" width="2" height="4" fill="#DC143C"/>
+</svg>

@@ -1,0 +1,25 @@
+<svg width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+  <!-- Golden Rope - 金绳索 -->
+  <!-- Rope coils -->
+  <path d="M 8,8 Q 12,10 8,12 Q 4,14 8,16 Q 12,18 8,20 Q 4,22 8,24" 
+        stroke="#DAA520" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M 24,8 Q 20,10 24,12 Q 28,14 24,16 Q 20,18 24,20 Q 28,22 24,24" 
+        stroke="#DAA520" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <!-- Center binding -->
+  <ellipse cx="16" cy="16" rx="4" ry="8" fill="none" stroke="#FFD700" stroke-width="3"/>
+  <!-- Golden glow -->
+  <path d="M 8,8 Q 12,10 8,12 Q 4,14 8,16 Q 12,18 8,20 Q 4,22 8,24" 
+        stroke="#FFED4E" stroke-width="1" fill="none" opacity="0.6"/>
+  <path d="M 24,8 Q 20,10 24,12 Q 28,14 24,16 Q 20,18 24,20 Q 28,22 24,24" 
+        stroke="#FFED4E" stroke-width="1" fill="none" opacity="0.6"/>
+  <!-- Rope ends -->
+  <circle cx="8" cy="8" r="2" fill="#DAA520"/>
+  <circle cx="24" cy="8" r="2" fill="#DAA520"/>
+  <circle cx="8" cy="24" r="2" fill="#DAA520"/>
+  <circle cx="24" cy="24" r="2" fill="#DAA520"/>
+  <!-- Magic sparkles -->
+  <circle cx="12" cy="12" r="1" fill="#FFD700" opacity="0.8"/>
+  <circle cx="20" cy="12" r="1" fill="#FFD700" opacity="0.8"/>
+  <circle cx="12" cy="20" r="1" fill="#FFD700" opacity="0.8"/>
+  <circle cx="20" cy="20" r="1" fill="#FFD700" opacity="0.8"/>
+</svg>

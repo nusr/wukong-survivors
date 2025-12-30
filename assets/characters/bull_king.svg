@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="64" height="64">
+  <rect width="32" height="32" fill="none"/>
+  <!-- 牛魔王 -->
+  <!-- 牛角 -->
+  <rect x="8" y="7" width="2" height="3" fill="#4a4a4a"/>
+  <rect x="22" y="7" width="2" height="3" fill="#4a4a4a"/>
+  <rect x="7" y="6" width="1" height="2" fill="#FFFFFF"/>
+  <rect x="24" y="6" width="1" height="2" fill="#FFFFFF"/>
+  <rect x="6" y="5" width="1" height="2" fill="#FFFACD"/>
+  <rect x="25" y="5" width="1" height="2" fill="#FFFACD"/>
+  
+  <!-- 头部 -->
+  <rect x="10" y="9" width="12" height="7" fill="#8B4513"/>
+  <rect x="9" y="10" width="1" height="5" fill="#8B4513"/>
+  <rect x="22" y="10" width="1" height="5" fill="#8B4513"/>
+  
+  <!-- 眼睛 - 威猛 -->
+  <rect x="12" y="11" width="3" height="3" fill="#FF0000"/>
+  <rect x="17" y="11" width="3" height="3" fill="#FF0000"/>
+  <rect x="13" y="12" width="1" height="1" fill="#FFFF00"/>
+  <rect x="18" y="12" width="1" height="1" fill="#FFFF00"/>
+  
+  <!-- 鼻环 -->
+  <rect x="14" y="15" width="4" height="2" fill="#654321"/>
+  <rect x="13" y="16" width="1" height="1" fill="#FFD700"/>
+  <rect x="18" y="16" width="1" height="1" fill="#FFD700"/>
+  <rect x="14" y="17" width="4" height="1" fill="#FFD700"/>
+  
+  <!-- 身体 - 铠甲 -->
+  <rect x="9" y="16" width="14" height="9" fill="#2F4F4F"/>
+  <rect x="8" y="17" width="1" height="7" fill="#2F4F4F"/>
+  <rect x="23" y="17" width="1" height="7" fill="#2F4F4F"/>
+  
+  <!-- 护甲装饰 -->
+  <rect x="11" y="18" width="3" height="3" fill="#4682B4"/>
+  <rect x="18" y="18" width="3" height="3" fill="#4682B4"/>
+  <rect x="12" y="19" width="1" height="1" fill="#87CEEB"/>
+  <rect x="19" y="19" width="1" height="1" fill="#87CEEB"/>
+  <rect x="14" y="20" width="4" height="2" fill="#FFD700"/>
+  <rect x="15" y="21" width="2" height="1" fill="#FFA500"/>
+  
+  <!-- 披风 -->
+  <rect x="7" y="18" width="1" height="7" fill="#8B0000"/>
+  <rect x="24" y="18" width="1" height="7" fill="#8B0000"/>
+  <rect x="6" y="20" width="1" height="4" fill="#DC143C"/>
+  <rect x="25" y="20" width="1" height="4" fill="#DC143C"/>
+  
+  <!-- 腿部 -->
+  <rect x="10" y="25" width="5" height="4" fill="#8B4513"/>
+  <rect x="17" y="25" width="5" height="4" fill="#8B4513"/>
+  <rect x="11" y="26" width="3" height="2" fill="#A0522D"/>
+  <rect x="18" y="26" width="3" height="2" fill="#A0522D"/>
+  
+  <!-- 蹄子 -->
+  <rect x="10" y="29" width="5" height="2" fill="#2F4F4F"/>
+  <rect x="17" y="29" width="5" height="2" fill="#2F4F4F"/>
+</svg>

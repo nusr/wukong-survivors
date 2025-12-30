@@ -1,0 +1,26 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 宝石主体：六边形底座 -->
+  <path d="M16 2L24 8L28 16L24 24L16 30L8 24L4 16L8 8L16 2Z" fill="url(#lowGemGradient)" stroke="#B89B3C" stroke-width="1.5"/>
+  <!-- 内部菱形切面 -->
+  <path d="M16 6L21 12L16 18L11 12L16 6Z" fill="url(#lowGemInnerGradient)"/>
+  <!-- 顶部高光 -->
+  <path d="M16 4L19 8L16 12L13 8L16 4Z" fill="#FFF9D6" opacity="0.8"/>
+  <!-- 侧面高光 -->
+  <path d="M19 8L22 12L19 16L16 12L19 8Z" fill="#F7E7B0" opacity="0.6"/>
+  <path d="M11 8L13 12L11 16L8 12L11 8Z" fill="#F7E7B0" opacity="0.6"/>
+  <!-- 底部反光 -->
+  <path d="M16 22L19 18L16 14L13 18L16 22Z" fill="#FFF" opacity="0.3"/>
+  <!-- 渐变定义 -->
+  <defs>
+    <linearGradient id="lowGemGradient" x1="4" y1="16" x2="28" y2="16" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E2C16B" stop-opacity="0.9"/>
+      <stop offset="0.5" stop-color="#F7D56B" stop-opacity="1"/>
+      <stop offset="1" stop-color="#E2C16B" stop-opacity="0.9"/>
+    </linearGradient>
+    <linearGradient id="lowGemInnerGradient" x1="11" y1="12" x2="21" y2="12" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F7E7B0" stop-opacity="0.8"/>
+      <stop offset="0.5" stop-color="#FFF9D6" stop-opacity="1"/>
+      <stop offset="1" stop-color="#F7E7B0" stop-opacity="0.8"/>
+    </linearGradient>
+  </defs>
+</svg>

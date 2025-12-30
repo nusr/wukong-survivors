@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="goldPagoda" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#FFA500;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#DAA520;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="holyLight" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#FFFACD;stop-opacity:0.9" />
+      <stop offset="50%" style="stop-color:#FFD700;stop-opacity:0.5" />
+      <stop offset="100%" style="stop-color:#FFA500;stop-opacity:0" />
+    </radialGradient>
+    <linearGradient id="gemGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF69B4;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#FF1493;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#C71585;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Divine light -->
+  <ellipse cx="100" cy="90" rx="70" ry="85" fill="url(#holyLight)" opacity="0.6">
+    <animate attributeName="opacity" values="0.6;0.4;0.6" dur="3s" repeatCount="indefinite"/>
+  </ellipse>
+  
+  <!-- Pagoda base (bottom tier - largest) -->
+  <path d="M 60 160 L 50 170 L 150 170 L 140 160 Z" 
+        fill="url(#goldPagoda)" stroke="#B8860B" stroke-width="1.5"/>
+  <rect x="65" y="150" width="70" height="10" 
+        fill="url(#goldPagoda)" stroke="#B8860B" stroke-width="1"/>
+  
+  <!-- Second tier -->
+  <path d="M 70 140 L 62 150 L 138 150 L 130 140 Z" 
+        fill="url(#goldPagoda)" stroke="#B8860B" stroke-width="1.5"/>
+  <rect x="73" y="130" width="54" height="10" 
+        fill="url(#goldPagoda)" stroke="#B8860B" stroke-width="1"/>
+  
+  <!-- Third tier -->
+  <path d="M 77 120 L 70 130 L 130 130 L 123 120 Z" 
+        fill="url(#goldPagoda)" stroke="#B8860B" stroke-width="1.5"/>
+  <rect x="80" y="110" width="40" height="10" 
+        fill="url(#goldPagoda)" stroke="#B8860B" stroke-width="1"/>
+  
+  <!-- Fourth tier -->
+  <path d="M 83 100 L 77 110 L 123 110 L 117 100 Z" 
+        fill="url(#goldPagoda)" stroke="#B8860B" stroke-width="1.5"/>
+  <rect x="85" y="90" width="30" height="10" 
+        fill="url(#goldPagoda)" stroke="#B8860B" stroke-width="1"/>
+  
+  <!-- Fifth tier -->
+  <path d="M 88 80 L 83 90 L 117 90 L 112 80 Z" 
+        fill="url(#goldPagoda)" stroke="#B8860B" stroke-width="1.5"/>
+  <rect x="90" y="70" width="20" height="10" 
+        fill="url(#goldPagoda)" stroke="#B8860B" stroke-width="1"/>
+  
+  <!-- Sixth tier -->
+  <path d="M 92 60 L 88 70 L 112 70 L 108 60 Z" 
+        fill="url(#goldPagoda)" stroke="#B8860B" stroke-width="1.5"/>
+  <rect x="94" y="50" width="12" height="10" 
+        fill="url(#goldPagoda)" stroke="#B8860B" stroke-width="1"/>
+  
+  <!-- Seventh tier (top) -->
+  <path d="M 95 40 L 92 50 L 108 50 L 105 40 Z" 
+        fill="url(#goldPagoda)" stroke="#B8860B" stroke-width="1.5"/>
+  <rect x="97" y="32" width="6" height="8" 
+        fill="url(#goldPagoda)" stroke="#B8860B" stroke-width="1"/>
+  
+  <!-- Spire ornament -->
+  <path d="M 100 10 L 96 22 L 100 20 L 104 22 Z" 
+        fill="url(#goldPagoda)" stroke="#B8860B" stroke-width="1"/>
+  <rect x="98" y="20" width="4" height="12" 
+        fill="url(#goldPagoda)" stroke="#B8860B" stroke-width="0.5"/>
+  <circle cx="100" cy="15" r="3" fill="url(#gemGrad)" stroke="#8B008B" stroke-width="0.5"/>
+  
+  <!-- Decorative gems on each tier -->
+  <circle cx="100" cy="155" r="3" fill="url(#gemGrad)" stroke="#8B008B" stroke-width="0.5"/>
+  <circle cx="100" cy="135" r="2.5" fill="url(#gemGrad)" stroke="#8B008B" stroke-width="0.5"/>
+  <circle cx="100" cy="115" r="2.5" fill="url(#gemGrad)" stroke="#8B008B" stroke-width="0.5"/>
+  <circle cx="100" cy="95" r="2" fill="url(#gemGrad)" stroke="#8B008B" stroke-width="0.5"/>
+  <circle cx="100" cy="75" r="2" fill="url(#gemGrad)" stroke="#8B008B" stroke-width="0.5"/>
+  <circle cx="100" cy="55" r="1.5" fill="url(#gemGrad)" stroke="#8B008B" stroke-width="0.5"/>
+  
+  <!-- Buddhist symbols on tiers -->
+  <text x="100" y="167" font-family="serif" font-size="7" fill="#8B0000" 
+        text-anchor="middle" font-weight="bold">卍</text>
+  
+  <!-- Decorative bells on corners -->
+  <ellipse cx="52" cy="168" rx="3" ry="4" 
+           fill="#DAA520" stroke="#B8860B" stroke-width="0.5"/>
+  <ellipse cx="148" cy="168" rx="3" ry="4" 
+           fill="#DAA520" stroke="#B8860B" stroke-width="0.5"/>
+  
+  <ellipse cx="63" cy="148" rx="2.5" ry="3.5" 
+           fill="#DAA520" stroke="#B8860B" stroke-width="0.5"/>
+  <ellipse cx="137" cy="148" rx="2.5" ry="3.5" 
+           fill="#DAA520" stroke="#B8860B" stroke-width="0.5"/>
+  
+  <ellipse cx="71" cy="128" rx="2" ry="3" 
+           fill="#DAA520" stroke="#B8860B" stroke-width="0.5"/>
+  <ellipse cx="129" cy="128" rx="2" ry="3" 
+           fill="#DAA520" stroke="#B8860B" stroke-width="0.5"/>
+  
+  <!-- Light beams from spire -->
+  <path d="M 100 15 L 95 5" stroke="#FFFACD" stroke-width="1.5" opacity="0.6" 
+        stroke-linecap="round">
+    <animate attributeName="opacity" values="0.6;0.2;0.6" dur="2s" repeatCount="indefinite"/>
+  </path>
+  <path d="M 100 15 L 100 3" stroke="#FFFACD" stroke-width="1.5" opacity="0.6" 
+        stroke-linecap="round">
+    <animate attributeName="opacity" values="0.2;0.6;0.2" dur="2s" repeatCount="indefinite"/>
+  </path>
+  <path d="M 100 15 L 105 5" stroke="#FFFACD" stroke-width="1.5" opacity="0.6" 
+        stroke-linecap="round">
+    <animate attributeName="opacity" values="0.6;0.2;0.6" dur="2s" repeatCount="indefinite"/>
+  </path>
+  
+  <!-- Auspicious clouds around pagoda -->
+  <path d="M 35 130 Q 40 128, 45 130 Q 50 128, 55 130" 
+        stroke="#FFFACD" stroke-width="1.5" fill="none" opacity="0.5"/>
+  <path d="M 145 130 Q 150 128, 155 130 Q 160 128, 165 130" 
+        stroke="#FFFACD" stroke-width="1.5" fill="none" opacity="0.5"/>
+  <path d="M 30 100 Q 35 98, 40 100" 
+        stroke="#FFFACD" stroke-width="1.5" fill="none" opacity="0.5"/>
+  <path d="M 160 100 Q 165 98, 170 100" 
+        stroke="#FFFACD" stroke-width="1.5" fill="none" opacity="0.5"/>
+  
+  <!-- Energy sparkles -->
+  <circle cx="45" cy="120" r="2" fill="#FFD700" opacity="0.8">
+    <animate attributeName="opacity" values="0.8;0.2;0.8" dur="1.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="155" cy="120" r="2" fill="#FFD700" opacity="0.8">
+    <animate attributeName="opacity" values="0.2;0.8;0.2" dur="1.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="35" cy="90" r="2" fill="#FFD700" opacity="0.8">
+    <animate attributeName="opacity" values="0.8;0.2;0.8" dur="1.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="165" cy="90" r="2" fill="#FFD700" opacity="0.8">
+    <animate attributeName="opacity" values="0.2;0.8;0.2" dur="1.5s" repeatCount="indefinite"/>
+  </circle>
+</svg>

@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" width="56" height="56">
+  <rect width="28" height="28" fill="none"/>
+  <!-- 牛魔统领 - 精英 -->
+  <!-- 牛角 -->
+  <rect x="7" y="5" width="2" height="3" fill="#654321"/>
+  <rect x="19" y="5" width="2" height="3" fill="#654321"/>
+  <rect x="6" y="4" width="1" height="2" fill="#DCDCDC"/>
+  <rect x="21" y="4" width="1" height="2" fill="#DCDCDC"/>
+  
+  <!-- 头部 -->
+  <rect x="8" y="7" width="12" height="6" fill="#A0522D"/>
+  <rect x="7" y="8" width="1" height="4" fill="#A0522D"/>
+  <rect x="20" y="8" width="1" height="4" fill="#A0522D"/>
+  
+  <!-- 眼睛 -->
+  <rect x="10" y="9" width="2" height="2" fill="#FF0000"/>
+  <rect x="16" y="9" width="2" height="2" fill="#FF0000"/>
+  <rect x="11" y="10" width="1" height="1" fill="#FFD700"/>
+  <rect x="17" y="10" width="1" height="1" fill="#FFD700"/>
+  
+  <!-- 鼻环 -->
+  <rect x="12" y="12" width="4" height="1" fill="#FFD700"/>
+  <rect x="11" y="12" width="1" height="1" fill="#FFA500"/>
+  <rect x="16" y="12" width="1" height="1" fill="#FFA500"/>
+  
+  <!-- 身体 - 重甲 -->
+  <rect x="7" y="13" width="14" height="8" fill="#696969"/>
+  <rect x="6" y="14" width="1" height="6" fill="#696969"/>
+  <rect x="21" y="14" width="1" height="6" fill="#696969"/>
+  
+  <!-- 护甲装饰 -->
+  <rect x="9" y="14" width="3" height="3" fill="#808080"/>
+  <rect x="16" y="14" width="3" height="3" fill="#808080"/>
+  <rect x="10" y="15" width="1" height="1" fill="#A9A9A9"/>
+  <rect x="17" y="15" width="1" height="1" fill="#A9A9A9"/>
+  <rect x="11" y="17" width="6" height="3" fill="#8B4513"/>
+  <rect x="12" y="18" width="4" height="1" fill="#A0522D"/>
+  
+  <!-- 护肩 -->
+  <rect x="5" y="13" width="2" height="3" fill="#A0522D"/>
+  <rect x="21" y="13" width="2" height="3" fill="#A0522D"/>
+  
+  <!-- 腰带 -->
+  <rect x="8" y="20" width="12" height="1" fill="#FFD700"/>
+  
+  <!-- 腿部 -->
+  <rect x="8" y="21" width="5" height="5" fill="#A0522D"/>
+  <rect x="15" y="21" width="5" height="5" fill="#A0522D"/>
+  <rect x="9" y="22" width="3" height="3" fill="#8B4513"/>
+  <rect x="16" y="22" width="3" height="3" fill="#8B4513"/>
+  
+  <!-- 蹄子 -->
+  <rect x="7" y="26" width="6" height="1" fill="#2F4F4F"/>
+  <rect x="15" y="26" width="6" height="1" fill="#2F4F4F"/>
+  
+  <!-- 武器 - 大斧 -->
+  <rect x="23" y="12" width="2" height="10" fill="#8B4513"/>
+  <rect x="22" y="10" width="4" height="3" fill="#696969"/>
+  <rect x="23" y="11" width="2" height="1" fill="#808080"/>
+  <rect x="21" y="11" width="1" height="1" fill="#A9A9A9"/>
+  <rect x="26" y="11" width="1" height="1" fill="#A9A9A9"/>
+</svg>

@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="swordGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E8E8E8;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#C0C0C0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#A0A0A0;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#FFA500;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#DAA520;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="starGrad" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:1" />
+      <stop offset="30%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFA500;stop-opacity:0.8" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Sword blade -->
+  <path d="M 100 10 L 110 20 L 108 110 L 105 125 L 100 130 L 95 125 L 92 110 L 90 20 Z" 
+        fill="url(#swordGrad)" stroke="#606060" stroke-width="1.5"/>
+  
+  <!-- Blade edge highlight -->
+  <path d="M 100 15 L 105 25 L 104 110" 
+        stroke="#FFFFFF" stroke-width="1.2" opacity="0.7" fill="none"/>
+  
+  <!-- Seven stars on blade -->
+  <!-- Star 1 (top) -->
+  <circle cx="100" cy="30" r="3" fill="url(#starGrad)" opacity="0.9"/>
+  <path d="M 100 27 L 100.8 29.2 L 103 29.2 L 101.1 30.6 L 101.9 32.8 L 100 31.4 L 98.1 32.8 L 98.9 30.6 L 97 29.2 L 99.2 29.2 Z" 
+        fill="#FFD700" opacity="0.8"/>
+  
+  <!-- Star 2 -->
+  <circle cx="100" cy="45" r="3" fill="url(#starGrad)" opacity="0.9"/>
+  <path d="M 100 42 L 100.8 44.2 L 103 44.2 L 101.1 45.6 L 101.9 47.8 L 100 46.4 L 98.1 47.8 L 98.9 45.6 L 97 44.2 L 99.2 44.2 Z" 
+        fill="#FFD700" opacity="0.8"/>
+  
+  <!-- Star 3 -->
+  <circle cx="100" cy="60" r="3" fill="url(#starGrad)" opacity="0.9"/>
+  <path d="M 100 57 L 100.8 59.2 L 103 59.2 L 101.1 60.6 L 101.9 62.8 L 100 61.4 L 98.1 62.8 L 98.9 60.6 L 97 59.2 L 99.2 59.2 Z" 
+        fill="#FFD700" opacity="0.8"/>
+  
+  <!-- Star 4 (middle, bigger) -->
+  <circle cx="100" cy="75" r="3.5" fill="url(#starGrad)" opacity="0.9"/>
+  <path d="M 100 71.5 L 101 74 L 103.5 74 L 101.3 75.6 L 102.3 78.1 L 100 76.5 L 97.7 78.1 L 98.7 75.6 L 96.5 74 L 99 74 Z" 
+        fill="#FFD700" opacity="0.8"/>
+  
+  <!-- Star 5 -->
+  <circle cx="100" cy="90" r="3" fill="url(#starGrad)" opacity="0.9"/>
+  <path d="M 100 87 L 100.8 89.2 L 103 89.2 L 101.1 90.6 L 101.9 92.8 L 100 91.4 L 98.1 92.8 L 98.9 90.6 L 97 89.2 L 99.2 89.2 Z" 
+        fill="#FFD700" opacity="0.8"/>
+  
+  <!-- Star 6 -->
+  <circle cx="100" cy="105" r="3" fill="url(#starGrad)" opacity="0.9"/>
+  <path d="M 100 102 L 100.8 104.2 L 103 104.2 L 101.1 105.6 L 101.9 107.8 L 100 106.4 L 98.1 107.8 L 98.9 105.6 L 97 104.2 L 99.2 104.2 Z" 
+        fill="#FFD700" opacity="0.8"/>
+  
+  <!-- Star 7 (bottom) -->
+  <circle cx="100" cy="118" r="3" fill="url(#starGrad)" opacity="0.9"/>
+  <path d="M 100 115 L 100.8 117.2 L 103 117.2 L 101.1 118.6 L 101.9 120.8 L 100 119.4 L 98.1 120.8 L 98.9 118.6 L 97 117.2 L 99.2 117.2 Z" 
+        fill="#FFD700" opacity="0.8"/>
+  
+  <!-- Guard -->
+  <rect x="80" y="128" width="40" height="6" rx="1"
+        fill="url(#goldGrad)" stroke="#B8860B" stroke-width="1"/>
+  <circle cx="82" cy="131" r="2.5" fill="#8B0000"/>
+  <circle cx="118" cy="131" r="2.5" fill="#8B0000"/>
+  
+  <!-- Handle -->
+  <rect x="94" y="134" width="12" height="40" rx="2"
+        fill="url(#goldGrad)" stroke="#B8860B" stroke-width="1"/>
+  
+  <!-- Handle wrapping pattern -->
+  <line x1="94" y1="140" x2="106" y2="140" stroke="#8B4513" stroke-width="0.5"/>
+  <line x1="94" y1="148" x2="106" y2="148" stroke="#8B4513" stroke-width="0.5"/>
+  <line x1="94" y1="156" x2="106" y2="156" stroke="#8B4513" stroke-width="0.5"/>
+  <line x1="94" y1="164" x2="106" y2="164" stroke="#8B4513" stroke-width="0.5"/>
+  
+  <!-- Pommel -->
+  <ellipse cx="100" cy="176" rx="10" ry="7" 
+           fill="url(#goldGrad)" stroke="#B8860B" stroke-width="1.5"/>
+  <circle cx="100" cy="176" r="4" fill="url(#starGrad)"/>
+  <path d="M 100 173 L 100.6 174.8 L 102.4 174.8 L 100.9 175.9 L 101.5 177.7 L 100 176.6 L 98.5 177.7 L 99.1 175.9 L 97.6 174.8 L 99.4 174.8 Z" 
+        fill="#FFD700"/>
+</svg>

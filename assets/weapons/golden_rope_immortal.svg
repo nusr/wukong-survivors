@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="ropeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="30%" style="stop-color:#FFA500;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#FF8C00;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#DAA520;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="glowGrad" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#FFFF00;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#FFA500;stop-opacity:0" />
+    </radialGradient>
+    <linearGradient id="shimmer" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#FFFACD;stop-opacity:0.8" />
+      <stop offset="50%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFFACD;stop-opacity:0.8" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Mystical glow background -->
+  <ellipse cx="100" cy="100" rx="70" ry="70" fill="url(#glowGrad)" opacity="0.4"/>
+  
+  <!-- Main rope coils forming dynamic swirling pattern -->
+  <!-- Outer coil -->
+  <path d="M 100 30 Q 140 50, 150 90 Q 155 120, 130 145 Q 100 165, 70 145 Q 45 120, 50 90 Q 60 50, 100 30" 
+        stroke="url(#ropeGrad)" stroke-width="16" fill="none" 
+        stroke-linecap="round"/>
+  
+  <!-- Rope texture on outer coil -->
+  <path d="M 100 30 Q 140 50, 150 90 Q 155 120, 130 145 Q 100 165, 70 145 Q 45 120, 50 90 Q 60 50, 100 30" 
+        stroke="#B8860B" stroke-width="2" fill="none" 
+        stroke-dasharray="5,5" opacity="0.6"/>
+  
+  <!-- Middle coil -->
+  <path d="M 100 55 Q 125 65, 130 90 Q 132 110, 115 125 Q 100 135, 85 125 Q 68 110, 70 90 Q 75 65, 100 55" 
+        stroke="url(#ropeGrad)" stroke-width="14" fill="none" 
+        stroke-linecap="round"/>
+  
+  <!-- Inner coil -->
+  <path d="M 100 75 Q 110 80, 112 90 Q 113 100, 105 108 Q 100 112, 95 108 Q 87 100, 88 90 Q 90 80, 100 75" 
+        stroke="url(#ropeGrad)" stroke-width="12" fill="none" 
+        stroke-linecap="round"/>
+  
+  <!-- Flying rope end 1 (top right) -->
+  <path d="M 150 90 Q 165 85, 175 78 Q 182 72, 188 65" 
+        stroke="url(#ropeGrad)" stroke-width="10" fill="none" 
+        stroke-linecap="round"/>
+  <path d="M 188 65 L 192 62 L 190 68 L 186 67 Z" 
+        fill="url(#ropeGrad)"/>
+  
+  <!-- Flying rope end 2 (bottom left) -->
+  <path d="M 70 145 Q 55 155, 42 162 Q 30 168, 20 175" 
+        stroke="url(#ropeGrad)" stroke-width="10" fill="none" 
+        stroke-linecap="round"/>
+  <path d="M 20 175 L 16 178 L 22 180 L 21 174 Z" 
+        fill="url(#ropeGrad)"/>
+  
+  <!-- Braided texture details -->
+  <path d="M 100 32 Q 135 50, 145 85" 
+        stroke="#FFFACD" stroke-width="1.5" fill="none" opacity="0.6"/>
+  <path d="M 148 95 Q 150 115, 135 135" 
+        stroke="#FFFACD" stroke-width="1.5" fill="none" opacity="0.6"/>
+  <path d="M 115 155 Q 95 162, 75 155" 
+        stroke="#FFFACD" stroke-width="1.5" fill="none" opacity="0.6"/>
+  <path d="M 55 130 Q 48 110, 52 90" 
+        stroke="#FFFACD" stroke-width="1.5" fill="none" opacity="0.6"/>
+  
+  <!-- Knot details -->
+  <circle cx="150" cy="90" r="8" fill="url(#ropeGrad)" stroke="#B8860B" stroke-width="1"/>
+  <circle cx="70" cy="145" r="8" fill="url(#ropeGrad)" stroke="#B8860B" stroke-width="1"/>
+  <circle cx="100" cy="55" r="7" fill="url(#ropeGrad)" stroke="#B8860B" stroke-width="1"/>
+  
+  <!-- Energy sparkles -->
+  <circle cx="160" cy="70" r="2" fill="#FFFF00" opacity="0.8">
+    <animate attributeName="opacity" values="0.8;0.2;0.8" dur="1.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="40" cy="150" r="2" fill="#FFFF00" opacity="0.8">
+    <animate attributeName="opacity" values="0.2;0.8;0.2" dur="1.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="115" cy="100" r="2" fill="#FFFF00" opacity="0.8">
+    <animate attributeName="opacity" values="0.8;0.2;0.8" dur="1.5s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Motion trails -->
+  <path d="M 170 82 Q 172 80, 174 78" 
+        stroke="#FFD700" stroke-width="1.5" fill="none" opacity="0.4" 
+        stroke-linecap="round"/>
+  <path d="M 35 160 Q 33 163, 31 166" 
+        stroke="#FFD700" stroke-width="1.5" fill="none" opacity="0.4" 
+        stroke-linecap="round"/>
+</svg>

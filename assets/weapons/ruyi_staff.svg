@@ -1,0 +1,15 @@
+<svg width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+  <!-- Ruyi Staff - 如意金箍棒 (Ultimate form) -->
+  <rect x="14" y="2" width="4" height="28" fill="#FFD700"/>
+  <rect x="12" y="0" width="8" height="4" fill="#FF6347"/>
+  <rect x="12" y="28" width="8" height="4" fill="#FF6347"/>
+  <!-- Red bands -->
+  <rect x="12" y="8" width="8" height="2" fill="#DC143C"/>
+  <rect x="12" y="22" width="8" height="2" fill="#DC143C"/>
+  <!-- Golden glow -->
+  <rect x="10" y="4" width="2" height="24" fill="#FFED4E" opacity="0.6"/>
+  <rect x="20" y="4" width="2" height="24" fill="#FFED4E" opacity="0.6"/>
+  <!-- Power aura -->
+  <rect x="8" y="6" width="2" height="20" fill="#FF4500" opacity="0.4"/>
+  <rect x="22" y="6" width="2" height="20" fill="#FF4500" opacity="0.4"/>
+</svg>

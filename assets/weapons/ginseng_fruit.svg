@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="fruitGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFEFD5;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#FFE4B5;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F5DEB3;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="glowGrad" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#FFFACD;stop-opacity:0.8" />
+      <stop offset="50%" style="stop-color:#FFD700;stop-opacity:0.4" />
+      <stop offset="100%" style="stop-color:#FFA500;stop-opacity:0" />
+    </radialGradient>
+    <linearGradient id="stemGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#8FBC8F;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#6B8E23;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#556B2F;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="leafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#90EE90;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#32CD32;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#228B22;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Glow effect -->
+  <circle cx="100" cy="100" r="60" fill="url(#glowGrad)" opacity="0.5"/>
+  
+  <!-- Main fruit body (baby-like shape) -->
+  <ellipse cx="100" cy="105" rx="35" ry="40" 
+           fill="url(#fruitGrad)" stroke="#D2B48C" stroke-width="2"/>
+  
+  <!-- Head -->
+  <ellipse cx="100" cy="70" rx="28" ry="30" 
+           fill="url(#fruitGrad)" stroke="#D2B48C" stroke-width="2"/>
+  
+  <!-- Eyes -->
+  <ellipse cx="92" cy="68" rx="4" ry="5" fill="#2F4F4F"/>
+  <ellipse cx="108" cy="68" rx="4" ry="5" fill="#2F4F4F"/>
+  <circle cx="93" cy="67" r="1.5" fill="#FFFFFF" opacity="0.8"/>
+  <circle cx="109" cy="67" r="1.5" fill="#FFFFFF" opacity="0.8"/>
+  
+  <!-- Nose -->
+  <ellipse cx="100" cy="75" rx="2" ry="3" fill="#D2B48C"/>
+  
+  <!-- Mouth (smile) -->
+  <path d="M 95 78 Q 100 82, 105 78" 
+        stroke="#CD853F" stroke-width="1.5" fill="none"/>
+  
+  <!-- Arms -->
+  <ellipse cx="70" cy="100" rx="8" ry="18" 
+           fill="url(#fruitGrad)" stroke="#D2B48C" stroke-width="1.5" 
+           transform="rotate(-20 70 100)"/>
+  <ellipse cx="130" cy="100" rx="8" ry="18" 
+           fill="url(#fruitGrad)" stroke="#D2B48C" stroke-width="1.5" 
+           transform="rotate(20 130 100)"/>
+  
+  <!-- Legs -->
+  <ellipse cx="88" cy="145" rx="8" ry="20" 
+           fill="url(#fruitGrad)" stroke="#D2B48C" stroke-width="1.5"/>
+  <ellipse cx="112" cy="145" rx="8" ry="20" 
+           fill="url(#fruitGrad)" stroke="#D2B48C" stroke-width="1.5"/>
+  
+  <!-- Stem on top -->
+  <rect x="97" y="35" width="6" height="15" rx="1"
+        fill="url(#stemGrad)" stroke="#556B2F" stroke-width="1"/>
+  
+  <!-- Leaves -->
+  <ellipse cx="85" cy="42" rx="12" ry="8" 
+           fill="url(#leafGrad)" stroke="#228B22" stroke-width="1" 
+           transform="rotate(-30 85 42)"/>
+  <ellipse cx="115" cy="42" rx="12" ry="8" 
+           fill="url(#leafGrad)" stroke="#228B22" stroke-width="1" 
+           transform="rotate(30 115 42)"/>
+  <ellipse cx="100" cy="38" rx="10" ry="7" 
+           fill="url(#leafGrad)" stroke="#228B22" stroke-width="1"/>
+  
+  <!-- Leaf veins -->
+  <path d="M 85 42 L 90 42" stroke="#1F5E1F" stroke-width="0.5"/>
+  <path d="M 115 42 L 110 42" stroke="#1F5F1F" stroke-width="0.5"/>
+  
+  <!-- Body texture/shading -->
+  <ellipse cx="95" cy="100" rx="5" ry="8" fill="#F5DEB3" opacity="0.3"/>
+  <ellipse cx="105" cy="110" rx="5" ry="8" fill="#F5DEB3" opacity="0.3"/>
+  
+  <!-- Energy sparkles -->
+  <circle cx="120" cy="80" r="2" fill="#FFD700" opacity="0.7"/>
+  <circle cx="80" cy="90" r="1.5" fill="#FFD700" opacity="0.7"/>
+  <circle cx="115" cy="120" r="2" fill="#FFD700" opacity="0.7"/>
+  <circle cx="85" cy="125" r="1.5" fill="#FFD700" opacity="0.7"/>
+  
+  <!-- Star sparkles -->
+  <path d="M 125 75 L 126 77 L 128 77 L 126.5 78.5 L 127 80.5 L 125 79 L 123 80.5 L 123.5 78.5 L 122 77 L 124 77 Z" 
+        fill="#FFFACD" opacity="0.8"/>
+  <path d="M 75 85 L 75.7 86.5 L 77.2 86.5 L 76 87.5 L 76.5 89 L 75 88 L 73.5 89 L 74 87.5 L 72.8 86.5 L 74.3 86.5 Z" 
+        fill="#FFFACD" opacity="0.8"/>
+</svg>

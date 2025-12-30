@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <radialGradient id="diamondGrad" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:1" />
+      <stop offset="30%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#FFA500;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FF8C00;stop-opacity:1" />
+    </radialGradient>
+    <radialGradient id="glowGrad" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#FFFACD;stop-opacity:0.8" />
+      <stop offset="50%" style="stop-color:#FFD700;stop-opacity:0.4" />
+      <stop offset="100%" style="stop-color:#FFA500;stop-opacity:0" />
+    </radialGradient>
+    <linearGradient id="goldShine" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFFF00;stop-opacity:0.9" />
+      <stop offset="50%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#DAA520;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Powerful glow -->
+  <circle cx="100" cy="100" r="85" fill="url(#glowGrad)" opacity="0.6">
+    <animate attributeName="r" values="85;90;85" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Diamond snare main ring body -->
+  <circle cx="100" cy="100" r="60" 
+          fill="none" stroke="url(#diamondGrad)" stroke-width="20"/>
+  
+  <!-- Inner diamond pattern ring -->
+  <circle cx="100" cy="100" r="60" 
+          fill="none" stroke="url(#goldShine)" stroke-width="8" opacity="0.8"/>
+  
+  <!-- Outer highlight ring -->
+  <circle cx="100" cy="100" r="60" 
+          fill="none" stroke="#FFFF00" stroke-width="2" opacity="0.6">
+    <animate attributeName="opacity" values="0.6;0.3;0.6" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Diamond facets pattern on ring -->
+  <g opacity="0.7">
+    <!-- Top facet -->
+    <path d="M 100 40 L 95 45 L 100 50 L 105 45 Z" 
+          fill="#FFFFFF" stroke="#FFD700" stroke-width="0.5"/>
+    
+    <!-- Right facets -->
+    <path d="M 160 100 L 155 95 L 150 100 L 155 105 Z" 
+          fill="#FFFFFF" stroke="#FFD700" stroke-width="0.5"/>
+    
+    <!-- Bottom facet -->
+    <path d="M 100 160 L 95 155 L 100 150 L 105 155 Z" 
+          fill="#FFFFFF" stroke="#FFD700" stroke-width="0.5"/>
+    
+    <!-- Left facets -->
+    <path d="M 40 100 L 45 95 L 50 100 L 45 105 Z" 
+          fill="#FFFFFF" stroke="#FFD700" stroke-width="0.5"/>
+  </g>
+  
+  <!-- Inner mystical circle -->
+  <circle cx="100" cy="100" r="35" 
+          fill="none" stroke="url(#goldShine)" stroke-width="3" opacity="0.6">
+    <animate attributeName="r" values="35;38;35" dur="2.5s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Center vajra/diamond symbol -->
+  <g transform="translate(100, 100)">
+    <!-- Vajra center -->
+    <circle r="8" fill="url(#diamondGrad)" stroke="#B8860B" stroke-width="1"/>
+    
+    <!-- Vajra prongs (4 directions) -->
+    <path d="M 0 -8 L -3 -15 L 0 -20 L 3 -15 Z" 
+          fill="url(#goldShine)" stroke="#B8860B" stroke-width="0.5"/>
+    <path d="M 8 0 L 15 -3 L 20 0 L 15 3 Z" 
+          fill="url(#goldShine)" stroke="#B8860B" stroke-width="0.5"/>
+    <path d="M 0 8 L 3 15 L 0 20 L -3 15 Z" 
+          fill="url(#goldShine)" stroke="#B8860B" stroke-width="0.5"/>
+    <path d="M -8 0 L -15 3 L -20 0 L -15 -3 Z" 
+          fill="url(#goldShine)" stroke="#B8860B" stroke-width="0.5"/>
+    
+    <!-- Diagonal prongs -->
+    <path d="M -6 -6 L -10 -10 L -12 -8 L -8 -4 Z" 
+          fill="url(#goldShine)" stroke="#B8860B" stroke-width="0.5" opacity="0.8"/>
+    <path d="M 6 -6 L 10 -10 L 12 -8 L 8 -4 Z" 
+          fill="url(#goldShine)" stroke="#B8860B" stroke-width="0.5" opacity="0.8"/>
+    <path d="M 6 6 L 10 10 L 12 8 L 8 4 Z" 
+          fill="url(#goldShine)" stroke="#B8860B" stroke-width="0.5" opacity="0.8"/>
+    <path d="M -6 6 L -10 10 L -12 8 L -8 4 Z" 
+          fill="url(#goldShine)" stroke="#B8860B" stroke-width="0.5" opacity="0.8"/>
+  </g>
+  
+  <!-- Ancient binding seals on ring -->
+  <circle cx="100" cy="50" r="4" fill="#8B0000" opacity="0.7"/>
+  <circle cx="150" cy="100" r="4" fill="#8B0000" opacity="0.7"/>
+  <circle cx="100" cy="150" r="4" fill="#8B0000" opacity="0.7"/>
+  <circle cx="50" cy="100" r="4" fill="#8B0000" opacity="0.7"/>
+  
+  <!-- Energy particles orbiting -->
+  <circle cx="130" cy="70" r="2" fill="#FFD700" opacity="0.9">
+    <animateTransform attributeName="transform" type="rotate" 
+                      from="0 100 100" to="360 100 100" 
+                      dur="4s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="130" cy="130" r="2" fill="#FFD700" opacity="0.9">
+    <animateTransform attributeName="transform" type="rotate" 
+                      from="90 100 100" to="450 100 100" 
+                      dur="4s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="70" cy="130" r="2" fill="#FFD700" opacity="0.9">
+    <animateTransform attributeName="transform" type="rotate" 
+                      from="180 100 100" to="540 100 100" 
+                      dur="4s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="70" cy="70" r="2" fill="#FFD700" opacity="0.9">
+    <animateTransform attributeName="transform" type="rotate" 
+                      from="270 100 100" to="630 100 100" 
+                      dur="4s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Light rays emanating -->
+  <g opacity="0.4">
+    <line x1="100" y1="100" x2="100" y2="20" stroke="#FFFF00" stroke-width="1.5">
+      <animate attributeName="opacity" values="0.4;0.1;0.4" dur="2s" repeatCount="indefinite"/>
+    </line>
+    <line x1="100" y1="100" x2="180" y2="100" stroke="#FFFF00" stroke-width="1.5">
+      <animate attributeName="opacity" values="0.1;0.4;0.1" dur="2s" repeatCount="indefinite"/>
+    </line>
+    <line x1="100" y1="100" x2="100" y2="180" stroke="#FFFF00" stroke-width="1.5">
+      <animate attributeName="opacity" values="0.4;0.1;0.4" dur="2s" repeatCount="indefinite"/>
+    </line>
+    <line x1="100" y1="100" x2="20" y2="100" stroke="#FFFF00" stroke-width="1.5">
+      <animate attributeName="opacity" values="0.1;0.4;0.1" dur="2s" repeatCount="indefinite"/>
+    </line>
+  </g>
+</svg>

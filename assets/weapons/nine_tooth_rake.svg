@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Nine-Tooth Rake / Jiu Chi Ding Pa - Zhu Bajie's Weapon -->
+  <defs>
+    <linearGradient id="rakeHandle" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B4513;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#654321;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8B4513;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="rakeMetal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="30%" style="stop-color:#FFA500;stop-opacity:1" />
+      <stop offset="60%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#DAA520;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="20%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#FFA500;stop-opacity:0" />
+    </radialGradient>
+    <linearGradient id="toothShine" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFF;stop-opacity:0.9" />
+      <stop offset="50%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#DAA520;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Celestial glow -->
+  <ellipse cx="32" cy="15" rx="25" ry="12" fill="url(#glow)"/>
+  
+  <!-- Long wooden handle (heavenly rosewood) -->
+  <rect x="30" y="18" width="4" height="42" fill="url(#rakeHandle)" rx="2"/>
+  
+  <!-- Handle decorative rings -->
+  <circle cx="32" cy="25" r="2.5" fill="none" stroke="#FFD700" stroke-width="1.5"/>
+  <circle cx="32" cy="35" r="2.5" fill="none" stroke="#DAA520" stroke-width="1.5"/>
+  <circle cx="32" cy="45" r="2.5" fill="none" stroke="#FFD700" stroke-width="1.5"/>
+  
+  <!-- Handle grip wrapping -->
+  <line x1="30" y1="52" x2="34" y2="52" stroke="#654321" stroke-width="1"/>
+  <line x1="30" y1="54" x2="34" y2="54" stroke="#654321" stroke-width="1"/>
+  <line x1="30" y1="56" x2="34" y2="56" stroke="#654321" stroke-width="1"/>
+  
+  <!-- Top crossbar (rake head mount) -->
+  <rect x="14" y="15" width="36" height="4" fill="url(#rakeMetal)" rx="2"/>
+  
+  <!-- Decorative dragon engravings on crossbar -->
+  <circle cx="20" cy="17" r="1.2" fill="#8B4513"/>
+  <circle cx="32" cy="17" r="1.2" fill="#8B4513"/>
+  <circle cx="44" cy="17" r="1.2" fill="#8B4513"/>
+  
+  <!-- Nine deadly teeth (curved and sharp) -->
+  
+  <!-- Tooth 1 (leftmost) -->
+  <path d="M 16 19 Q 15 8 14 4" stroke="url(#toothShine)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M 14 4 L 12 6 L 14 5 Z" fill="#FFD700"/>
+  
+  <!-- Tooth 2 -->
+  <path d="M 20 19 Q 19 10 18 5" stroke="url(#toothShine)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M 18 5 L 16 7 L 18 6 Z" fill="#FFD700"/>
+  
+  <!-- Tooth 3 -->
+  <path d="M 24 19 Q 23 9 22 4" stroke="url(#toothShine)" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+  <path d="M 22 4 L 20 6 L 22 5 Z" fill="#FFD700"/>
+  
+  <!-- Tooth 4 -->
+  <path d="M 28 19 Q 27 8 26 3" stroke="url(#toothShine)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M 26 3 L 24 5 L 26 4 Z" fill="#FFD700"/>
+  
+  <!-- Tooth 5 (center, largest) -->
+  <path d="M 32 19 Q 32 7 32 2" stroke="url(#toothShine)" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+  <path d="M 32 2 L 30 4 L 34 4 Z" fill="#FFD700"/>
+  <ellipse cx="32" cy="2" rx="1.5" ry="1" fill="#FFF" opacity="0.8"/>
+  
+  <!-- Tooth 6 -->
+  <path d="M 36 19 Q 37 8 38 3" stroke="url(#toothShine)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M 38 3 L 40 5 L 38 4 Z" fill="#FFD700"/>
+  
+  <!-- Tooth 7 -->
+  <path d="M 40 19 Q 41 9 42 4" stroke="url(#toothShine)" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+  <path d="M 42 4 L 44 6 L 42 5 Z" fill="#FFD700"/>
+  
+  <!-- Tooth 8 -->
+  <path d="M 44 19 Q 45 10 46 5" stroke="url(#toothShine)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M 46 5 L 48 7 L 46 6 Z" fill="#FFD700"/>
+  
+  <!-- Tooth 9 (rightmost) -->
+  <path d="M 48 19 Q 49 8 50 4" stroke="url(#toothShine)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M 50 4 L 52 6 L 50 5 Z" fill="#FFD700"/>
+  
+  <!-- Mystical runes on teeth (celestial power) -->
+  <circle cx="18" cy="10" r="0.5" fill="#FF4500"/>
+  <circle cx="26" cy="8" r="0.5" fill="#FF4500"/>
+  <circle cx="32" cy="7" r="0.6" fill="#FF6347"/>
+  <circle cx="38" cy="8" r="0.5" fill="#FF4500"/>
+  <circle cx="46" cy="10" r="0.5" fill="#FF4500"/>
+  
+  <!-- Bottom spike/spear tip -->
+  <path d="M 32 60 L 28 62 L 32 63 L 36 62 Z" fill="url(#rakeMetal)"/>
+  
+  <!-- Energy crackling effect -->
+  <path d="M 14 6 L 12 8 L 14 7" stroke="#FFD700" stroke-width="0.8" opacity="0.6"/>
+  <path d="M 22 5 L 20 7 L 22 6" stroke="#FFA500" stroke-width="0.8" opacity="0.6"/>
+  <path d="M 32 3 L 30 5 L 32 4" stroke="#FFD700" stroke-width="1" opacity="0.7"/>
+  <path d="M 42 5 L 44 7 L 42 6" stroke="#FFA500" stroke-width="0.8" opacity="0.6"/>
+  <path d="M 50 6 L 52 8 L 50 7" stroke="#FFD700" stroke-width="0.8" opacity="0.6"/>
+  
+  <!-- Handle end cap -->
+  <ellipse cx="32" cy="60" rx="3" ry="2" fill="#654321"/>
+  <circle cx="32" cy="60" r="1.5" fill="#FFD700"/>
+</svg>

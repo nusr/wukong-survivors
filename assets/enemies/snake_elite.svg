@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" width="56" height="56">
+  <rect width="28" height="28" fill="none"/>
+  <!-- 蛇将军 - 精英 -->
+  <!-- 蛇头 -->
+  <rect x="8" y="7" width="12" height="6" fill="#228B22"/>
+  <rect x="7" y="8" width="1" height="4" fill="#228B22"/>
+  <rect x="20" y="8" width="1" height="4" fill="#228B22"/>
+  
+  <!-- 眼睛 - 蛇眼 -->
+  <rect x="10" y="9" width="2" height="2" fill="#FFFF00"/>
+  <rect x="16" y="9" width="2" height="2" fill="#FFFF00"/>
+  <rect x="11" y="10" width="1" height="1" fill="#000000"/>
+  <rect x="17" y="10" width="1" height="1" fill="#000000"/>
+  
+  <!-- 蛇信 -->
+  <rect x="13" y="12" width="2" height="1" fill="#DC143C"/>
+  <rect x="12" y="13" width="1" height="1" fill="#DC143C"/>
+  <rect x="15" y="13" width="1" height="1" fill="#DC143C"/>
+  
+  <!-- 蛇鳞纹理 -->
+  <rect x="9" y="8" width="2" height="1" fill="#2E8B57"/>
+  <rect x="17" y="8" width="2" height="1" fill="#2E8B57"/>
+  <rect x="10" y="11" width="2" height="1" fill="#3CB371"/>
+  <rect x="16" y="11" width="2" height="1" fill="#3CB371"/>
+  
+  <!-- 身体 - 蛇身盔甲 -->
+  <rect x="7" y="13" width="14" height="8" fill="#228B22"/>
+  <rect x="6" y="14" width="1" height="6" fill="#228B22"/>
+  <rect x="21" y="14" width="1" height="6" fill="#228B22"/>
+  
+  <!-- 鳞片 -->
+  <rect x="8" y="14" width="3" height="2" fill="#2E8B57"/>
+  <rect x="17" y="14" width="3" height="2" fill="#2E8B57"/>
+  <rect x="9" y="15" width="1" height="1" fill="#3CB371"/>
+  <rect x="18" y="15" width="1" height="1" fill="#3CB371"/>
+  <rect x="11" y="16" width="2" height="2" fill="#2E8B57"/>
+  <rect x="15" y="16" width="2" height="2" fill="#2E8B57"/>
+  <rect x="13" y="18" width="2" height="2" fill="#3CB371"/>
+  
+  <!-- 护甲 -->
+  <rect x="11" y="17" width="6" height="3" fill="#696969"/>
+  <rect x="12" y="18" width="4" height="1" fill="#808080"/>
+  
+  <!-- 蛇尾 -->
+  <rect x="9" y="21" width="10" height="3" fill="#228B22"/>
+  <rect x="10" y="22" width="8" height="1" fill="#2E8B57"/>
+  <rect x="11" y="24" width="6" height="2" fill="#228B22"/>
+  <rect x="12" y="25" width="4" height="1" fill="#3CB371"/>
+  <rect x="13" y="26" width="2" height="1" fill="#228B22"/>
+  
+  <!-- 蛇鳞装饰 -->
+  <rect x="9" y="19" width="2" height="1" fill="#3CB371"/>
+  <rect x="17" y="19" width="2" height="1" fill="#3CB371"/>
+  <rect x="11" y="20" width="1" height="1" fill="#2E8B57"/>
+  <rect x="16" y="20" width="1" height="1" fill="#2E8B57"/>
+</svg>

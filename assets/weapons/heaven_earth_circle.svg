@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+    <defs>
+        <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+            <stop offset="50%" style="stop-color:#FFA500;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#FF8C00;stop-opacity:1" />
+        </linearGradient>
+        <radialGradient id="glowGrad" cx="50%" cy="50%">
+            <stop offset="0%" style="stop-color:#FFD700;stop-opacity:0.8" />
+            <stop offset="50%" style="stop-color:#FFA500;stop-opacity:0.4" />
+            <stop offset="100%" style="stop-color:#FF8C00;stop-opacity:0" />
+        </radialGradient>
+        <linearGradient id="innerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#DC143C;stop-opacity:1" />
+            <stop offset="50%" style="stop-color:#FF4500;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#DC143C;stop-opacity:1" />
+        </linearGradient>
+    </defs>
+
+    <!-- Outer glow -->
+    <circle cx="100" cy="100" r="60" fill="url(#glowGrad)" opacity="0.5" />
+
+    <!-- Main ring body -->
+    <circle cx="100" cy="100" r="50" fill="none"
+        stroke="url(#ringGrad)" stroke-width="18" />
+
+    <!-- Inner decorative ring -->
+    <circle cx="100" cy="100" r="50" fill="none"
+        stroke="url(#innerGrad)" stroke-width="8" />
+
+    <!-- Outer highlight -->
+    <circle cx="100" cy="100" r="50" fill="none"
+        stroke="#FFFF00" stroke-width="2" opacity="0.6"
+        stroke-dasharray="3,3" />
+
+    <!-- Dragon scale patterns -->
+    <path d="M 100 50 Q 110 55, 115 65"
+        stroke="#B8860B" stroke-width="1.5" fill="none" opacity="0.7" />
+    <path d="M 115 65 Q 120 75, 122 85"
+        stroke="#B8860B" stroke-width="1.5" fill="none" opacity="0.7" />
+    <path d="M 122 85 Q 123 95, 122 105"
+        stroke="#B8860B" stroke-width="1.5" fill="none" opacity="0.7" />
+    <path d="M 122 105 Q 120 115, 115 125"
+        stroke="#B8860B" stroke-width="1.5" fill="none" opacity="0.7" />
+    <path d="M 115 125 Q 110 135, 100 140"
+        stroke="#B8860B" stroke-width="1.5" fill="none" opacity="0.7" />
+
+    <!-- Inner energy core -->
+    <circle cx="100" cy="100" r="28" fill="url(#innerGrad)" opacity="0.3" />
+
+    <!-- Center taiji symbol -->
+    <circle cx="100" cy="100" r="20" fill="#000000" opacity="0.4" />
+    <path d="M 100 80 A 10 10 0 0 1 100 100 A 10 10 0 0 0 100 120 A 20 20 0 0 1 100 80"
+        fill="#FFFFFF" opacity="0.4" />
+    <circle cx="100" cy="90" r="3" fill="#FFFFFF" opacity="0.6" />
+    <circle cx="100" cy="110" r="3" fill="#000000" opacity="0.6" />
+
+    <!-- Energy particles -->
+    <circle cx="85" cy="70" r="2" fill="#FFD700" opacity="0.8">
+        <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="115" cy="85" r="2" fill="#FFD700" opacity="0.8">
+        <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="125" cy="115" r="2" fill="#FFD700" opacity="0.8">
+        <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="85" cy="130" r="2" fill="#FFD700" opacity="0.8">
+        <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2s" repeatCount="indefinite" />
+    </circle>
+</svg>

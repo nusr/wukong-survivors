@@ -1,0 +1,17 @@
+<svg width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+  <!-- Bull King Horns - 牛魔双角 -->
+  <!-- Left horn -->
+  <path d="M 12,20 Q 8,16 6,10 L 8,9 Q 10,15 13,19" fill="#2F4F4F"/>
+  <path d="M 12,20 Q 9,16 7,10 L 8,10 Q 10,15 12,18" fill="#696969"/>
+  <!-- Right horn -->
+  <path d="M 20,20 Q 24,16 26,10 L 24,9 Q 22,15 19,19" fill="#2F4F4F"/>
+  <path d="M 20,20 Q 23,16 25,10 L 24,10 Q 22,15 20,18" fill="#696969"/>
+  <!-- Base/skull -->
+  <ellipse cx="16" cy="20" rx="8" ry="6" fill="#8B7355"/>
+  <ellipse cx="16" cy="20" rx="6" ry="4" fill="#A0826D"/>
+  <!-- Eye sockets -->
+  <circle cx="13" cy="19" r="1.5" fill="#000000"/>
+  <circle cx="19" cy="19" r="1.5" fill="#000000"/>
+  <!-- Power aura -->
+  <circle cx="16" cy="16" r="12" stroke="#DC143C" stroke-width="1" fill="none" opacity="0.3"/>
+</svg>

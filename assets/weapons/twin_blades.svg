@@ -1,0 +1,17 @@
+<svg width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+  <!-- Twin Blades - 双刃刀 -->
+  <!-- Left blade -->
+  <rect x="6" y="12" width="2" height="12" fill="#8B4513"/>
+  <polygon points="7,8 5,12 9,12" fill="#C0C0C0"/>
+  <polygon points="7,9 6,12 8,12" fill="#E8E8E8"/>
+  <!-- Right blade -->
+  <rect x="24" y="12" width="2" height="12" fill="#8B4513"/>
+  <polygon points="25,8 23,12 27,12" fill="#C0C0C0"/>
+  <polygon points="25,9 24,12 26,12" fill="#E8E8E8"/>
+  <!-- Cross guard -->
+  <rect x="5" y="13" width="4" height="1" fill="#DAA520"/>
+  <rect x="23" y="13" width="4" height="1" fill="#DAA520"/>
+  <!-- Motion blur effect -->
+  <rect x="10" y="10" width="12" height="2" fill="#C0C0C0" opacity="0.3"/>
+  <rect x="11" y="8" width="10" height="1" fill="#FFFFFF" opacity="0.4"/>
+</svg>

@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="bladeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#c0c0c0;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#e8e8e8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#a0a0a0;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="handleGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B4513;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#A0522D;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#654321;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="gemGrad" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#FF4500;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8B0000;stop-opacity:1" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Main blade body -->
+  <path d="M 100 20 L 110 60 L 108 100 L 100 140 L 92 100 L 90 60 Z" 
+        fill="url(#bladeGrad)" stroke="#505050" stroke-width="1.5"/>
+  
+  <!-- Left blade point -->
+  <path d="M 80 40 L 90 50 L 92 80 L 85 90 L 78 70 Z" 
+        fill="url(#bladeGrad)" stroke="#505050" stroke-width="1.5"/>
+  
+  <!-- Right blade point -->
+  <path d="M 120 40 L 110 50 L 108 80 L 115 90 L 122 70 Z" 
+        fill="url(#bladeGrad)" stroke="#505050" stroke-width="1.5"/>
+  
+  <!-- Blade edges highlight -->
+  <path d="M 100 25 L 105 60 L 104 100" 
+        stroke="#ffffff" stroke-width="1" opacity="0.6" fill="none"/>
+  
+  <!-- Guard -->
+  <rect x="85" y="135" width="30" height="8" 
+        fill="#DAA520" stroke="#B8860B" stroke-width="1"/>
+  <circle cx="85" cy="139" r="4" fill="url(#gemGrad)" stroke="#8B0000" stroke-width="0.5"/>
+  <circle cx="115" cy="139" r="4" fill="url(#gemGrad)" stroke="#8B0000" stroke-width="0.5"/>
+  
+  <!-- Handle -->
+  <rect x="95" y="143" width="10" height="35" 
+        fill="url(#handleGrad)" stroke="#4d2600" stroke-width="1"/>
+  <circle cx="100" cy="150" r="1.5" fill="#DAA520"/>
+  <circle cx="100" cy="158" r="1.5" fill="#DAA520"/>
+  <circle cx="100" cy="166" r="1.5" fill="#DAA520"/>
+  
+  <!-- Pommel -->
+  <ellipse cx="100" cy="180" rx="8" ry="6" 
+           fill="#DAA520" stroke="#B8860B" stroke-width="1"/>
+  <circle cx="100" cy="180" r="3" fill="url(#gemGrad)" stroke="#8B0000" stroke-width="0.5"/>
+</svg>

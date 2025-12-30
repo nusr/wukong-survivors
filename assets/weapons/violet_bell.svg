@@ -1,0 +1,16 @@
+<svg width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+  <!-- Violet Bell - 紫金铃 -->
+  <!-- Bell body -->
+  <path d="M 16,8 L 10,18 L 22,18 Z" fill="#9370DB"/>
+  <path d="M 16,10 L 12,18 L 20,18 Z" fill="#BA55D3"/>
+  <!-- Bell bottom rim -->
+  <ellipse cx="16" cy="18" rx="6" ry="2" fill="#DAA520"/>
+  <!-- Top knob -->
+  <rect x="15" y="4" width="2" height="4" fill="#DAA520"/>
+  <rect x="14" y="4" width="4" height="2" fill="#FFD700"/>
+  <!-- Sound waves -->
+  <circle cx="16" cy="16" r="10" stroke="#9370DB" stroke-width="1" fill="none" opacity="0.4"/>
+  <circle cx="16" cy="16" r="12" stroke="#9370DB" stroke-width="1" fill="none" opacity="0.2"/>
+  <!-- Clapper -->
+  <circle cx="16" cy="19" r="1" fill="#DAA520"/>
+</svg>

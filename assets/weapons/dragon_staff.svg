@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="woodGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B4513;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#A0522D;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#654321;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="dragonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#FF8C00;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#DAA520;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="energyGrad" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#FFFF00;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#FFA500;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Energy aura -->
+  <ellipse cx="100" cy="100" rx="60" ry="80" fill="url(#energyGrad)" opacity="0.4">
+    <animate attributeName="opacity" values="0.4;0.2;0.4" dur="3s" repeatCount="indefinite"/>
+  </ellipse>
+  
+  <!-- Main staff body -->
+  <rect x="90" y="20" width="20" height="160" rx="3"
+        fill="url(#woodGrad)" stroke="#4d2600" stroke-width="2"/>
+  
+  <!-- Wood grain texture -->
+  <path d="M 93 25 Q 97 40, 93 55 Q 97 70, 93 85 Q 97 100, 93 115 Q 97 130, 93 145 Q 97 160, 93 175" 
+        stroke="#654321" stroke-width="0.8" fill="none" opacity="0.4"/>
+  <path d="M 107 25 Q 103 40, 107 55 Q 103 70, 107 85 Q 103 100, 107 115 Q 103 130, 107 145 Q 103 160, 107 175" 
+        stroke="#654321" stroke-width="0.8" fill="none" opacity="0.4"/>
+  
+  <!-- Coiling dragon design -->
+  <!-- Dragon head at top -->
+  <ellipse cx="100" cy="30" rx="18" ry="15" 
+           fill="url(#dragonGrad)" stroke="#B8860B" stroke-width="1.5"/>
+  
+  <!-- Dragon eyes -->
+  <circle cx="95" cy="28" r="2.5" fill="#8B0000"/>
+  <circle cx="105" cy="28" r="2.5" fill="#8B0000"/>
+  <circle cx="96" cy="27.5" r="1" fill="#FFFFFF" opacity="0.8"/>
+  <circle cx="106" cy="27.5" r="1" fill="#FFFFFF" opacity="0.8"/>
+  
+  <!-- Dragon horns -->
+  <path d="M 90 25 L 85 20 L 88 24" 
+        fill="url(#dragonGrad)" stroke="#B8860B" stroke-width="1"/>
+  <path d="M 110 25 L 115 20 L 112 24" 
+        fill="url(#dragonGrad)" stroke="#B8860B" stroke-width="1"/>
+  
+  <!-- Dragon whiskers -->
+  <line x1="88" y1="32" x2="80" y2="34" stroke="#DAA520" stroke-width="1"/>
+  <line x1="112" y1="32" x2="120" y2="34" stroke="#DAA520" stroke-width="1"/>
+  
+  <!-- Dragon body coiling around staff - section 1 -->
+  <ellipse cx="85" cy="60" rx="12" ry="8" 
+           fill="url(#dragonGrad)" stroke="#B8860B" stroke-width="1" 
+           transform="rotate(-30 85 60)"/>
+  <path d="M 92 30 Q 80 45, 85 60" 
+        stroke="url(#dragonGrad)" stroke-width="8" fill="none"/>
+  
+  <!-- Dragon scales on body section 1 -->
+  <circle cx="85" cy="55" r="1.5" fill="#B8860B" opacity="0.6"/>
+  <circle cx="88" cy="58" r="1.5" fill="#B8860B" opacity="0.6"/>
+  
+  <!-- Dragon body - section 2 (crossing to right) -->
+  <ellipse cx="115" cy="90" rx="12" ry="8" 
+           fill="url(#dragonGrad)" stroke="#B8860B" stroke-width="1" 
+           transform="rotate(30 115 90)"/>
+  <path d="M 85 65 Q 105 75, 115 90" 
+        stroke="url(#dragonGrad)" stroke-width="8" fill="none"/>
+  <circle cx="110" cy="88" r="1.5" fill="#B8860B" opacity="0.6"/>
+  <circle cx="113" cy="92" r="1.5" fill="#B8860B" opacity="0.6"/>
+  
+  <!-- Dragon body - section 3 (crossing to left) -->
+  <ellipse cx="85" cy="120" rx="12" ry="8" 
+           fill="url(#dragonGrad)" stroke="#B8860B" stroke-width="1" 
+           transform="rotate(-30 85 120)"/>
+  <path d="M 115 95 Q 95 105, 85 120" 
+        stroke="url(#dragonGrad)" stroke-width="8" fill="none"/>
+  <circle cx="85" cy="115" r="1.5" fill="#B8860B" opacity="0.6"/>
+  <circle cx="88" cy="118" r="1.5" fill="#B8860B" opacity="0.6"/>
+  
+  <!-- Dragon body - section 4 (crossing to right) -->
+  <ellipse cx="115" cy="150" rx="12" ry="8" 
+           fill="url(#dragonGrad)" stroke="#B8860B" stroke-width="1" 
+           transform="rotate(30 115 150)"/>
+  <path d="M 85 125 Q 105 135, 115 150" 
+        stroke="url(#dragonGrad)" stroke-width="8" fill="none"/>
+  <circle cx="110" cy="148" r="1.5" fill="#B8860B" opacity="0.6"/>
+  <circle cx="113" cy="152" r="1.5" fill="#B8860B" opacity="0.6"/>
+  
+  <!-- Dragon tail at bottom -->
+  <path d="M 115 155 Q 105 165, 100 175 Q 98 180, 95 183" 
+        stroke="url(#dragonGrad)" stroke-width="6" fill="none" 
+        stroke-linecap="round"/>
+  <path d="M 100 175 L 102 185 L 98 185 Z" 
+        fill="url(#dragonGrad)" stroke="#B8860B" stroke-width="1"/>
+  
+  <!-- Dragon claws on each section -->
+  <g transform="translate(85, 60)">
+    <line x1="-5" y1="3" x2="-8" y2="6" stroke="#DAA520" stroke-width="1"/>
+    <line x1="-5" y1="5" x2="-9" y2="8" stroke="#DAA520" stroke-width="1"/>
+  </g>
+  <g transform="translate(115, 90)">
+    <line x1="5" y1="3" x2="8" y2="6" stroke="#DAA520" stroke-width="1"/>
+    <line x1="5" y1="5" x2="9" y2="8" stroke="#DAA520" stroke-width="1"/>
+  </g>
+  
+  <!-- Top ornament -->
+  <circle cx="100" cy="18" r="5" 
+          fill="url(#dragonGrad)" stroke="#B8860B" stroke-width="1"/>
+  <circle cx="100" cy="18" r="2" fill="#8B0000"/>
+  
+  <!-- Energy sparkles -->
+  <circle cx="75" cy="50" r="2" fill="#FFD700" opacity="0.8">
+    <animate attributeName="opacity" values="0.8;0.2;0.8" dur="1.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="125" cy="110" r="2" fill="#FFD700" opacity="0.8">
+    <animate attributeName="opacity" values="0.2;0.8;0.2" dur="1.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="75" cy="140" r="2" fill="#FFD700" opacity="0.8">
+    <animate attributeName="opacity" values="0.8;0.2;0.8" dur="1.5s" repeatCount="indefinite"/>
+  </circle>
+</svg>

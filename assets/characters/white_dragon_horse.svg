@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- White Dragon Horse / Bai Long Ma - Celestial Steed -->
+  <defs>
+    <linearGradient id="dragonScale" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E0FFFF;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#F0F8FF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFFAFA;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="mane" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#4682B4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1E90FF;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="aura" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#4682B4;stop-opacity:0" />
+    </radialGradient>
+    <linearGradient id="dragonHorn" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#FFF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFD700;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Celestial aura -->
+  <ellipse cx="32" cy="35" rx="28" ry="25" fill="url(#aura)"/>
+  
+  <!-- Horse body -->
+  <ellipse cx="35" cy="42" rx="16" ry="14" fill="url(#dragonScale)"/>
+  
+  <!-- Dragon scales pattern on body -->
+  <circle cx="25" cy="38" r="2" fill="none" stroke="#87CEEB" stroke-width="0.8"/>
+  <circle cx="30" cy="40" r="2" fill="none" stroke="#87CEEB" stroke-width="0.8"/>
+  <circle cx="35" cy="42" r="2" fill="none" stroke="#87CEEB" stroke-width="0.8"/>
+  <circle cx="40" cy="40" r="2" fill="none" stroke="#87CEEB" stroke-width="0.8"/>
+  <circle cx="45" cy="38" r="2" fill="none" stroke="#87CEEB" stroke-width="0.8"/>
+  
+  <!-- Chest -->
+  <ellipse cx="25" cy="40" rx="6" ry="8" fill="url(#dragonScale)"/>
+  
+  <!-- Neck -->
+  <path d="M 25 35 Q 22 25 24 18" stroke="url(#dragonScale)" stroke-width="10" fill="url(#dragonScale)"/>
+  
+  <!-- Head (horse-dragon hybrid) -->
+  <ellipse cx="24" cy="16" rx="7" ry="8" fill="url(#dragonScale)"/>
+  
+  <!-- Dragon horn (small, showing dragon heritage) -->
+  <path d="M 24 8 L 22 4 L 24 6 Z" fill="url(#dragonHorn)"/>
+  <path d="M 24 8 L 26 4 L 24 6 Z" fill="url(#dragonHorn)"/>
+  
+  <!-- Mane (flowing like water/clouds) -->
+  <path d="M 28 12 Q 32 10 34 14 Q 32 16 30 18 Q 28 16 28 12 Z" fill="url(#mane)"/>
+  <path d="M 26 16 Q 30 14 32 18 Q 30 20 28 22 Q 26 20 26 16 Z" fill="url(#mane)"/>
+  <path d="M 24 20 Q 28 18 30 22 Q 28 24 26 26 Q 24 24 24 20 Z" fill="url(#mane)"/>
+  
+  <!-- Flowing tail -->
+  <path d="M 50 42 Q 56 40 58 44 Q 56 48 52 50 Q 50 46 50 42 Z" fill="url(#mane)"/>
+  <path d="M 52 44 Q 58 42 60 48 Q 58 52 54 54 Q 52 50 52 44 Z" fill="url(#mane)" opacity="0.7"/>
+  
+  <!-- Noble eye (wise and celestial) -->
+  <ellipse cx="26" cy="15" rx="2.5" ry="3" fill="#4682B4"/>
+  <circle cx="26.5" cy="14.5" r="1" fill="#87CEEB"/>
+  <circle cx="27" cy="14" r="0.5" fill="#FFF"/>
+  
+  <!-- Nostril -->
+  <ellipse cx="22" cy="18" rx="1.5" ry="1" fill="#B0C4DE"/>
+  
+  <!-- Elegant muzzle -->
+  <path d="M 18 18 Q 20 20 22 20" stroke="#B0C4DE" stroke-width="1" fill="none"/>
+  
+  <!-- Dragon whiskers -->
+  <line x1="18" y1="17" x2="12" y2="16" stroke="#87CEEB" stroke-width="0.8"/>
+  <line x1="18" y1="19" x2="12" y2="20" stroke="#87CEEB" stroke-width="0.8"/>
+  
+  <!-- Ear (pointed, alert) -->
+  <path d="M 28 10 L 30 6 L 28 12 Z" fill="url(#dragonScale)"/>
+  
+  <!-- Front legs -->
+  <rect x="22" y="48" width="4" height="14" fill="url(#dragonScale)" rx="1"/>
+  <rect x="30" y="50" width="4" height="12" fill="url(#dragonScale)" rx="1"/>
+  
+  <!-- Back legs -->
+  <rect x="42" y="50" width="4" height="12" fill="url(#dragonScale)" rx="1"/>
+  <rect x="48" y="48" width="4" height="14" fill="url(#dragonScale)" rx="1"/>
+  
+  <!-- Hooves (golden - celestial quality) -->
+  <ellipse cx="24" cy="62" rx="2.5" ry="2" fill="#FFD700"/>
+  <ellipse cx="32" cy="62" rx="2.5" ry="2" fill="#FFD700"/>
+  <ellipse cx="44" cy="62" rx="2.5" ry="2" fill="#FFD700"/>
+  <ellipse cx="50" cy="62" rx="2.5" ry="2" fill="#FFD700"/>
+  
+  <!-- Saddle (ornate, fitting for Tang Monk) -->
+  <path d="M 26 36 Q 32 34 38 36 L 38 42 Q 32 40 26 42 Z" fill="#8B0000"/>
+  <path d="M 28 36 Q 32 35 36 36" stroke="#FFD700" stroke-width="1.5" fill="none"/>
+  <circle cx="30" cy="38" r="1" fill="#FFD700"/>
+  <circle cx="34" cy="38" r="1" fill="#FFD700"/>
+  
+  <!-- Dragon sword strapped to side -->
+  <rect x="38" y="40" width="2" height="12" fill="#4682B4" rx="0.5"/>
+  <path d="M 38 40 L 36 38 L 38 36 L 40 38 Z" fill="#87CEEB"/>
+  <line x1="37" y1="38" x2="41" y2="38" stroke="#FFD700" stroke-width="0.5"/>
+  
+  <!-- Cloud wisps around feet (celestial movement) -->
+  <ellipse cx="24" cy="60" rx="4" ry="2" fill="#F0F8FF" opacity="0.6"/>
+  <ellipse cx="32" cy="60" rx="4" ry="2" fill="#F0F8FF" opacity="0.6"/>
+  <ellipse cx="44" cy="60" rx="4" ry="2" fill="#F0F8FF" opacity="0.6"/>
+  <ellipse cx="50" cy="60" rx="4" ry="2" fill="#F0F8FF" opacity="0.6"/>
+  
+  <!-- Dragon scales on legs -->
+  <line x1="23" y1="52" x2="25" y2="52" stroke="#87CEEB" stroke-width="0.5"/>
+  <line x1="23" y1="56" x2="25" y2="56" stroke="#87CEEB" stroke-width="0.5"/>
+  <line x1="43" y1="54" x2="45" y2="54" stroke="#87CEEB" stroke-width="0.5"/>
+  <line x1="43" y1="58" x2="45" y2="58" stroke="#87CEEB" stroke-width="0.5"/>
+</svg>
