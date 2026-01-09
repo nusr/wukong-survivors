@@ -14,8 +14,6 @@ jobs:
   deploy:
     permissions:
       contents: write
-    concurrency:
-      group: ${{ github.workflow }}-${{ github.ref }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -28,10 +26,11 @@ jobs:
 
       - name: Build
         run: |
-          npm i
-          npm run test:coverage
-          npm run lint
-          npm run build
+          npm install -g yarn
+          yarn install --frozen-lockfile
+          yarn test:coverage
+          yarn lint
+          yarn build
 
       - name: Deploy to GitHub Pages
         if: github.ref == 'refs/heads/main'
