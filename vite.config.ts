@@ -17,6 +17,7 @@ export default defineConfig({
     open: false,
   },
   build: {
+    modulePreload: true,
     outDir: "./dist",
     sourcemap: true,
     rollupOptions: {
