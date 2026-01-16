@@ -27,7 +27,7 @@ jobs:
       - name: Build
         run: |
           npm install -g yarn
-          yarn install --frozen-lockfile
+          yarn install --immutable
           yarn test:coverage
           yarn lint
           yarn build

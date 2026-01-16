@@ -47,7 +47,8 @@ git clone https://github.com/nusr/survivor-game.git
 cd survivor-game
 
 # Install dependencies
-npm install
+npm i -g yarn
+yarn
 
 # Start development server
 npm start

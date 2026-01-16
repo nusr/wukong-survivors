@@ -47,7 +47,8 @@ git clone https://github.com/nusr/survivor-game.git
 cd survivor-game
 
 # 安装依赖
-npm install
+npm i -g yarn
+yarn
 
 # 启动开发服务器
 npm start
