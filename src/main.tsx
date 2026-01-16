@@ -5,7 +5,6 @@ import "./App.css";
 import i18n from "./i18n";
 import { useSettingStore } from "./store";
 import { isFullScreen } from "./util";
-import "vite/modulepreload-polyfill";
 
 async function init() {
   await i18n.changeLanguage();
