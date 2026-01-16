@@ -15,8 +15,8 @@
       "_phaser-vendor-D4qQPf22.js"
     ]
   },
-  "_util-vendor-B5888PiE.js": {
-    "file": "assets/util-vendor-B5888PiE.js",
+  "_util-vendor-CmwX3imn.js": {
+    "file": "assets/util-vendor-CmwX3imn.js",
     "name": "util-vendor",
     "imports": [
       "_react-vendor-yv4bjaiB.js",
@@ -24,14 +24,14 @@
     ]
   },
   "index.html": {
-    "file": "assets/index-K2jaW2Pu.js",
+    "file": "assets/index-DQDxBYHn.js",
     "name": "index",
     "src": "index.html",
     "isEntry": true,
     "imports": [
       "_react-vendor-yv4bjaiB.js",
       "_i18next-vendor-CvEbW1Rb.js",
-      "_util-vendor-B5888PiE.js",
+      "_util-vendor-CmwX3imn.js",
       "_phaser-vendor-D4qQPf22.js"
     ],
     "css": [
