@@ -34,35 +34,77 @@ const Stats: React.FC<{ onBack: () => void }> = ({ onBack }) => {
         X
       </button>
       <h1 data-testid="page-title">{t("stats.title")}</h1>
-      <div className={styles.stat}>
-        <span className={styles.statLabel}>💰 {t("stats.gold")}:</span>
-        <span className={styles.statValue}>{totalGold}</span>
+      <div className={styles.stat} data-testid="stat-gold">
+        <span className={styles.statLabel} data-testid="stat-gold-label">
+          💰 {t("stats.gold")}:
+        </span>
+        <span className={styles.statValue} data-testid="stat-gold-value">
+          {totalGold}
+        </span>
       </div>
-      <div className={styles.stat}>
+      <div className={styles.stat} data-testid="stat-total-kills">
         {/* eslint-disable-next-line i18next/no-literal-string */}
-        <span className={styles.statLabel}>⚔️ {t("stats.totalKills")}:</span>
-        <span className={styles.statValue}>{totalKills}</span>
+        <span className={styles.statLabel} data-testid="stat-total-kills-label">
+          ⚔️ {t("stats.totalKills")}:
+        </span>
+        <span className={styles.statValue} data-testid="stat-total-kills-value">
+          {totalKills}
+        </span>
       </div>
-      <div className={styles.stat}>
-        {/* eslint-disable-next-line i18next/no-literal-string */}
-        <span className={styles.statLabel}>⏱️ {t("stats.bestSurvival")}:</span>
-        <span className={styles.statValue}>{formatTime(bestSurvivalTime)}</span>
+      <div className={styles.stat} data-testid="stat-best-survival">
+        <span
+          className={styles.statLabel}
+          data-testid="stat-best-survival-label"
+          // eslint-disable-next-line i18next/no-literal-string
+        >
+          ⏱️ {t("stats.bestSurvival")}:
+        </span>
+        <span
+          className={styles.statValue}
+          data-testid="stat-best-survival-value"
+        >
+          {formatTime(bestSurvivalTime)}
+        </span>
       </div>
-      <div className={styles.stat}>
-        <span className={styles.statLabel}>🕒 {t("stats.totalPlayTime")}:</span>
-        <span className={styles.statValue}>{formatTime(totalPlayTime)}</span>
+      <div className={styles.stat} data-testid="stat-total-play-time">
+        <span
+          className={styles.statLabel}
+          data-testid="stat-total-play-time-label"
+        >
+          🕒 {t("stats.totalPlayTime")}:
+        </span>
+        <span
+          className={styles.statValue}
+          data-testid="stat-total-play-time-value"
+        >
+          {formatTime(totalPlayTime)}
+        </span>
       </div>
-      <div className={styles.stat}>
-        <span className={styles.statLabel}>
+      <div className={styles.stat} data-testid="stat-unlocked-characters">
+        <span
+          className={styles.statLabel}
+          data-testid="stat-unlocked-characters-label"
+        >
           {t("characters.unlockCharacter")}:
         </span>
-        <span className={styles.statValue}>
+        <span
+          className={styles.statValue}
+          data-testid="stat-unlocked-characters-value"
+        >
           {unlockedCharacters.length}/{chatterList.length}
         </span>
       </div>
-      <div className={styles.stat}>
-        <span className={styles.statLabel}>{t("game.completeChapters")}:</span>
-        <span className={styles.statValue}>
+      <div className={styles.stat} data-testid="stat-completed-chapters">
+        <span
+          className={styles.statLabel}
+          data-testid="stat-completed-chapters-label"
+        >
+          {t("game.completeChapters")}:
+        </span>
+        <span
+          className={styles.statValue}
+          data-testid="stat-completed-chapters-value"
+        >
           {completedChapters.length}/{MAPS.length}
         </span>
       </div>

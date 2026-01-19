@@ -29,7 +29,11 @@ const Wiki = ({ onBack }: { onBack: () => void }) => {
       <details className={styles.details} data-testid="wiki-maps-section">
         <summary className={styles.title}>{t("maps.title")}</summary>
         {MAPS.map((v) => (
-          <div key={v.id} className={styles.item}>
+          <div
+            key={v.id}
+            className={styles.item}
+            data-testid={`wiki-item-maps-${v.id}`}
+          >
             <div className={styles.label}>{t(`maps.${v.id}.name`)}</div>
             <div className={styles.desc}>{t(`maps.${v.id}.description`)}</div>
           </div>
@@ -39,7 +43,11 @@ const Wiki = ({ onBack }: { onBack: () => void }) => {
       <details className={styles.details} data-testid="wiki-characters-section">
         <summary className={styles.title}>{t("characters.title")}</summary>
         {characters.map((v) => (
-          <div key={v.id} className={styles.item}>
+          <div
+            key={v.id}
+            className={styles.item}
+            data-testid={`wiki-item-characters-${v.id}`}
+          >
             <div className={styles.label}>{t(`characters.${v.id}.name`)}</div>
             <div className={styles.desc}>
               {t(`characters.${v.id}.description`)}
@@ -51,7 +59,11 @@ const Wiki = ({ onBack }: { onBack: () => void }) => {
       <details className={styles.details} data-testid="wiki-weapons-section">
         <summary className={styles.title}>{t("weapons.title")}</summary>
         {weapons.map((v) => (
-          <div key={v.id} className={styles.item}>
+          <div
+            key={v.id}
+            className={styles.item}
+            data-testid={`wiki-item-weapons-${v.id}`}
+          >
             <div className={styles.label}>{t(`weapons.${v.id}.name`)}</div>
             <div className={styles.desc}>
               {t(`weapons.${v.id}.description`)}
@@ -63,7 +75,11 @@ const Wiki = ({ onBack }: { onBack: () => void }) => {
       <details className={styles.details} data-testid="wiki-elixirs-section">
         <summary className={styles.title}>{t("elixirs.title")}</summary>
         {elixirs.map((v) => (
-          <div key={v.id} className={styles.item}>
+          <div
+            key={v.id}
+            className={styles.item}
+            data-testid={`wiki-item-elixirs-${v.id}`}
+          >
             <div className={styles.label}>{t(`elixirs.${v.id}.name`)}</div>
             <div className={styles.desc}>
               {t(`elixirs.${v.id}.description`)}
@@ -75,7 +91,11 @@ const Wiki = ({ onBack }: { onBack: () => void }) => {
       <details className={styles.details} data-testid="wiki-enemies-section">
         <summary className={styles.title}>{t("enemies.title")}</summary>
         {enemies.map((v) => (
-          <div key={v.id} className={styles.item}>
+          <div
+            key={v.id}
+            className={styles.item}
+            data-testid={`wiki-item-enemies-${v.id}`}
+          >
             <div className={styles.label}>{t(`enemies.${v.id}`)}</div>
           </div>
         ))}
