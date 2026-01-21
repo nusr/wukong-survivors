@@ -60,3 +60,17 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
+
+      - name: Verify deployment
+        if: github.ref == 'refs/heads/main'
+        run: |
+          echo "Waiting 20 seconds for deployment to propagate..."
+          sleep 20
+          echo "Checking if site is accessible..."
+          response=$(curl -sL https://nusr.github.io/wukong-survivors)
+          if echo "$response" | grep -q "Wukong Survivors"; then
+            echo "✓ Deployment successful!"
+          else
+            echo "✗ Deployment check failed!"
+            exit 1
+          fi
