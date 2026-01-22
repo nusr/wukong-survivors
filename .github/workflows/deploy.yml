@@ -68,7 +68,7 @@ jobs:
           sleep 20
           echo "Checking if site is accessible..."
           response=$(curl -sL https://nusr.github.io/wukong-survivors)
-          if echo "$response" | grep -q "Wukong Survivors"; then
+          if echo "$response" | grep -q "wukong-survivors/assets"; then
             echo "✓ Deployment successful!"
           else
             echo "✗ Deployment check failed!"
