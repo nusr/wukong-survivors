@@ -30,7 +30,7 @@
   "dependencies": {
     "@sentry/react": "^10.35.0",
     "i18next": "^25.8.0",
-    "lodash": "^4.17.21",
+    "lodash": "^4.17.23",
     "phaser": "^3.90.0",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
