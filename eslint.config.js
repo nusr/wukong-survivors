@@ -3,7 +3,6 @@ import importPlugin from "eslint-plugin-import";
 import globals from "globals";
 import tseslint from "typescript-eslint";
 import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended";
-import i18next from "eslint-plugin-i18next";
 import { defineConfig } from "eslint/config";
 
 export default defineConfig(
@@ -21,7 +20,6 @@ export default defineConfig(
       eslint.configs.recommended,
       ...tseslint.configs.recommended,
       eslintPluginPrettierRecommended,
-      i18next.configs["flat/recommended"],
     ],
     languageOptions: {
       globals: {
@@ -36,13 +34,6 @@ export default defineConfig(
     rules: {
       "@typescript-eslint/no-explicit-any": "off",
       "@typescript-eslint/no-unused-vars": "warn",
-    },
-  },
-  {
-    files: ["**/__tests__/**", "**/*.test.*", "**/*.spec.*"],
-    rules: {
-      "i18next/no-literal-string": "off",
-      "@typescript-eslint/no-var-requires": "off",
     },
   },
 );
