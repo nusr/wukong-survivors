@@ -1,5 +1,6 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import { version } from "./package.json";
 
 const venderConfig = {
   "react-vendor": ["react", "react-dom"],
@@ -8,10 +9,46 @@ const venderConfig = {
   "util-vendor": ["lodash", "zustand"],
 };
 
+type Options = {
+  rules: {
+    slot: string;
+    html: string;
+  }[];
+};
+
+function htmlSlot(options: Options) {
+  const { rules } = options;
+
+  return {
+    name: "html-slot",
+    transformIndexHtml(indexHtml: string) {
+      if (rules.length === 0) {
+        return indexHtml;
+      }
+      for (const item of rules) {
+        const { slot, html } = item;
+        indexHtml = indexHtml.replace(slot, html);
+      }
+
+      return indexHtml;
+    },
+  };
+}
+
 // https://vitejs.dev/config/
 export default defineConfig({
   base: process.env.ROOT_BASE_URL ? process.env.ROOT_BASE_URL : undefined,
-  plugins: [react()],
+  plugins: [
+    react(),
+    htmlSlot({
+      rules: [
+        {
+          slot: "<!--BUNDLE_INFO-->",
+          html: `<script>window.__bundle_info = ${JSON.stringify({ time: new Date().toISOString(), commit_id: process.env.COMMIT_ID ?? `v${version}` })}</script>`,
+        },
+      ],
+    }),
+  ],
   server: {
     port: 3000,
     open: false,

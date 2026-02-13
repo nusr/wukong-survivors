@@ -11,6 +11,15 @@ import {
   replayIntegration,
 } from "@sentry/react";
 
+declare global {
+  interface Window {
+    __bundle_info?: {
+      time?: string;
+      commit_id?: string;
+    };
+  }
+}
+
 if (location.hostname === "nusr.github.io") {
   initSentry({
     dsn: "https://07d089a03337af8aee98719f34a3164a@o4506851168092160.ingest.us.sentry.io/4510718843420672",
@@ -25,6 +34,7 @@ if (location.hostname === "nusr.github.io") {
     tracePropagationTargets: ["nusr.github.io"],
     replaysSessionSampleRate: 0.1,
     replaysOnErrorSampleRate: 1.0,
+    release: window.__bundle_info?.commit_id,
   });
 }
 
