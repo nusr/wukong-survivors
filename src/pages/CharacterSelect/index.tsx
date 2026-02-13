@@ -92,7 +92,6 @@ const CharacterSelect: React.FC<CharacterSelectProps> = ({
           </p>
           <div className={styles.stats}>
             <div className={styles.stat}>
-              {/* eslint-disable-next-line i18next/no-literal-string */}
               <span className={styles.statName}>❤️ {t("stats.level")}</span>
               <span className={styles.statValue}>
                 {selectedCharacter.stats.baseHealth}
@@ -107,7 +106,6 @@ const CharacterSelect: React.FC<CharacterSelectProps> = ({
               </span>
             </div>
             <div className={styles.stat}>
-              {/* eslint-disable-next-line i18next/no-literal-string */}
               <span className={styles.statName}>
                 ⚔️ {t("upgrades.attack.name")}
               </span>
@@ -116,7 +114,6 @@ const CharacterSelect: React.FC<CharacterSelectProps> = ({
               </span>
             </div>
             <div className={styles.stat}>
-              {/* eslint-disable-next-line i18next/no-literal-string */}
               <span className={styles.statName}>
                 🛡️ {t("upgrades.armor.name")}
               </span>
@@ -134,7 +131,6 @@ const CharacterSelect: React.FC<CharacterSelectProps> = ({
             </div>
             {selectedCharacter.startingWeapon && (
               <div className={styles.stat}>
-                {/* eslint-disable-next-line i18next/no-literal-string */}
                 <span className={styles.statName}>
                   🗡️ {t("characters.specialWeapon")}
                 </span>

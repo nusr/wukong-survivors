@@ -43,7 +43,6 @@ const Stats: React.FC<{ onBack: () => void }> = ({ onBack }) => {
         </span>
       </div>
       <div className={styles.stat} data-testid="stat-total-kills">
-        {/* eslint-disable-next-line i18next/no-literal-string */}
         <span className={styles.statLabel} data-testid="stat-total-kills-label">
           ⚔️ {t("stats.totalKills")}:
         </span>
@@ -55,7 +54,6 @@ const Stats: React.FC<{ onBack: () => void }> = ({ onBack }) => {
         <span
           className={styles.statLabel}
           data-testid="stat-best-survival-label"
-          // eslint-disable-next-line i18next/no-literal-string
         >
           ⏱️ {t("stats.bestSurvival")}:
         </span>
