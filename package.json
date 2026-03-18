@@ -28,7 +28,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@sentry/react": "^10.43.0",
+    "@sentry/react": "^10.44.0",
     "i18next": "^25.8.18",
     "lodash": "^4.17.23",
     "phaser": "^3.90.0",
