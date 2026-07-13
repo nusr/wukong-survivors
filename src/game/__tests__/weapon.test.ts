@@ -46,6 +46,7 @@ const mockProjectile = {
 
 const mockProjectileGroup = {
   create: vi.fn(() => mockProjectile),
+  getChildren: vi.fn(() => []),
 };
 
 const mockScene = {

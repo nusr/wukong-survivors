@@ -95,9 +95,8 @@ export abstract class Weapon {
     this.isOrb = config.isOrb ?? false;
   }
 
-  public get projectiles(): ProjectileSprite[] {
-    return (this.projectileGroup?.children?.entries ||
-      []) as ProjectileSprite[];
+  public get projectiles() {
+    return (this.projectileGroup?.getChildren() || []) as ProjectileSprite[];
   }
 
   public get damage(): number {
