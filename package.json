@@ -31,7 +31,7 @@
     "@sentry/react": "^10.65.0",
     "i18next": "^26.3.4",
     "lodash": "^4.18.1",
-    "phaser": "^3.90.0",
+    "phaser": "^4.2.1",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
     "react-i18next": "^17.0.2",
