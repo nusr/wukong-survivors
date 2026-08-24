@@ -29,7 +29,7 @@
   "license": "MIT",
   "dependencies": {
     "@sentry/react": "^10.70.0",
-    "i18next": "^26.3.6",
+    "i18next": "^26.4.0",
     "lodash": "^4.18.1",
     "phaser": "^4.2.1",
     "react": "^19.2.8",
