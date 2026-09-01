@@ -43,6 +43,9 @@ jobs:
       - name: Unit test
         run: yarn test:coverage
 
+      - name: Build
+        run: yarn build
+
       - name: Upload coverage
         if: github.ref == 'refs/heads/main'
         uses: codecov/codecov-action@v7
@@ -61,9 +64,6 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 7
-
-      - name: Build
-        run: yarn build
 
       - name: Deploy to GitHub Pages
         if: github.ref == 'refs/heads/main'
