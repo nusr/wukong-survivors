@@ -1,5 +1,23 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { RewardSelectionUI } from "../RewardSelectionUI";
+import { useAppStore, useSaveStore, useSettingStore } from "../../store";
+
+const createRectMock = () => {
+  const handlers: Record<string, () => void> = {};
+  const mock: any = {
+    handlers,
+    setScrollFactor: vi.fn().mockReturnThis(),
+    setDepth: vi.fn().mockReturnThis(),
+    setStrokeStyle: vi.fn().mockReturnThis(),
+    setFillStyle: vi.fn().mockReturnThis(),
+    setInteractive: vi.fn().mockReturnThis(),
+    on: vi.fn((event: string, cb: () => void) => {
+      handlers[event] = cb;
+    }),
+    destroy: vi.fn(),
+  };
+  return mock;
+};
 
 describe("RewardSelectionUI", () => {
   let mockScene: any;
@@ -8,19 +26,14 @@ describe("RewardSelectionUI", () => {
 
   beforeEach(() => {
     vi.clearAllMocks();
+    useAppStore.getState().resetAll();
+    useSaveStore.getState().resetAll();
+    useSettingStore.getState().resetAll();
 
     // Mock scene
     mockScene = {
       add: {
-        rectangle: vi.fn().mockReturnValue({
-          setScrollFactor: vi.fn().mockReturnThis(),
-          setDepth: vi.fn().mockReturnThis(),
-          setStrokeStyle: vi.fn().mockReturnThis(),
-          setFillStyle: vi.fn().mockReturnThis(),
-          setInteractive: vi.fn().mockReturnThis(),
-          on: vi.fn(),
-          destroy: vi.fn(),
-        }),
+        rectangle: vi.fn().mockImplementation(() => createRectMock()),
         text: vi.fn().mockReturnValue({
           setOrigin: vi.fn().mockReturnThis(),
           setScrollFactor: vi.fn().mockReturnThis(),
@@ -207,5 +220,142 @@ describe("RewardSelectionUI", () => {
     expect(mockElement1.destroy).toHaveBeenCalled();
     expect(mockElement2.destroy).toHaveBeenCalled();
     expect(mockElement3.destroy).not.toHaveBeenCalled();
+  });
+
+  it("should hide existing UI before showing again if already visible", () => {
+    rewardUI.show(mockOnSelect);
+    const hideSpy = vi.spyOn(rewardUI, "hide");
+
+    rewardUI.show(mockOnSelect);
+
+    expect(hideSpy).toHaveBeenCalled();
+  });
+
+  it("should auto-select an option when enableAutoSelect is on", () => {
+    useSettingStore.getState().setAutoSelectEnabled(true);
+    const option = {
+      type: "weapon",
+      data: { id: "golden_staff", rarity: "common" },
+    };
+    vi.spyOn(rewardUI as any, "generateOptions").mockReturnValue([option]);
+    const selectSpy = vi.spyOn(rewardUI as any, "selectOption");
+
+    rewardUI.show(mockOnSelect);
+
+    expect(selectSpy).toHaveBeenCalledWith(option);
+  });
+
+  it("should trigger hover and click handlers on option buttons", () => {
+    const option = {
+      type: "weapon",
+      data: { id: "golden_staff", rarity: "common" },
+    };
+    vi.spyOn(rewardUI as any, "generateOptions").mockReturnValue([option]);
+    const selectSpy = vi.spyOn(rewardUI as any, "selectOption");
+
+    rewardUI.show(mockOnSelect);
+
+    const rectResults = mockScene.add.rectangle.mock.results.map(
+      (r: any) => r.value,
+    );
+    // First rectangle is the overlay, second is the option button background
+    const background = rectResults[1];
+
+    expect(() => background.handlers["pointerover"]()).not.toThrow();
+    expect(() => background.handlers["pointerout"]()).not.toThrow();
+    background.handlers["pointerdown"]();
+
+    expect(selectSpy).toHaveBeenCalledWith(option);
+  });
+
+  it("should trigger hover and click handlers on the refresh button when affordable", () => {
+    useSaveStore.getState().addGold(100);
+    const option = {
+      type: "weapon",
+      data: { id: "golden_staff", rarity: "common" },
+    };
+    vi.spyOn(rewardUI as any, "generateOptions").mockReturnValue([option]);
+    const refreshSpy = vi
+      .spyOn(rewardUI as any, "refresh")
+      .mockImplementation(() => {});
+
+    rewardUI.show(mockOnSelect);
+
+    const rectResults = mockScene.add.rectangle.mock.results.map(
+      (r: any) => r.value,
+    );
+    const refreshBg = rectResults[rectResults.length - 1];
+
+    expect(refreshBg.setInteractive).toHaveBeenCalled();
+    refreshBg.handlers["pointerover"]();
+    refreshBg.handlers["pointerout"]();
+    refreshBg.handlers["pointerdown"]();
+
+    expect(refreshSpy).toHaveBeenCalled();
+  });
+
+  it("should not make the refresh button interactive when not affordable", () => {
+    useSaveStore.setState({ totalGold: 0 });
+    const option = {
+      type: "weapon",
+      data: { id: "golden_staff", rarity: "common" },
+    };
+    vi.spyOn(rewardUI as any, "generateOptions").mockReturnValue([option]);
+
+    rewardUI.show(mockOnSelect);
+
+    const rectResults = mockScene.add.rectangle.mock.results.map(
+      (r: any) => r.value,
+    );
+    const refreshBg = rectResults[rectResults.length - 1];
+
+    expect(refreshBg.setInteractive).not.toHaveBeenCalled();
+  });
+
+  it("should show craft hint text when crafts are available", () => {
+    useAppStore.setState({
+      ownedWeapons: ["golden_staff", "thunder_drum", "mace"],
+    });
+    const option = {
+      type: "weapon",
+      data: { id: "golden_staff", rarity: "common" },
+    };
+    vi.spyOn(rewardUI as any, "generateOptions").mockReturnValue([option]);
+
+    rewardUI.show(mockOnSelect);
+
+    expect(mockScene.add.text).toHaveBeenCalled();
+  });
+
+  it("should refresh UI when enough gold is spent", () => {
+    useSaveStore.getState().addGold(100);
+    const option = {
+      type: "weapon",
+      data: { id: "golden_staff", rarity: "common" },
+    };
+    vi.spyOn(rewardUI as any, "generateOptions").mockReturnValue([option]);
+
+    rewardUI.show(mockOnSelect);
+    const initialCost = (rewardUI as any).refreshCost;
+
+    (rewardUI as any).refresh();
+
+    expect((rewardUI as any).refreshCost).toBe(initialCost + 5);
+  });
+
+  it("should not refresh UI when not enough gold", () => {
+    useSaveStore.setState({ totalGold: 0 });
+    const option = {
+      type: "weapon",
+      data: { id: "golden_staff", rarity: "common" },
+    };
+    vi.spyOn(rewardUI as any, "generateOptions").mockReturnValue([option]);
+
+    rewardUI.show(mockOnSelect);
+    const initialCost = (rewardUI as any).refreshCost;
+
+    (rewardUI as any).refresh();
+
+    expect((rewardUI as any).refreshCost).toBe(initialCost);
   });
 });

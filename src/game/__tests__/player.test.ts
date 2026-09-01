@@ -373,4 +373,95 @@ describe("Player", () => {
 
     expect(player.experienceToNextLevel).toBe(Math.floor(initialReq * 1.5));
   });
+
+  describe("upgrade", () => {
+    it("should apply health upgrade with secondary value", () => {
+      player.health = 50;
+      player.maxHealth = 100;
+
+      player.upgrade("health", 10, 20);
+
+      expect(player.health).toBe(60);
+      expect(player.maxHealth).toBe(120);
+    });
+
+    it("should apply attack upgrade", () => {
+      player.attack = 0;
+      player.upgrade("attack", 5);
+      expect(player.attack).toBe(5);
+    });
+
+    it("should apply armor upgrade", () => {
+      player.armor = 0;
+      player.upgrade("armor", 3);
+      expect(player.armor).toBe(3);
+    });
+
+    it("should apply luck upgrade", () => {
+      player.luck = 0;
+      player.upgrade("luck", 2);
+      expect(player.luck).toBe(2);
+    });
+
+    it("should apply speed upgrade", () => {
+      const initialSpeed = player.speed;
+      player.upgrade("speed", 10);
+      expect(player.speed).toBe(initialSpeed + 10);
+    });
+
+    it("should apply expBonus upgrade", () => {
+      player.expBonus = 0;
+      player.upgrade("expBonus", 0.2);
+      expect(player.expBonus).toBe(0.2);
+    });
+
+    it("should apply critRate upgrade", () => {
+      player.critRate = 0;
+      player.upgrade("critRate", 0.1);
+      expect(player.critRate).toBe(0.1);
+    });
+
+    it("should apply revive upgrade", () => {
+      player.reviveCount = 0;
+      player.upgrade("revive", 1);
+      expect(player.reviveCount).toBe(1);
+    });
+
+    it("should apply magnetBonus upgrade", () => {
+      player.magnetBonus = 0;
+      player.upgrade("magnetBonus", 5);
+      expect(player.magnetBonus).toBe(5);
+    });
+
+    it("should apply collectRange upgrade", () => {
+      player.collectRange = 0;
+      player.upgrade("collectRange", 5);
+      expect(player.collectRange).toBe(5);
+    });
+
+    it("should apply 'all' upgrade to every stat proportionally", () => {
+      player.maxHealth = 100;
+      player.health = 50;
+      player.speed = 100;
+      player.magnetBonus = 10;
+      player.critRate = 0.1;
+      player.expBonus = 0.1;
+      player.luck = 10;
+      player.armor = 10;
+      player.attack = 10;
+
+      player.upgrade("all", 0.5);
+
+      const radio = 1.5;
+      expect(player.maxHealth).toBe(100 * radio);
+      expect(player.health).toBe(50 + 100 * radio * 0.5);
+      expect(player.speed).toBe(100 * radio);
+      expect(player.magnetBonus).toBe(10 * radio);
+      expect(player.critRate).toBeCloseTo(0.1 * radio);
+      expect(player.expBonus).toBeCloseTo(0.1 * radio);
+      expect(player.luck).toBe(10 * radio);
+      expect(player.armor).toBe(10 * radio);
+      expect(player.attack).toBe(10 * radio);
+    });
+  });
 });

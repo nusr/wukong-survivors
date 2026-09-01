@@ -7,6 +7,11 @@ on:
   pull_request:
   workflow_dispatch:
 
+env:
+  CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+  ROOT_BASE_URL: ${{ vars.ROOT_BASE_URL }}
+  COMMIT_ID: ${{ github.sha }}
+
 jobs:
   deploy:
     permissions:
@@ -24,10 +29,10 @@ jobs:
           cache: yarn
 
       - name: Install yarn and dependencies
-        run: |
-          npm install -g yarn
-          yarn install --immutable
-          yarn playwright install --with-deps
+        run: yarn install --frozen-lockfile
+
+      - name: Install yarn and dependencies
+        run: yarn playwright install --with-deps
 
       - name: Lint
         run: yarn lint
@@ -44,7 +49,6 @@ jobs:
         with:
           report_type: coverage
           token: ${{ secrets.CODECOV_TOKEN }}
-          slug: nusr/wukong-survivors
 
       - name: Run e2e tests
         run: yarn e2e
@@ -60,9 +64,6 @@ jobs:
 
       - name: Build
         run: yarn build
-        env:
-          ROOT_BASE_URL: ${{ vars.ROOT_BASE_URL }}
-          COMMIT_ID: ${{ github.sha }}
 
       - name: Deploy to GitHub Pages
         if: github.ref == 'refs/heads/main'

@@ -1,31 +1,28 @@
-import { defineConfig } from "vite";
+import { defineConfig, type PluginOption } from "vite";
 import react from "@vitejs/plugin-react";
-import { version } from "./package.json";
+import { version } from "./package.json" with { type: "json" };
+import { codecovVitePlugin } from "@codecov/vite-plugin";
 
 const venderConfig = {
   "react-vendor": ["react", "react-dom"],
   "i18next-vendor": ["i18next", "react-i18next"],
   "phaser-vendor": ["phaser"],
-  "util-vendor": ["lodash", "zustand"],
+  "util-vendor": ["lodash", "zustand", "@sentry/react"],
 };
 
-type Options = {
-  rules: {
-    slot: string;
-    html: string;
-  }[];
-};
+type Options = Array<{
+  slot: string;
+  html: string;
+}>;
 
-function htmlSlot(options: Options) {
-  const { rules } = options;
-
+function htmlSlot(options: Options): PluginOption {
   return {
     name: "html-slot",
     transformIndexHtml(indexHtml: string) {
-      if (rules.length === 0) {
+      if (options.length === 0) {
         return indexHtml;
       }
-      for (const item of rules) {
+      for (const item of options) {
         const { slot, html } = item;
         indexHtml = indexHtml.replace(slot, html);
       }
@@ -40,13 +37,16 @@ export default defineConfig({
   base: process.env.ROOT_BASE_URL ? process.env.ROOT_BASE_URL : undefined,
   plugins: [
     react(),
-    htmlSlot({
-      rules: [
-        {
-          slot: "<!--BUNDLE_INFO-->",
-          html: `<script>window.__bundle_info = ${JSON.stringify({ time: new Date().toISOString(), commit_id: process.env.COMMIT_ID ?? `v${version}` })}</script>`,
-        },
-      ],
+    htmlSlot([
+      {
+        slot: "<!--BUNDLE_INFO-->",
+        html: `<script>window.__bundle_info = ${JSON.stringify({ time: new Date().toISOString(), commit_id: process.env.COMMIT_ID ?? `v${version}` })}</script>`,
+      },
+    ]),
+    codecovVitePlugin({
+      enableBundleAnalysis: process.env.CODECOV_TOKEN !== undefined,
+      bundleName: "wukong-survivors",
+      uploadToken: process.env.CODECOV_TOKEN,
     }),
   ],
   server: {

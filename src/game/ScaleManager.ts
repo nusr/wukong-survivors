@@ -4,7 +4,7 @@
  */
 
 import { START_Z_INDEX } from "../constant";
-import _ from "lodash";
+import throttle from "lodash/throttle";
 
 export interface ScaleConfig {
   // Base design dimensions (reference screen size)
@@ -37,7 +37,7 @@ class ScaleManagerClass {
   constructor() {
     this.updateScale();
 
-    const onResize = _.throttle(() => {
+    const onResize = throttle(() => {
       this.updateScale();
     }, 100);
 
