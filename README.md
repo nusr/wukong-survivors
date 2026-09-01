@@ -2,6 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Build Status](https://img.shields.io/github/actions/workflow/status/nusr/survivor-game/deploy.yml?branch=main)](https://github.com/nusr/survivor-game/actions/workflows/deploy.yml)
+[![codecov](https://codecov.io/gh/nusr/wukong-survivors/graph/badge.svg?token=oDuxZ0od7n)](https://codecov.io/gh/nusr/wukong-survivors)
 
 English | [中文](./README_ZH.md)
 
