@@ -5,6 +5,7 @@ const isCI = Boolean(process.env.CI);
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
+  failOnFlakyTests: true,
   testDir: "./e2e",
   /* Run tests in files in parallel */
   fullyParallel: true,
