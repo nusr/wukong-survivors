@@ -38,6 +38,14 @@ jobs:
       - name: Unit test
         run: yarn test:coverage
 
+      - name: Upload coverage
+        if: github.ref == 'refs/heads/main'
+        uses: codecov/codecov-action@v7
+        with:
+          report_type: coverage
+          token: ${{ secrets.CODECOV_TOKEN }}
+          slug: nusr/wukong-survivors
+
       - name: Run e2e tests
         run: yarn e2e
         env:
