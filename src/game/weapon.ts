@@ -75,7 +75,7 @@ export abstract class Weapon {
    */
   constructor(scene: GameScene, player: Player, config: WeaponConfig) {
     const weaponData = WEAPONS[config.type];
-    if (!scene.textures.exists(config.type) || weaponData) {
+    if (!scene.textures.exists(config.type)) {
       console.error(
         `Weapon texture '${config.type}' not found. Please ensure the SVG file is preloaded correctly.`,
       );
