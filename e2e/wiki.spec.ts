@@ -1,4 +1,4 @@
-import { test, expect } from "@playwright/test";
+import { test, expect } from "./util";
 
 test("wiki page loads correctly", async ({ page }) => {
   // Navigate to wiki page
