@@ -3,9 +3,7 @@ import { Page, expect, test as base } from "@playwright/test";
 const baseURL = process.env.BASE_URL ?? "";
 
 const isWhiteList = (text: string) => {
-  const whiteList: string[] = [
-    "GL Driver Message", // benign WebGL perf warnings (e.g. GPU stall due to ReadPixels)
-  ];
+  const whiteList: string[] = ["GL Driver"];
   return whiteList.some((item) => text.includes(item));
 };
 
