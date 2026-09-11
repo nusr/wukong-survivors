@@ -7,6 +7,7 @@ const isWhiteList = (text: string) => {
     "WebGL warning",
     "GL Driver",
     "Failed to create WebGL context",
+    "the server responded with a status of 404",
   ];
   return whiteList.some((item) => text.includes(item));
 };
