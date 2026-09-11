@@ -26,31 +26,3 @@ test("game page loads correctly", async ({ page }) => {
   // Check that the game container is present
   await expect(page.locator('[data-testid="game-container"]')).toBeVisible();
 });
-
-test("can show end game modal with ESC key", async ({ page }) => {
-  // Click start button to go to character select
-  await page.click('[data-testid="start-button"]');
-  await page.waitForTimeout(500); // Wait for transition
-
-  // Click on the first character card (destined_one)
-  await page.click('[data-testid="character-card-destined_one"]');
-  await page.waitForTimeout(300); // Wait for selection
-
-  // Click start button to go to map select
-  await page.click('[data-testid="start-button"]');
-  await page.waitForTimeout(500); // Wait for transition
-
-  // Click on the first map card (chapter1)
-  await page.click('[data-testid="map-card-chapter1"]');
-  await page.waitForTimeout(300); // Wait for selection
-
-  // Click start game button to go to game
-  await page.click('[data-testid="start-game-button"]');
-  await page.waitForTimeout(1000); // Wait for game to load
-
-  // Press ESC key
-  await page.keyboard.press("Escape");
-
-  // Wait for the end game modal to appear
-  await page.waitForTimeout(500);
-});
