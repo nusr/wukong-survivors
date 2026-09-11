@@ -1,10 +1,6 @@
 import { test, expect } from "@playwright/test";
 
 test("wiki page loads correctly", async ({ page }) => {
-  // Go to home page first
-  await page.goto("/");
-  await page.waitForTimeout(500); // Wait for page to load
-
   // Navigate to wiki page
   await page.click('[data-testid="wiki-button"]');
   await page.waitForTimeout(500); // Wait for page to load
@@ -51,8 +47,6 @@ test("wiki page loads correctly", async ({ page }) => {
 });
 
 test("can see all wiki sections", async ({ page }) => {
-  // Navigate to wiki page
-  await page.goto("/");
   await page.click('[data-testid="wiki-button"]');
   await page.waitForTimeout(500);
 
@@ -73,9 +67,6 @@ test("can see all wiki sections", async ({ page }) => {
 });
 
 test("can view content in wiki sections", async ({ page }) => {
-  // Go to wiki page
-  await page.goto("/");
-  await page.waitForTimeout(500); // Wait for page to load
   await page.click('[data-testid="wiki-button"]');
   await page.waitForTimeout(500); // Wait for page to load
 
@@ -114,9 +105,6 @@ test("can view content in wiki sections", async ({ page }) => {
 });
 
 test("can go back to home from wiki", async ({ page }) => {
-  // Go to wiki page
-  await page.goto("/");
-  await page.waitForTimeout(500); // Wait for page to load
   await page.click('[data-testid="wiki-button"]');
   await page.waitForTimeout(500); // Wait for page to load
 

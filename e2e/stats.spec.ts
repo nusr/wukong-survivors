@@ -1,10 +1,6 @@
-import { test, expect } from "@playwright/test";
+import { test, expect } from "./util";
 
 test("stats page loads correctly", async ({ page }) => {
-  // Go to home page first
-  await page.goto("/");
-  await page.waitForTimeout(500); // Wait for page to load
-
   // Navigate to stats page
   await page.click('[data-testid="stats-button"]');
   await page.waitForTimeout(500); // Wait for page to load
@@ -79,9 +75,6 @@ test("stats page loads correctly", async ({ page }) => {
 });
 
 test("can go back to home from stats", async ({ page }) => {
-  // Go to stats page
-  await page.goto("/");
-  await page.waitForTimeout(500); // Wait for page to load
   await page.click('[data-testid="stats-button"]');
   await page.waitForTimeout(500); // Wait for page to load
 

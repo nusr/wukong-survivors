@@ -1,9 +1,6 @@
-import { test, expect } from "@playwright/test";
+import { test, expect } from "./util";
 
 test("settings page loads correctly", async ({ page }) => {
-  // Go to home page first
-  await page.goto("/");
-
   // Navigate to settings page
   await page.click('[data-testid="settings-button"]');
 
@@ -31,8 +28,6 @@ test("settings page loads correctly", async ({ page }) => {
 });
 
 test("can toggle settings options", async ({ page }) => {
-  // Go to settings page
-  await page.goto("/");
   await page.click('[data-testid="settings-button"]');
   await page.waitForTimeout(300); // Wait for settings to load
 
@@ -48,8 +43,6 @@ test("can toggle settings options", async ({ page }) => {
 });
 
 test("can adjust game time slider", async ({ page }) => {
-  // Go to settings page
-  await page.goto("/");
   await page.click('[data-testid="settings-button"]');
 
   // Get the game time slider
@@ -67,8 +60,6 @@ test("can adjust game time slider", async ({ page }) => {
 });
 
 test("can adjust music volume slider", async ({ page }) => {
-  // Go to settings page
-  await page.goto("/");
   await page.click('[data-testid="settings-button"]');
 
   // Get the music volume slider

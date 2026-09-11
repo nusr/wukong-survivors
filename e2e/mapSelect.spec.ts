@@ -1,9 +1,6 @@
-import { test, expect } from "@playwright/test";
+import { test, expect } from "./util";
 
 test("map select page loads correctly", async ({ page }) => {
-  // Navigate to the home page
-  await page.goto("/");
-
   // Click the start button to go to character select page
   await page.locator('[data-testid="start-button"]').click();
 
@@ -38,9 +35,6 @@ test("map select page loads correctly", async ({ page }) => {
 });
 
 test("can select a map and see details", async ({ page }) => {
-  // Navigate to the home page
-  await page.goto("/");
-
   // Click the start button to go to character select page
   await page.locator('[data-testid="start-button"]').click();
 
@@ -70,9 +64,6 @@ test("can select a map and see details", async ({ page }) => {
 });
 
 test("can go back to character select from map select", async ({ page }) => {
-  // Navigate to the home page
-  await page.goto("/");
-
   // Click the start button to go to character select page
   await page.locator('[data-testid="start-button"]').click();
 

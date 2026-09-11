@@ -1,9 +1,6 @@
-import { test, expect } from "@playwright/test";
+import { test, expect } from "./util";
 
 test("shop page loads correctly", async ({ page }) => {
-  // Go to home page first
-  await page.goto("/");
-
   // Navigate to shop page
   await page.click('[data-testid="shop-button"]');
 
@@ -28,8 +25,6 @@ test("shop page loads correctly", async ({ page }) => {
 });
 
 test("can view upgrade details", async ({ page }) => {
-  // Go to shop page
-  await page.goto("/");
   await page.click('[data-testid="shop-button"]');
 
   // Get the first upgrade card
@@ -47,8 +42,6 @@ test("can view upgrade details", async ({ page }) => {
 });
 
 test("can go back to home from shop", async ({ page }) => {
-  // Go to shop page
-  await page.goto("/");
   await page.click('[data-testid="shop-button"]');
 
   // Click back button

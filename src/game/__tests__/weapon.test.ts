@@ -715,7 +715,6 @@ describe("GoldenStaff Weapon", () => {
     // Test through public update method which internally calls fire
     const time = 1000;
 
-    // @ts-expect-error just for test
     const fireSpy = vi.spyOn(goldenStaff, "fire");
 
     // Set lastFired to 0 so it can fire immediately

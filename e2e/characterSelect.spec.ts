@@ -1,9 +1,6 @@
-import { test, expect } from "@playwright/test";
+import { test, expect } from "./util";
 
 test("character select page loads correctly", async ({ page }) => {
-  // Go to home page first
-  await page.goto("/");
-
   // Navigate to character select page
   await page.click('[data-testid="start-button"]');
 
@@ -29,8 +26,6 @@ test("character select page loads correctly", async ({ page }) => {
 });
 
 test("can select character and go to map select", async ({ page }) => {
-  // Go to character select page
-  await page.goto("/");
   await page.click('[data-testid="start-button"]');
 
   // Select the first unlocked character
@@ -50,8 +45,6 @@ test("can select character and go to map select", async ({ page }) => {
 });
 
 test("can go back to home from character select", async ({ page }) => {
-  // Go to character select page
-  await page.goto("/");
   await page.click('[data-testid="start-button"]');
 
   // Click back button

@@ -1,9 +1,6 @@
-import { test, expect } from "@playwright/test";
+import { test, expect } from "./util";
 
 test("home page loads correctly", async ({ page }) => {
-  // Go to the home page
-  await page.goto("/");
-
   // Check that the page title is present
   await expect(page.locator('[data-testid="page-title"]')).toBeVisible();
 
@@ -17,9 +14,6 @@ test("home page loads correctly", async ({ page }) => {
 });
 
 test("can navigate to character selection from home", async ({ page }) => {
-  // Go to the home page
-  await page.goto("/");
-
   // Click the start button
   await page.click('[data-testid="start-button"]');
 
@@ -28,9 +22,6 @@ test("can navigate to character selection from home", async ({ page }) => {
 });
 
 test("can navigate to settings from home", async ({ page }) => {
-  // Go to the home page
-  await page.goto("/");
-
   // Click the settings button
   await page.click('[data-testid="settings-button"]');
 
@@ -41,9 +32,6 @@ test("can navigate to settings from home", async ({ page }) => {
 });
 
 test("can navigate to shop from home", async ({ page }) => {
-  // Go to the home page
-  await page.goto("/");
-
   // Click the shop button
   await page.click('[data-testid="shop-button"]');
 

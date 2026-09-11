@@ -1,9 +1,6 @@
-import { test, expect } from "@playwright/test";
+import { test, expect } from "./util";
 
 test("game page loads correctly", async ({ page }) => {
-  // Navigate to the home page first
-  await page.goto("/");
-
   // Click start button to go to character select
   const startButton = page.locator('[data-testid="start-button"]');
   await expect(startButton).toBeVisible();
@@ -28,16 +25,9 @@ test("game page loads correctly", async ({ page }) => {
 
   // Check that the game container is present
   await expect(page.locator('[data-testid="game-container"]')).toBeVisible();
-
-  // Loading overlay and spinner might disappear quickly after game loads, so we don't check them
-  // await expect(page.locator('[data-testid="loading-overlay"]')).toBeVisible();
-  // await expect(page.locator('[data-testid="loading-spinner"]')).toBeVisible();
 });
 
 test("can show end game modal with ESC key", async ({ page }) => {
-  // Navigate to the home page first
-  await page.goto("/");
-
   // Click start button to go to character select
   await page.click('[data-testid="start-button"]');
   await page.waitForTimeout(500); // Wait for transition
