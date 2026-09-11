@@ -4,9 +4,9 @@ const baseURL = process.env.BASE_URL ?? "";
 
 const isWhiteList = (text: string) => {
   const whiteList: string[] = [
+    "WebGL warning",
     "GL Driver",
     "Failed to create WebGL context",
-    "the server responded with a status of 404",
   ];
   return whiteList.some((item) => text.includes(item));
 };
@@ -30,8 +30,6 @@ export async function gotoHomePage(page: Page) {
   if (!baseURL) {
     throw new Error("process.env.BASE_URL is not defined");
   }
-
-  console.log("navigating to baseURL,", baseURL);
 
   await page.goto(baseURL);
 

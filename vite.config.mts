@@ -10,20 +10,21 @@ const venderConfig = {
   "util-vendor": ["lodash", "zustand", "@sentry/react"],
 };
 
-type Options = Array<{
-  slot: string;
-  html: string;
-}>;
+const preloadInfo = ["weapons/golden_staff"]
+  .map(
+    (v) =>
+      `<link rel="prefetch" href="./assets/${v}.svg" as="image" type="image/svg+xml" />`,
+  )
+  .join("\n");
 
-function htmlSlot(options: Options): PluginOption {
+function htmlSlot(options: Record<string, string>): PluginOption {
   return {
     name: "html-slot",
     transformIndexHtml(indexHtml: string) {
-      if (options.length === 0) {
+      if (Object.keys(options).length === 0) {
         return indexHtml;
       }
-      for (const item of options) {
-        const { slot, html } = item;
+      for (const [slot, html] of Object.entries(options)) {
         indexHtml = indexHtml.replace(slot, html);
       }
 
@@ -37,12 +38,10 @@ export default defineConfig({
   base: process.env.ROOT_BASE_URL ? process.env.ROOT_BASE_URL : undefined,
   plugins: [
     react(),
-    htmlSlot([
-      {
-        slot: "<!--BUNDLE_INFO-->",
-        html: `<script>window.__bundle_info = ${JSON.stringify({ time: new Date().toISOString(), commit_id: process.env.COMMIT_ID ?? `v${version}` })}</script>`,
-      },
-    ]),
+    htmlSlot({
+      "<!--BUNDLE_INFO-->": `<script>window.__bundle_info = ${JSON.stringify({ time: new Date().toISOString(), commit_id: process.env.COMMIT_ID ?? `v${version}` })}</script>`,
+      "<!--PRELOAD_INFO-->": preloadInfo,
+    }),
     codecovVitePlugin({
       enableBundleAnalysis: process.env.CODECOV_TOKEN !== undefined,
       bundleName: "wukong-survivors",
