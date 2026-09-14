@@ -75,15 +75,6 @@ npm run preview
 # 运行所有测试
 npm test
 
-# 在监听模式下运行测试
-npm run test:watch
-
-# 使用 UI 运行测试
-npm run test:ui
-
-# 生成覆盖率报告
-npm run test:coverage
-
 # 运行端到端测试
 npm run test:e2e
 ```

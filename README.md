@@ -75,15 +75,6 @@ npm run preview
 # Run all tests
 npm test
 
-# Run tests in watch mode
-npm run test:watch
-
-# Run tests with UI
-npm run test:ui
-
-# Run tests with coverage report
-npm run test:coverage
-
 # Run end-to-end tests
 npm run test:e2e
 ```
