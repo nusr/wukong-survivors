@@ -53,12 +53,12 @@ export class AudioManager {
         this.stopMusic();
       });
       this.music.once("error", (error: Error) => {
-        console.warn(`Sound effect error: ${effect}`, error);
+        console.log(`Sound effect error: ${effect}`, error);
         this.stopMusic();
       });
     } catch (error) {
       this.stopMusic();
-      console.warn(`Failed to play sound effect: ${effect}`, error);
+      console.log(`Failed to play sound effect: ${effect}`, error);
     }
   }
 
