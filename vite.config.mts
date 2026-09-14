@@ -10,11 +10,17 @@ const venderConfig = {
   "util-vendor": ["lodash", "zustand", "@sentry/react"],
 };
 
-const preloadInfo = ["weapons/golden_staff"]
-  .map(
-    (v) =>
-      `<link rel="prefetch" href="./assets/${v}.svg" as="image" type="image/svg+xml" />`,
-  )
+const preloadInfo = ["weapons/golden_staff.svg", "audio/player_fire.wav"]
+  .map((v) => {
+    const ext = v.split(".").pop() ?? "";
+
+    const asMap: Record<string, string> = {
+      svg: "image",
+      wav: "audio",
+    };
+
+    return `<link rel="prefetch" href="./assets/${v}" as="${asMap[ext]}"  />`;
+  })
   .join("\n");
 
 function htmlSlot(options: Record<string, string>): PluginOption {
